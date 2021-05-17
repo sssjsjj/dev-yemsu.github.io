@@ -1,4 +1,11 @@
 module.exports = {
   publicPath: '/resume',
-  outputDir: 'docs'
+  outputDir: 'docs',
+  // css: {
+  //   loaderOptions: {
+  //     scss: {
+  //       additionalData: ``
+  //     }
+  //   }
+  // }
 }

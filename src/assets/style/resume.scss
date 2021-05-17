@@ -1,0 +1,168 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+$main-color: rgb(85, 55, 194);
+$sub-color: darkseagreen;
+
+/* reset style */
+body, div, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p {
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  color: #222;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: -0.03em;
+}
+li, dt, dd {
+  list-style: none;
+}
+a {
+  color: #222;
+  text-decoration: none;
+  border-bottom: 1px solid #222;
+  transition: opacity 0.1s;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+button {
+  border: none;
+  background-color: transparent;
+  appearance: none;
+  cursor: pointer;
+}
+
+/* common style */
+.dot-point {
+  color: $sub-color;
+  font-size: 1.2em;
+  line-height: 0;
+}
+.badge {
+  display: inline-block;
+  padding: 0px 5px 2px 5px;
+  background-color: rgb(234, 234, 238);
+  font-size: 0.85em;
+  text-align: center;
+  border-radius: 5px;
+}
+[class*="bg-"] {
+  &.bg-main {
+    background-color: $main-color;
+    color: #fff;
+  }
+  &.light-1 {
+    opacity: .7;
+  }
+  &.light-2 {
+    opacity: .3;
+  }
+}
+.list-basic li::before {
+  display: inline-block;
+  margin-right: 8px;
+  color: $sub-color;
+  border-radius: 3px;
+  content: '•';
+}
+/* common - text */
+.text-big-1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #aaa
+}
+h2 {
+  font-size: 36px;
+  letter-spacing: 0;
+  & + .row {
+    margin-top: 20px;
+  }
+}
+h3 {
+  font-size: 24px;
+  letter-spacing: 0;
+}
+/* layout */
+.bar-point {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(to right, $main-color), rgb(201, 218, 201)
+}
+.container {
+  width: 900px;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+section:not(:first-child) {
+  margin-top: 80px;
+}
+.wrap-top {
+  display: flex;
+  justify-content: space-between;
+  & + * {
+    margin-top: 20px;
+  }
+}
+/* row */
+.row {
+  display: flex;
+  & + .row {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid rgb(231, 236, 231);
+  }
+}
+/* col */
+.col {
+  &-title {
+    width: 230px;
+    & + .col:last-child {
+      flex: 1;
+    }
+    h3 {
+      font-size: 1.6em;
+    }
+  }
+}
+/* column list */
+
+/* list  */
+[class*="list-col-"] {
+  display: flex;
+  flex-wrap: wrap;
+  & > li {
+    padding-right: 12px;
+  }
+}
+.list {
+  &-basic {
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+    > li {
+      margin-top: 5px;
+    }
+  }
+  &-col {
+    &-4 {
+      > li {
+        width: 25%;
+        margin-top: 10px;
+      }
+    }
+    &-right {
+      justify-content: flex-end;
+    }
+  }
+  &-badge {
+    .badge:first-child:last-child{
+      margin-right: 4px; 
+    }
+  }
+}
