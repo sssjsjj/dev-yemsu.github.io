@@ -2,7 +2,7 @@
   <div>
     <div class="bar-point"></div>
     <div class="container">
-      <div class="area-top">
+      <div class="container-top">
         <!-- <h1>Front-end Developer로 도약을 꿈꾸는 <br>6년차 퍼블리셔, 정수진입니다.</h1> -->
         <h1>ABCDEF</h1>
         <p>
@@ -31,8 +31,8 @@
           <dd><a href="https://dribbles.tistory.com/">https://dribbles.tistory.com/</a></dd>
         </dl>
       </div>
-      <section>
-        <div class="wrap-top">
+      <section class="section">
+        <div class="section-top">
           <h2>Skills<span class="dot-point"><span class="dot-point">.</span></span></h2>
           <ul class="list-col-right">
             <li><small><span class="badge bg-main light-2">1</span> : 기초 수준 </small></li>
@@ -73,82 +73,93 @@
           </div>
         </div>
       </section>
-      <section>
-        <div class="wrap-top">
+      <section class="section">
+        <div class="section-top">
           <h2>Experience<span class="dot-point">.</span></h2>
         </div>
         <section 
-          v-for="(item, index) in experience"
-          :key="`experience${index}`"
-          class="wrap-company"
-          >
-          <div class="row">
+          v-for="(exp, expIndex) in experience"
+          :key="`exp${expIndex}`"
+          :class="['wrap-company']"
+          ref="wrapCompany"
+        >
+          <div class="row row-company">
             <div class="col col-title">
+              <h3>{{ exp.en }}</h3>
               <p class="text-big-1">2017.03 ~</p>
               <p><span class="badge">4년 2개월</span></p>
             </div>
             <div class="col">
-              <h3>{{ item.kor }} ({{ item.en }})</h3>
-              <p>{{ item.job }} | {{ item.team }}</p>
+              <p>{{ exp.job }} | {{ exp.team }}</p>
               <ul class="list-basic">
                 <li
-                  v-for="(item, index) in item.descriptions"
-                  :key="`companyDesc${index}`"
+                  v-for="(desc, descIndex) in exp.descriptions"
+                  :key="`companyDesc${descIndex}`"
                 >
-                  {{ item }}
+                  {{ desc }}
                 </li>
               </ul>
               <p>
                 <span
-                  v-for="(item, index) in item.works"
-                  :key="`companyWorks${index}`"
+                  v-for="(work, workIndex) in exp.works"
+                  :key="`companyWorks${workIndex}`"
                   class="badge"
                 >
-                  {{ item }}
+                  {{ work }}
                 </span>
               </p>
             </div>
           </div>
+          <div 
+            v-for="(prj, prjIndex) in exp.projects"
+            :key="`project${expIndex}-${prjIndex}`"
+            class="row"
+          >
+            <div class="col col-title">
+              <p class="text-big-1"></p>
+            </div>
+            <div class="col">
+              <h3>{{ prj.title }}</h3>
+              <p>
+                <a 
+                  v-for="(link, linkIndex) in prj.links" 
+                  :key="`link${prjIndex}-${linkIndex}`"
+                  :href="link.url" 
+                  target="_blank" 
+                  title="새창"
+                >
+                  {{ link.title }}
+                </a>
+              </p>
+              <p>
+                {{ prj.period[0] }} ~ {{ prj.period[1] }}
+              </p>
+              <p>
+                <span class="badge">{{ prj.members }}인</span> {{ prj.type }} 
+              </p>
+              <ul class="list-basic">
+                <li
+                  v-for="(prjDesc, prjDescIndex) in prj.descriptions"
+                  :key="`prjDesc${prjIndex}-${prjDescIndex}`"
+                >
+                  {{ prjDesc }}
+                </li>
+              </ul>
+              <ul>
+                <li 
+                  v-for="(prjKeyword, prjKeywordIndex) in prj.keywords"
+                  :key="`prjKeyword${prjIndex}-${prjKeywordIndex}`"
+                  class="badge"
+                >
+                  {{ prjKeyword }}
+                </li>
+              </ul>
+            </div>
+          </div>
         </section>
-        <div class="row">
-          <div class="col col-title">
-            <p class="text-big-1">2020.04 ~</p>
-            <p><span class="badge">3인</span></p>
-          </div>
-          <div class="col">
-            <h3>
-              <a href="https://www.hyundai.com/kr/ko/e" target="_blank" title="새창">현대닷컴</a>
-            </h3>
-            <p>운영 | 아이파트너즈</p>
-            <ul class="list-basic">
-              <li>Vue.js/AEM 으로 나누어진 개발환경</li>
-              <li>신규 차량 런칭 / 사이트 유지보수 및 개선 (스크립트 작업 위주)</li>
-              <li>웹 접근성 인증 갱신 작업</li>
-              <li>
-                <span class="badge">20.12-21.02</span>
-                차량 상세 페이지 개편 작업
-              </li>
-              <li>
-                <span class="badge">20.11</span>
-                static html 단순 작업 자동화
-              </li>
-            </ul>
-            <p>
-              <span class="badge">HTML</span>
-              <span class="badge">SCSS</span>
-              <span class="badge">JavaScript</span>
-              <span class="badge">Vue.js</span>
-              <span class="badge">AEM</span>
-              <span class="badge">git</span>
-              <span class="badge">git lab</span>
-              <span class="badge">Jenskins</span>
-              <span class="badge">SVN</span>
-            </p>
-          </div>
-        </div>
       </section>
-      <section>
-        <div class="wrap-top">
+      <section class="section">
+        <div class="section-top">
           <h2>Education<span class="dot-point">.</span></h2>
         </div>
         <div class="row">
@@ -169,7 +180,7 @@
         </div>
         <div class="row">
           <div class="col col-title">
-            2010.03 ~ 2014.02
+            2015.06 ~ 2015.09
           </div>
           <div class="col">
             <h3>[NCS기반]디지털 웹 디자인(웹퍼블리셔) </h3>
@@ -201,7 +212,9 @@ import experience from './data/experience'
   export default {
     data() {
       return {
-        experience: {}
+        experience: {},
+        isScrolling: false,
+        isCompanyActive: false,
       }
     },
     computed: {
@@ -214,14 +227,40 @@ import experience from './data/experience'
       this.experience = experience
     },
     mounted() {
-      console.log(this.experience)
+      document.addEventListener('scroll', this.scrollHandler)
+    },
+    beforeDestroy() {
+
     },
     methods: {
-
+      scrollHandler() {
+        if(this.isScrolling) return false
+        this.isScrolling = true
+        
+        // this.scrollFixTitle(this.$refs.wrapCompany)
+        
+        setTimeout(() => {
+          this.isScrolling = false
+        }, 50);
+      },
+      scrollFixTitle(elems) {
+        const crrScrT = Math.ceil(window.pageYOffset) + 30        
+        for(const elem of elems) {
+          const isOnScroll = elem.offsetTop < crrScrT
+          const isOutScroll = elem.offsetTop + elems.offsetHeight < crrScrT
+          if(isOnScroll && !isOutScroll) {
+            elem.classList.add('active')
+          } else {
+            elem.classList.remove('active')
+            elem.style = ''
+          }
+        }
+      }
     }
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@import "./assets/style/reset";
 @import "./assets/style/resume";
 </style>

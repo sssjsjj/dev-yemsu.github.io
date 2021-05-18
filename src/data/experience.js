@@ -36,6 +36,7 @@ export default [
         ],
         keywords: [
           'HTML',
+          'CSS',
           'SCSS',
           'JavaScript',
           'Vue.js',
@@ -64,7 +65,7 @@ export default [
         ],
         keywords: [
           'HTML',
-          'SCSS',
+          'CSS',
           'JavaScript',
           'jQuery',
           'AEM',

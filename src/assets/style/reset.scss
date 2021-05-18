@@ -1,0 +1,34 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+/* reset style */
+body, div, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p {
+  vertical-align: top;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  color: #222;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: -0.03em;
+}
+li, dt, dd {
+  list-style: none;
+}
+a {
+  color: #222;
+  text-decoration: none;
+  border-bottom: 1px solid #222;
+  transition: opacity 0.1s;
+  &:hover {
+    opacity: 0.6;
+  }
+}
+button {
+  border: none;
+  background-color: transparent;
+  appearance: none;
+  cursor: pointer;
+}
