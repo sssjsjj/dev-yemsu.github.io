@@ -3,22 +3,33 @@
     <div class="bar-point"></div>
     <div class="container">
       <div class="container-top">
-        <!-- <h1>Front-end Developer로 도약을 꿈꾸는 <br>6년차 퍼블리셔, 정수진입니다.</h1> -->
+        <!-- <h1>프론트엔드 개발자로 도약을 꿈꾸는 <br>6년차 퍼블리셔, 정수진입니다.</h1> -->
         <h1>ABCDEF</h1>
         <p>
-          웹/앱 서비스 백엔드 개발과 스타트업 개발자로서의 다양한 경험이 있습니다. Node.js, PHP, MySQL, Redis, AWS, Git, Linux 등을 사용하여 프로덕션 서비스를 설계, 개발, 운영한 경험으로 확장성과 유지 보수성이 높은 백엔드 아키텍처와 패턴을 위해 언제나 고민하고 있습니다. <br><br>
+          웹 에이전시는 다양한 경험을 할 수 있다는 것이 큰 장점이지만,<br>
+          자사 서비스가 아닌만큼 작업에 적극적으로 참여하기엔 한계가 있다고 느꼈습니다.<br>
+          작업에 애정을 가지고 적극적으로 보완, 개선에 대한 의견을 내며 능동적으로 일하고 싶습니다.
+        </p>
+        <p>
+          회사 내부 스터디에 참여하며 Vanilla JS 및 프레임 워크들을 살펴보았습니다.<br>
+          실무에서 Vanilla JS를 적용해 보기도 하고, 토이 프로젝트들을 진행해보면서 지식을 쌓을 수 있었습니다. <br>
+          그렇게 현재 운영중인 Vue.js 프로젝트에 투입될 수 있었고,<br>
+          프론트엔드 개발 영역까지 조금이나마 유지보수 및 개선 작업을 진행할 수 있었습니다.
+        </p>
+        <p>
+          크고 작은 규모의 다양한 웹사이트 작업 경험이 있습니다.<br>
+          <!-- 소형 사이트 구축을 하며  -->
+          대형 사이트 운영을 하면서 클린코드와 지속적인 리팩토링의 중요성을 느끼고,<br>
+          정확한 커뮤니케이션이 업무 효율에 미치는 영향도 느낄 수 있었습니다. <br><br>
 
-          오픈소스 프로젝트에 관심이 많고, 다양한 방법으로 기여를 하려고 노력하고 있습니다. 이외에도 개인 프로젝트나 개발 커뮤니티 활동 등을 통해 다양한 개발 경험을 즐기고 있습니다. 평소 개발 경험을 공유하거나 기록하는 것을 좋아하여 학부생 시절부터 시작한 개발 블로그에는 350여 개의 기술 포스트를 작성했습니다. 언제나 백엔드 개발의 정점을 찍고 싶다고 생각하고 있으며, 조금 더 나중에는 어딘가의 기술 조직 리더라는 목표를 가지고 다양한 기술을 학습하거나 사용하고 경험을 쌓고 있습니다. <br><br>
+          더 나은 유지보수를 위해,<br>
+          <!-- 전체적인 가이드를 고려하며 차곡차곡 소스를 쌓아  -->
+          재사용이 가능하도록 작업하는 것을 중요하게 생각합니다.<br>
+          부끄럽지 않은 코드를 작성하기위해 고민하고 노력합니다.<br><br>
+          
+          주어진 업무를 수동적으로 진행하기보다, 능동적으로 고민하고 제안하며 작업할 때 활력을 얻습니다.<br><br>
 
-          서비스 개발이란 결국 개발과 비즈니스와의 커뮤니케이션이 가장 중요하다고 생각하고 있습니다. 능동적이고 적극적인 커뮤니케이션으로 문제 해결과 비즈니스 발전을 위해 뛰어듭니다. 이러한 점을 바탕으로 더 좋은 개발자로서 성장하기 위해 더 치열하게 학습하고, 경험하고, 노력하고 있습니다.
-          <br><br>
-          서울에서 6년차 웹 프론트엔드 엔지니어로 일하고 있으며 아름다운 인터페이스와 애니메이션을 구현하는 것을 좋아합니다. 개발자의 가치는 비즈니스 가치를 구현하는데서 나온다고 믿습니다. 주도적으로 업무를 진행할 수 있는 환경을 선호합니다.
-          <br><br>
-          6년 차 개발자로 스타트업에서 웹과 앱 서비스를 기획/개발/배포/운영하였습니다. 주로 웹 서비스 개발을 담당했으며 필요에 따라 PO(Product Owner) 역할을 겸하였습니다. 작은 규모의 팀에 첫 번째 개발자로 입사하여 50억 투자를 유치하고 40명 규모의 팀으로 성장할 때까지 필요한 기술 역량을 책임졌던 경험이 있습니다.
-          <br><br>
-          비즈니스 성장에 기여하는 일을 좋아합니다. 이를 위해 빠르게 개발하고 배포하는 역량과 데이터를 활용하여 유저를 이해하는 역량을 쌓고자 노력해왔습니다. 또한, 큰 임팩트는 혼자가 아닌 함께 만들 수 있다고 생각하기에 다양한 직무의 팀 구성원들과 적극적으로 커뮤니케이션하며 협업해왔습니다.
-          <br><br>
-          반복되는 일을 자동화하고 비효율적인 프로세스를 개선하는 일을 좋아합니다. 팀 구성원들의 단순/루틴 업무 시간을 줄여주기 위해 지속해서 백오피스를 개선하고 개발한 경험이 있습니다.
+          낯선 작업을 탐색하고, 시도해보는 과정에 재미를 느낍니다.
         </p>
         <dl>
           <dt>email</dt>
@@ -36,8 +47,8 @@
           <h2>Skills<span class="dot-point"><span class="dot-point">.</span></span></h2>
           <ul class="list-col-right">
             <li><small><span class="badge bg-main light-2">1</span> : 기초 수준 </small></li>
-            <li><small><span class="badge bg-main light-1">2</span> : 취미 개발 수준 </small></li>
-            <li><small><span class="badge bg-main">3</span> : Production 개발 가능 수준 </small></li>
+            <li><small><span class="badge bg-main light-1">2</span> : 유지보수 가능 수준 </small></li>
+            <li><small><span class="badge bg-main">3</span> : Production 개발 가능 수준</small></li>
           </ul>
         </div>
         <div class="row">
@@ -47,12 +58,12 @@
           <div class="col">
             <ul class="list-badge list-col-4">
               <li><span class="badge bg-main">3</span> HTML/CSS</li>
-              <li><span class="badge bg-main">3</span> SCSS</li>
               <li><span class="badge bg-main">3</span> Javascript</li>
-              <li><span class="badge bg-main">3</span> jQuery</li>
+              <li><span class="badge bg-main">3</span> Jqeury</li>
+              <li><span class="badge bg-main">3</span> SCSS</li>
               <li><span class="badge bg-main light-1">2</span> Vue.js</li>
-              <li><span class="badge bg-main light-2">1</span> React.js</li>
-              <li><span class="badge bg-main light-2">1</span> Angular.js</li>
+              <!-- <li><span class="badge bg-main light-2">1</span> React.js</li>
+              <li><span class="badge bg-main light-2">1</span> Angular.js</li> -->
             </ul>
           </div>
         </div>
@@ -68,7 +79,6 @@
               <li>Jira</li>
               <li>Jenkins</li>
               <li>Zeplin</li>
-              <li>Agile</li>
             </ul>
           </div>
         </div>
@@ -228,6 +238,7 @@ import experience from './data/experience'
     },
     mounted() {
       document.addEventListener('scroll', this.scrollHandler)
+      console.log(this.experience)
     },
     beforeDestroy() {
 
