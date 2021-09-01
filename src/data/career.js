@@ -4,6 +4,7 @@ export default [
     kor: '아이파트너즈' ,
     team: 'UX부문',
     job: '웹퍼블리셔',
+    period: {start: [2017, 3], end: []},
     descriptions: [
       '웹에이전시',
       '대기업 웹 사이트 운영'
@@ -24,7 +25,7 @@ export default [
         links: [
           {title: '현대닷컴', url: 'https://www.hyundai.com/kr/ko/e'}
         ],
-        period: ['2020.04'],
+        period: {start: [2020, 4], end: []},
         members: 3,
         type: '운영',
         descriptions: [
@@ -54,7 +55,7 @@ export default [
           {title: '현대 월드와이드', url: 'https://www.hyundai.com/worldwide/en'},
           {title: '현대 WWN(28개 해외 사이트)', url: 'https://org3-www.hyundai.com/template_ar/ar'},
         ],
-        period: ['2019.04', '2020.03'],
+        period: {start: [2019, 4], end: [2020, 3]},
         members: 1,
         type: '운영',
         descriptions: [
@@ -84,7 +85,7 @@ export default [
           {title: '기아 PR', url: 'https://pr.kia.com/ko/main.do'},
           {title: '기아 군수', url: 'https://military.kia.com/kr/main.do'},
         ],
-        period: ['2019.03', '2020.03'],
+        period:{start: [2019, 3], end: [2020, 3]},
         members: 2,
         type: '운영',
         descriptions: [
@@ -113,7 +114,7 @@ export default [
           {title: 'EN', url: 'http://www.eng.kodex.com/main.do'},
           {title: 'EN mobile', url: 'http://m.eng.kodex.com/main.do'},
         ],
-        period: ['2020.01', '2020.04'],
+        period: {start: [2020, 1], end: [2020, 4]},
         members: 3,
         type: '접근성',
         descriptions: [
@@ -133,7 +134,7 @@ export default [
         links: [
           {title: '현대 N brand', url: 'https://www.hyundai-n.com/'},
         ],
-        period: ['2019.07', '2020.04'],
+        period: {start: [2019, 7], end: [2020, 4]},
         members: 1,
         type: 'Google Tag Manager',
         descriptions: [
@@ -154,7 +155,7 @@ export default [
         links: [
           {title: '소니 G Master', url: 'https://www.sony.co.kr/alpha/handler/alphaCommon-Start?PageName=jsp/alpha/gmaster/index.jsp'},
         ],
-        period: ['2019.02', '2019.03'],
+        period: {start: [2019, 2], end: [2019, 3]},
         members: 1,
         type: '리뉴얼 구축',
         descriptions: [
@@ -186,7 +187,7 @@ export default [
           {title: '프리메라', url: 'https://www.primerabeauty.com/kr/ko/index.html'},
           {title: '해피바스', url: 'https://www.happybath.com/kr/ko/index.html'},
         ],
-        period: ['2017.03', '2019.02'],
+        period: {start: [2017, 3], end: [2019, 2]},
         members: 2,
         type: 'Google Tag Manager',
         descriptions: [
@@ -216,6 +217,7 @@ export default [
     kor: 'RZA',
     team: '디자인팀',
     job: '웹디자이너',
+    period: {start: [2016, 7], end: [2017, 3]},
     descriptions: [
       '웹 에이전시',
       '쇼핑몰, 성형외과 등 소규모 웹 사이트 운영 및 구축',
@@ -234,7 +236,7 @@ export default [
         links: [
           {title: '청년희망재단 동남본부 모바일', url: 'https://www.yhf.kr/m/dongnam/index.do'}
         ],
-        period: ['2016.07', '2017.03'],
+        period: {start: [2016, 7], end: [2017, 3]},
         members: '퍼블: 1, 기획: 1',
         type: '운영',
         descriptions: [
@@ -251,11 +253,31 @@ export default [
         ]
       },
       {
+        title: '성형외과·쇼핑몰',
+        links: [
+          {title: '성형외과', url: 'http://www.1004sky.co.kr/new2018/index.php'},
+          {title: '쇼핑몰', url: 'http://dualforms.co.kr/'}
+        ],
+        period: {start: [2016, 7], end: [2017, 3]},
+        members: '퍼블: 1, 기획: 1',
+        type: '운영',
+        descriptions: [
+          '유지보수 및 소규모 개선',
+        ],
+        keywords: [
+          'HTML',
+          'CSS',
+          'jQuery',
+          'Adobe Photoshop',
+          'Adobe Illustrator',
+        ]
+      },
+      {
         title: 'DUVIVIER',
         links: [
           {title: 'DUVIVIER', url: 'http://duvivier.co.kr/'}
         ],
-        period: ['2017.01', '2017.02'],
+        period: {start: [2017, 1], end: [2017, 2]},
         members: '디자인: 2',
         type: '구축',
         descriptions: [
@@ -274,7 +296,7 @@ export default [
         links: [
           {title: '목일가', url: 'http://wdshop.co.kr/'}
         ],
-        period: ['2016.12', '2017.01'],
+        period: {start: [2016, 12], end: [2017, 1]},
         members: '디자인: 2',
         type: '구축',
         descriptions: [
@@ -295,6 +317,7 @@ export default [
     kor: '로켓',
     team: '시스템개발팀',
     job: '웹디자이너',
+    period: {start: [2015, 10], end: [2016, 6]},
     descriptions: [
       '법률 o2o 플랫폼 스타트업',
       '자회사 플랫폼 유지보수 및 버전업',
@@ -311,10 +334,7 @@ export default [
     projects: [
       {
         title: 'LAWKET',
-        links: [
-          {title: '목일가', url: 'http://wdshop.co.kr/'}
-        ],
-        period: ['2015.10', '2016.06'],
+        period: {start: [2015, 10], end: [2016, 6]},
         members: '디자인: 2',
         type: '구축',
         descriptions: [

@@ -85,10 +85,11 @@
       </section>
       <section class="section">
         <div class="section-top">
-          <h2>Experience<span class="dot-point">.</span></h2>
+          <h2>career<span class="dot-point">.</span></h2>
+          <p><span class="badge">{{ returnCareerPeriod() }}</span></p>
         </div>
         <section 
-          v-for="(exp, expIndex) in experience"
+          v-for="(exp, expIndex) in career"
           :key="`exp${expIndex}`"
           :class="['wrap-company']"
           ref="wrapCompany"
@@ -96,8 +97,10 @@
           <div class="row row-company">
             <div class="col col-title">
               <h3>{{ exp.en }}</h3>
-              <p class="text-big-1">2017.03 ~</p>
-              <p><span class="badge">4년 2개월</span></p>
+              <p class="text-big-1">{{ exp.period.start.join('.') }} ~ {{ exp.period.end.length > 0 ? exp.period.start.join('.') : '' }}</p>
+              <p><span class="badge">
+                {{ returnPeriodText(exp.period.start, exp.period.end) }}
+              </span></p>
             </div>
             <div class="col">
               <p>{{ exp.job }} | {{ exp.team }}</p>
@@ -142,7 +145,7 @@
                 </a>
               </p>
               <p>
-                {{ prj.period[0] }} ~ {{ prj.period[1] }}
+                {{ prj.period.start }} ~ {{ prj.period.end }}
               </p>
               <p>
                 <span class="badge">{{ prj.members }}인</span> {{ prj.type }} 
@@ -218,11 +221,11 @@
 </template>
 
 <script>
-import experience from './data/experience'
+import career from './data/career'
   export default {
     data() {
       return {
-        experience: {},
+        career: {},
         isScrolling: false,
         isCompanyActive: false,
       }
@@ -234,11 +237,12 @@ import experience from './data/experience'
 
     },
     created() {
-      this.experience = experience
+      this.career = career
     },
     mounted() {
       document.addEventListener('scroll', this.scrollHandler)
-      console.log(this.experience)
+      // console.log(this.career)
+      this.setCareerPeriod()
     },
     beforeDestroy() {
 
@@ -266,6 +270,49 @@ import experience from './data/experience'
             elem.style = ''
           }
         }
+      },
+      returnPeriod(start, end) {
+        const today = new Date()
+        const endYear = end.length ? end[0] : today.getFullYear()
+        const endMonth = end.length ? end[1] : today.getMonth()
+
+        const calcYear = endYear - start[0]
+        const calcMonth = endMonth - start[1] + 1
+
+        const periodYear = calcMonth < 0 ? calcYear - 1 : calcYear
+        const periodMonth = calcMonth < 0 ? 12 + calcMonth : calcMonth
+        
+        const checkYear = periodYear != 0 ? periodYear + 1 : periodYear
+        return [checkYear, periodMonth]
+      },
+      returnPeriodText(start, end) {
+        const period = this.returnPeriod(start, end)
+        const year = period[0]
+        const month = period[1]
+
+        const yearText = year > 0 ? year + '년' : ''
+        const monthText = month > 0 ? month + '개월' : ''
+
+        return `${yearText} ${monthText}`
+      },
+      returnCareerPeriod() {
+        let year = 0
+        let month = 0
+
+        for(const career of this.career) {
+          const careerPeriod = career.period
+          const period = this.returnPeriod(careerPeriod.start, careerPeriod.end)
+          year += period[0]
+          month += period[1]
+        }
+
+        year += Math.floor(month / 12)
+        month = month % 12
+        
+        const yearText = year > 0 ? year + '년' : ''
+        const monthText = month > 0 ? month + '개월' : ''
+        
+        return `${yearText} ${monthText}`
       }
     }
   }
