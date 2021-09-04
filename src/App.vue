@@ -94,14 +94,12 @@
           :class="['wrap-company']"
           ref="wrapCompany"
         >
-          <div class="row row-company">
-            <div class="col col-title">
-              <h3>{{ exp.en }}</h3>
-              <p class="text-big-1">{{ exp.period.start.join('.') }} ~ {{ exp.period.end.length > 0 ? exp.period.start.join('.') : '' }}</p>
-              <p><span class="badge">
-                {{ returnPeriodText(exp.period.start, exp.period.end) }}
-              </span></p>
-            </div>
+          <div class="col col-title">
+            <h3>{{ exp.en }}</h3>
+            <p class="text-big-1">{{ exp.period.start.join('.') }} ~ {{ exp.period.end.length > 0 ? exp.period.end.join('.') : '' }}</p>
+            <p><span class="badge">
+              {{ returnPeriodText(exp.period.start, exp.period.end) }}
+            </span></p>
             <div class="col">
               <p>{{ exp.job }} | {{ exp.team }}</p>
               <ul class="list-basic">
@@ -112,61 +110,62 @@
                   {{ desc }}
                 </li>
               </ul>
-              <p>
-                <span
+              <ul>
+                <li
                   v-for="(work, workIndex) in exp.works"
                   :key="`companyWorks${workIndex}`"
                   class="badge"
                 >
                   {{ work }}
-                </span>
-              </p>
-            </div>
+                </li>
+              </ul>
+            </div>            
           </div>
-          <div 
-            v-for="(prj, prjIndex) in exp.projects"
-            :key="`project${expIndex}-${prjIndex}`"
-            class="row"
-          >
-            <div class="col col-title">
-              <p class="text-big-1"></p>
-            </div>
-            <div class="col">
-              <h3>{{ prj.title }}</h3>
-              <p>
-                <a 
-                  v-for="(link, linkIndex) in prj.links" 
-                  :key="`link${prjIndex}-${linkIndex}`"
-                  :href="link.url" 
-                  target="_blank" 
-                  title="새창"
-                >
-                  {{ link.title }}
-                </a>
-              </p>
-              <p>
-                {{ prj.period.start }} ~ {{ prj.period.end }}
-              </p>
-              <p>
-                <span class="badge">{{ prj.members }}인</span> {{ prj.type }} 
-              </p>
-              <ul class="list-basic">
-                <li
-                  v-for="(prjDesc, prjDescIndex) in prj.descriptions"
-                  :key="`prjDesc${prjIndex}-${prjDescIndex}`"
-                >
-                  {{ prjDesc }}
-                </li>
-              </ul>
-              <ul>
-                <li 
-                  v-for="(prjKeyword, prjKeywordIndex) in prj.keywords"
-                  :key="`prjKeyword${prjIndex}-${prjKeywordIndex}`"
-                  class="badge"
-                >
-                  {{ prjKeyword }}
-                </li>
-              </ul>
+          <div class="wrap-projects">
+            <div
+              v-for="(prj, prjIndex) in exp.projects"
+              :key="`project${expIndex}-${prjIndex}`"
+              class="row"
+            >
+              <div class="col">
+                <h3>{{ prj.title }}</h3>
+                <p>
+                  <a
+                    v-for="(link, linkIndex) in prj.links"
+                    :key="`link${prjIndex}-${linkIndex}`"
+                    :href="link.url"
+                    target="_blank"
+                    title="새창"
+                  >
+                    {{ link.title }}
+                  </a>
+                </p>
+                <p>
+                  {{ prj.period.start.join('.') }} ~ {{ prj.period.end.join('.') }}
+            
+                  <span class="badge">{{ returnPeriodText(prj.period.start, prj.period.end) }}</span>
+                </p>
+                <p>
+                  <span class="badge">{{ prj.members }}인</span> {{ prj.type }}
+                </p>
+                <ul class="list-basic">
+                  <li
+                    v-for="(prjDesc, prjDescIndex) in prj.descriptions"
+                    :key="`prjDesc${prjIndex}-${prjDescIndex}`"
+                  >
+                    {{ prjDesc }}
+                  </li>
+                </ul>
+                <ul>
+                  <li
+                    v-for="(prjKeyword, prjKeywordIndex) in prj.keywords"
+                    :key="`prjKeyword${prjIndex}-${prjKeywordIndex}`"
+                    class="badge"
+                  >
+                    {{ prjKeyword }}
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </section>
@@ -196,7 +195,7 @@
             2015.06 ~ 2015.09
           </div>
           <div class="col">
-            <h3>[NCS기반]디지털 웹 디자인(웹퍼블리셔) </h3>
+            <h3>[NCS기반] 디지털 웹 디자인(웹퍼블리셔) </h3>
             <p>그린컴퓨터아카데미</p>
             <ul class="list-basic">
               <li>그래픽 디자인</li>
@@ -226,7 +225,6 @@ import career from './data/career'
     data() {
       return {
         career: {},
-        isScrolling: false,
         isCompanyActive: false,
       }
     },
@@ -240,24 +238,12 @@ import career from './data/career'
       this.career = career
     },
     mounted() {
-      document.addEventListener('scroll', this.scrollHandler)
       // console.log(this.career)
-      this.setCareerPeriod()
     },
     beforeDestroy() {
 
     },
     methods: {
-      scrollHandler() {
-        if(this.isScrolling) return false
-        this.isScrolling = true
-        
-        // this.scrollFixTitle(this.$refs.wrapCompany)
-        
-        setTimeout(() => {
-          this.isScrolling = false
-        }, 50);
-      },
       scrollFixTitle(elems) {
         const crrScrT = Math.ceil(window.pageYOffset) + 30        
         for(const elem of elems) {
@@ -282,7 +268,7 @@ import career from './data/career'
         const periodYear = calcMonth < 0 ? calcYear - 1 : calcYear
         const periodMonth = calcMonth < 0 ? 12 + calcMonth : calcMonth
         
-        const checkYear = periodYear != 0 ? periodYear + 1 : periodYear
+        const checkYear = periodYear != 0 ? periodYear : periodYear
         return [checkYear, periodMonth]
       },
       returnPeriodText(start, end) {
