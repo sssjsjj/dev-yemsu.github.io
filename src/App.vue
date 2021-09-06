@@ -74,7 +74,7 @@
           <div class="col">
             <ul class="list-basic list-col-4">
               <li>VS Code</li>
-              <li>Git / Github</li>
+              <li>Git/Github</li>
               <li>SVN</li>
               <li>Jira</li>
               <li>Jenkins</li>
@@ -85,8 +85,10 @@
       </section>
       <section class="section">
         <div class="section-top">
-          <h2>career<span class="dot-point">.</span></h2>
-          <p><span class="badge">{{ returnCareerPeriod() }}</span></p>
+          <div>
+            <h2>Career<span class="dot-point">.</span></h2>
+            <p><span class="badge dark">총 {{ returnCareerPeriod() }}</span></p>
+          </div>
         </div>
         <section 
           v-for="(exp, expIndex) in career"
@@ -96,12 +98,19 @@
         >
           <div class="col col-title">
             <h3>{{ exp.en }}</h3>
-            <p class="text-big-1">{{ exp.period.start.join('.') }} ~ {{ exp.period.end.length > 0 ? exp.period.end.join('.') : '' }}</p>
-            <p><span class="badge">
-              {{ returnPeriodText(exp.period.start, exp.period.end) }}
-            </span></p>
+            <p>
+              <span class="text-big-1">
+                {{ exp.period.start.join('.') }}
+                -
+                {{ exp.period.end.length > 0 ? exp.period.end.join('.') : '현재' }}
+              </span>
+            </p>
+            <p>              
+              {{ exp.job }} <template v-if="exp.team">| {{ exp.team }}</template> 
+              <span class="badge">{{ returnPeriodText(exp.period.start, exp.period.end) }}</span>              
+              <span v-if="exp.period.end.length === 0" class="badge point">재직중</span>              
+            </p>
             <div class="col">
-              <p>{{ exp.job }} | {{ exp.team }}</p>
               <ul class="list-basic">
                 <li
                   v-for="(desc, descIndex) in exp.descriptions"
@@ -110,7 +119,7 @@
                   {{ desc }}
                 </li>
               </ul>
-              <ul>
+              <ul class="list-badge">
                 <li
                   v-for="(work, workIndex) in exp.works"
                   :key="`companyWorks${workIndex}`"
@@ -128,25 +137,66 @@
               class="row"
             >
               <div class="col">
-                <h3>{{ prj.title }}</h3>
+                <div class="area-title">
+                  <h4>
+                    <a v-if="prj.links && !prj.links[1]" :href="prj.links[0].url"
+                      target="_blank"
+                      title="새창"
+                    >
+                      {{ prj.title }}
+                    </a>
+                    <template v-else>
+                      {{ prj.title }}
+                    </template>
+                  </h4>
+                  <p v-if="prj.links && prj.links.length <= 3 && prj.links.length > 1" class="links-inline">
+                    <template v-for="(link, linkIndex) in prj.links">
+                      <a
+                        :key="`link${prjIndex}-${linkIndex}`"
+                        :href="link.url"
+                        target="_blank"
+                        title="새창"
+                      >
+                        {{ link.title }}
+                      </a>
+                    </template>
+                  </p>
+                  <p v-if="prj.links && prj.links.length > 3" class="links-inline">
+                    <a
+                      :href="prj.links[0].url"
+                      target="_blank"
+                      title="새창"
+                    >
+                      {{ prj.links[0].title }}
+                    </a>
+                    <span class="more-hover">
+                      외
+                      {{ prj.links.length - 1}}개 사이트                    
+                      <button>+</button>
+                      <span class="area-view-more">
+                        <template v-for="(link, linkIndex) in prj.links">
+                          <a
+                            v-if="linkIndex !== 0"
+                            :key="`link${prjIndex}-${linkIndex}`"
+                            :href="link.url"
+                            target="_blank"
+                            title="새창"
+                          >
+                            {{ link.title }}
+                          </a>
+                        </template>
+                      </span>
+                    </span>
+                  </p>
+                </div>
                 <p>
-                  <a
-                    v-for="(link, linkIndex) in prj.links"
-                    :key="`link${prjIndex}-${linkIndex}`"
-                    :href="link.url"
-                    target="_blank"
-                    title="새창"
-                  >
-                    {{ link.title }}
-                  </a>
-                </p>
-                <p>
-                  {{ prj.period.start.join('.') }} ~ {{ prj.period.end.join('.') }}
-            
-                  <span class="badge">{{ returnPeriodText(prj.period.start, prj.period.end) }}</span>
-                </p>
-                <p>
-                  <span class="badge">{{ prj.members }}인</span> {{ prj.type }}
+                  <span>
+                    {{ prj.period.start.join('.') }}
+                    -
+                    {{ prj.period.end.length > 0 ? prj.period.end.join('.') : '현재'}}
+                  </span>            
+                  <span class="badge dark">{{ returnPeriodText(prj.period.start, prj.period.end) }}</span>
+                  <span class="badge">{{ prj.type }}</span> 
                 </p>
                 <ul class="list-basic">
                   <li
@@ -156,7 +206,7 @@
                     {{ prjDesc }}
                   </li>
                 </ul>
-                <ul>
+                <ul class="list-badge">
                   <li
                     v-for="(prjKeyword, prjKeywordIndex) in prj.keywords"
                     :key="`prjKeyword${prjIndex}-${prjKeywordIndex}`"
@@ -176,11 +226,11 @@
         </div>
         <div class="row">
           <div class="col col-title">
-            2016.04 ~ 2016.06
+            <h3>Javascript/JQuery</h3>
+            <p class="text-big-1">2016.04 - 2016.06</p>
+            <!-- <p>그린컴퓨터아카데미</p> -->
           </div>
           <div class="col">
-            <h3>Javascript/JQuery</h3>
-            <p>그린컴퓨터아카데미</p>
             <ul class="list-basic">
               <li>자바 스크립트의 개요 및 기본 문법(출력, 변수, 자료형, 입력, 배열, 형변화)</li>
               <li>제어문의 구조(조건문과 반복문)</li>
@@ -192,11 +242,11 @@
         </div>
         <div class="row">
           <div class="col col-title">
-            2015.06 ~ 2015.09
+            <h3>[NCS기반] 디지털 웹 디자인(웹퍼블리셔) </h3>
+            <p class="text-big-1">2015.06 - 2015.09</p>
+            <!-- <p>그린컴퓨터아카데미</p> -->
           </div>
           <div class="col">
-            <h3>[NCS기반] 디지털 웹 디자인(웹퍼블리셔) </h3>
-            <p>그린컴퓨터아카데미</p>
             <ul class="list-basic">
               <li>그래픽 디자인</li>
               <li>html5, css3, scss, jquery</li>
@@ -208,10 +258,17 @@
         </div>
         <div class="row">
           <div class="col col-title">
-            2010.03 ~ 2014.02
+            <h3>상명대학교 사진영상미디어학과</h3>
+            <p class="text-big-1">2010.03 - 2014.02</p>
           </div>
           <div class="col">
-            <h3>상명대학교 사진영상미디어학과</h3>
+            <ul class="list-basic">
+              <li>광고 사진 전공</li>
+              <li>html5, css3, scss, jquery</li>
+              <li>웹표준 디자인 기획 및 모델설계, 제작</li>
+              <li>포트폴리오 제작</li>
+              <li>학업성취최우수로 졸업</li>
+            </ul>
           </div>
         </div>
       </section>
