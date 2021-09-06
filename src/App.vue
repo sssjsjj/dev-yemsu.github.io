@@ -99,7 +99,7 @@
           <div class="col col-title">
             <h3>{{ exp.en }}</h3>
             <p>
-              <span class="text-big-1">
+              <span class="text-period">
                 {{ exp.period.start.join('.') }}
                 -
                 {{ exp.period.end.length > 0 ? exp.period.end.join('.') : '현재' }}
@@ -190,7 +190,7 @@
                   </p>
                 </div>
                 <p>
-                  <span>
+                  <span class="text-period">
                     {{ prj.period.start.join('.') }}
                     -
                     {{ prj.period.end.length > 0 ? prj.period.end.join('.') : '현재'}}
@@ -227,7 +227,7 @@
         <div class="row">
           <div class="col col-title">
             <h3>Javascript/JQuery</h3>
-            <p class="text-big-1">2016.04 - 2016.06</p>
+            <p class="text-period">2016.04 - 2016.06</p>
             <!-- <p>그린컴퓨터아카데미</p> -->
           </div>
           <div class="col">
@@ -243,7 +243,7 @@
         <div class="row">
           <div class="col col-title">
             <h3>[NCS기반] 디지털 웹 디자인(웹퍼블리셔) </h3>
-            <p class="text-big-1">2015.06 - 2015.09</p>
+            <p class="text-period">2015.06 - 2015.09</p>
             <!-- <p>그린컴퓨터아카데미</p> -->
           </div>
           <div class="col">
@@ -259,7 +259,7 @@
         <div class="row">
           <div class="col col-title">
             <h3>상명대학교 사진영상미디어학과</h3>
-            <p class="text-big-1">2010.03 - 2014.02</p>
+            <p class="text-period">2010.03 - 2014.02</p>
           </div>
           <div class="col">
             <ul class="list-basic">
