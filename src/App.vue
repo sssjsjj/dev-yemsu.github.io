@@ -98,17 +98,17 @@
         >
           <div class="col col-title">
             <h3>{{ exp.en }}</h3>
+            <p class="job-position">              
+              {{ exp.job }} <template v-if="exp.team">| {{ exp.team }}</template>            
+            </p>
             <p>
-              <span class="text-period">
+              <span class="text-gray">
                 {{ exp.period.start.join('.') }}
                 -
                 {{ exp.period.end.length > 0 ? exp.period.end.join('.') : '현재' }}
               </span>
-            </p>
-            <p>              
-              {{ exp.job }} <template v-if="exp.team">| {{ exp.team }}</template> 
               <span class="badge">{{ returnPeriodText(exp.period.start, exp.period.end) }}</span>              
-              <span v-if="exp.period.end.length === 0" class="badge point">재직중</span>              
+              <span v-if="exp.period.end.length === 0" class="badge point">재직중</span>   
             </p>
             <div class="col">
               <ul class="list-basic">
@@ -149,54 +149,28 @@
                       {{ prj.title }}
                     </template>
                   </h4>
-                  <p v-if="prj.links && prj.links.length <= 3 && prj.links.length > 1" class="links-inline">
-                    <template v-for="(link, linkIndex) in prj.links">
+                  <p class="links-inline">
+                    <template v-if="prj.links && prj.links.length > 1">
                       <a
+                        v-for="(link, linkIndex) in prj.links"
                         :key="`link${prjIndex}-${linkIndex}`"
                         :href="link.url"
                         target="_blank"
                         title="새창"
                       >
                         {{ link.title }}
-                      </a>
+                      </a>                      
                     </template>
-                  </p>
-                  <p v-if="prj.links && prj.links.length > 3" class="links-inline">
-                    <a
-                      :href="prj.links[0].url"
-                      target="_blank"
-                      title="새창"
-                    >
-                      {{ prj.links[0].title }}
-                    </a>
-                    <span class="more-hover">
-                      외
-                      {{ prj.links.length - 1}}개 사이트                    
-                      <button>+</button>
-                      <span class="area-view-more">
-                        <template v-for="(link, linkIndex) in prj.links">
-                          <a
-                            v-if="linkIndex !== 0"
-                            :key="`link${prjIndex}-${linkIndex}`"
-                            :href="link.url"
-                            target="_blank"
-                            title="새창"
-                          >
-                            {{ link.title }}
-                          </a>
-                        </template>
-                      </span>
-                    </span>
                   </p>
                 </div>
                 <p>
-                  <span class="text-period">
+                  <span class="text-gray">
                     {{ prj.period.start.join('.') }}
                     -
                     {{ prj.period.end.length > 0 ? prj.period.end.join('.') : '현재'}}
                   </span>            
-                  <span class="badge dark">{{ returnPeriodText(prj.period.start, prj.period.end) }}</span>
-                  <span class="badge">{{ prj.type }}</span> 
+                  <span class="badge">{{ returnPeriodText(prj.period.start, prj.period.end) }}</span>
+                  <span class="badge dark">{{ prj.type }}</span> 
                 </p>
                 <ul class="list-basic">
                   <li
@@ -220,14 +194,14 @@
           </div>
         </section>
       </section>
-      <section class="section">
+      <section class="section education">
         <div class="section-top">
           <h2>Education<span class="dot-point">.</span></h2>
         </div>
         <div class="row">
           <div class="col col-title">
             <h3>Javascript/JQuery</h3>
-            <p class="text-period">2016.04 - 2016.06</p>
+            <p class="text-gray">2016.04 - 2016.06</p>
             <!-- <p>그린컴퓨터아카데미</p> -->
           </div>
           <div class="col">
@@ -243,7 +217,7 @@
         <div class="row">
           <div class="col col-title">
             <h3>[NCS기반] 디지털 웹 디자인(웹퍼블리셔) </h3>
-            <p class="text-period">2015.06 - 2015.09</p>
+            <p class="text-gray">2015.06 - 2015.09</p>
             <!-- <p>그린컴퓨터아카데미</p> -->
           </div>
           <div class="col">
@@ -259,7 +233,7 @@
         <div class="row">
           <div class="col col-title">
             <h3>상명대학교 사진영상미디어학과</h3>
-            <p class="text-period">2010.03 - 2014.02</p>
+            <p class="text-gray">2010.03 - 2014.02</p>
           </div>
           <div class="col">
             <ul class="list-basic">

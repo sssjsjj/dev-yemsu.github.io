@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
 
 /* reset style */
-body, div, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p {
+body, div, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, p, button {
   vertical-align: top;
   padding: 0;
   margin: 0;
@@ -19,25 +19,20 @@ li, dt, dd {
 }
 a {
   position: relative;
-  color: #222;
-  text-decoration: none;
-  transition: opacity 0.1s;
-  &:hover {
-    opacity: 0.6;
-  }
-  &:after {
-    position: absolute;
-    bottom: 0.1em;
-    left: 1%;
-    width: 99%;
-    height: 1px;
-    background-color: #222;
-    content: ''
-  }
+  color: inherit;
 }
 button {
   border: none;
   background-color: transparent;
+  font: inherit;
+  letter-spacing: inherit;
   appearance: none;
   cursor: pointer;
+}
+a,
+button {
+  transition: opacity 0.1s;
+  &:hover {
+    opacity: 0.6;
+  }
 }

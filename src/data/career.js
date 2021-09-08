@@ -10,6 +10,7 @@ export default [
       '대기업 웹 사이트 운영'
     ],
     works: [
+      '사이트 유지보수',
       '사이트 리뉴얼',
       '사이트 구축',
       '웹표준',
@@ -27,12 +28,12 @@ export default [
         type: '운영',
         descriptions: [
           'Vue.js/AEM 으로 나누어진 개발환경',
-          '스크립트 관련 작업 도맡아 진행',
+          '퍼블 팀 내 스크립트 작업 담당',
           '기존 api 활용하여 예외처리 등 간단한 작업은 퍼블단에서 진행',
           '컴포넌트 분리/추가 등',
           '웹 접근성 인증 갱신 작업',
-          '차량 상세 페이지 개편 작업 - PC는 Fullpage Carousel, Mobile에서는 스크롤 구동으로 변환',
-          '차량 상세 - 반복되는 단순 작업 자동화 제안 및 작업 진행'
+          '[개선] 차량 상세 페이지 개편 작업 - PC는 Fullpage Carousel, Mobile에서는 스크롤 구동으로 변환',
+          '[개선] 차량 상세 - 반복되는 단순 작업 자동화 제안 및 작업 진행'
         ],
         keywords: [
           'Vue.js',
@@ -57,16 +58,17 @@ export default [
         members: 1,
         type: '운영',
         descriptions: [
+          '컨텐츠 페이지 정기 업데이트',
           '인도 개발자와 협업',
-          '[개선] 컨텐츠 상세 페이지 개편 - 독일 디자인 업체와 협업',
+          '[개선] 디자인 개편에 따른 신규 컴포넌트 생성 (독일 디자인 업체와 협업)',
           '[개선] 현대 월드와이드 타 업체 개편 이후 WWN3.0 사이트 확산 작업',
         ],
         keywords: [
           'JavaScript',
           'jQuery',
-          'AEM',
           'Zeplin',
           'Jira',
+          'AEM',
           'HTML',
           'CSS',
         ]
@@ -87,10 +89,13 @@ export default [
         descriptions: [
           '보안 문제로 개발에서만 배포 진행 가능하여 소스 내 주석과 함께 작업 내용 문서화 하여 개발에 전달',
           '웹 접근성 인증 갱신 작업',
+          '[개선] 플레이 기아 이벤트 페이지 웹표준 개선',
+          '[개선] 기아 CSR 컨텐츠 페이지 웹표준 개선',
         ],
         keywords: [
           'JavaScript',
           'jQuery',
+          'WAI-ARIA',
           'HTML',
           'CSS',
         ]
@@ -131,8 +136,7 @@ export default [
         type: 'Google Tag Manager',
         descriptions: [
           'Google Tag Manager 신규 적용 및 운영',
-          'Youtube 커스텀 태그 작업 (Youtube Data API)',
-          'graph, slider, date picker 등 플러그인 접근성이 주요 이슈',
+          'Youtube 관련 커스텀 태그 작업이 주요 이슈',
         ],
         keywords: [
           'JavaScript',
@@ -151,7 +155,7 @@ export default [
         members: 1,
         type: '리뉴얼 구축',
         descriptions: [
-          '소니 본사에 약 1달간 파견되어 작업 진행',
+          '소니 본사에 약 1달간 파견',
           '플러그인 없이 기능 구현',
           'parallax, animation 등 스크롤 이벤트에 따른 효과 제안하여 작업 진행',
           '갤러리 페이지 내 사진 자세히 보기 팝업(PC) 세로형 디자인 > 가로형으로 제안하여 작업 진행',
@@ -186,8 +190,9 @@ export default [
           '정기 상품 상세 업데이트, 이벤트 페이지 작업',
           '웹 접근성 인증 갱신 작업',
           '[개선] 설화수 스파 예약 시스템 개선',
-          '[개선] 미쟝센 신규 이벤트 페이지 작업',
-          '[개선] 마몽드 상품 상세페이지 개선 작업'
+          '[개선] 한율 메인 페이지 디자인 개선',
+          '[개선] 미쟝센 신규 이벤트 템플릿 작업',
+          '[개선] 마몽드 상품 상세페이지 개선'
         ],
         keywords: [
           'jQuery',
@@ -212,6 +217,7 @@ export default [
       '메일, 블로그 컨텐츠 제작'
     ],
     works: [
+      '사이트 유지보수',
       '사이트 구축',
       '웹표준',
       '웹디자인',
@@ -271,8 +277,6 @@ export default [
           'jQuery',
           'HTML',
           'CSS',
-          'Adobe Photoshop',
-          'Adobe Illustrator',
         ]
       },
       {
@@ -291,8 +295,6 @@ export default [
           'jQuery',
           'HTML',
           'CSS',
-          'Adobe Photoshop',
-          'Adobe Illustrator',
         ]
       },
     ]
@@ -306,23 +308,40 @@ export default [
     descriptions: [
       '법률 o2o 플랫폼 스타트업',
       '자회사 플랫폼 유지보수 및 버전업',
-      '메일, 블로그 컨텐츠 퍼블리싱'
+      '메일, 블로그 컨텐츠 퍼블리싱',
+      '운영 종료',
     ],
     works: [
+      '사이트 유지보수',
       '사이트 구축',
       '웹표준',
       '웹디자인',
     ],
     projects: [
       {
-        title: 'LAWKET',
+        title: '로켓닷컴',
         period: {start: [2015, 10], end: [2016, 6]},
         members: '2',
+        type: '운영/리뉴얼',
+        descriptions: [
+          '법률 o2o 플랫폼',
+          '상시 사이트 테스트 진행, 버그 및 개선 사항 작업',
+          '1ver > 1.5ver 버전업 작업',
+        ],
+        keywords: [
+          'jQuery',
+          'HTML',
+          'CSS',
+        ]
+      },
+      {
+        title: 'LAWKET 기업 사이트',
+        period: {start: [2015, 10], end: [2015, 12]},
+        members: '1',
         type: '구축',
         descriptions: [
-          '가구 브랜드 목일가 브랜드 사이트 구축',
-          '퍼블리싱 담당',
-          'one page scroll',
+          '첫 회사 첫 프로젝트',
+          '기획부터 사이트에 사용 될 직원들 사진 촬영, 디자인, 퍼블리싱까지 모두 재미있게 진행했던 1인 프로젝트',
         ],
         keywords: [
           'jQuery',

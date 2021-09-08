@@ -1,5 +1,7 @@
 $main-color: rgb(85, 55, 194);
 $sub-color: darkseagreen;
+$gray: #999;
+$dark-gray: rgb(104, 104, 108);
 /* common style */
 .dot-point {
   color: $sub-color;
@@ -20,7 +22,7 @@ $sub-color: darkseagreen;
   }
   &.dark {
     padding: 3px 5px 4px 4px;
-    background-color: rgb(104, 104, 108);
+    background-color: $dark-gray;
     font-size: 0.8em;
     color: #fff;
   }
@@ -31,7 +33,7 @@ $sub-color: darkseagreen;
   &.line {
     padding: 2px 4px 3px;
     background-color: transparent;
-    border: 1px solid #666;
+    border: 1px solid gray;
   }
 }
 :not(.badge) + .badge {
@@ -50,8 +52,8 @@ $sub-color: darkseagreen;
   }
 }
 /* common - text */
-.text-period {
-  color: #999
+.text-gray {
+  color: $gray
 }
 h2 {
   font-size: 3em;
@@ -60,16 +62,20 @@ h2 {
     margin-top: 20px;
   }
 }
+h3 {
+  font-size: 1.8em;
+  word-break: keep-all;
+}
 h4 {
-  font-size: 24px;
+  font-size: 1.7em;
   font-weight: normal;
 }
 .links-inline {
+  display: inline;
+  font-size: 0.9em;
+  color: $gray;
   a {
-    color: #999;
-    &:after {
-      background-color: #999;
-    }
+    word-break: keep-all;
     &:not(:last-child) {
       margin-right: 4px;
     }
@@ -124,14 +130,8 @@ h4 {
     align-self: flex-start;
     position: sticky;
     top: 50px;
-    width: 300px;
-    margin-right: 120px;
     & + .col:last-child {
       flex: 1;
-    }
-    h3 {
-      font-size: 1.6em;
-      word-break: keep-all;
     }
   }
 }
@@ -142,21 +142,12 @@ h4 {
     padding-left: 30px;
   }
   .area-title {
-    align-items: baseline;
-    h4 {
-      display: inline;
-    }
-    .links-inline {
-      display: inline;
-      vertical-align: baseline;
-      margin-left: 6px;
-      font-size: 0.9em;
-      color: #999;
-      line-height: 1;
-      a {
-        word-break: keep-all;
-      }
-    }
+    margin-bottom: 8px;
+  }
+}
+.section.education {
+  h3 {
+    font-size: 1.4em;
   }
 }
 /* row */
@@ -166,6 +157,17 @@ h4 {
     margin-top: 30px;
     padding-top: 25px;
     border-top: 1px solid rgb(231, 236, 231);
+  }
+}
+/* col */
+.col {
+  &-title {
+    width: 300px;
+    margin-right: 120px;
+    word-break: keep-all;
+    & + .col:last-child {
+      flex: 1;
+    }
   }
 }
 
@@ -200,9 +202,9 @@ h4 {
   }
   &-col {
     &-4 {
+      row-gap: 10px;
       > li {
         width: 25%;
-        margin-top: 10px;
       }
     }
     &-right {
@@ -221,11 +223,20 @@ h4 {
 }
 
 .more-hover {
-  display: block;
+  cursor: pointer;
+  span {
+    display: inline-block;
+  }
   & .area-view-more {
     display: none;
   }
   &:hover .area-view-more {
     display: block;
   }
+}
+
+.job-position {
+  color: $gray;
+  font-size: 0.95em;
+  font-style: italic;
 }
