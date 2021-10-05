@@ -7,7 +7,7 @@ export default [
     period: {start: [2017, 3], end: []},
     descriptions: [
       '웹에이전시',
-      '대기업 웹 사이트 운영'
+      '대기업 웹 사이트 위주',
     ],
     works: [
       '사이트 유지보수',
@@ -28,51 +28,51 @@ export default [
         type: '운영',
         descriptions: [
           'Vue.js/AEM 으로 나누어진 개발환경',
-          '퍼블 팀 내 스크립트 작업 담당',
-          '기존 api 활용하여 예외처리 등 간단한 작업은 퍼블단에서 진행',
-          '컴포넌트 분리/추가 등',
+          'Vue 컴포넌트 신규 생성 및 기존 컴포넌트 업데이트',
           '웹 접근성 인증 갱신 작업',
           '[개선] 다국어 차량 상세 페이지 node.js 환경 적용',
-          '[개선] 차량 상세 페이지 개편 작업 - PC는 Fullpage Carousel, Mobile에서는 스크롤 구동으로 변환',
-          '[개선] 차량 상세 - 반복되는 단순 작업 자동화 제안 및 작업 진행'
+          '[개선] 차량 상세 페이지 디자인 개편 작업<br> - PC는 Full page Carousel, Mobile에서는 스크롤 구동으로 변환<br> - 여러 컴포넌트들과 상태 공유를 위해 Vuex store 이용하여 관리',
+          '[개선] 차량 상세 페이지 내 반복되는 단순 작업 자동화 제안 후 작업<br> - pc 소스 기준으로 mobile 소스 자동 삽입',
+          '[개선] 내 차 만들기/차량 상세 페이지 내 전시차량 조회 연결 기능 추가 <br> - 선택한 차량 및 옵션 바탕으로 전시차량 조회 '
         ],
         keywords: [
           'Vue.js',
-          'JavaScript',
+          'Vuex',
+          'Nuxt.js',
+          'javascript',
           'SCSS',
           'Git',
           'Git lab',
           'Jenkins',
           'SVN',
           'AEM',
-          'HTML',
-          'CSS',
+          'HTML/CSS',
         ]
       },
       {
         title: '현대 월드와이드',
         links: [
           {title: '현대 월드와이드', url: 'https://www.hyundai.com/worldwide/en'},
-          {title: '현대 WWN(28개 해외 사이트)', url: 'https://org3-www.hyundai.com/template_ar/ar'},
+          {title: '현대 WWN 3.0(28개 해외 사이트)', url: 'https://org3-www.hyundai.com/template_ar/ar'},
         ],
         period: {start: [2019, 4], end: [2020, 3]},
         members: 1,
         type: '운영',
         descriptions: [
-          '월드와이드 기준으로 WWN사이트 관리',
+          'AEM 컴포넌트 관리 및 업데이트',
+          '월드와이드 기준으로 WWN 3.0 확산 적용',
           '컨텐츠 페이지 정기 업데이트',
           '인도 개발자와 협업',
           '[개선] 디자인 개편에 따른 신규 컴포넌트 생성 (독일 디자인 업체와 협업)',
-          '[개선] 현대 월드와이드 타 업체 개편 이후 WWN3.0 사이트 확산 작업',
+          '[개선] 현대 월드와이드 타 업체 개편 이후 WWN 3.0 사이트 확산 작업',
         ],
         keywords: [
-          'JavaScript',
+          'javascript',
           'jQuery',
           'Zeplin',
           'Jira',
           'AEM',
-          'HTML',
-          'CSS',
+          'HTML/CSS',
         ]
       },
       {
@@ -95,11 +95,9 @@ export default [
           '[개선] 기아 CSR 컨텐츠 페이지 웹표준 개선',
         ],
         keywords: [
-          'JavaScript',
+          'javascript',
           'jQuery',
-          'WAI-ARIA',
-          'HTML',
-          'CSS',
+          'HTML/CSS',
         ]
       },
       {
@@ -120,12 +118,12 @@ export default [
         descriptions: [
           '웹 접근성 인증 취득 작업',
           '국문/영문, PC/MOBILE 총 8개 사이트 작업',
-          'graph, slider, date picker 등 플러그인 접근성이 주요 이슈',
+          'Highcharts, bx slider, date picker 등 플러그인 접근성이 주요 이슈',
         ],
         keywords: [
           'jQuery',
-          'HTML',
-          'CSS',
+          'WAI-ARIA',
+          'HTML/CSS',
         ]
       },
       {
@@ -141,9 +139,8 @@ export default [
           'Youtube 관련 커스텀 태그 작업이 주요 이슈',
         ],
         keywords: [
-          'JavaScript',
-          'jQuery',
-          'HTML',
+          'javascript',
+          'HTML/CSS',
           'Google Tag Manager',
           'Google Analytics',
         ]
@@ -164,10 +161,7 @@ export default [
         ],
         keywords: [
           'jQuery',
-          'AEM',
-          'Eclipse',
-          'HTML',
-          'CSS',
+          'HTML/CSS',
         ]
       },
       {
@@ -190,6 +184,7 @@ export default [
         type: '운영',
         descriptions: [
           '정기 상품 상세 업데이트, 이벤트 페이지 작업',
+          'AEM 컴포넌트 관리 및 업데이트',
           '웹 접근성 인증 갱신 작업',
           '[개선] 설화수 스파 예약 시스템 개선',
           '[개선] 한율 메인 페이지 디자인 개선',
@@ -200,8 +195,7 @@ export default [
           'jQuery',
           'AEM',
           'Eclipse',
-          'HTML',
-          'CSS',
+          'HTML/CSS',
         ]
       },
 
@@ -215,7 +209,7 @@ export default [
     period: {start: [2016, 7], end: [2017, 3]},
     descriptions: [
       '웹 에이전시',
-      '소규모 웹 사이트 운영 및 구축',
+      '소규모 웹 사이트 위주',
       '메일, 블로그 컨텐츠 제작'
     ],
     works: [
@@ -240,8 +234,7 @@ export default [
         ],
         keywords: [
           'jQuery',
-          'HTML',
-          'CSS',
+          'HTML/CSS',
         ]
       },
       {
@@ -259,8 +252,7 @@ export default [
         ],
         keywords: [
           'jQuery',
-          'HTML',
-          'CSS',
+          'HTML/CSS',
         ]
       },
       {
@@ -277,8 +269,7 @@ export default [
         ],
         keywords: [
           'jQuery',
-          'HTML',
-          'CSS',
+          'HTML/CSS',
         ]
       },
       {
@@ -295,8 +286,7 @@ export default [
         ],
         keywords: [
           'jQuery',
-          'HTML',
-          'CSS',
+          'HTML/CSS',
         ]
       },
     ]
@@ -332,8 +322,7 @@ export default [
         ],
         keywords: [
           'jQuery',
-          'HTML',
-          'CSS',
+          'HTML/CSS',
         ]
       },
       {
@@ -347,8 +336,7 @@ export default [
         ],
         keywords: [
           'jQuery',
-          'HTML',
-          'CSS',
+          'HTML/CSS',
         ]
       },
     ]

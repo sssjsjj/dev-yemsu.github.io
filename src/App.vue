@@ -3,42 +3,41 @@
     <div class="bar-point"></div>
     <div class="container">
       <div class="container-top">
-        <!-- <h1>프론트엔드 개발자로 도약을 꿈꾸는 <br>6년차 퍼블리셔, 정수진입니다.</h1> -->
-        <h1>ABCDEF</h1>
+        <!-- <h1>6년의 퍼블리셔 경력으로 기초를 다진, </h1> -->
+        <h1>6년차 웹퍼블리셔<br>
+          프론트엔드 개발자로
+        </h1>
         <p>
-          크고 작은 규모의 다양한 웹사이트를 퍼블리싱하며 클린코드와 확장성에 대해 고민하고 있습니다.<br>
-          웹표준, 웹접근성, 웹호환성 등 기본적인 퍼블리싱 업무를 시작으로<br>
-          더 많은 기회를 만들어 작업 영역을 확장하며 JavaScript와 Vue.js에 대한 경험을 쌓았습니다.<br>
+          크고 작은 규모의 다양한 웹사이트를 퍼블리싱 하며 코드 가독성과 확장성에 대해 고민해왔습니다.<br>
+          웹 표준, 웹 접근성, 웹 호환성 등 주어진 퍼블리싱 업무에서 나아가<br>
+          더 많은 기회를 만들어 작업 영역을 확장해가면서 JS에 대한 경험을 쌓고자 노력하였습니다.<br>
         </p>
         <p>
-          사내 스터디에 참여하여 Vanilla JS 및 프레임 워크들을 학습하며,<br>
-          실무에 Vanilla JS를 점진적으로 적용해보고, 토이 프로젝트들을 진행했습니다. <br>
-          그렇게 현재 운영중인 Vue.js 프로젝트에 투입될 수 있었고,<br>
-          프론트엔드 개발 영역까지 조금이나마 유지보수 및 개선 작업을 진행할 수 있었습니다.
+          팀 내 스터디에 참여하여 Vanilla JS, 프레임 워크, 라이브러리들을 학습하면서<br>
+          토이 프로젝트로 차근차근 언어를 흡수하고 있습니다.<br>
+          그렇게 현재 운영 중인 Vue.js 프로젝트에 투입되어 기능 구현 위주의 업무를 맡을 수 있었고<br>
+          기존 소스들을 파악해가면서 프론트엔드 개발 영역까지 조금씩 경험하고 있습니다.
         </p>
         <p>
-          웹 에이전시는 다양한 경험을 할 수 있다는 것이 장점이지만,<br>
-          자사 서비스가 아닌만큼 작업에 적극적으로 참여하는데 한계를 느꼈습니다.<br>
-          더 나은 방향에 대해 고민하고 함께 의논하며 적극적으로 참여하며 비즈니스와 함께 성장하고 싶습니다.
+          <!-- 웹 에이전시는 다양한 사이트를 경험할 수 있지만<br> -->
+          대기업 사이트 운영 위주의 업무, 수직적인 워크플로우로<br>
+          새로운 업무와 적극적인 참여에 한계를 느껴 그에 대한 욕구가 누적되고 있습니다.<br>          
+          이제 한 단계 나아가 프론트엔드 개발자로서 비즈니스에 깊게 뛰어들어 함께 성장하고자 합니다.
         </p>
         <dl>
-          <dt>email</dt>
-          <dd><a href="mailto:sssjsjj@gmail.com">sssjsjj@gmail.com</a></dd>
-          <dt>phone</dt>
-          <dd>010 6342 3621</dd>
           <dt>github</dt>
-          <dd><a href="https://github.com/sssjsjj">https://github.com/sssjsjj</a></dd>
+          <dd><a href="https://github.com/sssjsjj" target="_blank" title="새창">https://github.com/sssjsjj</a></dd>
           <dt>blog</dt>
-          <dd><a href="https://dribbles.tistory.com/">https://dribbles.tistory.com/</a></dd>
+          <dd><a href="https://dribbles.tistory.com/" target="_blank" title="새창">https://dribbles.tistory.com/</a></dd>
         </dl>
       </div>
       <section class="section">
         <div class="section-top">
           <h2>Skills<span class="dot-point"><span class="dot-point">.</span></span></h2>
           <ul class="list-col-right">
-            <li><small><span class="badge bg-main light-2">1</span> : 기초 수준 </small></li>
-            <li><small><span class="badge bg-main light-1">2</span> : 유지보수 가능 수준 </small></li>
-            <li><small><span class="badge bg-main">3</span> : Production 개발 가능 수준</small></li>
+            <li><small><span class="badge bg-main light-2">1</span>: 기초 수준 </small></li>
+            <li><small><span class="badge bg-main light-1">2</span>: 유지보수 가능 수준 </small></li>
+            <li><small><span class="badge bg-main">3</span>: Production 개발 가능 수준</small></li>
           </ul>
         </div>
         <div class="row">
@@ -52,6 +51,7 @@
               <li><span class="badge bg-main">3</span> Jqeury</li>
               <li><span class="badge bg-main">3</span> SCSS</li>
               <li><span class="badge bg-main light-1">2</span> Vue.js</li>
+              <!-- <li><span class="badge bg-main light-2">1</span> Node.js</li> -->
               <!-- <li><span class="badge bg-main light-2">1</span> React.js</li>
               <li><span class="badge bg-main light-2">1</span> Angular.js</li> -->
             </ul>
@@ -62,7 +62,7 @@
             <h3>Etc</h3>
           </div>
           <div class="col">
-            <ul class="list-basic list-col-4">
+            <ul class="list-dot list-col-4">
               <li>VS Code</li>
               <li>Git/Github</li>
               <li>SVN</li>
@@ -101,12 +101,12 @@
               <span v-if="exp.period.end.length === 0" class="badge point">재직중</span>   
             </p>
             <div class="col">
-              <ul class="list-basic">
+              <ul class="list-dot">
                 <li
                   v-for="(desc, descIndex) in exp.descriptions"
                   :key="`companyDesc${descIndex}`"
+                  v-html="desc"
                 >
-                  {{ desc }}
                 </li>
               </ul>
               <ul class="list-badge">
@@ -130,7 +130,7 @@
                 <div class="area-title">
                   <h4>
                     <a v-if="prj.links && !prj.links[1]" :href="prj.links[0].url"
-                      target="_blank"
+                      target="_blank" 
                       title="새창"
                     >
                       {{ prj.title }}
@@ -162,12 +162,12 @@
                   <span class="badge">{{ returnPeriodText(prj.period.start, prj.period.end) }}</span>
                   <span class="badge dark">{{ prj.type }}</span> 
                 </p>
-                <ul class="list-basic">
+                <ul class="list-dot">
                   <li
                     v-for="(prjDesc, prjDescIndex) in prj.descriptions"
                     :key="`prjDesc${prjIndex}-${prjDescIndex}`"
+                    v-html="prjDesc"
                   >
-                    {{ prjDesc }}
                   </li>
                 </ul>
                 <ul class="list-badge">
@@ -195,7 +195,7 @@
             <!-- <p>그린컴퓨터아카데미</p> -->
           </div>
           <div class="col">
-            <ul class="list-basic">
+            <ul class="list-dot">
               <li>자바 스크립트의 개요 및 기본 문법(출력, 변수, 자료형, 입력, 배열, 형변화)</li>
               <li>제어문의 구조(조건문과 반복문)</li>
               <li>내장 함수, 사용자 정의 함수의 선언과 호출</li>
@@ -211,7 +211,7 @@
             <!-- <p>그린컴퓨터아카데미</p> -->
           </div>
           <div class="col">
-            <ul class="list-basic">
+            <ul class="list-dot">
               <li>그래픽 디자인</li>
               <li>html5, css3, scss, jquery</li>
               <li>웹표준 디자인 기획 및 모델설계, 제작</li>
@@ -226,7 +226,7 @@
             <p class="text-gray">2010.03 - 2014.02</p>
           </div>
           <div class="col">
-            <ul class="list-basic">
+            <ul class="list-dot">
               <li>광고 사진 전공</li>
               <li>html5, css3, scss, jquery</li>
               <li>웹표준 디자인 기획 및 모델설계, 제작</li>
@@ -320,7 +320,7 @@ import career from './data/career'
         const monthText = month > 0 ? month + '개월' : ''
         
         return `${yearText} ${monthText}`
-      }
+      },
     }
   }
 </script>

@@ -95,6 +95,11 @@ h4 {
   max-width: 1160px;
   margin: 0 auto;
   padding: 80px 20px;
+  &-top {
+    p:nth-child(n+2) {
+      margin-top: 2em;
+    }
+  }
 }
 .section {
   &:not(:first-child) {
@@ -180,7 +185,7 @@ h4 {
   }
 }
 .list {
-  &-basic {
+  &-dot {
     &:not(:first-child) {
       margin-top: 8px;
     }
