@@ -8,20 +8,18 @@
           프론트엔드 개발자로
         </h1>
         <p>
-          크고 작은 규모의 다양한 웹사이트를 퍼블리싱 하며 코드 가독성과 확장성에 대해 고민해왔습니다.<br>
+          크고 작은 규모의 다양한 웹사이트를 퍼블리싱 하며 코드 가독성과 확장성, 유지보수성에 대해 항상 고민해왔습니다.<br>
           웹 표준, 웹 접근성, 웹 호환성 등 주어진 퍼블리싱 업무에서 나아가<br>
           더 많은 기회를 만들어 작업 영역을 확장해가면서 JS에 대한 경험을 쌓고자 노력하였습니다.<br>
         </p>
         <p>
-          팀 내 스터디에 참여하여 Vanilla JS, 프레임 워크, 라이브러리들을 학습하면서<br>
-          토이 프로젝트로 차근차근 언어를 흡수하고 있습니다.<br>
+          팀 내 스터디에 참여하여 Vanilla JS, 프레임 워크, 라이브러리들을 익히면서 토이 프로젝트로 차근차근 흡수하고 있습니다.<br>
           그렇게 현재 운영 중인 Vue.js 프로젝트에 투입되어 기능 구현 위주의 업무를 맡을 수 있었고<br>
           기존 소스들을 파악해가면서 프론트엔드 개발 영역까지 조금씩 경험하고 있습니다.
         </p>
         <p>
-          <!-- 웹 에이전시는 다양한 사이트를 경험할 수 있지만<br> -->
-          대기업 사이트 운영 위주의 업무, 수직적인 워크플로우로<br>
-          새로운 업무와 적극적인 참여에 한계를 느껴 그에 대한 욕구가 누적되고 있습니다.<br>          
+          다양한 프로젝트를 맡으며 성장과 재미를 느껴왔지만<br>
+          대기업 사이트 운영 위주로 익숙해진 업무와 수직적인 워크플로우로 적극적인 참여에 한계를 느꼈습니다.<br>
           이제 한 단계 나아가 프론트엔드 개발자로서 비즈니스에 깊게 뛰어들어 함께 성장하고자 합니다.
         </p>
         <dl>
@@ -35,9 +33,9 @@
         <div class="section-top">
           <h2>Skills<span class="dot-point"><span class="dot-point">.</span></span></h2>
           <ul class="list-col-right">
-            <li><small><span class="badge bg-main light-2">1</span>: 기초 수준 </small></li>
-            <li><small><span class="badge bg-main light-1">2</span>: 유지보수 가능 수준 </small></li>
-            <li><small><span class="badge bg-main">3</span>: Production 개발 가능 수준</small></li>
+            <li><small><span class="badge bg-main light-2">1</span>학습 경험</small></li>
+            <li><small><span class="badge bg-main light-1">2</span>유지보수 가능 수준 </small></li>
+            <li><small><span class="badge bg-main">3</span>Production 개발 가능 수준</small></li>
           </ul>
         </div>
         <div class="row">
@@ -47,13 +45,14 @@
           <div class="col">
             <ul class="list-badge list-col-4">
               <li><span class="badge bg-main">3</span> HTML/CSS</li>
-              <li><span class="badge bg-main">3</span> Javascript</li>
+              <li><span class="badge bg-main">3</span> JavaScript</li>
               <li><span class="badge bg-main">3</span> Jqeury</li>
               <li><span class="badge bg-main">3</span> SCSS</li>
               <li><span class="badge bg-main light-1">2</span> Vue.js</li>
+              <li><span class="badge bg-main light-1">2</span> WAI-ARIA</li>
+              <li><span class="badge bg-main light-2">1</span> React.js</li>
+              <li><span class="badge bg-main light-2">1</span> Angular.js</li>
               <!-- <li><span class="badge bg-main light-2">1</span> Node.js</li> -->
-              <!-- <li><span class="badge bg-main light-2">1</span> React.js</li>
-              <li><span class="badge bg-main light-2">1</span> Angular.js</li> -->
             </ul>
           </div>
         </div>
@@ -65,10 +64,12 @@
             <ul class="list-dot list-col-4">
               <li>VS Code</li>
               <li>Git/Github</li>
+              <li>AEM</li>
               <li>SVN</li>
-              <li>Jira</li>
+              <!-- <li>Jira</li> -->
               <li>Jenkins</li>
               <li>Zeplin</li>
+              <li>GA/GTM</li>
             </ul>
           </div>
         </div>

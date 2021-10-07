@@ -6,7 +6,7 @@ export default [
     job: '웹퍼블리셔',
     period: {start: [2017, 3], end: []},
     descriptions: [
-      '웹에이전시',
+      '웹 에이전시',
       '대기업 웹 사이트 위주',
     ],
     works: [
@@ -27,8 +27,6 @@ export default [
         members: 3,
         type: '운영',
         descriptions: [
-          'Vue.js/AEM 으로 나누어진 개발환경',
-          'Vue 컴포넌트 신규 생성 및 기존 컴포넌트 업데이트',
           '웹 접근성 인증 갱신 작업',
           '[개선] 다국어 차량 상세 페이지 node.js 환경 적용',
           '[개선] 차량 상세 페이지 디자인 개편 작업<br> - PC는 Full page Carousel, Mobile에서는 스크롤 구동으로 변환<br> - 여러 컴포넌트들과 상태 공유를 위해 Vuex store 이용하여 관리',
@@ -70,7 +68,7 @@ export default [
           'javascript',
           'jQuery',
           'Zeplin',
-          'Jira',
+          // 'Jira',
           'AEM',
           'HTML/CSS',
         ]
@@ -229,7 +227,6 @@ export default [
         type: '구축',
         descriptions: [
           '프랑스 침대 브랜드 DUVIVIER의 브랜드 사이트 구축',
-          '퍼블리싱 담당',
           'one page scroll',
         ],
         keywords: [
@@ -247,7 +244,6 @@ export default [
         type: '구축',
         descriptions: [
           '가구 브랜드 목일가 브랜드 사이트 구축',
-          '퍼블리싱 담당',
           'one page scroll',
         ],
         keywords: [
@@ -300,7 +296,6 @@ export default [
     descriptions: [
       '법률 o2o 플랫폼 스타트업',
       '자회사 플랫폼 유지보수 및 버전업',
-      '메일, 블로그 컨텐츠 퍼블리싱',
       '운영 종료',
     ],
     works: [
