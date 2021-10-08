@@ -4,7 +4,7 @@
     <div class="container">
       <div class="container-top">
         <!-- <h1>6년의 퍼블리셔 경력으로 기초를 다진, </h1> -->
-        <h1>6년차 웹퍼블리셔<br>
+        <h1>7년차 웹퍼블리셔<br>
           프론트엔드 개발자로
         </h1>
         <p>
@@ -20,7 +20,15 @@
         <p>
           다양한 프로젝트를 맡으며 성장과 재미를 느껴왔지만<br>
           대기업 사이트 운영 위주로 익숙해진 업무와 수직적인 워크플로우로 적극적인 참여에 한계를 느꼈습니다.<br>
+          
+          계속 공부만 하다보니 금방 날아가고. 공부는 지루하고. 완벽하게 흡수가되지 않는다. 
+          일단 주어진 업무는 끝까지 물고 늘어져서 어떻게든 해내려고 노력하고 그 과정이 너무 신나기 때문에, 직접 부딪치면서 일하고 싶다. 
+          새로운 도전과제를 직면했을때 에너지가 분출되고 어떻게든 해내려고 하기 때문에 그러한 과정들을 통해 크게 성장해왔다고 생각한다.
+          내가 진짜 흥미가 가는 서비스, 키워보고 싶은 서비스를 운영하는 회사에 들어가서 고난과 역경을 헤쳐나가며 빛나는 미래를 꿈꾸며 개발하고 싶다.
+
           이제 한 단계 나아가 프론트엔드 개발자로서 비즈니스에 깊게 뛰어들어 함께 성장하고자 합니다.
+
+          도전적인 업무.시너지.추진력
         </p>
         <dl>
           <dt>github</dt>
@@ -184,6 +192,58 @@
             </div>
           </div>
         </section>
+      </section>
+      <section class="section study">
+        <div class="section-top">
+          <h2>Study<span class="dot-point">.</span></h2>
+        </div>
+        <div class="row">
+          <div class="col col-title">
+            <h3>Javascript/JQuery</h3>
+            <p class="text-gray">2016.04 - 2016.06</p>
+            <!-- <p>그린컴퓨터아카데미</p> -->
+          </div>
+          <div class="col">
+            <ul class="list-dot">
+              <li>자바 스크립트의 개요 및 기본 문법(출력, 변수, 자료형, 입력, 배열, 형변화)</li>
+              <li>제어문의 구조(조건문과 반복문)</li>
+              <li>내장 함수, 사용자 정의 함수의 선언과 호출</li>
+              <li>j-query 기초 문법 및 명령어</li>
+              <li>j-query 플러그인의 종류와 적용 방법, j-query approach 플러그인</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-title">
+            <h3>[NCS기반] 디지털 웹 디자인(웹퍼블리셔) </h3>
+            <p class="text-gray">2015.06 - 2015.09</p>
+            <!-- <p>그린컴퓨터아카데미</p> -->
+          </div>
+          <div class="col">
+            <ul class="list-dot">
+              <li>그래픽 디자인</li>
+              <li>html5, css3, scss, jquery</li>
+              <li>웹표준 디자인 기획 및 모델설계, 제작</li>
+              <li>포트폴리오 제작</li>
+              <li>학업성취최우수로 졸업</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-title">
+            <h3>상명대학교 사진영상미디어학과</h3>
+            <p class="text-gray">2010.03 - 2014.02</p>
+          </div>
+          <div class="col">
+            <ul class="list-dot">
+              <li>광고 사진 전공</li>
+              <li>html5, css3, scss, jquery</li>
+              <li>웹표준 디자인 기획 및 모델설계, 제작</li>
+              <li>포트폴리오 제작</li>
+              <li>학업성취최우수로 졸업</li>
+            </ul>
+          </div>
+        </div>
       </section>
       <section class="section education">
         <div class="section-top">
