@@ -60,7 +60,7 @@ button {
 [class*="bg-"].light-2 {
   opacity: .3;
 }
-.list-basic li::before {
+.list-dot li::before {
   display: inline-block;
   margin-right: 8px;
   color: var(--sub-color);
@@ -131,10 +131,10 @@ h2 + .row {
   font-size: 1.6em;
 }
 /* list  */
-.list-basic:not(:first-child) {
+.list-dot:not(:first-child) {
   margin-top: 10px;
 }
-.list-basic > li {
+.list-dot > li {
   margin-top: 5px;
 }
 /* column list */
