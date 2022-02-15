@@ -2,40 +2,31 @@
   <div>
     <div class="bar-point"></div>
     <div class="container">
+      <ul class="portfolios">
+        <li>
+          <a href="https://github.com/sssjsjj" target="_blank" title="새창">
+            <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle">
+              <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+          </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://dribbles.tistory.com/" target="_blank" title="새창">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 459 459"><path d="M229.5,0C102.75,0,0,102.75,0,229.5S102.75,459,229.5,459,459,356.25,459,229.5,356.25,0,229.5,0ZM130.21,191.45a39.57,39.57,0,1,1,39.56-39.57A39.58,39.58,0,0,1,130.21,191.45ZM229.5,390a39.56,39.56,0,1,1,39.56-39.56A39.56,39.56,0,0,1,229.5,390Zm0-99.29a39.56,39.56,0,1,1,39.56-39.56A39.56,39.56,0,0,1,229.5,290.74Zm0-99.29a39.57,39.57,0,1,1,39.56-39.57A39.57,39.57,0,0,1,229.5,191.45Zm99.29,0a39.57,39.57,0,1,1,39.57-39.57A39.57,39.57,0,0,1,328.79,191.45Z"/></svg>
+          </a>
+        </li>
+      </ul>
       <div class="container-top">
-        <!-- <h1>6년의 퍼블리셔 경력으로 기초를 다진, </h1> -->
-        <h1>7년차 웹퍼블리셔<br>
-          프론트엔드 개발자로
-        </h1>
+        <h1>Mark-up, Javascript 개발자 <br>정수진 입니다.</h1>
         <p>
-          크고 작은 규모의 다양한 웹사이트를 퍼블리싱 하며 코드 가독성과 확장성, 유지보수성에 대해 항상 고민해왔습니다.<br>
-          웹 표준, 웹 접근성, 웹 호환성 등 주어진 퍼블리싱 업무에서 나아가<br>
-          더 많은 기회를 만들어 작업 영역을 확장해가면서 JS에 대한 경험을 쌓고자 노력하였습니다.<br>
+          크고 작은 규모의 다양한 웹사이트를 작업하며 코드 가독성과 확장성, 유지보수성에 대해 항상 고민해왔습니다.<br>
+          웹 표준 마크업, 웹 접근성, 반응형 개발등 주어진 업무에서 나아가 더 많은 기회를 만들어 작업 영역을 확장해가면서 자바스크립트 대한 실무 경험을 쌓았습니다.
         </p>
         <p>
-          팀 내 스터디에 참여하여 Vanilla JS, 프레임 워크, 라이브러리들을 익히면서 토이 프로젝트로 차근차근 흡수하고 있습니다.<br>
-          그렇게 현재 운영 중인 Vue.js 프로젝트에 투입되어 기능 구현 위주의 업무를 맡을 수 있었고<br>
-          기존 소스들을 파악해가면서 프론트엔드 개발 영역까지 조금씩 경험하고 있습니다.
+          바닐라 자바스크립트, 프레임워크, 라이브러리들을 학습 및 팀 스터디에 참여하여<br>
+          현재 운영 중인 Vue.js 프로젝트에 투입될 수 있었고 기능 구현 위주의 업무를 맡고 있습니다.<br>
+          스터디와 프로젝트 소스 파악을 병행하며 프론트엔드 개발 영역까지 넓혀가고 있습니다.
         </p>
-        <p>
-          다양한 프로젝트를 맡으며 성장과 재미를 느껴왔지만<br>
-          대기업 사이트 운영 위주로 익숙해진 업무와 수직적인 워크플로우로 적극적인 참여에 한계를 느꼈습니다.<br>
-          
-          계속 공부만 하다보니 금방 날아가고. 완벽하게 흡수가되지 않는다. 
-          일단 주어진 업무는 끝까지 물고 늘어져서 어떻게든 해내려고 노력하고 그 과정이 너무 신나기 때문에, 직접 부딪치면서 일하고 싶다. 
-          새로운 도전과제를 직면했을때 에너지가 분출되고 어떻게든 해내려고 하기 때문에 그러한 과정들을 통해 크게 성장해왔다고 생각한다.
-          내가 진짜 흥미가 가는 서비스, 키워보고 싶은 서비스를 운영하는 회사에 들어가서 고난과 역경을 헤쳐나가며 빛나는 미래를 꿈꾸며 개발하고 싶다.
-
-          이제 한 단계 나아가 프론트엔드 개발자로서 비즈니스에 깊게 뛰어들어 함께 성장하고자 합니다.
-
-          도전적인 업무.시너지.추진력
-        </p>
-        <dl>
-          <dt>github</dt>
-          <dd><a href="https://github.com/sssjsjj" target="_blank" title="새창">https://github.com/sssjsjj</a></dd>
-          <dt>blog</dt>
-          <dd><a href="https://dribbles.tistory.com/" target="_blank" title="새창">https://dribbles.tistory.com/</a></dd>
-        </dl>
       </div>
       <section class="section">
         <div class="section-top">
@@ -69,7 +60,7 @@
             <h3>Etc</h3>
           </div>
           <div class="col">
-            <ul class="list-dot list-col-4">
+            <ul class="list-bullet dot list-col-4">
               <li>VS Code</li>
               <li>Git/Github</li>
               <li>AEM</li>
@@ -84,9 +75,9 @@
       </section>
       <section class="section">
         <div class="section-top">
-          <div>
+          <div class="wrap-title">
             <h2>Career<span class="dot-point">.</span></h2>
-            <p><span class="badge dark">총 {{ returnCareerPeriod() }}</span></p>
+            <p><span class="badge">총 {{ returnCareerPeriod() }}</span></p>
           </div>
         </div>
         <section 
@@ -110,7 +101,7 @@
               <span v-if="exp.period.end.length === 0" class="badge point">재직중</span>   
             </p>
             <div class="col">
-              <ul class="list-dot">
+              <ul class="list-bullet dot">
                 <li
                   v-for="(desc, descIndex) in exp.descriptions"
                   :key="`companyDesc${descIndex}`"
@@ -171,12 +162,23 @@
                   <span class="badge">{{ returnPeriodText(prj.period.start, prj.period.end) }}</span>
                   <span class="badge dark">{{ prj.type }}</span> 
                 </p>
-                <ul class="list-dot">
+                <ul class="list-bullet dot">
                   <li
                     v-for="(prjDesc, prjDescIndex) in prj.descriptions"
                     :key="`prjDesc${prjIndex}-${prjDescIndex}`"
-                    v-html="prjDesc"
                   >
+                    <span v-html="prjDesc.title || prjDesc"></span>
+                    <ul
+                      v-if="prjDesc.desc"
+                      class="list-bullet hyphen"
+                    >
+                      <li
+                        v-for="(prjDesc2, prjDesc2Index) in prjDesc.desc"                    
+                        :key="`prjDesc${prjDesc2Index}`"
+                      >
+                        {{ prjDesc2 }}
+                      </li>
+                    </ul>
                   </li>
                 </ul>
                 <ul class="list-badge">
@@ -204,7 +206,7 @@
             <!-- <p>그린컴퓨터아카데미</p> -->
           </div>
           <div class="col">
-            <ul class="list-dot">
+            <ul class="list-bullet dot">
               <li>자바 스크립트의 개요 및 기본 문법(출력, 변수, 자료형, 입력, 배열, 형변화)</li>
               <li>제어문의 구조(조건문과 반복문)</li>
               <li>내장 함수, 사용자 정의 함수의 선언과 호출</li>
@@ -220,7 +222,7 @@
             <!-- <p>그린컴퓨터아카데미</p> -->
           </div>
           <div class="col">
-            <ul class="list-dot">
+            <ul class="list-bullet dot">
               <li>그래픽 디자인</li>
               <li>html5, css3, scss, jquery</li>
               <li>웹표준 디자인 기획 및 모델설계, 제작</li>
@@ -235,12 +237,12 @@
             <p class="text-gray">2010.03 - 2014.02</p>
           </div>
           <div class="col">
-            <ul class="list-dot">
+            <ul class="list-bullet dot">
               <li>광고 사진 전공</li>
-              <li>html5, css3, scss, jquery</li>
-              <li>웹표준 디자인 기획 및 모델설계, 제작</li>
-              <li>포트폴리오 제작</li>
-              <li>학업성취최우수로 졸업</li>
+              <li>[자원봉사] 마음으로 보는 세상 - 시각장애우와 팀을 이뤄 사진촬영 및 전시</li>
+              <li>[인턴] 크래커 매거진 - 스트릿 패션 및 컨텐츠 촬영</li>
+              <li>[인턴] BoLee 스튜디오 - 패션촬영 보조</li>
+              <li>[인턴] 일산 킨텍스 마크리부 전시장 - 관람객 스튜디오 사진 촬영 및 안내</li>
             </ul>
           </div>
         </div>
@@ -250,17 +252,28 @@
           <h2>Toy Projects<span class="dot-point">.</span></h2>
         </div>
         <div class="row">
-          <div class="col col-title">
-            <h3>팀 스터디</h3>
-            <p class="text-gray">2016.04 - 2016.06</p>
-            <!-- <p>그린컴퓨터아카데미</p> -->
-          </div>
           <div class="col">
-            <ul class="list-dot">
-              <li>https://github.com/sssjsjj/study/tree/master/poll-bar-graph</li>
-              <li>https://github.com/sssjsjj/study/tree/master/gallery-slider</li>
-              <li>https://github.com/sssjsjj/study/tree/master/customize-favorite-homeMenu</li>
-              <li>https://github.com/sssjsjj/study/tree/master/calendar</li>
+            <ul class="list-bullet dot">
+              <li>
+                <a href="https://github.com/sssjsjj/study/tree/master/poll-bar-graph" target="_blank" title="새창 (Github)">
+                  [Javascript] 막대 그래프
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/sssjsjj/study/tree/master/gallery-slider" target="_blank" title="새창 (Github)">
+                  [Javascript] 갤러리 슬라이더
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/sssjsjj/study/tree/master/customize-favorite-homeMenu" target="_blank" title="새창 (Github)">
+                  [Javascript] 개인 홈메뉴 선택 기능
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/sssjsjj/study/tree/master/calendar" target="_blank" title="새창 (Github)">
+                  [Javascript] 캘린더
+                </a>
+              </li>
             </ul>
           </div>
         </div>

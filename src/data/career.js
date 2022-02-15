@@ -29,10 +29,33 @@ export default [
         descriptions: [
           '웹 접근성 인증 갱신 작업',
           '[개선] 다국어 차량 상세 페이지 node.js 환경 적용',
-          '[개선] <a href="https://www.hyundai.com/kr/ko/e/vehicles/grandeur/intro" title="새창" tartget="_blank">차량 상세 페이지</a> 디자인 개편 작업<br> - PC는 Full page Carousel, Mobile에서는 스크롤 구동으로 변환<br> - 여러 컴포넌트들과 편리한 상태 공유를 위해 Vuex store 이용',
-          '[개선] 차량 상세 페이지 <br>- 반복되는 단순 작업 자동화 제안 후 작업<br> - pc 소스 기준으로 mobile 소스 자동 삽입',
-          '[개선] 내 차 만들기/차량 상세 페이지 - 선택한 차량 및 옵션 바탕으로 전시차량 조회 기능 추가',
-          '[개선] <a href="https://www.hyundai.com/kr/ko/e/vehicles/comparison" title="새창" tartget="_blank">모델비교</a>/<a href="https://www.hyundai.com/kr/ko/e/vehicles/comparison/popup/my_comparison?carCodes=DN08,DN09&purposeCodes=J,J" title="새창" tartget="_blank">트림비교</a> 페이지 모바일 UI/UX 개선 <br> - 모바일 스와이프, 차량 순서 이동 기능 추가<br>- 반복되는 기존 소스 컴포넌트로 리팩토링하여 코드 용량 및 유지 보수성 개선'
+          {
+            title: '[개선] <a href="https://www.hyundai.com/kr/ko/e/vehicles/grandeur/intro" title="새창" tartget="_blank">차량 상세 페이지</a> 디자인 개편 작업',
+            desc: [
+              'PC는 Full page Carousel, Mobile에서는 스크롤로 변환',
+              '여러 컴포넌트들과 편리한 상태 공유를 위해 Vuex store 이용'
+            ],
+          },
+          {
+            title: '[개선] 차량 상세 페이지',
+            desc: [
+              '반복되는 단순 작업 자동화 제안 후 작업',
+              'pc 소스 기준으로 mobile 소스 자동 삽입'
+            ]
+          },
+          {
+            title: '[개선] 내 차 만들기/차량 상세 페이지',
+            desc: [
+              '선택한 차량 및 옵션 바탕으로 전시차량 조회 기능 추가'
+            ]
+          },
+          {
+            title: '[개선] <a href="https://www.hyundai.com/kr/ko/e/vehicles/comparison" title="새창" tartget="_blank">모델비교</a>/<a href="https://www.hyundai.com/kr/ko/e/vehicles/comparison/popup/my_comparison?carCodes=DN08,DN09&purposeCodes=J,J" title="새창" tartget="_blank">트림비교</a> 페이지 모바일 UI/UX 개선',
+            desc: [
+              '모바일 스와이프, 차량 순서 이동 기능 추가',
+              '반복되는 기존 소스 컴포넌트로 리팩토링하여 코드 용량 및 유지 보수성 개선'
+            ]
+          }
         ],
         keywords: [
           'Vue.js',
@@ -62,7 +85,12 @@ export default [
           '월드와이드 기준으로 WWN 3.0 확산 적용',
           '컨텐츠 페이지 정기 업데이트',
           '인도 개발자와 협업',
-          '[개선] 디자인 개편에 따른 신규 컴포넌트 생성 (독일 디자인 업체와 협업)',
+          {
+            title: '[개선] 디자인 개편에 따른 신규 컴포넌트 생성',
+            desc: [
+              '독일 디자인 업체와 협업'
+            ]
+          },
           '[개선] 현대 월드와이드 타 업체 개편 이후 WWN 3.0 사이트 확산 작업',
         ],
         keywords: [

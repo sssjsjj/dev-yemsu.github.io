@@ -94,10 +94,27 @@ h4 {
 .container {
   max-width: 1160px;
   margin: 0 auto;
-  padding: 80px 20px;
+  padding: 40px 40px 80px;
   &-top {
+    word-break: keep-all;
     p:nth-child(n+2) {
       margin-top: 2em;
+    }
+  }
+}
+.portfolios {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: -6px;
+  > li {
+    padding: 10px 6px;
+    a {
+      svg {
+        height: 22px;
+        path {
+          // fill: #999
+        }
+      }
     }
   }
 }
@@ -108,13 +125,22 @@ h4 {
   &-top {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     & + * {
       margin-top: 40px;
+    }
+    .wrap-title {
+      display: flex;
+      align-items: center;
+      .badge {
+        margin-left: 20px;
+      }
     }
   }
 }
 .wrap-company {
   display: flex;
+  justify-content: space-between;
   & + .wrap-company {
     margin-top: 50px;
     padding-top: 50px;
@@ -141,7 +167,8 @@ h4 {
   }
 }
 .wrap-projects {
-  flex: 1;
+  width: 650px;
+  max-width: 65%;
   padding-top: 5px;
   .row {
     padding-left: 30px;
@@ -168,7 +195,7 @@ h4 {
 .col {
   &-title {
     width: 300px;
-    margin-right: 120px;
+    max-width: 30%;
     word-break: keep-all;
     & + .col:last-child {
       flex: 1;
@@ -185,13 +212,13 @@ h4 {
   }
 }
 .list {
-  &-dot {
+  &-bullet {
     &:not(:first-child) {
       margin-top: 8px;
     }
     > li {
       position: relative;
-      margin-top: 5px;
+      margin-top: 6px;
       padding-left: 0.9em;
       &::before {
         display: block;
@@ -199,9 +226,22 @@ h4 {
         top: 0;
         left:0;
         margin-right: 5px;
-        color: $sub-color;
         border-radius: 3px;
-        content: '•';
+      }
+    }
+    &.dot {
+      > li {
+        &::before {
+          color: $sub-color;
+          content: '•';
+        }
+      }
+    }
+    &.hyphen {
+      > li {
+        &::before {
+          content: '-';
+        }
       }
     }
   }
