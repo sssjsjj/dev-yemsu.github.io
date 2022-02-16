@@ -1,6 +1,6 @@
 $main-color: rgb(85, 55, 194);
 $sub-color: darkseagreen;
-$gray: #999;
+$gray: #888;
 $dark-gray: rgb(104, 104, 108);
 /* common style */
 .dot-point {
@@ -10,7 +10,7 @@ $dark-gray: rgb(104, 104, 108);
 }
 .badge {
   display: inline-block;
-  padding: 3px 5px 4px 4px;
+  padding: 4px 5px 4px 4px;
   background-color: rgb(234, 234, 238);
   font-size: 0.85em;
   text-align: center;
@@ -21,7 +21,6 @@ $dark-gray: rgb(104, 104, 108);
     margin-right: 6px;
   }
   &.dark {
-    padding: 3px 5px 4px 4px;
     background-color: $dark-gray;
     font-size: 0.8em;
     color: #fff;
@@ -55,6 +54,9 @@ $dark-gray: rgb(104, 104, 108);
 .text-gray {
   color: $gray
 }
+h1 {
+  font-size: 2.4em;
+}
 h2 {
   font-size: 3em;
   letter-spacing: 0;
@@ -64,18 +66,24 @@ h2 {
 }
 h3 {
   font-size: 1.8em;
-  word-break: keep-all;
 }
 h4 {
   font-size: 1.7em;
   font-weight: normal;
+}
+.weight-normal {
+  font-weight: normal;
+}
+.smaller {
+  &-1 {
+    font-size: 0.6em;
+  }
 }
 .links-inline {
   display: inline;
   font-size: 0.9em;
   color: $gray;
   a {
-    word-break: keep-all;
     &:not(:last-child) {
       margin-right: 4px;
     }
@@ -92,17 +100,20 @@ h4 {
   background: linear-gradient(to right, $main-color, rgb(201, 218, 201));
 }
 .container {
-  max-width: 1160px;
+  max-width: 768px;
   margin: 0 auto;
-  padding: 40px 40px 80px;
+  padding: 40px 30px 80px;
+  word-break: keep-all;
   &-top {
-    word-break: keep-all;
-    p:nth-child(n+2) {
-      margin-top: 2em;
+    h1 + p {
+      margin-top: 1.8em;
+    }
+    p + p {
+      margin-top: 1em;
     }
   }
 }
-.portfolios {
+.list-icon {
   display: flex;
   justify-content: flex-end;
   margin-right: -6px;
@@ -158,21 +169,15 @@ h4 {
     }
   }
   .col-title {
-    align-self: flex-start;
-    position: sticky;
     top: 50px;
     & + .col:last-child {
       flex: 1;
     }
   }
 }
-.wrap-projects {
-  width: 650px;
-  max-width: 65%;
+.wrap-row {
+  flex: 1;
   padding-top: 5px;
-  .row {
-    padding-left: 30px;
-  }
   .area-title {
     margin-bottom: 8px;
   }
@@ -194,11 +199,17 @@ h4 {
 /* col */
 .col {
   &-title {
-    width: 300px;
-    max-width: 30%;
-    word-break: keep-all;
+    width: 220px;
+    margin-right: 50px;
     & + .col:last-child {
       flex: 1;
+    }
+    &.sticky {
+      align-self: flex-start;
+      position: sticky;
+    }
+    &.size-s-1 {
+      width: 160px;
     }
   }
 }
@@ -213,12 +224,16 @@ h4 {
 }
 .list {
   &-bullet {
-    &:not(:first-child) {
-      margin-top: 8px;
+    &:nth-child(n+2) {
+      margin-top: 5px;
+    }
+    .list-bullet {
+      margin-top: 0;
+      margin-bottom: 5px;
     }
     > li {
       position: relative;
-      margin-top: 6px;
+      margin-top: 1px;
       padding-left: 0.9em;
       &::before {
         display: block;
@@ -258,7 +273,7 @@ h4 {
   }
   &-badge {
     &:nth-child(n+2) {
-      margin-top: 8px;
+      margin-top: 5px;
     }
     .badge {
       margin-top: 3px;

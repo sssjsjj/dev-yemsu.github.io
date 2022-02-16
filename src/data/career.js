@@ -37,16 +37,16 @@ export default [
             ],
           },
           {
-            title: '[개선] 차량 상세 페이지',
+            title: '[개선] 차량 상세 페이지 모바일 소스 자동화',
             desc: [
-              '반복되는 단순 작업 자동화 제안 후 작업',
+              'pc, mobile 마크업이 분리되어 있어 같은 컨텐츠를 2번 삽입/검수해야 하는 케이스들 개선',
               'pc 소스 기준으로 mobile 소스 자동 삽입'
             ]
           },
           {
             title: '[개선] 내 차 만들기/차량 상세 페이지',
             desc: [
-              '선택한 차량 및 옵션 바탕으로 전시차량 조회 기능 추가'
+              '선택한 차량 및 옵션 바탕으로 전시 차량 조회 기능 추가'
             ]
           },
           {
@@ -61,7 +61,7 @@ export default [
           'Vue.js',
           'Vuex',
           'Nuxt.js',
-          'javascript',
+          'JavaScript',
           'SCSS',
           'Git',
           'Git lab',
@@ -91,10 +91,10 @@ export default [
               '독일 디자인 업체와 협업'
             ]
           },
-          '[개선] 현대 월드와이드 타 업체 개편 이후 WWN 3.0 사이트 확산 작업',
+          '[개선] 현대 월드와이드 타 업체 개편 이후 WWN 3.0 사이트 확산',
         ],
         keywords: [
-          'javascript',
+          'JavaScript',
           'jQuery',
           'Zeplin',
           // 'Jira',
@@ -122,7 +122,7 @@ export default [
           '[개선] 기아 CSR 컨텐츠 페이지 웹표준 개선',
         ],
         keywords: [
-          'javascript',
+          'JavaScript',
           'jQuery',
           'HTML/CSS',
         ]
@@ -166,7 +166,7 @@ export default [
           'Youtube 관련 커스텀 태그 작업이 주요 이슈',
         ],
         keywords: [
-          'javascript',
+          'JavaScript',
           'HTML/CSS',
           'Google Tag Manager',
           'Google Analytics',
