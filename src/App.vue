@@ -64,10 +64,10 @@
           <div class="col">
             <ul class="list-bullet dot">
               <li>웹표준을 준수하며 시맨틱한 마크업을 작성합니다.</li>
-              <li>반응형을 적용할 수 있습니다.</li>
               <li>Search Engine Optimization(SEO) 작업 경험이 있습니다.</li>
-              <li>웹 접근성 취득 경험이 다수 있습니다. (WAI-ARIA 사용 경험 有)</li>
-              <li>컴포넌트 단위로 작업한 경험이 다수 있습니다.</li>
+              <li>웹 접근성 취득 경험이 다수 있습니다. (+ WAI-ARIA 사용 경험)</li>
+              <li>컴포넌트 단위 작업 경험이 다수 있습니다.</li>
+              <li>반응형을 작업 경험이 다수 있습니다.</li>
               <li>Sass와 같은 CSS Preprocessor를 사용할 수 있습니다.</li>
             </ul>
           </div>
