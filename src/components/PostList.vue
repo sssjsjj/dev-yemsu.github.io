@@ -12,6 +12,7 @@
         >
           <h4
             class="title"
+            :style="`background-color:${randomRgba()};`"
           >
             <span
               class="title-text"
@@ -38,6 +39,7 @@
 </template>
 
 <script>
+import { utilRandomRgba } from '@/utils'
 
 export default {
   props: {
@@ -46,6 +48,15 @@ export default {
       default: () => []
     }
   },
+  data() {
+    return {
+    }
+  },
+  methods: {
+    randomRgba() {
+      return utilRandomRgba(100, 180)
+    }
+  }
 }
 </script>
 
