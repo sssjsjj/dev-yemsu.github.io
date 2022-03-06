@@ -1,0 +1,50 @@
+.container {
+  padding: 0 50px;
+}
+.list-post {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  .post {
+    width: 300px;
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 140px;
+      padding: 0 40px;
+      background-color: #eee;
+      word-break: keep-all;
+      font-weight: bold;
+      font-size: 1.1em;
+      text-align: center;
+    }
+    .description {
+      height: 80px;
+      margin-top: 10px;
+      word-break: keep-all;
+      color: #666;
+      font-weight: 300;
+    }
+    .date {
+      margin-top: 10px;
+      font-size: 0.8em;
+      color: #999;
+    }
+    .keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4em;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #eee;
+      .keyword {
+        padding: 0.3em 0.4em;
+        font-size: 0.8em;
+        background-color: #eee;
+        border-radius: 7px;
+        line-height: 1;
+      }
+    }
+  }
+}
