@@ -12,13 +12,12 @@ export default {
     }
   },
   async created() {
-    try {
-      const param = this.$route.params.title
-      const post = await import(`@/contents/${param}.md`)
-      this.contents = htmlConverter(post.default)
-    } catch (e) {
-      console.log(e)
-    }
+    const param = this.$route.params.title
+    await fetch(`/posts/${param}.md`)
+      .then(res => res.text())
+      .then(data => this.contents = htmlConverter(data))
+      .catch(e => console.log(e))
+      
   },
 }
 </script>
