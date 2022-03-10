@@ -6,8 +6,8 @@
         :key="`post${i}`"
         class="post"
       >
-        <a
-          :href="post.name"
+        <router-link
+          :to="post.name"
           :title="post.title"
         >
           <h4
@@ -32,7 +32,7 @@
               </li>
             </ul>
           </div>
-        </a>
+        </router-link>
       </div>
     </div>
   </div>
