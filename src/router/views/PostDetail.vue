@@ -3,21 +3,21 @@
 </template>
 
 <script>
+import axios from 'axios'
 import htmlConverter from "@/utils/htmlConverter";
 
 export default {
   data() {
     return {
-      contents: null
+      contents: null,
+      baseUrl: process.env.VUE_APP_BASE_URL,
     }
   },
-  async created() {
+  created() {
     const param = this.$route.params.title
-    await fetch(`/posts/${param}.md`)
-      .then(res => res.text())
-      .then(data => this.contents = htmlConverter(data))
-      .catch(e => console.log(e))
-      
+    axios.get(`${this.baseUrl}/posts/${param}.md`)
+      .then(res => this.contents = htmlConverter(res.data))
+      .catch(e => console.log(`ERROR🙄 ${e.response.status} : ${e.request.responseURL}`))
   },
 }
 </script>

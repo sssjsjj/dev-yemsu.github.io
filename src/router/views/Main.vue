@@ -5,6 +5,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import ContainerComp from '@/components/layout/Container.vue'
 import PostList from '@/components/PostList.vue'
 // import posts from '@/contents/posts.js'
@@ -16,18 +17,14 @@ export default {
   },
   data() {
     return {
-      posts: []
+      posts: [],
+      baseUrl: process.env.VUE_APP_BASE_URL,
     }
   },
-  async created() {
-    await fetch('/posts/index.json')
-      .then(res => res.json())
-      .then(data => this.posts = data)
-      .catch(e => console.log(e))
-    
+  created() {
+    axios.get(`${this.baseUrl}/posts/index.json`)
+      .then(res => this.posts = res.data)
+      .catch(e => console.log(`ERROR🙄 ${e.response.status} : ${e.request.responseURL}`))
   }
 }
 </script>
-
-<style lang="scss" scoped>
-</style>
