@@ -5,10 +5,9 @@
 </template>
 
 <script>
-import axios from 'axios'
 import ContainerComp from '@/components/layout/Container.vue'
 import PostList from '@/components/PostList.vue'
-// import posts from '@/contents/posts.js'
+import { getPostsInfo } from '@/utils/https'
 
 export default {
   components: {
@@ -17,14 +16,12 @@ export default {
   },
   data() {
     return {
-      posts: [],
-      baseUrl: process.env.VUE_APP_BASE_URL,
+      posts: []
     }
   },
   created() {
-    axios.get(`${this.baseUrl}/posts/index.json`)
-      .then(res => this.posts = res.data)
-      .catch(e => console.log(`ERROR🙄 ${e.response.status} : ${e.request.responseURL}`))
+    getPostsInfo()
+      .then(data => this.posts = data)
   }
 }
 </script>

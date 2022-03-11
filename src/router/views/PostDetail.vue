@@ -19,8 +19,8 @@
 
 <script>
 import ContainerComp from '@/components/layout/Container.vue'
-import axios from 'axios'
 import htmlConverter from "@/utils/htmlConverter";
+import { getMD, getPostInfo } from '@/utils/https'
 
 export default {
   components: {
@@ -28,15 +28,18 @@ export default {
   },
   data() {
     return {
-      post: null,
-      baseUrl: process.env.VUE_APP_BASE_URL,
+      contents: null,
+      post: null
     }
   },
-  created() {
+  async created() {
     const param = this.$route.params.title
-    axios.get(`${this.baseUrl}/posts/${param}.md`)
-      .then(res => this.post = htmlConverter(res.data))
-      .catch(e => console.log(`ERROR🙄 ${e.response.status} : ${e.request.responseURL}`))
+    
+    await getMD(param)
+      .then(data => this.contents = htmlConverter(data))
+
+    await getPostInfo({"name": param})
+      .then(data => this.post = data)
   },
 }
 </script>
