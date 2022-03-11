@@ -1,5 +1,5 @@
 <template>
-  <container-comp>
+  <container-comp :size="'wide'">
     <post-list :posts="posts" />
   </container-comp>
 </template>

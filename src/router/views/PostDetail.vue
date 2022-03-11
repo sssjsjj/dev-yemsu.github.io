@@ -1,5 +1,5 @@
 <template>
-  <container-comp>
+  <container-comp :size="'narrow'">
     <div class="wrap-info">
       <h2 class="title">{{ post.title.split('<br>').join(' ') }}</h2>
       <p class="date">{{ post.date }}</p>
