@@ -21,7 +21,10 @@ export default {
   },
   created() {
     getPostsInfo()
-      .then(data => this.posts = data)
+      .then(data => {
+        const visibleData = data.filter(item => item.hidden !== true)
+        this.posts = visibleData
+      })
   }
 }
 </script>
