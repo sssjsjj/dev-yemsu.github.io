@@ -10,7 +10,7 @@
           :to="post.name"
           :title="post.title"
         >
-          <h4
+          <h3
             class="title"
             :style="`background-color:${randomRgba()};`"
           >
@@ -18,7 +18,7 @@
               class="title-text"
               v-html="post.title"
             ></span>
-          </h4>
+          </h3>
           <div class="wrap-info">
             <p class="description">{{ post.description }}</p>
             <p class="date">{{ post.date }}</p>
