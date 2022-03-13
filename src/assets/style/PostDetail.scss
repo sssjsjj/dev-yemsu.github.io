@@ -1,9 +1,8 @@
-@import '@/assets/style/var.scss';
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&display=swap');
 
 .wrap-info {
   padding-bottom: 30px;
-  border-bottom: 1px solid $bg-gray;
+  border-bottom: 1px solid $line-light-gray;
   text-align: center;
   .title {
     font-size: 2.5em;
@@ -13,7 +12,7 @@
     margin-top: 10px;
     line-height: 1;
     font-size: 0.8em;
-    color: $color-light-gray;
+    color: $text-light-gray;
   }
   .keywords {
     display: flex;
@@ -34,17 +33,24 @@
   padding: 50px 20px;
   ::v-deep {
     h3, h4, h5, h6 {
-      margin-bottom: 10px;
       font-weight: 700;
+    }
+    h4, h5 {
+      margin-bottom: 10px;
       &:not(:first-child) {
         margin-top: 2em;
       }
     }
     h3 {
+      text-indent: -0.3em;
       font-size: 1.8em;
+      margin-bottom: 0.5em;
+      &:not(:first-child) {
+        margin-top: 85px;
+      }
     }
     h4 {
-      font-size: 1.1em;
+      font-size: 1.3em;
     }
     h5 {
       font-size: 1em;
@@ -52,22 +58,22 @@
     p {
       margin-top: 10px;
       line-height: 1.8;
-      a {
-        color: $color-point-2;
-        text-decoration: underline;
-        font-style: italic;
-      }
+    }
+    a {
+      color: $color-point-2;
+      text-decoration: underline;
+      font-style: italic;
     }
     figure {
       margin: 15px 0 25px;
       text-align: center;
       img {
-        border: 1px solid $bg-gray;
+        border: 1px solid $line-light-gray;
       }
       figcaption {
         margin-top: 10px;
         font-size: 0.85em;
-        color: $color-gray;
+        color: $text-gray;
         font-style: italic;
       }
     }
@@ -77,6 +83,24 @@
       background-color: $bg-light-gray;
       border-left: 5px solid $color-point-2;
     }
+    cite,
+    .refer {
+      &:before {
+        display: inline;
+        margin-right: 10px;
+      }
+    }
+    cite {
+      &:not(.refer):before {
+        content: '📌 출처'
+      }
+      &.refer {
+        &:before {
+          content: '📌 참고'
+        }
+      }
+    }
+
     code {
       margin-right: 1px;
       padding: 0 0.2em 0.1em;
@@ -92,7 +116,8 @@
       background-color: $bg-gray;
     }
     hr {
-      margin: 40px 0;
+      margin: 85px 0;
+      border-top: 1px solid $line-gray;
     }
     ul {
       padding-left: 2em;
