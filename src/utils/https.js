@@ -19,13 +19,9 @@ export const getPostsInfo = () => {
 export const getPostInfo = (param = {}) => {
   const key = Object.keys(param)[0]
   const value = Object.values(param)[0]
-
-  return getPostsInfo()
-    .then((data) => {
-      for(const info of data) {
-        if(info[key] === value) return info
-      }
-    })
+  const getPostInfo = getPostsInfo()
+    .then((data) => data.filter(info => info[key] === value))
+  return getPostInfo
 }
 
 export const getMD = (param = '') => {
