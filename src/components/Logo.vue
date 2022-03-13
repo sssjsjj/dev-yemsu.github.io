@@ -42,7 +42,7 @@ export default {
     }
     &.enjoy {
       letter-spacing: 0.1em;
-      color: rgb(111, 0, 255);
+      color: $color-point;
     } 
     .hidden {
       color: #fff;
