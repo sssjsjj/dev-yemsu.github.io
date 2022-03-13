@@ -1,6 +1,6 @@
 <template>
   <container-comp :size="'narrow'">
-    <div class="wrap-info">
+    <div v-if="post" class="wrap-info">
       <h2 class="title">{{ post.title.split('<br>').join(' ') }}</h2>
       <p class="date">{{ post.date }}</p>
       <ul class="keywords">
