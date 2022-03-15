@@ -1,17 +1,17 @@
-### 1. router 설치
+### router 설치
 vue3부터는 <code>vue-router</code>가 아닌 <code>vue-router@next</code>를 설치해줘야한다.
 ```
 npm i vue-router@next
 ```
 
-### 2. 폴더 / 모듈 생성
+### 폴더 / 모듈 생성
 src 폴더 내부에 router 폴더를 생성하고 폴더 안에 index.js로 라우터 모듈을 생성해준다.
 ```
 mkdir src/router
 touch src/router/index.js
 ```
 
-### 3. 라우터 모듈 작성
+### 라우터 모듈 작성
 아래와 같이 라우터 모듈을 작성한다.
 ##### 📃 src/router/index.js
 ```javascript
@@ -60,7 +60,7 @@ export default router;
 >
 > 📌 참고 [Vue Router - Different History modes](https://router.vuejs.org/guide/essentials/history-mode.html)
 
-### 4. 라우터 모듈 가져오기
+### 라우터 모듈 가져오기
 라우터를 사용한다고 어플리케이션에게 알려준다.
 ##### 📃 /src/main.js
 ```javascript
@@ -73,7 +73,7 @@ const app = createApp(App)
 app.use(router).mount('#app')
 ```
 
-### 5. 라우터 영역 지정하기
+### 라우터 영역 지정하기
 라우터 영역을 지정해준다.
 ##### 📃 /src/App.vue
 ```javascript
@@ -86,7 +86,7 @@ app.use(router).mount('#app')
 </template>
 ```
 
-### ➕ 동적 라우팅
+### 동적 라우팅
 위 소스에서 동적라우팅을 사용한 부분만 가져와보자.  
 동적으로 적용할 부분은 콜론(:)이 앞에 붙는다.
 ```javascript
