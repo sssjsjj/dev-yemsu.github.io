@@ -7,6 +7,14 @@
     "description": "Node.js 환경에서 babel, babel polyfill, jest, webpack 설치 및 세팅으로 JavaScript 개발 환경을 구축한 과정"
   },
   {
+    "name": "make-github-io-blog-with-vue3",
+    "title": "Vue3 <br>Github Pages 블로그 <br>직접 만들기",
+    "date": "2022-03-06",
+    "keywords": ["Vue3", "project"],
+    "description": "Vue3로 직접 개발해 Github Pages로 배포까지! 블로그 만들기 프로젝트",
+    "hidden": true
+  },
+  {
     "name": "vue-cli-working-with-sass",
     "title": "Vue CLI <br>Sass 사용하기",
     "date": "2022-03-05",
@@ -14,10 +22,10 @@
     "description": "Vue CLI에서 Sass를 설치하고 사용해봅시다!"
   },
   {
-    "name": "make-github-io-blog-with-vue3",
-    "title": "Vue3 <br>Github Pages 블로그 <br>직접 만들기",
-    "date": "2022-03-06",
-    "keywords": ["Vue3", "project"],
-    "description": "Vue3로 직접 개발해 Github Pages로 배포까지! 블로그 만들기 프로젝트"
+    "name": "vue3-router",
+    "title": "Vue3 <br>Router 사용하기 <br> (+ 동적 라우팅)",
+    "date": "2022-03-10",
+    "keywords": ["Vue3", "Router", "Dynamic Segments"],
+    "description": "Vue CLI에서 Router를 설치하고 사용해봅시다! 각 옵션에 대한 내용과 함께 동적 라우팅도 설정합니다."
   }
 ]

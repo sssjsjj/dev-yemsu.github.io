@@ -1,28 +1,33 @@
+$post-item-width: 300px;
+$post-item-gap: 25px;
+
 .wrap-list-post {
-  display: flex;
-  justify-content: center;
+  @include flexBox(unset, center);
 }
 .list-post {
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: $post-item-gap;
+  width: calc(($post-item-width * 4) + ($post-item-gap * 3));
+  @media screen and (max-width: 1385px) {
+    width: calc(($post-item-width * 3) + ($post-item-gap * 2));
+  }
 }
 .post {
-  width: 300px;
-  border: 1px solid #eee;
-  border-radius: 5px 5px 0 0;
+  $border-radius: 5px 5px 0 0;
+  width: $post-item-width;
+  border: 1px solid $line-light-gray;
+  border-radius: $border-radius;
   .title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flexBox();
     height: 140px;
     padding: 0 40px;
-    background-color: #eee;
+    background-color: $bg-gray;
     word-break: keep-all;
     font-size: 1.1em;
     font-weight: 500;
     text-align: center;
-    border-radius: 5px 5px 0 0;
+    border-radius: $border-radius;
     > .title-text {
       color: #fff;
     }
@@ -38,7 +43,7 @@
     margin-top: 10px;
     line-height: 1;
     font-size: 0.8em;
-    color: #999;
+    color: $text-light-gray;
   }
   .keywords {
     display: flex;
@@ -48,8 +53,8 @@
     .keyword {
       padding: 0.3em 0.4em;
       font-size: 0.8em;
-      background-color: #eee;
-      border-radius: 7px;
+      background-color: $bg-gray;
+      border-radius: 5px;
       line-height: 1;
     }
   }

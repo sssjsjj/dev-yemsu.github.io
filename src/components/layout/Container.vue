@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div :class="`container size-${size}`">
     <main>
       <slot></slot>
     </main>
@@ -8,6 +8,12 @@
 
 <script>
 export default {
+  props: {
+    size: {
+      type: String,
+      default: "wide"
+    }
+  },
   data() {
     return {
     }
@@ -18,5 +24,11 @@ export default {
 <style lang="scss" scoped>
 .container {
   padding: 50px;
+  &.size-narrow {
+    main {
+      width: 800px;
+      margin: 0 auto;
+    }
+  }
 }
 </style>

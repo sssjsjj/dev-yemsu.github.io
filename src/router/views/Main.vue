@@ -1,5 +1,5 @@
 <template>
-  <container-comp>
+  <container-comp :size="'wide'">
     <post-list :posts="posts" />
   </container-comp>
 </template>
@@ -7,7 +7,7 @@
 <script>
 import ContainerComp from '@/components/layout/Container.vue'
 import PostList from '@/components/PostList.vue'
-// import posts from '@/contents/posts.js'
+import { getPostsInfo } from '@/utils/https'
 
 export default {
   components: {
@@ -19,15 +19,12 @@ export default {
       posts: []
     }
   },
-  async created() {
-    await fetch('/posts/index.json')
-      .then(res => res.json())
-      .then(data => this.posts = data)
-      .catch(e => console.log(e))
-    
+  created() {
+    getPostsInfo()
+      .then(data => {
+        const visibleData = data.filter(item => item.hidden !== true)
+        this.posts = visibleData
+      })
   }
 }
 </script>
-
-<style lang="scss" scoped>
-</style>
