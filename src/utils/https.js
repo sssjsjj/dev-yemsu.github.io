@@ -5,7 +5,7 @@ const $axios = axios.create({
 })
 
 const Https = {
-  async get(url = '', params = {}) {
+  get(url = '', params = {}) {
     return $axios.get(url, params)
       .then(res => res.data)
       .catch(e => console.log(`ERROR🙄 ${e.response.status} : ${e.request.responseURL}`))
