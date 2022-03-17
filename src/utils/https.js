@@ -20,7 +20,7 @@ export const getPostInfo = (param = {}) => {
   const key = Object.keys(param)[0]
   const value = Object.values(param)[0]
   const getPostInfo = getPostsInfo()
-    .then((data) => data.filter(info => info[key] === value))
+    .then((data) => data.filter(info => info[key] === value)[0])
   return getPostInfo
 }
 
