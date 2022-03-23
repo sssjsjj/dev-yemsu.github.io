@@ -7,24 +7,21 @@
 <script>
 import ContainerComp from '@/components/layout/Container.vue'
 import PostList from '@/components/PostList.vue'
-import { getPostsInfo } from '@/utils/https'
+import { mapGetters } from 'vuex';
 
 export default {
   components: {
     ContainerComp,
     PostList
   },
-  data() {
-    return {
-      posts: []
-    }
+  computed: {
+    ...mapGetters({
+      posts: 'getPosts'
+      
+    })
   },
   created() {
-    getPostsInfo()
-      .then(data => {
-        const visibleData = data.filter(item => item.hidden !== true)
-        this.posts = visibleData
-      })
-  }
+    this.$store.dispatch('GET_POSTS')
+  },
 }
 </script>

@@ -3,16 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "dev": "vue-cli-service serve",
+    "sitemap": "vue-cli-service sitemap"
   },
   "dependencies": {
     "axios": "^0.26.1",
     "core-js": "^3.6.5",
     "showdown": "^2.0.1",
     "vue": "^3.0.0",
-    "vue-router": "^4.0.13"
+    "vue-meta": "^3.0.0-alpha.10",
+    "vue-router": "^4.0.13",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.15",
@@ -24,7 +27,8 @@
     "eslint-plugin-vue": "^7.0.0",
     "prerender-spa-plugin": "^3.4.0",
     "sass": "^1.49.9",
-    "sass-loader": "10"
+    "sass-loader": "10",
+    "sitemap-webpack-plugin": "^1.1.1"
   },
   "eslintConfig": {
     "root": true,
