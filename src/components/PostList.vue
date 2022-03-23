@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { utilRandomRgba } from '@/utils'
+import randomRgba from '@/utils/randomRgba'
 
 export default {
   props: {
@@ -48,13 +48,9 @@ export default {
       default: () => []
     }
   },
-  data() {
-    return {
-    }
-  },
   methods: {
     randomRgba() {
-      return utilRandomRgba(100, 180)
+      return randomRgba(100, 180)
     }
   }
 }

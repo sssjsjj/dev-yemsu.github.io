@@ -1,7 +1,7 @@
 <template>
   <container-comp :size="'narrow'">
-    <div v-if="post" class="wrap-info">
-      <h2 class="title">{{ post.title.split('<br>').join(' ') }}</h2>
+    <div v-if="post && post.title" class="wrap-info">
+      <h2 class="title">{{ post.title.replace('<br>', '') }}</h2>
       <p class="date">{{ post.date }}</p>
       <ul class="keywords">
         <li
@@ -19,8 +19,7 @@
 
 <script>
 import ContainerComp from '@/components/layout/Container.vue'
-import htmlConverter from "@/utils/htmlConverter";
-import { getMD, getPostInfo } from '@/utils/https'
+import { mapGetters } from 'vuex';
 
 export default {
   components: {
@@ -28,18 +27,20 @@ export default {
   },
   data() {
     return {
-      contents: null,
-      post: null
+      isLoading: true
     }
   },
+  computed: {
+    ...mapGetters({
+      contents: 'getMD',
+      post: 'getPost'
+    }),
+  },
   async created() {
-    const param = this.$route.params.title
-    
-    await getMD(param)
-      .then(data => this.contents = htmlConverter(data))
-
-    await getPostInfo({"name": param})
-      .then(data => this.post = data)
+    const postName = this.$route.params.title
+    await this.$store.dispatch('GET_MD', postName)
+    await this.$store.dispatch('GET_POST', postName)
+    this.isLoading = false
   },
 }
 </script>
