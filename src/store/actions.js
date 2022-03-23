@@ -12,8 +12,9 @@ export default {
   GET_POSTS({ commit }) {
     return getPosts()
       .then(({data}) => {
-        commit(`SET_DATA`, {data, type: 'posts'})
-        return data
+        const visiblePosts = data.filter(item => !item.hidden)
+        commit(`SET_DATA`, {data: visiblePosts, type: 'posts'})
+        return visiblePosts
       })
       .catch(error => console.log('GET_POSTS', error))
   },
