@@ -14,7 +14,8 @@
     "showdown": "^2.0.1",
     "vue": "^3.0.0",
     "vue-meta": "^3.0.0-alpha.10",
-    "vue-router": "^4.0.13"
+    "vue-router": "^4.0.13",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.15",
