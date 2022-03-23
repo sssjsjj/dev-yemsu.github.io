@@ -5,6 +5,4 @@ const utilRandomRgba = (min, max) => {
   return randomCssRgba
 }
 
-export {
-  utilRandomRgba
-}
+export default utilRandomRgba
