@@ -1,1 +1,118 @@
-<!DOCTYPE html><html lang=""><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><title>DEV BLOG</title><meta name="naver-site-verification" content="c702bde42c5742aa62750f39d810dd87c91f4811"><meta name="google-site-verification" content="rRA_cKc94OITZM0hBG9JQUQBl8IbTx9G7cY6mUo1hgw"><link href="/css/app.5c99a1eb.css" rel="preload" as="style"><link href="/js/app.aff8af30.js" rel="preload" as="script"><link href="/js/chunk-vendors.c313b892.js" rel="preload" as="script"><link href="/css/app.5c99a1eb.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but DEV BLOG doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app" data-v-app=""><header data-v-03f1a523=""><h1 data-v-03f1a523=""><a href="/" class="logo size-medium" data-v-6a066cea="" data-v-03f1a523=""><span class="logo-text dev" data-v-6a066cea=""> D<span class="hidden" data-v-6a066cea="">E</span>V </span><span class="logo-text enjoy" data-v-6a066cea=""><span class="common-e" data-v-6a066cea="">E</span>NJOY🌊 </span></a></h1><div class="links" data-v-03f1a523=""><a href="https://github.com/sssjsjj/" title="블로그 주인 Github 구경하러가기" data-v-03f1a523=""><svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="26" data-view-component="true" class="octicon octicon-mark-github v-align-middle"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a></div></header><div class="container size-narrow" data-v-14de9e3e="" data-v-4fef9c8c=""><main data-v-14de9e3e=""><!----><div class="contents" data-v-4fef9c8c=""></div></main></div></div><script src="/js/chunk-vendors.c313b892.js"></script><script src="/js/app.aff8af30.js"></script></body></html>
+<!DOCTYPE html><html lang="ko"><head>
+        <title>Vue3 Router 사용하기  (+ 동적 라우팅)</title>
+        <meta name="title" content="Vue3 Router 사용하기  (+ 동적 라우팅)" />
+        <meta name="description" content="Vue CLI에서 Router를 설치하고 사용합니다. 각 옵션에 대한 내용과 함께 동적 라우팅도 설정합니다." />
+        <meta name="keywords" content="Vue3,Router,Dynamic Segments" />
+        <meta property="og:url" content="https://yemsu.github.io/vue3-router" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="Vue3 Router 사용하기  (+ 동적 라우팅)" />
+        <meta property="og:description" content="Vue CLI에서 Router를 설치하고 사용합니다. 각 옵션에 대한 내용과 함께 동적 라우팅도 설정합니다." />
+        <meta property="og:image" content="https://yemsu.github.io/images/og_image.jpg" />
+        <meta property="twitter:card" content="https://yemsu.github.io/images/og_image.jpg" />
+        <meta property="twitter:url" content="https://yemsu.github.io/vue3-router" />
+        <meta property="twitter:title" content="Vue3 Router 사용하기  (+ 동적 라우팅)" />
+        <meta property="twitter:description" content="Vue CLI에서 Router를 설치하고 사용합니다. 각 옵션에 대한 내용과 함께 동적 라우팅도 설정합니다." />
+        <meta property="twitter:image" content="https://yemsu.github.io/images/og_image.jpg" />
+      <meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2284%22>🌊</text></svg>"><title>ENJOY BLOG</title><meta name="naver-site-verification" content="c702bde42c5742aa62750f39d810dd87c91f4811"><meta name="google-site-verification" content="rRA_cKc94OITZM0hBG9JQUQBl8IbTx9G7cY6mUo1hgw"><link href="/css/app.4c7f096c.css" rel="preload" as="style"><link href="/js/app.ddef898b.js" rel="preload" as="script"><link href="/js/chunk-vendors.085d28d0.js" rel="preload" as="script"><link href="/css/app.4c7f096c.css" rel="stylesheet"><meta vmid="description" name="meta" content="Vue3로 제작한 프론트엔드 개발 블로그"><meta vmid="keywords" name="meta" content="blog, frontend, vue3, vueCLI4"><meta vmid="og:type" name="meta" content="article"><meta vmid="og:title" name="meta" content="ENJOY DEV"><meta vmid="og:description" name="meta" content="Vue3로 제작한 프론트엔드 개발 블로그"><meta vmid="og:url" name="meta" content="https://yemsu.github.io/"><meta vmid="og:image" name="meta" content="og:image"></head><body><noscript><strong>We're sorry but ENJOY BLOG doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app" data-v-app=""><header data-v-03f1a523=""><h1 data-v-03f1a523=""><a href="/" class="logo size-medium" data-v-6a066cea="" data-v-03f1a523=""><span class="logo-text dev" data-v-6a066cea=""> D<span class="hidden" data-v-6a066cea="">E</span>V </span><span class="logo-text enjoy" data-v-6a066cea=""><span class="common-e" data-v-6a066cea="">E</span>NJOY🌊 </span></a></h1><div class="links" data-v-03f1a523=""><a href="https://github.com/sssjsjj/" title="블로그 주인 Github 구경하러가기" data-v-03f1a523=""><svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="26" data-view-component="true" class="octicon octicon-mark-github v-align-middle"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a></div></header><div class="container size-narrow" data-v-14de9e3e="" data-v-127c7c68=""><main data-v-14de9e3e=""><div class="wrap-info" data-v-127c7c68=""><h2 class="title" data-v-127c7c68="">Vue3 Router 사용하기  (+ 동적 라우팅)</h2><p class="date" data-v-127c7c68="">2022-03-10</p><ul class="keywords" data-v-127c7c68=""><li class="keyword" data-v-127c7c68="">Vue3</li><li class="keyword" data-v-127c7c68="">Router</li><li class="keyword" data-v-127c7c68="">Dynamic Segments</li></ul></div><div class="contents" data-v-127c7c68=""><h3 id="router">router 설치</h3>
+<p>vue3부터는 <code>vue-router</code>가 아닌 <code>vue-router@next</code>를 설치해줘야한다.</p>
+<pre><code>npm i vue-router@next
+</code></pre>
+<h3 id="">폴더 / 모듈 생성</h3>
+<p>src 폴더 내부에 router 폴더를 생성하고 폴더 안에 index.js로 라우터 모듈을 생성해준다.</p>
+<pre><code>mkdir src/router
+touch src/router/index.js
+</code></pre>
+<h3 id="-1">라우터 모듈 작성</h3>
+<p>아래와 같이 라우터 모듈을 작성한다.</p>
+<h5 id="srcrouterindexjs">📃 src/router/index.js</h5>
+<pre><code class="javascript language-javascript">import { createWebHistory, createRouter } from "vue-router";
+import PostList from "./views/Main.vue";
+import PostDetail from "./views/PostDetail.vue";
+
+const routes = [
+  {
+    path: "/",
+    name: "Post List",
+    component: Main,
+  },
+  {
+    path: "/:title",
+    name: "PostDetail",
+    component: PostDetail,
+  },
+];
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+});
+
+export default router;
+</code></pre>
+<blockquote>
+  <h4 id="route">🔎 route 옵션</h4>
+  <ul>
+  <li>path : <code>route</code>를 찾을 수 있는 <code>url path</code></li>
+  <li>name : <code>route</code>로 연결할 때 사용하는 이름(선택)</li>
+  <li>component : <code>route</code>에서 불러와질 컴포넌트</li>
+  </ul>
+  <p>📌 참고 <a href="https://www.vuemastery.com/blog/vue-router-a-tutorial-for-vue-3/">vue-router-a-tutorial-for-vue-3</a></p>
+  <h4 id="historymode">🔎 history mode</h4>
+  <ul>
+  <li>HTML5 모드<ul>
+  <li><code>history: createWebHistory()</code></li>
+  <li>권장 history mode</li>
+  <li>Vue 앱은 Client Side인 SPA앱이기 때문에 url로 다이렉트로 접속하게 되면 404에러가 뜬다. 이런 문제를 해결하기 위해서는 서버측에서 대응이 필요하다. 자세한 내용은 <a href="https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations">공식 문서</a>에서 확인할 수 있다.  </li>
+  <li>url 형태 - https://example.com/user/1</li></ul></li>
+  <li>해시 모드<ul>
+  <li><code>history: createWebHashHistory()</code></li>
+  <li>hash 관련 내용은 서버로 보내지지 않기 때문에 서버측 대응이 필요하지 않다.</li>
+  <li>이런 점은 SEO에 매우 좋지 않다. SEO가 걱정이라면 HTML5모드를 사용해야한다.</li>
+  <li>url 형태 - https://example.com/#home</li></ul></li>
+  </ul>
+  <p>📌 참고 <a href="https://router.vuejs.org/guide/essentials/history-mode.html">Vue Router - Different History modes</a></p>
+</blockquote>
+<h3 id="-2">라우터 모듈 가져오기</h3>
+<p>라우터를 사용한다고 어플리케이션에게 알려준다.</p>
+<h5 id="srcmainjs">📃 /src/main.js</h5>
+<pre><code class="javascript language-javascript">import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router'
+
+const app = createApp(App)
+
+app.use(router).mount('#app')
+</code></pre>
+<h3 id="-3">라우터 영역 지정하기</h3>
+<p>라우터 영역을 지정해준다.</p>
+<h5 id="srcappvue">📃 /src/App.vue</h5>
+<pre><code class="javascript language-javascript">&lt;template&gt;
+  &lt;div id="nav"&gt;
+      &lt;router-link to="/"&gt;Home&lt;/router-link&gt;
+      &lt;router-link to="/about"&gt;About&lt;/router-link&gt;
+  &lt;/div&gt;
+  &lt;router-view /&gt;
+&lt;/template&gt;
+</code></pre>
+<h3 id="-4">동적 라우팅</h3>
+<p>위 소스에서 동적라우팅을 사용한 부분만 가져와보자.<br>
+동적으로 적용할 부분은 콜론(:)이 앞에 붙는다.</p>
+<pre><code class="javascript language-javascript">  {
+    path: "/:title",
+    name: "PostDetail",
+    component: PostDetail,
+  }
+</code></pre>
+<p>해당 부분은 나중에 <code>$route.params.title</code>과 같은 형태로 사용할 수 있다.
+확인해보자.</p>
+<h5 id="srcrouterviewspostdetailvue">📃 src/router/views/PostDetail.vue</h5>
+<pre><code>&lt;template&gt;
+  &lt;h1&gt;PostDetail&lt;/h1&gt;
+  &lt;p&gt;{{ $route.params.title }}&lt;/p&gt;ㅍ
+&lt;/template&gt;
+</code></pre>
+<p>결과는 아래와 같다.</p>
+<figure>
+  <img src="/posts/images/vue3-dynamic-route-result-in-browser.jpg" alt="router params값 호출 화면">
+  <figcaption><code>:title</code>로 지정한 부분이 <code>$route.params.title</code>로 불러와지고 있다.</figcaption>
+</figure></div></main></div></div><script src="/js/chunk-vendors.085d28d0.js"></script><script src="/js/app.ddef898b.js"></script></body></html>
