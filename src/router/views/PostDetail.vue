@@ -1,7 +1,7 @@
 <template>
   <container-comp :size="'narrow'">
     <div v-if="post && post.title" class="wrap-info">
-      <h2 class="title">{{ post.title.replace('<br>', '') }}</h2>
+      <h2 class="title">{{ post.title.replace(/<br>/ig, '') }}</h2>
       <p class="date">{{ post.date }}</p>
       <ul class="keywords">
         <li
