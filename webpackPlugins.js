@@ -7,7 +7,7 @@ const posts = postsInfo.filter(post => !post.hidden)
 const routes = posts.map(post => `/${post.name}`)
 const paths = posts.map(post => {
   return {
-    path: `/${post.name}`,
+    path: `/${post.name}/`,
     lastmod: post.lastmod,
     changefreq: 'yearly'
   }
