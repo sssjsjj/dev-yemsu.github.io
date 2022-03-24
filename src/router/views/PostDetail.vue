@@ -25,11 +25,6 @@ export default {
   components: {
     ContainerComp
   },
-  data() {
-    return {
-      isLoading: true
-    }
-  },
   computed: {
     ...mapGetters({
       contents: 'getMD',
@@ -40,7 +35,6 @@ export default {
     const postName = this.$route.params.title
     await this.$store.dispatch('GET_MD', postName)
     await this.$store.dispatch('GET_POST', postName)
-    this.isLoading = false
   },
 }
 </script>
