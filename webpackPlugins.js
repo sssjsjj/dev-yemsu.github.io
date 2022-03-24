@@ -8,12 +8,10 @@ const routes = posts.map(post => `/${post.name}`)
 const paths = posts.map(post => {
   return {
     path: `/${post.name}`,
-    lastmod: post.sitemap.lastmod,
-    priority: post.sitemap.priority,
-    changefreq: post.sitemap.changefreq
+    lastmod: post.lastmod,
+    changefreq: 'yearly'
   }
 })
-
 module.exports = [
   new PrerenderSpaPlugin({
     staticDir: path.join(__dirname, 'docs'),
