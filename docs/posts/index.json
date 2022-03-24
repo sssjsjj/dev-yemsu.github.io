@@ -5,6 +5,7 @@
     "date": "2022-03-06",
     "keywords": ["Vue3", "project"],
     "description": "Vue3로 직접 개발해 Github Pages로 배포까지! 블로그 만들기 프로젝트",
+    "lastmod": "2022-03-17",
     "hidden": true
   },
   {
@@ -13,11 +14,7 @@
     "date": "2022-03-05",
     "keywords": ["Vue3", "vue-meta", "SPA SEO", "Vue CLI"],
     "description": "Vue3에서 vue-meta를 설치하고 페이지별 메타태그를 적용해봅니다.",
-    "sitemap": {
-      "lastmod": "2022-03-17",
-      "priority": 0.9,
-      "changefreq": "yearly"
-    }
+    "lastmod": "2022-03-17"
   },
   {
     "name": "vue-cli-working-with-sass",
@@ -25,11 +22,7 @@
     "date": "2022-03-05",
     "keywords": ["Vue CLI", "Sass"],
     "description": "Vue CLI에서 Sass를 설치하고 Global Sass까지 적용해봅니다.",
-    "sitemap": {
-      "lastmod": "2022-03-05",
-      "priority": 0.9,
-      "changefreq": "yearly"
-    }
+    "lastmod": "2022-03-05"
   },
   {
     "name": "vue3-router",
@@ -37,11 +30,7 @@
     "date": "2022-03-10",
     "keywords": ["Vue3", "Router", "Dynamic Segments"],
     "description": "Vue CLI에서 Router를 설치하고 사용합니다. 각 옵션에 대한 내용과 함께 동적 라우팅도 설정합니다.",
-    "sitemap": {
-      "lastmod": "2022-03-10",
-      "priority": 0.9,
-      "changefreq": "yearly"
-    }
+    "lastmod": "2022-03-10"
   },
   {
     "name": "node-js-es6-plus-env-setting",
@@ -49,10 +38,6 @@
     "date": "2022-02-27",
     "keywords": ["Node.js", "babel", "jest", "webpack", "polyfill"],
     "description": "Node.js 환경에서 babel, babel polyfill, jest, webpack 설치/세팅으로 JavaScript 개발 환경을 구축한 과정",
-    "sitemap": {
-      "lastmod": "2022-02-27",
-      "priority": 0.9,
-      "changefreq": "yearly"
-    }
+    "lastmod": "2022-02-27"
   }
 ]
