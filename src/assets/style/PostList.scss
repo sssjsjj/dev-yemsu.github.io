@@ -1,5 +1,5 @@
 $post-item-width: 300px;
-$post-item-gap: 25px;
+$post-item-gap: 30px;
 
 .wrap-list-post {
   @include flexBox(unset, center);
@@ -20,8 +20,8 @@ $post-item-gap: 25px;
   border-radius: $border-radius;
   .title {
     @include flexBox();
-    height: 140px;
-    padding: 0 40px;
+    height: 120px;
+    padding: 0 20px;
     background-color: $bg-gray;
     word-break: keep-all;
     font-size: 1.1em;
@@ -36,7 +36,8 @@ $post-item-gap: 25px;
     padding: 12px 15px 15px;
   }
   .description {
-    height: 6em;
+    height: 5em;
+    font-size: 0.95em;
     word-break: keep-all;
   }
   .date {
