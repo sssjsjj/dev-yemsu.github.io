@@ -25,11 +25,6 @@ export default {
   components: {
     ContainerComp
   },
-  data() {
-    return {
-      isLoading: true
-    }
-  },
   computed: {
     ...mapGetters({
       contents: 'getMD',
