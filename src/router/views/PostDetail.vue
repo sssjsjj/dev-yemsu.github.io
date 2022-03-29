@@ -13,7 +13,7 @@
         </li>
       </ul>
     </div>
-    <div class="contents" v-html="contents"></div>
+    <article class="contents" v-html="contents"></article>
   </container-comp>
 </template>
 
@@ -24,11 +24,6 @@ import { mapGetters } from 'vuex';
 export default {
   components: {
     ContainerComp
-  },
-  data() {
-    return {
-      isLoading: true
-    }
   },
   computed: {
     ...mapGetters({
