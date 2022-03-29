@@ -13,7 +13,7 @@
         </li>
       </ul>
     </div>
-    <div class="contents" v-html="contents"></div>
+    <article class="contents" v-html="contents"></article>
   </container-comp>
 </template>
 
