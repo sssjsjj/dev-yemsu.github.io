@@ -7,13 +7,6 @@
     "description": "Vue CLI 4 환경에서 마크다운 파일을 불러오고 html로 변환합니다."
   },
   {
-    "name": "vue-devtools-not-detected-vue3",
-    "title": "Vue3 <br>Vue.js devtools - not detected",
-    "date": "2021-11-12",
-    "keywords": ["Vue3", "Vue.js devtools"],
-    "description": "Vue.js devtools - not detected 이슈 해결"
-  },
-  {
     "name": "make-github-io-blog-with-vue3",
     "title": "Vue3 <br>Github Pages 블로그 <br>직접 만들기",
     "date": "2022-03-06",
@@ -53,5 +46,12 @@
     "keywords": ["Node.js", "babel", "jest", "webpack", "polyfill"],
     "description": "Node.js 환경에서 babel, babel polyfill, jest, webpack 설치/세팅으로 JavaScript 개발 환경을 구축한 과정",
     "lastmod": "2022-02-27"
+  },
+  {
+    "name": "vue-devtools-not-detected-vue3",
+    "title": "Vue3 <br>Vue.js devtools - not detected",
+    "date": "2021-11-12",
+    "keywords": ["Vue3", "Vue.js devtools"],
+    "description": "Vue.js devtools - not detected 이슈 해결"
   }
 ]
