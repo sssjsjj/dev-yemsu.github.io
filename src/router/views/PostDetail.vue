@@ -31,11 +31,10 @@ export default {
       post: 'getPost'
     }),
   },
-  async created() {
+  created() {
     const postName = this.$route.params.title
-    await this.$store.dispatch('GET_MD', postName)
-    await this.$store.dispatch('GET_POST', postName)
-    this.isLoading = false
+    this.$store.dispatch('GET_MD', postName)
+    this.$store.dispatch('GET_POST', postName)
   },
 }
 </script>

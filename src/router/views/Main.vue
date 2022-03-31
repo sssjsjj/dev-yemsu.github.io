@@ -17,7 +17,6 @@ export default {
   computed: {
     ...mapGetters({
       posts: 'getPosts'
-      
     })
   },
   created() {

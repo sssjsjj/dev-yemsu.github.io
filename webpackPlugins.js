@@ -8,7 +8,7 @@ const routes = posts.map(post => `/${post.name}`)
 const paths = posts.map(post => {
   return {
     path: `/${post.name}/`,
-    lastmod: post.lastmod,
+    lastmod: post.lastmod || post.date,
     changefreq: 'yearly'
   }
 })
