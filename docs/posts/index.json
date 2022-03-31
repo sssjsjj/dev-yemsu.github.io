@@ -1,5 +1,19 @@
 [
   {
+    "name": "vue-make-http-module",
+    "title": "Vue <br>HTTP 호출 모듈 만들기",
+    "date": "2022-03-31",
+    "keywords": ["Vue", "esModule", "axios"],
+    "description": "HTTP 호출 로직을 esModule로 제작해 재사용할 수 있도록 리팩토링 합니다."
+  },
+  {
+    "name": "vue-cli-4-use-static-file",
+    "title": "Vue CLI 4 <br>static 파일 사용하기",
+    "date": "2022-03-31",
+    "keywords": ["Vue CLI 4", "Vue3", "static file", "axios", "env", "json", "markdown"],
+    "description": "Vue CLI 4 환경에서 json, markdown과 같은 static파일을 axios를 이용해 호출합니다. (+ 환경 파일 설정)"
+  },
+  {
     "name": "vue-cli-4-import-markdown-convert-to-html",
     "title": "Vue CLI 4 <br>마크다운 파일을 불러와 <br>HTML로 변환하기",
     "date": "2022-03-29",
