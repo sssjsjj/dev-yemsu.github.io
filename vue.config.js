@@ -1,4 +1,4 @@
-const webpackPlugins = require('./webpackPlugins')
+const webpackPlugins = require('./webpack.plugin')
 
 module.exports = {
   outputDir: 'docs',
