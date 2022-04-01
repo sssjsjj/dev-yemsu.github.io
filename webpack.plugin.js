@@ -19,7 +19,7 @@ module.exports = [
     postProcess(renderedRoute) {
       let { html, route } = renderedRoute;
       const { title, description, keywords } = posts.find(post => route.includes(post.name))
-      const titleText = title.replace(/<br>/ig, '')
+      const titleText = title ? title.replace(/<br>/ig, '') : process.env.VUE_APP_TITLE
       const descriptionText = description || '우당탕탕 프론트엔드 개발 일지 Github pages 블로그'
       const keywordsText = keywords || '개발, 프론트엔드, 블로그, github pages, Vue3'
       const url = `${process.env.VUE_APP_BASE_URL}${route}`
