@@ -57,6 +57,7 @@ $column-gap: 30px;
     @include mobile {
       height: auto;
       padding: 15px;
+      font-size: 1.2em;
       > .title-text {
         :deep(br) {
           display: none;
