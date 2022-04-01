@@ -1,5 +1,23 @@
-$post-item-width: 300px;
-$post-item-gap: 30px;
+$column-width: 300px;
+$column-gap: 30px;
+
+@mixin columnWidth($columnW, $num, $gap) {
+  width: calc(($columnW * $num) + ($gap * ($num - 1)));
+}
+
+@mixin columnWrapWidth($columnW, $num, $gap) {
+  $scroll-width: 20px;
+  $total-column-width: $columnW * ($num + 1);
+  $total-gap: $gap * $num;
+  $total-container-padding: $container-padding-x-pc * 2;
+  $etc-width: $scroll-width - 1;  
+  $max-width: $total-column-width + $total-gap + $total-container-padding + $etc-width;
+  $min-width: $max-width - $columnW - $gap;
+
+  @media (min-width: $min-width) and (max-width: $max-width) {
+    @include columnWidth($columnW, $num, $gap)
+  }
+}
 
 .wrap-list-post {
   @include flexBox(unset, center);
@@ -7,17 +25,22 @@ $post-item-gap: 30px;
 .list-post {
   display: flex;
   flex-wrap: wrap;
-  gap: $post-item-gap;
-  width: calc(($post-item-width * 4) + ($post-item-gap * 3));
-  @media screen and (max-width: 1385px) {
-    width: calc(($post-item-width * 3) + ($post-item-gap * 2));
+  gap: $column-gap;
+  @include columnWidth($column-width, 5, $column-gap);
+  @for $column-num from 2 to 5 {
+    @include columnWrapWidth($column-width, $column-num, $column-gap);
+  }
+  @include mobile {
+    flex-direction: column;
   }
 }
 .post {
   $border-radius: 5px 5px 0 0;
-  width: $post-item-width;
   border: 1px solid $line-light-gray;
   border-radius: $border-radius;
+  @include pc {
+    width: $column-width;
+  }
   .title {
     @include flexBox();
     height: 120px;
@@ -31,17 +54,38 @@ $post-item-gap: 30px;
     > .title-text {
       color: #fff;
     }
+    @include mobile {
+      height: auto;
+      padding: 15px;
+      > .title-text {
+        :deep(br) {
+          display: none;
+        }
+      }
+    }
   }
   .wrap-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     padding: 12px 15px 15px;
+    @include mobile {
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+    }
   }
   .description {
-    height: 5em;
     font-size: 0.95em;
-    word-break: keep-all;
+    @include pc {
+      height: 5em;
+      word-break: keep-all;
+    }
+    @include mobile {
+      width: 100%;
+    }
   }
   .date {
-    margin-top: 10px;
     line-height: 1;
     font-size: 0.8em;
     color: $text-light-gray;
@@ -50,7 +94,6 @@ $post-item-gap: 30px;
     display: flex;
     flex-wrap: wrap;
     gap: 0.4em;
-    margin-top: 15px;
     .keyword {
       padding: 0.3em 0.4em;
       font-size: 0.8em;
