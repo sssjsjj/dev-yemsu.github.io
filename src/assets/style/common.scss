@@ -4,14 +4,17 @@
 body {
   font-size: 16px;
   line-height: 1.5;
-  color: $color-black;
+  color: var(--color-black);
   font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
   @include mobile {
     font-size: 14px;
   }
+  @media (prefers-color-scheme: dark) {
+    background: $bg-black;
+  }
 }
 a, button {
-  color: $color-black;
+  color: var(--color-black);
   &:hover {
     opacity: 0.6;
     transition: opacity 0.2s;

@@ -5,7 +5,10 @@ $container-padding-x-m: 20px;
 
 // color
 $color-black: #000;
+$color-point: rgb(111, 0, 255);
+$color-point-2: rgb(43, 144, 202);
 
+$bg-black: #0d1117;
 $bg-gray: #eee;
 $bg-light-gray: #f6f6f6;
 $line-gray: #ccc;
@@ -13,5 +16,26 @@ $line-light-gray: #eee;
 $text-gray: #777;
 $text-light-gray: #999;
 
-$color-point: rgb(111, 0, 255);
-$color-point-2: rgb(43, 144, 202);
+
+// https://stackoverflow.com/questions/57017955/is-there-a-way-to-add-dark-mode-to-my-application-with-scss
+
+:root {
+  --color-black: #{$color-black};
+  --bg-gray: #{$bg-gray};
+  --bg-light-gray: #{$bg-light-gray};
+  --line-gray: #{$line-gray};
+  --line-light-gray: #{$line-light-gray};
+  --text-gray: #{$text-gray};
+  --text-light-gray: #{$text-light-gray};
+}
+:root {
+  @media (prefers-color-scheme: dark) {
+    --color-black: #d8dde4;
+    --bg-gray: #2b323b;
+    --bg-light-gray: #262e38;
+    --line-gray: #{$line-gray};
+    --line-light-gray: #1f2630;
+    --text-gray: #{$text-gray};
+    --text-light-gray: #6e7480;
+  }
+}
