@@ -24,14 +24,14 @@ export default {
 .logo {
   display: block;
   position: relative;
-  font-weight: 500;
-  transform: rotate(-18deg);
+  margin-bottom: -10px;
+  font-weight: 600;
+  transform: rotate(-25deg);
   &.size-medium {
     font-size: 20px;
-  }
-
-  .emoji-main {
-    font-size: 50px;
+    @include mobile {
+      font-size: 17px;
+    }
   }
   .logo-text {
     &.dev {
