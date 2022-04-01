@@ -9,6 +9,7 @@
         <router-link
           :to="post.name"
           :title="post.title.replace(/<br>/ig, '')"
+          class="link-post"
         >
           <h3
             class="title"
