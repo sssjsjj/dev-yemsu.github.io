@@ -31,10 +31,10 @@
   },
   {
     "name": "vue-meta-with-vue3",
-    "title": "Vue3 <br>vue-meta 적용하기",
+    "title": "Vue3 <br>vue-meta 패키지 적용하기",
     "date": "2022-03-05",
     "keywords": ["Vue3", "vue-meta", "SPA SEO", "Vue CLI"],
-    "description": "Vue3에서 vue-meta를 설치하고 페이지별 메타태그를 적용해봅니다.",
+    "description": "Vue3에서 vue-meta 패키지를 설치하고 페이지별 메타태그를 적용해봅니다.",
     "lastmod": "2022-03-17"
   },
   {
