@@ -539,9 +539,3 @@ https://mygumi.tistory.com/385
 
 이모지 파비콘 등록했다
 https://css-tricks.com/emoji-as-a-favicon/
-
-포스팅 작성하다가 public폴더에 있다고 굳이 axios를 사용할필요가 없다.
-http통신이 필요하다기보다는 파일을 읽기만 하면 되기 때문에 import로 변경했다.
-raw-loader다시 설치하고 axios 제거했 다.
-참고.
-https://stackoverflow.com/questions/50869127/what-is-the-difference-between-import-and-fetch-when-using-a-local-json-file

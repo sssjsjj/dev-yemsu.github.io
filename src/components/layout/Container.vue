@@ -23,12 +23,17 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  padding: 50px;
-  &.size-narrow {
-    main {
-      width: 800px;
-      margin: 0 auto;
+  padding: 50px $container-padding-x-pc;
+  @include pc {
+    &.size-narrow {
+      main {
+        width: 800px;
+        margin: 0 auto;
+      }
     }
+  }
+  @include mobile {
+    padding: 30px $container-padding-x-m;
   }
 }
 </style>

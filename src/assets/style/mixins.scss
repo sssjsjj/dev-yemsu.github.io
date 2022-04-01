@@ -3,3 +3,15 @@
   align-items: $al;
   justify-content: $jc;
 }
+
+@mixin pc {
+  @media screen and (min-width: ($mobile-width + 1)) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: $mobile-width) {
+    @content;
+  }
+}
