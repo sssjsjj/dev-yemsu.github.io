@@ -20,23 +20,25 @@ module.exports = [
       let { html, route } = renderedRoute;
       const { title, description, keywords } = posts.find(post => route.includes(post.name))
       const titleText = title.replace(/<br>/ig, '')
+      const descriptionText = description || '우당탕탕 프론트엔드 개발 일지 Github pages 블로그'
+      const keywordsText = keywords || '개발, 프론트엔드, 블로그, github pages, Vue3'
       const url = `${process.env.VUE_APP_BASE_URL}${route}`
       const imgUrl = `${process.env.VUE_APP_BASE_URL}/images/og_image.jpg`
       
       const metaData = `
         <title>${titleText}</title>
         <meta name="title" content="${titleText}" />
-        <meta name="description" content="${description}" />
-        <meta name="keywords" content="${keywords}" />
+        <meta name="description" content="${descriptionText}" />
+        <meta name="keywords" content="${keywordsText}" />
         <meta property="og:url" content="${url}" />
         <meta property="og:type" content="article" />
         <meta property="og:title" content="${titleText}" />
-        <meta property="og:description" content="${description}" />
+        <meta property="og:description" content="${descriptionText}" />
         <meta property="og:image" content="${imgUrl}" />
         <meta property="twitter:card" content="${imgUrl}" />
         <meta property="twitter:url" content="${url}" />
         <meta property="twitter:title" content="${titleText}" />
-        <meta property="twitter:description" content="${description}" />
+        <meta property="twitter:description" content="${descriptionText}" />
         <meta property="twitter:image" content="${imgUrl}" />
       `;
       const start = html.indexOf('<head>') + '<head>'.length;
