@@ -4,14 +4,26 @@ $container-padding-x-pc: 50px;
 $container-padding-x-m: 20px;
 
 // color
-$color-black: #000;
-
-$bg-gray: #eee;
-$bg-light-gray: #f6f6f6;
-$line-gray: #ccc;
-$line-light-gray: #eee;
-$text-gray: #777;
-$text-light-gray: #999;
-
 $color-point: rgb(111, 0, 255);
 $color-point-2: rgb(43, 144, 202);
+
+:root {
+  --color-black: #000;
+  --bg-white: #fff;
+  --bg-gray: #eee;
+  --bg-light-gray: #f6f6f6;
+  --line-gray: #ccc;
+  --line-light-gray: #eee;
+  --text-gray: #777;
+  --text-light-gray: #999;
+  @media (prefers-color-scheme: dark) {
+    --color-black: #e1e5ec;
+    --bg-white: #0d1117;
+    --bg-gray: #222933;
+    --bg-light-gray: #1e1f22;
+    --line-gray: #323b46;
+    --line-light-gray: #222933;
+    --text-gray: #979ca7;
+    --text-light-gray: #787e8a;
+  }
+}
