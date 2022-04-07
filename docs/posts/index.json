@@ -65,7 +65,7 @@
     "name": "compare-two-git-branches-vscode",
     "title": "VScode <br>Git 브랜치끼리 작업 내용 비교하기",
     "date": "2021-12-27",
-    "keywords": ["Gitlens", "Git", "VScode", "branch"],
+    "keywords": ["Gitlens", "Git", "VScode", "branch", "compare"],
     "description": "VScode의 Gitlens 확장프로그램을 이용하여 브랜치끼리 작업 내용을 비교합니다.",
     "lastmod": "2022-04-01"
   },
