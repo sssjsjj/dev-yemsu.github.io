@@ -36,7 +36,7 @@ export default {
   .logo-text {
     &.dev {
       margin-top: -1.05em;
-      margin-right: -1.1em;
+      margin-right: -1.05em;
       writing-mode: vertical-rl;
       text-orientation: upright;
     }
@@ -45,7 +45,7 @@ export default {
       color: $color-point;
     } 
     .hidden {
-      color: #fff;
+      color: var(--bg-white);
     }
   }
 }

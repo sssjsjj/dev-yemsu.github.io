@@ -2,7 +2,7 @@
 
 .wrap-info {
   padding-bottom: 30px;
-  border-bottom: 1px solid $line-light-gray;
+  border-bottom: 1px solid var(--line-gray);
   text-align: center;
   .title {
     font-size: 2.5em;
@@ -16,7 +16,7 @@
     margin-top: 10px;
     line-height: 1;
     font-size: 0.8em;
-    color: $text-light-gray;
+    color: var(--text-light-gray);
   }
   .keywords {
     display: flex;
@@ -27,7 +27,7 @@
     .keyword {
       padding: 0.3em 0.4em;
       font-size: 0.8em;
-      background-color: $bg-gray;
+      background-color: var(--bg-gray);
       border-radius: 7px;
       line-height: 1;
     }
@@ -53,9 +53,6 @@
     &:not(:first-child) {
       margin-top: 3em;
     }
-    @include pc {
-      text-indent: -0.3em;
-    }
   }
   h4 {
     font-size: 1.3em;
@@ -77,19 +74,19 @@
     text-align: center;
     img {
       max-width: 100%;
-      border: 1px solid $line-light-gray;
+      border: 1px solid var(--line-light-gray);
     }
     figcaption {
       margin-top: 10px;
       font-size: 0.85em;
-      color: $text-gray;
+      color: var(--text-gray);
       font-style: italic;
     }
   }
   blockquote {
     margin: 15px 0 25px;
     padding: 20px;
-    background-color: $bg-light-gray;
+    background-color: var(--bg-light-gray);
     border-left: 5px solid $color-point-2;
   }
   cite,
@@ -112,7 +109,7 @@
   code {
     margin-right: 1px;
     padding: 0 0.2em 0.1em;
-    background-color: $bg-gray;
+    background-color: var(--bg-gray);
     border-radius: 2px;
     font-size: 0.9em;
     line-height: 1.9;
@@ -122,11 +119,11 @@
     overflow-x: auto;
     margin: 15px 0 25px;
     padding: 15px;
-    background-color: $bg-gray;
+    background-color: var(--bg-gray);
   }
   hr {
     margin: 85px 0;
-    border-top: 1px solid $line-gray;
+    border-color: var(--line-gray);
   }
   ul {
     padding-left: 2em;
