@@ -50,7 +50,9 @@ export default router;
 > - HTML5 모드
 >     - <code>history: createWebHistory()</code>
 >     - 권장 history mode
->     - Vue 앱은 Client Side인 SPA앱이기 때문에 url로 다이렉트로 접속하게 되면 404에러가 뜬다. 이런 문제를 해결하기 위해서는 서버측에서 대응이 필요하다. 자세한 내용은 [공식 문서](https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations)에서 확인할 수 있다.  
+>     - Vue 앱은 Client Side인 SPA앱이기 때문에 url로 다이렉트로 접속하게 되면 404에러가 뜬다. 이런 문제를 해결하기 위해서는 서버측에서 대응이 필요하다. [공식 문서](https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations)에서 확인할 수 있다.  
+>         - 나는 [prerender-spa-plugin](https://github.com/chrisvfritz/prerender-spa-plugin)을 사용하여 해결하였다.  
+>         👉 [Webpack prerender-spa-plugin 사용하기 포스팅](webpack-prerender-spa-plugin)
 >     - url 형태 - https://example.com/user/1
 > - 해시 모드
 >     - <code>history: createWebHashHistory()</code>
@@ -104,7 +106,7 @@ app.use(router).mount('#app')
 ```
 <template>
   <h1>PostDetail</h1>
-  <p>{{ $route.params.title }}</p>ㅍ
+  <p>{{ $route.params.title }}</p>
 </template>
 ```
 

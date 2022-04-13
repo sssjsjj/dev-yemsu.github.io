@@ -1,5 +1,12 @@
 [
   {
+    "name": "webpack-prerender-spa-plugin",
+    "title": "Webpack <br>prerender-spa-plugin 사용하기",
+    "date": "2022-04-13",
+    "keywords": ["Vue CLI 4", "SPA", "SEO", "meta", "HTML5 mode"],
+    "description": "Vue CLI 4 환경에서 prerender-spa-plugin을 이용하여 CSR의 단점인 SEO와 router history mode의 단점을 해결합니다."
+  },
+  {
     "name": "vue-make-http-module",
     "title": "Vue <br>HTTP 요청 모듈 만들기",
     "date": "2022-03-31",
