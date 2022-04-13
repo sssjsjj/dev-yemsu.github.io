@@ -13,8 +13,5 @@ module.exports = {
         additionalData: `@import "@/assets/style/global.scss";`
       }
     }
-  },
-  transpileDependencies: [
-    'vue-meta',
-  ],
+  }
 }
