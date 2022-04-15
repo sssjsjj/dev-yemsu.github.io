@@ -192,5 +192,5 @@ Uncaught (in promise) Error: No manager or current instance
 Vue3에서 사용하기위해 <code>vue-meta</code> 알파 버전을 설치했는데 아직 안되는걸까? 관련 자료가 너무 부족해서 알아볼수가 없다.😭  
 추후 알게되면 포스팅을 업데이트할 예정이다.
 
-결국 그래서 나는 <code>vue-meta</code>사용을 포기하고 <code>webpack prerender-spa-plugin</code>의 <code>html</code>에 <code>meta</code>를 삽입하는 방식으로 진행했다.  
+결국 그래서 나는 <code>webpack prerender-spa-plugin</code>의 <code>html</code>에 <code>meta</code>를 삽입하는 방식으로 진행했다.  
 👉 [Webpack prerender-spa-plugin 사용하기 포스팅](webpack-prerender-spa-plugin)
