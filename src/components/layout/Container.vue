@@ -1,8 +1,6 @@
 <template>
   <div :class="`container size-${size}`">
-    <main>
-      <slot></slot>
-    </main>
+    <slot></slot>
   </div>
 </template>
 
@@ -23,17 +21,17 @@ export default {
 
 <style lang="scss" scoped>
 .container {
+  max-width: 100%;
   padding: 50px $container-padding-x-pc;
+  box-sizing: content-box;
   @include pc {
     &.size-narrow {
-      main {
-        width: 800px;
-        margin: 0 auto;
-      }
+      width: $container-narrow-width;
+      margin: 0 auto;
     }
   }
   @include mobile {
-    padding: 30px $container-padding-x-m;
+    padding: 30px $container-padding-x-mo;
   }
 }
 </style>
