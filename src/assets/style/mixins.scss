@@ -5,13 +5,13 @@
 }
 
 @mixin pc {
-  @media screen and (min-width: ($mobile-width + 1)) {
+  @media screen and (min-width: ($mobile-size + 1)) {
     @content;
   }
 }
 
 @mixin mobile {
-  @media screen and (max-width: $mobile-width) {
+  @media screen and (max-width: $mobile-size) {
     @content;
   }
 }

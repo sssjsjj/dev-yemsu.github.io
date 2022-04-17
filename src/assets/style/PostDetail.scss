@@ -36,7 +36,7 @@ $margin-medium: 40px;
     }
   }
 }
-:deep(.contents) {
+:deep(.article) {
   padding: 50px 20px 100px;
   @include mobile {
     padding: 20px 0;

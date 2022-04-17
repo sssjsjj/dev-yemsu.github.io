@@ -30,7 +30,7 @@ header {
   justify-content: space-between;
   padding: 50px $container-padding-x-pc 30px;
   @include mobile {
-    padding: 40px $container-padding-x-m;
+    padding: 40px $container-padding-x-mo;
   }
 }
 nav {
