@@ -67,14 +67,16 @@ export default {
   position: fixed;
   left: calc(50% + ($container-narrow-width / 2));
   margin-left: 10px;
-  padding-left: 20px;
+  padding-left: 15px;
   border-left: 1px solid var(--line-light-gray);
-  font-weight: 200;
+  font-weight: var(--font-light);
   font-size: 14px;
   ul {
     li {
       opacity: .5;
+      transition: 0.2s opacity;
       &.active {
+        font-weight: var(--font-medium);
         opacity: 1;
       }
       &:nth-child(n+2) {
