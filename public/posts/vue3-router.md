@@ -1,18 +1,18 @@
 ### router 설치
-vue3부터는 <code>vue-router</code>가 아닌 <code>vue-router@next</code>를 설치해줘야한다.
+vue3부터는 <code>vue-router</code>가 아닌 <code>vue-router@next</code>를 설치해줘야합니다.
 ```
-npm i vue-router@next
+yarn add vue-router@next
 ```
 
 ### 폴더 / 모듈 생성
-src 폴더 내부에 router 폴더를 생성하고 폴더 안에 index.js로 라우터 모듈을 생성해준다.
+src 폴더 내부에 router 폴더를 생성하고 폴더 안에 index.js로 라우터 모듈을 생성해줍니다.
 ```
 mkdir src/router
 touch src/router/index.js
 ```
 
 ### 라우터 모듈 작성
-아래와 같이 라우터 모듈을 작성한다.
+아래와 같이 라우터 모듈을 작성합니다.
 ##### 📃 src/router/index.js
 ```javascript
 import { createWebHistory, createRouter } from "vue-router";
@@ -63,7 +63,7 @@ export default router;
 > 📌 참고 [Vue Router - Different History modes](https://router.vuejs.org/guide/essentials/history-mode.html)
 
 ### 라우터 모듈 가져오기
-라우터를 사용한다고 어플리케이션에게 알려준다.
+라우터를 사용한다고 어플리케이션에게 알려줍니다.
 ##### 📃 /src/main.js
 ```javascript
 import { createApp } from 'vue'
@@ -76,7 +76,7 @@ app.use(router).mount('#app')
 ```
 
 ### 라우터 영역 지정하기
-라우터 영역을 지정해준다.
+라우터 영역을 지정해줍니다.
 ##### 📃 /src/App.vue
 ```javascript
 <template>
@@ -89,8 +89,8 @@ app.use(router).mount('#app')
 ```
 
 ### 동적 라우팅
-위 소스에서 동적라우팅을 사용한 부분만 가져와보자.  
-동적으로 적용할 부분은 콜론(:)이 앞에 붙는다.
+위 소스에서 동적라우팅을 사용한 부분입니다.
+동적으로 적용할 부분은 콜론(:)이 앞에 붙습니다.
 ```javascript
   {
     path: "/:title",
@@ -99,8 +99,7 @@ app.use(router).mount('#app')
   }
 ```
 
-해당 부분은 나중에 <code>$route.params.title</code>과 같은 형태로 사용할 수 있다.
-확인해보자.
+동적 라우팅으로 지정한 <code>:title</code>은 아래와 같이 <code>$route.params.title</code>과 같은 형태로 사용할 수 있습니다.
 
 ##### 📃 src/router/views/PostDetail.vue
 ```
@@ -110,8 +109,8 @@ app.use(router).mount('#app')
 </template>
 ```
 
-결과는 아래와 같다.
+결과는 아래와 같습니다.
 <figure>
   <img src="/posts/images/vue3-dynamic-route-result-in-browser.jpg" alt="router params값 호출 화면">
-  <figcaption><code>:title</code>로 지정한 부분이 <code>$route.params.title</code>로 불러와지고 있다.</figcaption>
+  <figcaption><code>:title</code>로 지정한 부분이 <code>$route.params.title</code>로 불러와지고 있습니다.</figcaption>
 </figure>

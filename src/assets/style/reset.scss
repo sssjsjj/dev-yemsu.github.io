@@ -4,8 +4,11 @@
   vertical-align: top;
   box-sizing: border-box;
 }
-ul, li, dl, dt, dd, ol {
+ul > li, dt, dd {
   list-style: none;
+}
+ol > li {
+  list-style-position: inside;
 }
 button {
   appearance: none;

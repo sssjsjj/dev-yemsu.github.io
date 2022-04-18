@@ -131,7 +131,7 @@ $margin-medium: 40px;
     border-color: var(--line-gray);
   }
   ul {
-    margin-bottom: $margin-medium;
+    margin: $margin-small 0 $margin-medium;
     padding-left: 2em;
     li {
       list-style: disc;
@@ -153,7 +153,7 @@ $margin-medium: 40px;
   .text-ps {
     padding: 30px;
     text-align: center;
-    font-weight: 200;
+    font-weight: var(--font-light);
     background-color: var(--bg-light-gray);
     // border: 1px solid $color-point;
   }

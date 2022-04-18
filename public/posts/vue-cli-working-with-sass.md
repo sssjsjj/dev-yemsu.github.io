@@ -21,7 +21,7 @@ Vue CLI 내부에 Css 전처리기에 대한 Webpack 설정이 이미 되어있�
 ```
 
 ### 전역 스타일
-전역으로 지정한 scss 파일은 모든 컴포넌트마다 호출된다.
+전역으로 지정한 scss 파일은 모든 컴포넌트마다 호출됩니다.
 ##### 📃 vue.config.js
 ```
 module.exports = {
@@ -42,13 +42,13 @@ module.exports = {
 @import './mixins.scss';
 ```
 
-vs code에서 <code>import</code>가 자동완성 되길래 그대로 썼었는데 css로 컴파일이 안돼서 한참을 삽질했었다.
-알고보니 <code>@import url('')</code>로 되어있었다. ㅎ
+vs code에서 <code>import</code>가 자동완성 되길래 그대로 썼었는데 css로 컴파일이 안돼서 한참을 삽질했었는데
+알고보니 <code>@import url('')</code>로 되어있었답니다. ㅎ
 
 <cite class="refer">[Vue CLI - Passing Options to Pre-Processor Loaders](https://cli.vuejs.org/guide/css.html#passing-options-to-pre-processor-loaders)</cite>
 
 #### Global !== Common
-전역 스타일을 사이트 공통 스타일과 동일한 개념으로 생각하면 안된다.  
-전역 스타일은 변수나 <code>mixin</code> 같은 특정한 값에 대한 정의들을 매번 <code>import</code> 없이 간편히 꺼내쓰기 위해 지정하는 것이다.
-전역 스타일에 common.scss, reset.scss같은 공통 스타일을 적용하면 컴포넌트마다 해당 코드가 불필요하게 삽입된다.
-공통 스타일은 <code>App.vue</code>에 <code>scoped</code> 설정 없이 삽입하면 된다.  
+전역 스타일은 사이트 공통 스타일과 동일한 개념으로 생각하면 안됩니다.  
+전역 스타일은 변수나 <code>mixin</code> 같은 특정한 값에 대한 정의들을 매번 <code>import</code> 없이 간편히 꺼내쓰기 위함입니다.
+<code>common.scss</code>, <code>reset.scss</code>같은 공통 스타일을 전역 스타일로 적용하면 컴포넌트마다 해당 코드가 불필요하게 삽입됩니다.  
+공통 스타일은 <code>App.vue</code>에 <code>scoped</code> 설정 없이 삽입하면 됩니다.  

@@ -61,12 +61,36 @@
     "lastmod": "2022-03-10"
   },
   {
-    "name": "node-js-es6-plus-env-setting",
-    "title": "Node.js <br>Javascript 개발 환경 <br>구축하기",
+    "name": "node-js-es6-plus-env-setting-4",
+    "title": "Node.js <br>ES6+ 개발 환경 구축하기 <br>Part 4. Webpack",
     "date": "2022-02-27",
-    "keywords": ["Node.js", "babel", "jest", "webpack", "polyfill"],
-    "description": "Node.js 환경에서 babel, babel polyfill, jest, webpack 설치/세팅으로 JavaScript 개발 환경을 구축한 과정",
-    "lastmod": "2022-02-27"
+    "keywords": ["Node.js", "ES6", "setup", "Webpack", "HtmlWebpackPlugin", "devServer", "devtool"],
+    "description": "마지막 과정. Webpack을 세팅하면서 들었던 생각들, 도움된 레퍼런스 등 전반적인 과정을 주로 다룹니다.",
+    "lastmod": "2022-04-18"
+  },
+  {
+    "name": "node-js-es6-plus-env-setting-3",
+    "title": "Node.js <br>ES6+ 개발 환경 구축하기 <br>Part 3. 로컬 서버",
+    "date": "2022-02-27",
+    "keywords": ["Node.js", "ES6", "setup", "Local Server"],
+    "description": "세번째 과정. Node.js 서버를 세팅하면서 들었던 생각들, 도움된 레퍼런스 등 전반적인 과정을 주로 다룹니다.",
+    "lastmod": "2022-04-18"
+  },
+  {
+    "name": "node-js-es6-plus-env-setting-2",
+    "title": "Node.js <br>ES6+ 개발 환경 구축하기 <br>Part 2. Babel",
+    "date": "2022-02-27",
+    "keywords": ["Node.js", "ES6", "setup", "Babel", "Polyfill", "useBuiltIns", "corejs"],
+    "description": "두번째 과정. Babel과 Babel Polyfill을 세팅하면서 들었던 생각들, 도움된 레퍼런스 등 전반적인 과정을 주로 다룹니다.",
+    "lastmod": "2022-04-18"
+  },
+  {
+    "name": "node-js-es6-plus-env-setting-1",
+    "title": "Node.js <br>ES6+ 개발 환경 구축하기 <br>Part 1. Jest",
+    "date": "2022-02-27",
+    "keywords": ["Node.js", "ES6", "setup", "Jest"],
+    "description": "첫번째 과정. 프로젝트 생성과 Jest를 세팅하면서 들었던 생각들, 도움된 레퍼런스 등 전반적인 과정을 주로 다룹니다.",
+    "lastmod": "2022-04-18"
   },
   {
     "name": "compare-two-git-branches-vscode",
