@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     randomRgba() {
-      return randomRgba(100, 180)
+      return randomRgba(120, 170)
     }
   }
 }
