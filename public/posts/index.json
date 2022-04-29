@@ -1,6 +1,13 @@
 [
   {
-    "name": "webpack-prerender-spa-plugin",
+    "name": "make-github-io-blog-with-vue3-1",
+    "title": "Vue3로 블로그 만들기 <br>Part 1. 환경세팅",
+    "date": "2022-04-29",
+    "keywords": ["Vue CLI 4", "Vue 3", "github pages", "blog", "Octokit", "vue-markdown-loader", "markdown-to-vue-loader"],
+    "description": "Vue3로 블로그를 만든 스토리. 정보 전달보다는 전체적인 작업 흐름과 우여곡절 스토리를 주로 다룹니다."
+  },
+  {
+    "name": "Webpack-prerender-spa-plugin",
     "title": "Webpack <br>prerender-spa-plugin 사용하기",
     "date": "2022-04-13",
     "keywords": ["Vue CLI 4", "SPA", "SEO", "meta", "HTML5 mode"],
