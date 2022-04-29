@@ -54,7 +54,7 @@
 &lt;/style&gt;
 </code></pre>
 <h3 id="전역-스타일">전역 스타일</h3>
-<p>전역으로 지정한 scss 파일은 모든 컴포넌트마다 호출된다.</p>
+<p>전역으로 지정한 scss 파일은 모든 컴포넌트마다 호출됩니다.</p>
 <h5 id="vueconfigjs">📃 vue.config.js</h5>
 <pre><code>module.exports = {
   outputDir: 'docs',
@@ -71,13 +71,13 @@
 <pre><code>@import './var.scss';
 @import './mixins.scss';
 </code></pre>
-<p>vs code에서 <code>import</code>가 자동완성 되길래 그대로 썼었는데 css로 컴파일이 안돼서 한참을 삽질했었다.
-알고보니 <code>@import url('')</code>로 되어있었다. ㅎ</p>
+<p>vs code에서 <code>import</code>가 자동완성 되길래 그대로 썼었는데 css로 컴파일이 안돼서 한참을 삽질했었는데
+알고보니 <code>@import url('')</code>로 되어있었답니다. ㅎ</p>
 <p><cite class="refer"><a href="https://cli.vuejs.org/guide/css.html#passing-options-to-pre-processor-loaders">Vue CLI - Passing Options to Pre-Processor Loaders</a></cite></p>
 <h4 id="Global-!==-Common">Global !== Common</h4>
-<p>전역 스타일을 사이트 공통 스타일과 동일한 개념으로 생각하면 안된다.<br>
-전역 스타일은 변수나 <code>mixin</code> 같은 특정한 값에 대한 정의들을 매번 <code>import</code> 없이 간편히 꺼내쓰기 위해 지정하는 것이다.
-전역 스타일에 common.scss, reset.scss같은 공통 스타일을 적용하면 컴포넌트마다 해당 코드가 불필요하게 삽입된다.
-공통 스타일은 <code>App.vue</code>에 <code>scoped</code> 설정 없이 삽입하면 된다.  </p></article><div class="article-bottom" data-v-f9dcc070=""><p class="text-ps" data-v-f9dcc070=""><strong data-v-f9dcc070="">수정이 필요한 부분</strong> 혹은 <strong data-v-f9dcc070="">더 나은 방법</strong>을 알고계신가요? <br data-v-f9dcc070=""> 댓글로 알려주시면 저에게 큰 도움이 됩니다! 😊💜 </p><div class="vue-utterances" data-v-f9dcc070=""><div class="utterances">
+<p>전역 스타일은 사이트 공통 스타일과 동일한 개념으로 생각하면 안됩니다.<br>
+전역 스타일은 변수나 <code>mixin</code> 같은 특정한 값에 대한 정의들을 매번 <code>import</code> 없이 간편히 꺼내쓰기 위함입니다.
+<code>common.scss</code>, <code>reset.scss</code>같은 공통 스타일을 전역 스타일로 적용하면 컴포넌트마다 해당 코드가 불필요하게 삽입됩니다.<br>
+공통 스타일은 <code>App.vue</code>에 <code>scoped</code> 설정 없이 삽입하면 됩니다.  </p></article><div class="article-bottom" data-v-f9dcc070=""><p class="text-ps" data-v-f9dcc070=""><strong data-v-f9dcc070="">수정이 필요한 부분</strong> 혹은 <strong data-v-f9dcc070="">더 나은 방법</strong>을 알고계신가요? <br data-v-f9dcc070=""> 댓글로 알려주시면 저에게 큰 도움이 됩니다! 😊💜 </p><div class="vue-utterances" data-v-f9dcc070=""><div class="utterances">
     <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?async=&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=yemsu%2Fyemsu.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A8001%2Fvue-cli-working-with-sass&amp;origin=http%3A%2F%2Flocalhost%3A8001&amp;pathname=vue-cli-working-with-sass&amp;title=ENJOY+DEV&amp;description=&amp;og%3Atitle=&amp;session=" loading="lazy"></iframe>
   </div></div></div></article></div></div><script src="/js/chunk-vendors.ae88b7ad.js"></script><script src="/js/app.4853140d.js"></script></body></html>
