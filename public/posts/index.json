@@ -1,10 +1,17 @@
 [
   {
+    "name": "make-github-io-blog-with-vue3-2",
+    "title": "Vue3로 <br>Github Pages 블로그 만들기 <br>Part 2. 포스팅 리스트와 헤더",
+    "date": "2022-05-11",
+    "keywords": ["Vue CLI 4", "Vue 3", "github pages", "blog", "posting", "sass", "router 404", "static", "public"],
+    "description": "Vue3로 Github Pages 블로그를 만든 우여곡절 스토리 두번째. 포스팅 리스트, 헤더 작업 그리고 배포."
+  },
+  {
     "name": "make-github-io-blog-with-vue3-1",
-    "title": "Vue3로 블로그 만들기 <br>Part 1. 환경세팅",
+    "title": "Vue3로 <br>Github Pages 블로그 만들기 <br>Part 1. 환경세팅",
     "date": "2022-04-29",
     "keywords": ["Vue CLI 4", "Vue 3", "github pages", "blog", "Octokit", "vue-markdown-loader", "markdown-to-vue-loader"],
-    "description": "Vue3로 블로그를 만든 스토리. 정보 전달보다는 전체적인 작업 흐름과 우여곡절 스토리를 주로 다룹니다."
+    "description": "Vue3로 Github Pages 블로그를 만든 우여곡절 스토리 첫번째. 환경세팅."
   },
   {
     "name": "Webpack-prerender-spa-plugin",
