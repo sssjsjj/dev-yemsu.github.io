@@ -1,6 +1,6 @@
 
 아래 문서를 번역한 포스팅입니다.   
-원문: [Vue.js + Node.js + Express + MongoDB example: MEVN stack CRUD Application](https://www.bezkoder.com/vue-node-express-mongodb-mevn-crud/)
+원문: [Vue.js + Node.js + Express + MongoDB example: MEVN stack CRUD Application](https://www.bezkoder.com/vue-node-express-mongodb-crud/)
 
 - 영어 실력이 미숙하여 번역이 완벽하지 않습니다.
 - 덧붙이고 싶은 내용은 🗨 표시와 함께 정리하였습니다.  
@@ -27,20 +27,20 @@ Firebase로 구현하는 Serverless:
 
 - 새 튜토리얼 추가하기
 <figure>
-  <img src="./posts/images/vue-node-express-mongodb-mevn-crud-translated-ko/add-object-page.jpg" alt="새로운 튜토리얼을 추가하는 화면">
+  <img src="/posts/images/vue-node-express-mongodb-crud-translated-ko/add-object-page.jpg" alt="새로운 튜토리얼을 추가하는 화면">
   <figcaption>text input에 타이틀과 설명글을 입력 후 Submit버튼을 클릭하면 새로운 튜토리얼이 추가됩니다.</figcaption>
 </figure>
 
 - 전체 튜토리얼 리스트 보기
 <figure>
-  <img src="./posts/images/vue-node-express-mongodb-mevn-crud-translated-ko/all-tutorials-page.jpg" alt="전체 튜토리얼 리스트">
+  <img src="/posts/images/vue-node-express-mongodb-crud-translated-ko/all-tutorials-page.jpg" alt="전체 튜토리얼 리스트">
   <figcaption>튜토리얼 리스트를 클릭하면 해당 튜토리얼과 관련된 자세한 내용이 노출됩니다.</figcaption>
 </figure>
 
 - Edit 버튼을 클릭하면 리스트 내용을 수정할 수 있습니다.  
   (🗨 튜토리얼을 그대로 따라했을땐 edit 버튼의 텍스트가 흰색이고 배경 컬러가 없어 보이지 않았습니다. TutorialsList.vue의 edit 버튼에 임시로 컬러를 지정해줬어요. 아래 튜토리얼 상세 페이지에서도 버튼 컬러도 별도로 지정해주었습니다.)
 <figure>
-  <img src="./posts/images/vue-node-express-mongodb-mevn-crud-translated-ko/tutorial-edit-page.jpg" alt="전체 튜토리얼 화면">
+  <img src="/posts/images/vue-node-express-mongodb-crud-translated-ko/tutorial-edit-page.jpg" alt="전체 튜토리얼 화면">
   <figcaption>튜토리얼 리스트를 클릭하면 해당 튜토리얼과 관련된 자세한 내용이 노출됩니다.</figcaption>
 </figure>
 
@@ -51,7 +51,7 @@ Firebase로 구현하는 Serverless:
 
 - 제목으로 리스트 검색하기
 <figure>
-  <img src="./posts/images/vue-node-express-mongodb-mevn-crud-translated-ko/search-lists-by-title.jpg" alt="'vue'로 리스트를 검색한 모습'">
+  <img src="/posts/images/vue-node-express-mongodb-crud-translated-ko/search-lists-by-title.jpg" alt="'vue'로 리스트를 검색한 모습'">
   <figcaption>'vue'로 검색한 결과 화면</figcaption>
 </figure>
 
@@ -76,7 +76,7 @@ Node.js Express App이 export할 API들 입니다.
 
 #### 프로젝트 폴더 구조
 <figure>
-  <img src="./posts/images/vue-node-express-mongodb-mevn-crud-translated-ko/node-express-project-structure.jpg" alt="Node.js Express 프로젝트 폴더 구조">
+  <img src="/posts/images/vue-node-express-mongodb-crud-translated-ko/node-express-project-structure.jpg" alt="Node.js Express 프로젝트 폴더 구조">
   <figcaption>Node.js Express 프로젝트 폴더 구조</figcaption>
 </figure>
 
@@ -152,8 +152,8 @@ app.listen(PORT, () => {
 이제 <code>node server.js</code> 명령으로 app을 실행해보세요.  
 브라우저에서 http://localhost:8080/ 을 열어보면 아래와 같이 보일겁니다.
 <figure>
-  <img src="./posts/images/vue-node-express-mongodb-mevn-crud-translated-ko/run-app-after-setup-server.jpg" alt="실행된 node.js app 페이지">
-  <figcaption>출처 - https://www.bezkoder.com/vue-node-express-mongodb-mevn-crud/</figcaption>
+  <img src="/posts/images/vue-node-express-mongodb-crud-translated-ko/run-app-after-setup-server.jpg" alt="실행된 node.js app 페이지">
+  <figcaption>출처 - https://www.bezkoder.com/vue-node-express-mongodb-crud/</figcaption>
 </figure>
 
 예~~ 첫번째 단계가 끝났습니다! 다음 섹션에서는 Mongoose를 이용한 작업을 해볼거예요.
@@ -342,7 +342,7 @@ Node.js Express App을 계속해서 구현하고 싶다면 이 포스팅을 확�
 
 #### 프로젝트 폴더 구조
 <figure>
-  <img src="./posts/images/vue-node-express-mongodb-mevn-crud-translated-ko/vue-project-structure.jpg" alt="Vue Client 프로젝트 폴더 구조">
+  <img src="/posts/images/vue-node-express-mongodb-crud-translated-ko/vue-project-structure.jpg" alt="Vue Client 프로젝트 폴더 구조">
   <figcaption>Vue Client 프로젝트 폴더 구조</figcaption>
 </figure>
 
@@ -522,7 +522,7 @@ export default new TutorialDataService();
 이제 확인해보세요.
 
 <figure>
-  <img src="./posts/images/vue-node-express-mongodb-mevn-crud-translated-ko/vue-app-local-server-screen.jpg" alt="데이터가 잘 불러와지는 vue app">
+  <img src="/posts/images/vue-node-express-mongodb-crud-translated-ko/vue-app-local-server-screen.jpg" alt="데이터가 잘 불러와지는 vue app">
   <figcaption>로컬 서버를 실행해보면 데이터가 잘 불러와 지고 있는 것을 확인할 수 있습니다.</figcaption>
 </figure>
 
@@ -546,3 +546,6 @@ TypeScript를 활용해 Vue App을 만들고 싶다면 요 포스팅을 확인�
 페이지네이션:  
 – [Server side Pagination in Node.js, MongoDB | Mongoose Paginate v2](https://www.bezkoder.com/node-js-mongodb-pagination/)
 – [Vue Pagination with Axios and API (Server Side pagination) example](https://www.bezkoder.com/vue-pagination-axios/)
+
+https://www.bezkoder.com/node-express-mongodb-crud-rest-api/  
+https://www.bezkoder.com/vue-js-crud-app/
