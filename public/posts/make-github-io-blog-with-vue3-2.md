@@ -195,7 +195,7 @@ export default {
 메인페이지에 리스트는 잘 나온다.
 
 <figure>
-  <img src="/posts/images/blog-main-ver-1.jpg" alt="version 1 블로그 메인 페이지">
+  <img src="/posts/images/make-github-io-blog-with-vue3-2/blog-main-ver-1.jpg" alt="version 1 블로그 메인 페이지">
   <figcaption>블로그 메인 페이지 version 1 </figcaption>
 </figure>
 
@@ -205,7 +205,7 @@ export default {
 <code>webpack loader</code>설정을 했으면 되는거 아닌가 싶었는데..
 
 <figure>
-  <img src="/posts/images/github-pages-404.jpg" alt="github pages 404 error">
+  <img src="/posts/images/make-github-io-blog-with-vue3-2/github-pages-404.jpg" alt="github pages 404 error">
   <figcaption>404에러가 뜨고있는 포스트 상세 페이지</figcaption>
 </figure>
 
@@ -218,7 +218,7 @@ static파일들을 public폴더로 바꿔봤다가 <code>history mode</code>에 
 <code>a</code>태그를 <code>router link</code>로 변경하니까 너무너무 잘 나왓다.  
 
 <figure>
-  <img src="/posts/images/vue-cli4-success-load-md-file.jpg" alt="html로 잘 불러와진 마크다운 컨텐츠">
+  <img src="/posts/images/make-github-io-blog-with-vue3-2/vue-cli4-success-load-md-file.jpg" alt="html로 잘 불러와진 마크다운 컨텐츠">
   <figcaption>html로 잘 불러와진 마크다운 컨텐츠</figcaption>
 </figure>
 
