@@ -1,5 +1,12 @@
 [
   {
+    "name": "vue-node-express-mongodb-crud-app-translated-ko",
+    "title": "Vue.js + Node.js + Express + MongoDB 튜토리얼: MEVN stack CRUD Application (번역)",
+    "date": "2022-05-17",
+    "keywords": ["Vue.js", "Node.js", "Express", "MongoDB", "CRUD", "Full-stack", "Data base", "tutorial"],
+    "description": "Vue.js + Node.js + Express + MongoDB를 이용하여 CRUD App 만들기 튜토리얼 포스팅을 한국어로 번역한 내용입니다."
+  },
+  {
     "name": "make-github-io-blog-with-vue3-2",
     "title": "Vue3로 <br>Github Pages 블로그 만들기 <br>Part 2. 포스팅 리스트와 헤더",
     "date": "2022-05-11",

@@ -66,7 +66,7 @@ yarn add @octokit/core
 - **Expiration**은 30days로 되어있었는데 그때마다 재생성하긴 귀찮아서 90days로 했다.    
 - **Scopes**는 쭉 읽어봤는데 딱히 필요없을 것 같고 나중에 수정이 가능할 것 같아서 default 체크 항목 그대로 토큰을 생성했다. 
 <figure>
-  <img src="./posts/images/octokit-new-token-page.jpg" alt="Octokit 토큰 발급 페이지">
+  <img src="/posts/images/octokit-new-token-page.jpg" alt="Octokit 토큰 발급 페이지">
   <figcaption>위와 같이 정보를 입력하고 Octokit 토큰을 발급 받았다</figcaption>
 </figure>
 
