@@ -1,5 +1,12 @@
 [
   {
+    "name": "code-syntax-highlight-package",
+    "title": "마크다운으로 작성한 블로그 포스팅에 코드 하이라이트 적용하기",
+    "date": "2022-05-20",
+    "keywords": ["highlight.js", "markdown", "source code", "Vue 3 blog", "highlight theme", "dark mode"],
+    "description": "블로그 포스팅 마크다운에 코드 하이라이트를 적용합니다. 다크 모드 여부에 따라 다른 스타일을 적용합니다."
+  },
+  {
     "name": "vue-node-express-mongodb-crud-app-translated-ko",
     "title": "Vue.js + Node.js + Express + MongoDB 튜토리얼: MEVN stack CRUD Application (번역)",
     "date": "2022-05-17",

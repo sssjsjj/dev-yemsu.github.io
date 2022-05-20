@@ -31,6 +31,7 @@
 import VueUtterances from "vue-utterances";
 import ContainerComp from '@/components/layout/Container.vue'
 import OutLiner from '@/components/OutLiner.vue'
+import { isDarkMode } from '@/utils'
 import { mapGetters } from 'vuex';
 
 export default {
@@ -50,9 +51,8 @@ export default {
       post: 'getPost'
     }),
     colorTheme() {
-      const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      return isDark ? 'dark' : 'light'
-    }
+      return isDarkMode() ? 'dark' : 'light'
+    },
   },
   async created() {
     const postName = this.$route.params.title
