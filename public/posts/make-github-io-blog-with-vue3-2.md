@@ -5,7 +5,8 @@
 ##### 📃 src/utils/posts.js
 리스트를 그릴때 사용할 포스팅에 대한 정보를 아래와 같은 형식으로 만들었다.  
 내용이 점점 많아질테니 컴포넌트에서 <code>import</code>할 시간을 절약하기 위해 <code>string</code>으로 변환해서 <code>export</code>했다.
-``` javascript
+
+```javascript
 const posts = [
   {
     'name': 'markdown-file-name',
@@ -22,6 +23,7 @@ export default JSON.stringify(posts)
 
 ##### 📃 src/router/views/PostList.vue
 만들어놨던 데이터를 <code>import</code>해서 <code>json</code>으로 <code>parse</code>한 후에 임시로 데이터 바인딩했다.
+
 ```html
 <template>
   <div>
@@ -64,6 +66,7 @@ export default {
 - - -
 ### sass 설치 하기
 스타일을 적용하기 위해 <code>css</code> 전처리기인 <code>sass</code>를 사용했다.
+
 ```
 yarn add sass sass-loader@10 -D
 ```
@@ -88,6 +91,7 @@ body {
 로고랑 깃헙링크도 컴포넌트로 만들어서 <code>header</code> 컴포넌트 내부에 삽입해줬다.
 
 ##### 📃 /src/components/layout/Header.vue
+
 ```html
 <template>
   <header>
@@ -134,6 +138,7 @@ nav {
 우선은 <code>header</code>에서 필요한 사이즈만 지정하고 추후 다른 사이즈가 필요하게 되면 사이즈 옵션을 추가할 예정이다.
 
 ##### 📃 src/components/Logo.vue
+
 ```html
 <template>
   <a href="/" :class="`logo size-${size}`">

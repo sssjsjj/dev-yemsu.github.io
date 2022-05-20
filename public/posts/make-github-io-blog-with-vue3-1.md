@@ -20,11 +20,13 @@ Tistory 블로그를 운영하다가 최근에 Velog로 마크다운을 사용�
 - - -
 ### Vue3 프로젝트 생성
 <code>Vue3</code> 프로젝트를 생성했다.
+
 ```
 $ vue create yemsu.github.io
 ```
 
 GitHub에 repository를 생성하고 <code>remote add</code> 해주었다.
+
 ```
 $ git remote add origin https://github.com/sssjsjj/yemsu.github.io.git
 ```
@@ -33,6 +35,7 @@ $ git remote add origin https://github.com/sssjsjj/yemsu.github.io.git
 - - -
 ### 폴더 구조
 [[Vue] 🌱우아한 프로젝트 구조 짜기](https://velog.io/@cindy-choi/Vue-%EC%9A%B0%EC%95%84%ED%95%9C-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%EC%A1%B0-%EC%A7%9C%EA%B8%B0)를 참고했다. 좋은 글이다!
+
 ```
 src
   ㄴ assets
@@ -57,6 +60,7 @@ src
 #### 삽질 1. Github API Octokit 시도 💦
 먼저 마크다운을 HTML로 변환하기 위한 방법을 찾아봤다.  
 [GitHub API](https://docs.github.com/en/rest/reference)에서 제공하는 기능이 있길래 시도해봤다.  [@octokit/core](https://github.com/octokit/core.js#readme) 라이브러리 패키지를 먼저 설치하고
+
 ```
 yarn add @octokit/core
 ```
@@ -72,6 +76,7 @@ yarn add @octokit/core
 
 3. 생성한 토큰을 아래와 같이 넣고 테스트를 위해 마크다운을 입력해서 실행해봤다. <code>html</code>로 변환된 결과는 <code>htmlContents</code> 데이터 값에 저장하고 <code>template</code>의 <code>v-html</code> 디렉티브에 값을 넣어 확인해봤다.
 ##### 📃 App.vue
+
 ```javascript
 <template>
   <div v-html="htmlContents"></div>
@@ -110,10 +115,12 @@ html로 잘 들어간 것을 확인했다!
 - - -
 ### 마크다운 파일 가져오기
 작성된 파크다운 파일 하나를 vue파일 상단에서 import 해봤다.
+
 ```javascript
 import text from "./contents/make-github-io-blog-with-vue3.md";
 ```
 에러가 떴다.
+
 ```
 Failed to compile.
 
@@ -125,11 +132,13 @@ md 확장자에 대한 로더를 별도로 설정해줘야 한다.
 
 #### 삽질 1. vue-markdown-loader 시도 💦
 서치해보고 [vue-markdown-loader](https://www.npmjs.com/package/vue-markdown-loader) 패키지를 설치했다.
+
 ```
 yarn add vue-markdown-loader -D
 ``` 
 <code>vue.config.js</code> 파일을 루트 경로에 생성하고 [가이드](https://github.com/QingWei-Li/vue-markdown-loader)에서 **With Vue CLI 3**에 대한 내용 그대로 넣었다.
 ##### 📃 vue.config.js
+
 ```javascript
 module.exports = {
   chainWebpack: config => {
@@ -147,6 +156,7 @@ module.exports = {
 }
 ```
 그래 에러야.. 안녕
+
 ```
 [vue-loader] vue-template-compiler must be installed as a peer dependency, or a compatible compiler implementation must be passed via options.
 ```
@@ -160,6 +170,7 @@ module.exports = {
 #### 삽질 2. markdown-to-vue-loader 시도 💦
 더 뒤져서 <code>Vue3</code>까지 지원하는 [markdown-to-vue-loader](https://www.npmjs.com/package/markdown-to-vue-loader?activeTab=dependencies)를 찾았고 가이드 대로 <code>vue.config.js</code>를 작성했다.
 ##### 📃 vue.config.js
+
 ```javascript
 module.exports = {
   chainWebpack: config => {
@@ -172,6 +183,7 @@ module.exports = {
 }
 ```
 그리고 에러를 또 만났다.
+
 ```
 Syntax Error: TypeError: this.getOptions is not a function
 ```
@@ -182,6 +194,7 @@ Syntax Error: TypeError: this.getOptions is not a function
 #### 삽질 3. @mdx-js/loader 시도 💦
  그렇게 찾은 [@mdx-js/loader](https://www.npmjs.com/package/@mdx-js/loader).
 설치를하고 공식문서대로 loader 설정했다.
+
 ```javascript
 module.exports = {
   chainWebpack: config => {
@@ -207,9 +220,11 @@ module.exports = {
 - - -
 ### 동적 라우팅 적용
 라우터를 설치/설정 했다. 
+
 ```
 yarn add vue-router@next
 ```
+
 자세한 과정은 ["Vue3 Router 사용하기 (+ 동적 라우팅)](vue3-router)에서!  
 
 이제 <code>param</code>값을 이용하여 원하는 마크다운 파일을 불러들이도록 작업할 수 있다.
