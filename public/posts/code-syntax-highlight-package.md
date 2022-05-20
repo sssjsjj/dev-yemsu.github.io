@@ -104,6 +104,7 @@ export default htmlConverter
 
 🗨 원래는 다크모드 여부에 따라 url 스트링값을 변수에 저장해놓고 그 변수를 <code>import()</code> 인자로 넣었었다. 그런데 자꾸 해당 경로에 module이 없다고 에러가 떠서 인자값을 변수가 아니라 직접 스트링 값으로 넣으니까 잘 됐다. <code>import()</code>는 변수를 인자로 사용할 수 없는것인가..?
 ##### 📃 src/utils/highlighter.js (상단)
+
 ```javascript
 import hljs from 'highlight.js';
 import { isDarkMode } from '@/utils'
@@ -122,6 +123,7 @@ isDarkMode
 함수는 언제나 사용할 수 있는 <code>highlighter</code>와 마크다운에만 사용할 수 있는 <code>mdHighlighter</code> 두가지로 분리했다.  
 highlight.js는 <code> pre > code</code>태그를 감지해서 내부 코드를 마크업으로 감싸는 방식이다. 그래서 마크다운 파일에서 코드블럭 영역만 미리 <code> pre > code</code>태그로 감싸서 <code>highlight()</code>메서드에 넘겨줘야했다 . 그리고 그 과정에서 마크다운에 작성해놨던 코드블럭 언어 설정도 클래스명으로 삽입하도록 작업했다.
 ##### 📃 src/utils/highlighter.js (하단)
+
 ```javascript
 export const highlighter = (code, codeType) => {
   return hljs.highlight(code, {language: codeType}).value
