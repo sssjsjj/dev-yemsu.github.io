@@ -1,6 +1,7 @@
 
 ### [Babel](https://babeljs.io/docs/en/usage)로 ES6+ 환경 설정하기
 #### Babel CLI 설치
+
 ```
 yarn add -D @babel/core @babel/cli @babel/preset-env
 ```
@@ -10,6 +11,7 @@ yarn add -D @babel/core @babel/cli @babel/preset-env
 - <code>@babel/preset-env</code> : <code>.babelrc</code>의 <code>targets</code> 옵션에 선언된 환경에 대응할 수 있는 plugin들을 모아놓은 preset 라이브러리. 가장 많이 쓰인다.
 
 ##### 📃 package.json
+
 ```json
 {
   "devDependencies": {
@@ -22,12 +24,14 @@ yarn add -D @babel/core @babel/cli @babel/preset-env
 ```
 #### Babel 설정
 프로젝트 루트에 <code>.babelrc</code> 파일 생성
+
 ```
 $ touch .babelrc
 ```
 아래와 같이 <code>@babel/preset-env</code> preset을 사용하겠다고 설정하고
 어떤 브라우저에 대응할지 <code>targets</code> 옵션에 선언했다. ([바벨 공식 문서](https://babeljs.io/docs/en/usage)에 있는 옵션)
 ##### 📃 .babelrc
+
 ```json
 {
   "presets": [
@@ -57,6 +61,7 @@ $ touch .babelrc
 }
 ```
 #### 🔎 Babel CLI 명령어
+
 ```
 babel src/lib -w -d dist/js
 ```
@@ -68,6 +73,7 @@ babel src/lib -w -d dist/js
 테스트 해보기 위해 graph.js에 <code>arrow function</code>과 <code>Set</code>을 사용 후 빌드해보았다.
 그러나 아래와 같이 상단에 <code>"use strict";</code>만 추가되고 변한게 없다.
 ##### 📃 lib/graph.js
+
 ```javascript
 function graph(num) {
   const setInstance = new Set([1, 2, 3, 4, 5]);
@@ -77,6 +83,7 @@ function graph(num) {
 module.exports = graph
 ```
 ##### 📃 dist/js/graph.js
+
 ```javascript
 "use strict";
 
@@ -137,6 +144,7 @@ ES5에 비어있는 ES6 객체, 메소드들을 충전솜처럼 폴리필이 채
 #### 🔎  useBuiltIns 옵션 종류
 - <code>**usage**</code>
 : 실제 사용한 폴리필만 삽입된다. import 문 변경이 아닌 삽입이므로 폴리필 모듈을 전역 스코프에 삽입하지 않아도 된다.
+
   ```javascript
   //before transpiling
   Promise.resolve().finally();
@@ -164,6 +172,7 @@ ES5에 비어있는 ES6 객체, 메소드들을 충전솜처럼 폴리필이 채
 테스트를 위해 넣었던 ie는 타겟옵션에서 제거했다.
 
 ##### 📃 .babelrc
+
 ```json
 {
   "presets": [
@@ -186,6 +195,7 @@ ES5에 비어있는 ES6 객체, 메소드들을 충전솜처럼 폴리필이 채
 #### Babel 실행 
 모듈이 추가 된 것을 확인할 수 있다.🕵️‍♀️
 ##### 📃 dist/js/graph.js
+
 ```javascript
 "use strict";
 

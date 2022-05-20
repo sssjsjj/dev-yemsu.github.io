@@ -152,6 +152,7 @@ module.exports = {
 - <code>none</code>: 기본 최적화 옵션 설정 해제
 
 ##### 📃 webpack.config.js
+
 ```javascript
 module.exports = {
   // ...
@@ -169,6 +170,7 @@ module.exports = {
 나는 <code>HtmlWebpackPlugin</code>을 사용했다.
 webpack 번들을 호출하는 HTML 파일을 자동으로 생성해준다.
 사용하기 위해서는 package 설치가 필요하다.
+
 ```
 yarn add -D html-webpack-plugin
 ```
@@ -193,6 +195,7 @@ module.exports = {
 #### devServer
 
 사용하기 위해서는 package 설치가 필요하다.
+
 ```
 yarn add -D webpack-dev-server
 ```
@@ -215,6 +218,7 @@ module.exports = {
 
 webpack dev server 사용으로 package.json의 scripts 옵션을 수정했다.
 기존에 <code>dev</code> 값에 지정되어 있던 Node.js 서버 실행 커맨드를 <code>webpack serve</code>로 바꾸고, <code>build</code>의 <code>watch</code>옵션을 제거했다.
+
 ```json
 "scripts": {
   "dev": "webpack serve",
@@ -225,6 +229,7 @@ webpack dev server 사용으로 package.json의 scripts 옵션을 수정했다.
 
 ### 완성된 Webpack 설정
 ##### 📃 webpack.config.js
+
 ```javascript
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');

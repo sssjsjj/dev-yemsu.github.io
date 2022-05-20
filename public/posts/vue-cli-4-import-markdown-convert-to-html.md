@@ -52,6 +52,7 @@ data() {
 
 > #### Inline으로 md파일을 호출하고싶다면?
 > 만약 vue.config.js파일에서 <code>loader</code>설정없이 파일 하나만 얼렁 호출하고싶다면 경로 앞에  <code>raw-loader!</code>를 붙여주는 방법도 있다.
+>
 > ```
 > import post from "raw-loader!../../public/posts/make-github-io-blog-with-vue3.md";
 > ```
@@ -154,6 +155,7 @@ route.params 설정에 대한 자세한 내용은 ["Vue3 Router 사용하기  (+
 promise 객체를 객체 구조 분해 할당으로 바로 default에 담아보려고 했으나 default라는 변수명은 작성할 수 없는 것 같다.
 
 #### 📃 src/router/views/PostDetail.vue
+
 ```javascript
 <template>
   <div v-html="contents"></div>

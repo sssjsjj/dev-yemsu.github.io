@@ -1,5 +1,6 @@
 ### 설치
 <code>sass</code>와 <code>sass-loader</code>를 설치합니다.
+
 ```
 yarn add sass sass-loader@10 -D
 ```
@@ -23,6 +24,7 @@ Vue CLI 내부에 Css 전처리기에 대한 Webpack 설정이 이미 되어있�
 ### 전역 스타일
 전역으로 지정한 scss 파일은 모든 컴포넌트마다 호출됩니다.
 ##### 📃 vue.config.js
+
 ```
 module.exports = {
   outputDir: 'docs',
@@ -37,6 +39,7 @@ module.exports = {
 ```
 
 ##### 📃 src/assets/style/global.scss
+
 ```
 @import './var.scss';
 @import './mixins.scss';

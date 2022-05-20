@@ -13,11 +13,13 @@ Node.js로만 서버 구축하는건 아래처럼 불편한점이 많다고 한�
 ### Node.js 서버 설정
 💡 개발 서버 실행을 위해 세팅 했던 것으로, [다음 포스팅](node-js-es6-plus-env-setting-4)에서 webpack-dev-server로 대체됨 💡
 프로젝트 루트에 <code>app.js</code> 파일 생성
+
 ```
 $ touch app.js
 ```
 [node.js 공식 문서](https://nodejs.org/ko/docs/guides/getting-started-guide/) 와 [zerocho 블로그](https://www.zerocho.com/category/NodeJS/post/57774a8eacbd2e9803de0195)를 참고해서 아래와 같이 작성했다.
 ##### 📃 app.js
+
 ```javascript
 const http = require('http'); // 서버 만드는 모듈
 const url = require('url'); // 주소 분석 모듈
