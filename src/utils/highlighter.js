@@ -37,7 +37,7 @@ export const mdHighlighter = (md) => {
     const code = codeArea.substr(codeStartIndex).trim()
     const highlightCode= codeType ? highlighter(code, codeType) : code
 
-    highlightSplittedMd.push(splittedMd[index])
+    highlightSplittedMd.push(splittedMd[index]+'\n')
     highlightSplittedMd.push(`<pre><code${codeType ? ` class="language-${codeType}"` : ''}>`)
     highlightSplittedMd.push(highlightCode)
     highlightSplittedMd.push(`</code></pre>`)
