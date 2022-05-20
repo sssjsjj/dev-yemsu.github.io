@@ -18,10 +18,12 @@ Tistory 블로그를 운영하다가 최근에 Velog로 마크다운을 사용�
 - - -
 ## 프로젝트 생성
 Vue3 프로젝트를 생성했다.
+
 ```
 $ vue create yemsu.github.io
 ```
 GitHub에 repository를 생성하고 remote add 해주었다.
+
 ```
 $ git remote add origin https://github.com/sssjsjj/yemsu.github.io.git
 ```
@@ -29,6 +31,7 @@ $ git remote add origin https://github.com/sssjsjj/yemsu.github.io.git
 - - -
 ## 폴더 구조 잡기
 [[Vue] 🌱우아한 프로젝트 구조 짜기](https://velog.io/@cindy-choi/Vue-%EC%9A%B0%EC%95%84%ED%95%9C-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%EC%A1%B0-%EC%A7%9C%EA%B8%B0)를 참고했다.
+
 ```
 src
   ㄴ assets
@@ -49,6 +52,7 @@ src
 마크다운으로 입력한 컨텐츠를 화면에 렌더링 시키는 방법에 대해서 먼저 고민했다.
 [GitHub API](https://docs.github.com/en/rest/reference)에서 제공하는 기능을 사용하기로 했다. 해당 API를 사용하기 위해서는 
 [@octokit/core](https://github.com/octokit/core.js#readme) 라이브러리 패키지를 설치해야한다.
+
 ```
 yarn add @octokit/core
 ```
@@ -66,6 +70,8 @@ yarn add @octokit/core
 
 3. 생성한 토큰을 아래와 같이 넣고 임시로 테스트 해볼 마크다운 텍스트로 html 변환 요청을 했다. 결과 값은 <code>htmlContents</code> 데이터 값에 저장하고 v-html 디렉티브에 값을 넣어 확인해봤다.
 #### 📃 App.vue
+
+
 ```javascript
 <template>
   <div v-html="htmlContents"></div>
@@ -103,10 +109,13 @@ export default {
 - - -
 ## 마크다운 파일 컨텐츠 가져오기
 작성된 파크다운 파일 하나를 vue파일 상단에서 import 해봤다.
+
+
 ```javascript
 import text from "./contents/make-github-io-blog-with-vue3.md";
 ```
 에러가 떴다.
+
 ```
 Failed to compile.
 
@@ -114,14 +123,18 @@ Failed to compile.
 Module parse failed: Assigning to rvalue (1:2)
 You may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders
 ```
+
 해당 파일 타입에 대한 로더를 설정해줘야 한다고 한다. 
 [vue-markdown-loader](https://www.npmjs.com/package/vue-markdown-loader) 패키지를 설치했다.
+
 ```
 yarn add vue-markdown-loader -D
 ``` 
+
 vue.config.js 파일을 루트 경로에 생성하고
 패키지 공식 가이드에서 **With Vue CLI3**에 대한 내용 그대로 넣었다.
 #### 📃 vue.config.js
+
 ```javascript
 module.exports = {
   chainWebpack: config => {
@@ -139,6 +152,7 @@ module.exports = {
 }
 ```
 그래 에러야.. 안녕
+
 ```
 [vue-loader] vue-template-compiler must be installed as a peer dependency, or a compatible compiler implementation must be passed via options.
 ```
@@ -149,6 +163,7 @@ vue-template-compiler 가 peer dependency로 꼭 깔려있어야 하거나 호�
 그래도 안된다. 더 찾아보니 <code>vue-markdown-loader</code> 자체가 vue3까지는 지원이 안된다고한다.
 더 뒤져서  vue3까지 지원하는 [markdown-to-vue-loader](https://www.npmjs.com/package/markdown-to-vue-loader?activeTab=dependencies)를 찾았고 가이드 대로 vue config파일을 작성했다.
 #### 📃 vue.config.js
+
 ```javascript
 module.exports = {
   chainWebpack: config => {
@@ -161,12 +176,14 @@ module.exports = {
 }
 ```
 그리고 에러를 또 만났다.
+
 ```
 Syntax Error: TypeError: this.getOptions is not a function
 ```
 호환되지 않는 패키지 일때 뜨는 에러라고 한다.  
 구글링으로 원하는 패키지를 찾기가 많이 힘들다. 생각해보니 npm 공식 사이트에서 서치해보는게 훨씬 정확할 것 같았다. 그렇게 찾은 [@mdx-js/loader](https://www.npmjs.com/package/@mdx-js/loader).
 설치를하고 공식문서대로 loader 설정했다.
+
 ```javascript
 module.exports = {
   chainWebpack: config => {
@@ -204,6 +221,7 @@ DB설정까지 해줘야해서 새로 공부할게 생각보다 훨씬 많았다
 list를 그릴때 사용할 post 데이터를 아래와 같은 형식으로 만들었다.
 내용이 점점 많아질테니 컴포넌트에서 import할 시간을 절약하기 위해 string으로 변환해서 export했다.
 #### 📃 src/utils/posts.js
+
 ``` javascript
 const posts = [
   {
@@ -287,6 +305,7 @@ body {
 로고랑 깃헙링크도 컴포넌트로 만들어서 <code>header</code> 컴포넌트 내부에 삽입해줬다.
 
 ## 📃 /src/components/layout/Header.vue
+
 ```html
 <template>
   <header>
@@ -333,6 +352,7 @@ nav {
 우선은 <code>header</code>에서 필요한 사이즈만 지정하고 추후 다른 사이즈가 필요하게 되면 사이즈 옵션을 추가할 예정이다.
 
 #### 📃 src/components/Logo.vue
+
 ```html
 <template>
   <a href="/" :class="`logo size-${size}`">
@@ -438,6 +458,7 @@ router의 history mode의 단점인 해당 url로 바로 갔을때 404에러가 
 [Vue - HTTP 호출 모듈 만들기](vue-make-http-module) 
 
 ##### 📃 src/router/views/Main.vue 
+
 ```html
 <script>
 // import axios from 'axios'  // as-is

@@ -28,10 +28,12 @@
 
 ### 프로젝트 생성
 <code>yarn</code>을 설치한적 없다면 먼저 설치
+
 ```
 npm install -g yarn
 ```
 <code>yarn</code> 프로젝트를 생성
+
 ```
 yarn init -y
 ```
@@ -39,6 +41,7 @@ yarn init -y
 
 package파일이 생성됐다.
 ##### 📃 package.json
+
 ```json
 {
   "name": "vanilla-poll-graph",
@@ -65,6 +68,7 @@ package파일이 생성됐다.
 
 아래는 폴더, 파일을 생성하는 명령어.
 마우스로 손을 움직이고 커서를 또 폴더 경로로 이동시키고 우클릭 등등... 의 수고를 많이 줄여준다.
+
 ```
 $ mkdir __tests__ lib
 $ touch __tests__/graph.test.js lib/graph.js
@@ -72,6 +76,7 @@ $ touch __tests__/graph.test.js lib/graph.js
 
 #### Jest 설치/NPM 커맨드 지정
 패키지 설치
+
 ```
 yarn add -D jest
 ```
@@ -79,6 +84,7 @@ yarn add -D jest
 <code>scripts</code>속성에 테스트 명령어 지정
 
 ##### 📃 package.json
+
 ```json
 {
   "scripts": {
@@ -91,6 +97,7 @@ yarn add -D jest
 
 우선 참고할 수 있는 소스를 [Jest 공식문서](https://jestjs.io/docs/getting-started)에서 가져와 넣어두었다.
 ##### 📃 \__test__/graph.test.js 
+
 ```
 // 임시 확인용 소스
 const sum = require('../lib/graph');
@@ -100,6 +107,7 @@ test('adds 1 + 2 to equal 3', () => {
 });    
 ```
 ##### 📃 lib/graph.js
+
 ```javascript
 // 임시 확인용 소스
 function sum(a, b) {
@@ -108,6 +116,7 @@ function sum(a, b) {
 module.exports = sum;
 ```
 커맨트 입력하여 테스트 실행
+
 ```
 yarn test
 ```

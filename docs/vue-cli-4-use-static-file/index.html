@@ -118,29 +118,30 @@
   }
 }
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
-<h5 id="srcrouterviewspostdetailvueprec31cpre">📃 src/router/views/PostDetail.vue<pre><code class="language-html">&lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;template&lt;/span&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;div&lt;/span&gt; &lt;span class="hljs-attr"&gt;v-html&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;contents&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;template&lt;/span&gt;&amp;gt;&lt;/span&gt;
+<h5 id="srcrouterviewspostdetailvue">📃 src/router/views/PostDetail.vue</h5>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-html</span>=<span class="hljs-string">"contents"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
-&lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class="javascript"&gt;
-&lt;span class="hljs-keyword"&gt;import&lt;/span&gt; axios &lt;span class="hljs-keyword"&gt;from&lt;/span&gt; &lt;span class="hljs-string"&gt;&amp;#x27;axios&amp;#x27;&lt;/span&gt;
-&lt;span class="hljs-keyword"&gt;import&lt;/span&gt; htmlConverter &lt;span class="hljs-keyword"&gt;from&lt;/span&gt; &lt;span class="hljs-string"&gt;&amp;quot;@/utils/htmlConverter&amp;quot;&lt;/span&gt;;
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">'axios'</span>
+<span class="hljs-keyword">import</span> htmlConverter <span class="hljs-keyword">from</span> <span class="hljs-string">"@/utils/htmlConverter"</span>;
 
-&lt;span class="hljs-keyword"&gt;export&lt;/span&gt; &lt;span class="hljs-keyword"&gt;default&lt;/span&gt; {
-  &lt;span class="hljs-function"&gt;&lt;span class="hljs-title"&gt;data&lt;/span&gt;(&lt;span class="hljs-params"&gt;&lt;/span&gt;)&lt;/span&gt; {
-    &lt;span class="hljs-keyword"&gt;return&lt;/span&gt; {
-      &lt;span class="hljs-attr"&gt;contents&lt;/span&gt;: &lt;span class="hljs-literal"&gt;null&lt;/span&gt;,
-      &lt;span class="hljs-attr"&gt;baseUrl&lt;/span&gt;: process.env.VUE_APP_BASE_URL,
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-function"><span class="hljs-title">data</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> {
+      <span class="hljs-attr">contents</span>: <span class="hljs-literal">null</span>,
+      <span class="hljs-attr">baseUrl</span>: process.env.VUE_APP_BASE_URL,
     }
   },
-  &lt;span class="hljs-function"&gt;&lt;span class="hljs-title"&gt;created&lt;/span&gt;(&lt;span class="hljs-params"&gt;&lt;/span&gt;)&lt;/span&gt; {
-    &lt;span class="hljs-keyword"&gt;const&lt;/span&gt; param = &lt;span class="hljs-built_in"&gt;this&lt;/span&gt;.$route.params.title
-    axios.get(&lt;span class="hljs-string"&gt;`&lt;span class="hljs-subst"&gt;${&lt;span class="hljs-built_in"&gt;this&lt;/span&gt;.baseUrl}&lt;/span&gt;/posts/&lt;span class="hljs-subst"&gt;${param}&lt;/span&gt;.md`&lt;/span&gt;)
-      .then(&lt;span class="hljs-function"&gt;&lt;span class="hljs-params"&gt;res&lt;/span&gt; =&amp;gt;&lt;/span&gt; &lt;span class="hljs-built_in"&gt;this&lt;/span&gt;.contents = htmlConverter(res.data))
-      .catch(&lt;span class="hljs-function"&gt;&lt;span class="hljs-params"&gt;e&lt;/span&gt; =&amp;gt;&lt;/span&gt; &lt;span class="hljs-built_in"&gt;console&lt;/span&gt;.log(&lt;span class="hljs-string"&gt;`ERROR🙄 &lt;span class="hljs-subst"&gt;${e.response.status}&lt;/span&gt; : &lt;span class="hljs-subst"&gt;${e.request.responseURL}&lt;/span&gt;`&lt;/span&gt;))
+  <span class="hljs-function"><span class="hljs-title">created</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">const</span> param = <span class="hljs-built_in">this</span>.$route.params.title
+    axios.get(<span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-built_in">this</span>.baseUrl}</span>/posts/<span class="hljs-subst">${param}</span>.md`</span>)
+      .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> <span class="hljs-built_in">this</span>.contents = htmlConverter(res.data))
+      .catch(<span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`ERROR🙄 <span class="hljs-subst">${e.response.status}</span> : <span class="hljs-subst">${e.request.responseURL}</span>`</span>))
   },
 }
-&lt;/span&gt;&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;</code></pre></h5>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 <p>여기서 <code>process.env.VUE_APP_BASE_URL</code>은 환경 설정 파일에 내가 설정한 base url이다.  </p>
 <p><code>baseUrl</code>없이 <code>axios.get(`/posts/index.json`)</code>로 입력해도 json 파일을 호출할 수 있긴하나 <a href="https://medium.com/@negarjf/how-to-access-a-static-json-file-in-vue-cli-3-8943dc343f95">baseUrl을 삽입하는것을 추천</a>한다고 한다.<br>
 환경 설정은 루트 경로에 .env파일을 생성해 작성 할 수 있다.</p>
@@ -164,29 +165,32 @@
   </ul>
 </blockquote>
 <p>따라서 나는 로컬에서만 사용할 <code>.env.local</code>과 <code>.env.production</code> 파일 두개를 생성해 아래와 같이 작성했다.</p>
-<h5 id="envlocalprec39cpre">📃 .env.local<pre><code>VUE_APP_TITLE=local | DEV BLOG
+<h5 id="envlocal">📃 .env.local</h5>
+<pre><code>VUE_APP_TITLE=local | DEV BLOG
 VUE_APP_BASE_URL=http://localhost:6060
-PORT=6060</code></pre></h5>
-<h5 id="envproductionprec40cpre">📃 .env.production<pre><code>VUE_APP_TITLE=DEV BLOG
-VUE_APP_BASE_URL=https://sssjsjj.github.io</code></pre></h5>
+PORT=6060</code></pre>
+<h5 id="envproduction">📃 .env.production</h5>
+<pre><code>VUE_APP_TITLE=DEV BLOG
+VUE_APP_BASE_URL=https://sssjsjj.github.io</code></pre>
 <p>나는 <code>VUE_APP_TITLE</code>도 지정해놨는데 <code>public/index.html</code>에서 <code>title</code>값을 해당 변수명으로 아래와 같이 지정해주면 사이트 타이틀값이 해당 변수 값으로 적용된다.</p>
-<h5 id="publicindexhtmlprec44cpre">📃 public/index.html<pre><code class="language-html">&lt;span class="hljs-meta"&gt;&amp;lt;!DOCTYPE &lt;span class="hljs-meta-keyword"&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;html&lt;/span&gt; &lt;span class="hljs-attr"&gt;lang&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;meta&lt;/span&gt; &lt;span class="hljs-attr"&gt;charset&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;utf-8&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;meta&lt;/span&gt; &lt;span class="hljs-attr"&gt;http-equiv&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;X-UA-Compatible&amp;quot;&lt;/span&gt; &lt;span class="hljs-attr"&gt;content&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;IE=edge&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;meta&lt;/span&gt; &lt;span class="hljs-attr"&gt;name&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;viewport&amp;quot;&lt;/span&gt; &lt;span class="hljs-attr"&gt;content&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;width=device-width,initial-scale=1.0&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;link&lt;/span&gt; &lt;span class="hljs-attr"&gt;rel&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;icon&amp;quot;&lt;/span&gt; &lt;span class="hljs-attr"&gt;href&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;&amp;lt;%= BASE_URL %&amp;gt;favicon.ico&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;&amp;lt;%= VUE_APP_TITLE %&amp;gt;&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;noscript&lt;/span&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;strong&lt;/span&gt;&amp;gt;&lt;/span&gt;We&amp;#x27;re sorry but &amp;lt;%= VUE_APP_TITLE %&amp;gt; doesn&amp;#x27;t work properly without JavaScript enabled. Please enable it to continue.&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;strong&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;noscript&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;div&lt;/span&gt; &lt;span class="hljs-attr"&gt;id&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;app&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="hljs-comment"&gt;&amp;lt;!-- built files will be auto injected --&amp;gt;&lt;/span&gt;
-  &lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;</code></pre></h5>
+<h5 id="publicindexhtml">📃 public/index.html</h5>
+<pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">""</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"IE=edge"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width,initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"icon"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"&lt;%= BASE_URL %&gt;favicon.ico"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>&lt;%= VUE_APP_TITLE %&gt;<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">noscript</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>We're sorry but &lt;%= VUE_APP_TITLE %&gt; doesn't work properly without JavaScript enabled. Please enable it to continue.<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">noscript</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- built files will be auto injected --&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
 <p>이렇게 <code>static</code> 파일들을 <code>axios</code>로 가져오도록 로직을 변경하고,
 더이상 필요없어진 <code>raw-loader</code> 패키지를 제거하고 <code>vue.config.js</code>에 관련 설정을 제거해줬다.</p>
 <h3 id="Next">Next</h3>
@@ -197,6 +201,6 @@ VUE_APP_BASE_URL=https://sssjsjj.github.io</code></pre></h5>
 <hr>
 <p><cite class="refer">
 <a href="https://medium.com/@negarjf/how-to-access-a-static-json-file-in-vue-cli-3-8943dc343f95">How to access a static JSON file in Vue CLI 3?</a>
-</cite></p></article><div class="article-bottom" data-v-6c33a998=""><p class="text-ps" data-v-6c33a998=""><strong data-v-6c33a998="">수정이 필요한 부분</strong> 혹은 <strong data-v-6c33a998="">더 나은 방법</strong>을 알고계신가요? <br data-v-6c33a998=""> 댓글로 알려주시면 저에게 큰 도움이 됩니다! 😊💜 </p><div class="vue-utterances" data-v-6c33a998=""><div class="utterances">
+</cite></p></article><div class="article-bottom" data-v-6c33a998=""><p class="text-ps" data-v-6c33a998=""><strong data-v-6c33a998="">수정이 필요한 부분</strong> 혹은 <strong data-v-6c33a998="">더 나은 방법</strong>을 알고계신가요? <br data-v-6c33a998=""> 댓글로 알려주시면 저에게 큰 도움이 됩니다! 😊💜 </p><div class="vue-utterances" data-v-6c33a998=""><div class="utterances" style="height: 269px;">
     <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?async=&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=yemsu%2Fyemsu.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A8001%2Fvue-cli-4-use-static-file&amp;origin=http%3A%2F%2Flocalhost%3A8001&amp;pathname=vue-cli-4-use-static-file&amp;title=ENJOY+DEV&amp;description=&amp;og%3Atitle=&amp;session=" loading="lazy"></iframe>
   </div></div></div></article></div></div><script src="/js/chunk-vendors.3a63ba27.js"></script><script src="/js/app.3434b35f.js"></script></body></html>

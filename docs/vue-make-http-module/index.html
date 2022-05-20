@@ -44,70 +44,73 @@
 <h3 id="모듈-공통-로직">모듈 공통 로직</h3>
 <p>현재 get 요청밖에 없기 때문에 get에 대한 내용만 넣었다.
 처음엔 Https 클래스로 할까 고민하다가 굳이 그럴 필요가 없을 것 같아 객체로 만들었다.</p>
-<h5 id="srcutilshttpjsprec0cpre">📃 src/utils/http.js<pre><code class="language-javascript">&lt;span class="hljs-keyword"&gt;import&lt;/span&gt; axios &lt;span class="hljs-keyword"&gt;from&lt;/span&gt; &lt;span class="hljs-string"&gt;&amp;#x27;axios&amp;#x27;&lt;/span&gt;
+<h5 id="srcutilshttpjs">📃 src/utils/http.js</h5>
+<pre><code class="language-javascript"><span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">'axios'</span>
 
-&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; $axios = axios.create({
-  &lt;span class="hljs-attr"&gt;baseURL&lt;/span&gt;: process.env.VUE_APP_BASE_URL
+<span class="hljs-keyword">const</span> $axios = axios.create({
+  <span class="hljs-attr">baseURL</span>: process.env.VUE_APP_BASE_URL
 })
 
-&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; Https = {
-  &lt;span class="hljs-keyword"&gt;async&lt;/span&gt; &lt;span class="hljs-function"&gt;&lt;span class="hljs-title"&gt;get&lt;/span&gt;(&lt;span class="hljs-params"&gt;url = &lt;span class="hljs-string"&gt;&amp;#x27;&amp;#x27;&lt;/span&gt;, params = {}&lt;/span&gt;)&lt;/span&gt; {
-    &lt;span class="hljs-keyword"&gt;return&lt;/span&gt; $axios.get(url, params)
-      .then(&lt;span class="hljs-function"&gt;&lt;span class="hljs-params"&gt;res&lt;/span&gt; =&amp;gt;&lt;/span&gt; res.data)
-      .catch(&lt;span class="hljs-function"&gt;&lt;span class="hljs-params"&gt;e&lt;/span&gt; =&amp;gt;&lt;/span&gt; &lt;span class="hljs-built_in"&gt;console&lt;/span&gt;.log(e))
+<span class="hljs-keyword">const</span> Https = {
+  <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-title">get</span>(<span class="hljs-params">url = <span class="hljs-string">''</span>, params = {}</span>)</span> {
+    <span class="hljs-keyword">return</span> $axios.get(url, params)
+      .then(<span class="hljs-function"><span class="hljs-params">res</span> =&gt;</span> res.data)
+      .catch(<span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> <span class="hljs-built_in">console</span>.log(e))
   }
-}</code></pre></h5>
+}</code></pre>
 <h3 id="세부-요청-로직">세부 요청 로직</h3>
 <p>공통 로직 아래쪽에 아래처럼 각 요청에 대한 함수를 만들어 export했다.
 이것도 파일을 따로 분리할까 고민했지만 아직 소스분량이 얼마되지 않기 때문에 한 파일안에 작업했다.</p>
-<h5 id="srcutilshttpjsprec1cpre">📃 src/utils/http.js (모듈 세분화)<pre><code class="language-javascript">&lt;span class="hljs-keyword"&gt;export&lt;/span&gt; &lt;span class="hljs-keyword"&gt;const&lt;/span&gt; importPostsInfo = &lt;span class="hljs-function"&gt;() =&amp;gt;&lt;/span&gt; {
-  &lt;span class="hljs-keyword"&gt;return&lt;/span&gt; Https.get(&lt;span class="hljs-string"&gt;&amp;#x27;/posts/index.json&amp;#x27;&lt;/span&gt;)
+<h5 id="srcutilshttpjs-1">📃 src/utils/http.js (모듈 세분화)</h5>
+<pre><code class="language-javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> importPostsInfo = <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-keyword">return</span> Https.get(<span class="hljs-string">'/posts/index.json'</span>)
 }
 
-&lt;span class="hljs-keyword"&gt;export&lt;/span&gt; &lt;span class="hljs-keyword"&gt;const&lt;/span&gt; getPostInfo = &lt;span class="hljs-function"&gt;(&lt;span class="hljs-params"&gt;param = {}&lt;/span&gt;) =&amp;gt;&lt;/span&gt; {
-  &lt;span class="hljs-keyword"&gt;const&lt;/span&gt; key = &lt;span class="hljs-built_in"&gt;Object&lt;/span&gt;.keys(param)[&lt;span class="hljs-number"&gt;0&lt;/span&gt;]
-  &lt;span class="hljs-keyword"&gt;const&lt;/span&gt; value = &lt;span class="hljs-built_in"&gt;Object&lt;/span&gt;.values(param)[&lt;span class="hljs-number"&gt;0&lt;/span&gt;]
-  &lt;span class="hljs-keyword"&gt;const&lt;/span&gt; getPostInfo = importPostsInfo()
-    .then(&lt;span class="hljs-function"&gt;(&lt;span class="hljs-params"&gt;data&lt;/span&gt;) =&amp;gt;&lt;/span&gt; data.filter(&lt;span class="hljs-function"&gt;&lt;span class="hljs-params"&gt;info&lt;/span&gt; =&amp;gt;&lt;/span&gt; info[key] === value))
-  &lt;span class="hljs-keyword"&gt;return&lt;/span&gt; getPostInfo
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> getPostInfo = <span class="hljs-function">(<span class="hljs-params">param = {}</span>) =&gt;</span> {
+  <span class="hljs-keyword">const</span> key = <span class="hljs-built_in">Object</span>.keys(param)[<span class="hljs-number">0</span>]
+  <span class="hljs-keyword">const</span> value = <span class="hljs-built_in">Object</span>.values(param)[<span class="hljs-number">0</span>]
+  <span class="hljs-keyword">const</span> getPostInfo = importPostsInfo()
+    .then(<span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> data.filter(<span class="hljs-function"><span class="hljs-params">info</span> =&gt;</span> info[key] === value))
+  <span class="hljs-keyword">return</span> getPostInfo
 }
 
-&lt;span class="hljs-keyword"&gt;export&lt;/span&gt; &lt;span class="hljs-keyword"&gt;const&lt;/span&gt; importMD = &lt;span class="hljs-function"&gt;(&lt;span class="hljs-params"&gt;param = &lt;span class="hljs-string"&gt;&amp;#x27;&amp;#x27;&lt;/span&gt;&lt;/span&gt;) =&amp;gt;&lt;/span&gt; {
-  &lt;span class="hljs-keyword"&gt;return&lt;/span&gt; Https.get(&lt;span class="hljs-string"&gt;`/posts/&lt;span class="hljs-subst"&gt;${param}&lt;/span&gt;.md`&lt;/span&gt;)
-}</code></pre></h5>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> importMD = <span class="hljs-function">(<span class="hljs-params">param = <span class="hljs-string">''</span></span>) =&gt;</span> {
+  <span class="hljs-keyword">return</span> Https.get(<span class="hljs-string">`/posts/<span class="hljs-subst">${param}</span>.md`</span>)
+}</code></pre>
 <h3 id="컴포넌트에-적용">컴포넌트에 적용</h3>
 <p>이제 모듈을 만들었으니 각 view 컴포넌트 내부를 정리해보자.<br>
 아래는 Main.vue의 script태그에 대한 내용이다. 모듈화 이전 소스를 as-is, 이후 소스를 to-be로 표시했다.<br>
 훨씬 코드가 깔끔해졌다. 뿌듯!  </p>
-<h5 id="srcrouterviewsmainvueprec2cpre">📃 src/router/views/Main.vue <pre><code class="language-html">&lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class="javascript"&gt;
-&lt;span class="hljs-comment"&gt;// import axios from &amp;#x27;axios&amp;#x27;  // as-is&lt;/span&gt;
-&lt;span class="hljs-keyword"&gt;import&lt;/span&gt; ContainerComp &lt;span class="hljs-keyword"&gt;from&lt;/span&gt; &lt;span class="hljs-string"&gt;&amp;#x27;@/components/layout/Container.vue&amp;#x27;&lt;/span&gt;
-&lt;span class="hljs-keyword"&gt;import&lt;/span&gt; PostList &lt;span class="hljs-keyword"&gt;from&lt;/span&gt; &lt;span class="hljs-string"&gt;&amp;#x27;@/components/PostList.vue&amp;#x27;&lt;/span&gt;
-&lt;span class="hljs-keyword"&gt;import&lt;/span&gt; { importPostsInfo } &lt;span class="hljs-keyword"&gt;from&lt;/span&gt; &lt;span class="hljs-string"&gt;&amp;#x27;@/utils/https&amp;#x27;&lt;/span&gt; &lt;span class="hljs-comment"&gt;// to-be&lt;/span&gt;
+<h5 id="srcrouterviewsmainvue">📃 src/router/views/Main.vue</h5>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-comment">// import axios from 'axios'  // as-is</span>
+<span class="hljs-keyword">import</span> ContainerComp <span class="hljs-keyword">from</span> <span class="hljs-string">'@/components/layout/Container.vue'</span>
+<span class="hljs-keyword">import</span> PostList <span class="hljs-keyword">from</span> <span class="hljs-string">'@/components/PostList.vue'</span>
+<span class="hljs-keyword">import</span> { importPostsInfo } <span class="hljs-keyword">from</span> <span class="hljs-string">'@/utils/https'</span> <span class="hljs-comment">// to-be</span>
 
-&lt;span class="hljs-keyword"&gt;export&lt;/span&gt; &lt;span class="hljs-keyword"&gt;default&lt;/span&gt; {
-  &lt;span class="hljs-attr"&gt;components&lt;/span&gt;: {
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">components</span>: {
     ContainerComp,
     PostList
   },
-  &lt;span class="hljs-function"&gt;&lt;span class="hljs-title"&gt;data&lt;/span&gt;(&lt;span class="hljs-params"&gt;&lt;/span&gt;)&lt;/span&gt; {
-    &lt;span class="hljs-keyword"&gt;return&lt;/span&gt; {
-      &lt;span class="hljs-attr"&gt;posts&lt;/span&gt;: [],
-      &lt;span class="hljs-comment"&gt;// as-is&lt;/span&gt;
-      &lt;span class="hljs-comment"&gt;// baseUrl: process.env.VUE_APP_BASE_URL,&lt;/span&gt;
+  <span class="hljs-function"><span class="hljs-title">data</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> {
+      <span class="hljs-attr">posts</span>: [],
+      <span class="hljs-comment">// as-is</span>
+      <span class="hljs-comment">// baseUrl: process.env.VUE_APP_BASE_URL,</span>
     }
   },
-  &lt;span class="hljs-function"&gt;&lt;span class="hljs-title"&gt;created&lt;/span&gt;(&lt;span class="hljs-params"&gt;&lt;/span&gt;)&lt;/span&gt; {
-    &lt;span class="hljs-comment"&gt;// as-is&lt;/span&gt;
-    &lt;span class="hljs-comment"&gt;// axios.get(`${this.baseUrl}/posts/index.json`)&lt;/span&gt;
-    &lt;span class="hljs-comment"&gt;//   .then(res =&amp;gt; this.posts = res.data)&lt;/span&gt;
-    &lt;span class="hljs-comment"&gt;//   .catch(e =&amp;gt; console.log(e))&lt;/span&gt;
+  <span class="hljs-function"><span class="hljs-title">created</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-comment">// as-is</span>
+    <span class="hljs-comment">// axios.get(`${this.baseUrl}/posts/index.json`)</span>
+    <span class="hljs-comment">//   .then(res =&gt; this.posts = res.data)</span>
+    <span class="hljs-comment">//   .catch(e =&gt; console.log(e))</span>
 
-    &lt;span class="hljs-comment"&gt;// to-be&lt;/span&gt;
+    <span class="hljs-comment">// to-be</span>
     importPostsInfo()
-      .then(&lt;span class="hljs-function"&gt;&lt;span class="hljs-params"&gt;data&lt;/span&gt; =&amp;gt;&lt;/span&gt; &lt;span class="hljs-built_in"&gt;this&lt;/span&gt;.posts = data)
+      .then(<span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> <span class="hljs-built_in">this</span>.posts = data)
   }
 }
-&lt;/span&gt;&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;</code></pre></h5></article><div class="article-bottom" data-v-6c33a998=""><p class="text-ps" data-v-6c33a998=""><strong data-v-6c33a998="">수정이 필요한 부분</strong> 혹은 <strong data-v-6c33a998="">더 나은 방법</strong>을 알고계신가요? <br data-v-6c33a998=""> 댓글로 알려주시면 저에게 큰 도움이 됩니다! 😊💜 </p><div class="vue-utterances" data-v-6c33a998=""><div class="utterances" style="height: 269px;">
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre></article><div class="article-bottom" data-v-6c33a998=""><p class="text-ps" data-v-6c33a998=""><strong data-v-6c33a998="">수정이 필요한 부분</strong> 혹은 <strong data-v-6c33a998="">더 나은 방법</strong>을 알고계신가요? <br data-v-6c33a998=""> 댓글로 알려주시면 저에게 큰 도움이 됩니다! 😊💜 </p><div class="vue-utterances" data-v-6c33a998=""><div class="utterances">
     <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?async=&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=yemsu%2Fyemsu.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A8001%2Fvue-make-http-module&amp;origin=http%3A%2F%2Flocalhost%3A8001&amp;pathname=vue-make-http-module&amp;title=ENJOY+DEV&amp;description=&amp;og%3Atitle=&amp;session=" loading="lazy"></iframe>
   </div></div></div></article></div></div><script src="/js/chunk-vendors.3a63ba27.js"></script><script src="/js/app.3434b35f.js"></script></body></html>

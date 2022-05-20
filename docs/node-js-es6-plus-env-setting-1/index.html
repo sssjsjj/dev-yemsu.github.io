@@ -64,16 +64,19 @@
 <a href="https://d2.naver.com/helloworld/2564557">위 참고 페이지</a>에 시작하는 방법이 나와있으니 따라서 해본다! 아주 옛날 글이지만 정리가 굉장히 잘 되어있다.</p>
 <hr>
 <h3 id="프로젝트-생성">프로젝트 생성</h3>
-<p><code>yarn</code>을 설치한적 없다면 먼저 설치</p><pre><code>npm install -g yarn</code></pre>
-<code>yarn</code> 프로젝트를 생성<pre><code>yarn init -y</code></pre>
-<code>-y</code> 플래그를 사용하여 기본 설정으로 생성<p></p>
+<p><code>yarn</code>을 설치한적 없다면 먼저 설치</p>
+<pre><code>npm install -g yarn</code></pre>
+<p><code>yarn</code> 프로젝트를 생성</p>
+<pre><code>yarn init -y</code></pre>
+<p><code>-y</code> 플래그를 사용하여 기본 설정으로 생성</p>
 <p>package파일이 생성됐다.</p>
-<h5 id="packagejsonprec10cpre">📃 package.json<pre><code class="language-json">{
-  &lt;span class="hljs-attr"&gt;&amp;quot;name&amp;quot;&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;vanilla-poll-graph&amp;quot;&lt;/span&gt;,
-  &lt;span class="hljs-attr"&gt;&amp;quot;version&amp;quot;&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;1.0.0&amp;quot;&lt;/span&gt;,
-  &lt;span class="hljs-attr"&gt;&amp;quot;main&amp;quot;&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;index.js&amp;quot;&lt;/span&gt;,
-  &lt;span class="hljs-attr"&gt;&amp;quot;license&amp;quot;&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;MIT&amp;quot;&lt;/span&gt;
-}</code></pre></h5>
+<h5 id="packagejson">📃 package.json</h5>
+<pre><code class="language-json">{
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"vanilla-poll-graph"</span>,
+  <span class="hljs-attr">"version"</span>: <span class="hljs-string">"1.0.0"</span>,
+  <span class="hljs-attr">"main"</span>: <span class="hljs-string">"index.js"</span>,
+  <span class="hljs-attr">"license"</span>: <span class="hljs-string">"MIT"</span>
+}</code></pre>
 <p>생성된 프로젝트를 git 원격 저장소에 연결하고
 <code>.gitignore</code>에 <code>node_modules</code>를 추가했다</p>
 <hr>
@@ -88,32 +91,38 @@
 <li>📃 <strong>graph.js</strong> // 구현 코드 파일</li>
 </ul>
 <p>아래는 폴더, 파일을 생성하는 명령어.
-마우스로 손을 움직이고 커서를 또 폴더 경로로 이동시키고 우클릭 등등… 의 수고를 많이 줄여준다.</p><pre><code>$ mkdir __tests__ lib
-$ touch __tests__/graph.test.js lib/graph.js</code></pre><p></p>
+마우스로 손을 움직이고 커서를 또 폴더 경로로 이동시키고 우클릭 등등… 의 수고를 많이 줄여준다.</p>
+<pre><code>$ mkdir __tests__ lib
+$ touch __tests__/graph.test.js lib/graph.js</code></pre>
 <h4 id="Jest-설치/NPM-커맨드-지정">Jest 설치/NPM 커맨드 지정</h4>
-<p>패키지 설치</p><pre><code>yarn add -D jest</code></pre><p></p>
+<p>패키지 설치</p>
+<pre><code>yarn add -D jest</code></pre>
 <p><code>scripts</code>속성에 테스트 명령어 지정</p>
-<h5 id="packagejsonprec16cpre">📃 package.json<pre><code class="language-json">{
-  &lt;span class="hljs-attr"&gt;&amp;quot;scripts&amp;quot;&lt;/span&gt;: {
-    &lt;span class="hljs-attr"&gt;&amp;quot;test&amp;quot;&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;jest&amp;quot;&lt;/span&gt;    &lt;span class="hljs-comment"&gt;// Jest CLI 명령문 설정&lt;/span&gt;
+<h5 id="packagejson-1">📃 package.json</h5>
+<pre><code class="language-json">{
+  <span class="hljs-attr">"scripts"</span>: {
+    <span class="hljs-attr">"test"</span>: <span class="hljs-string">"jest"</span>    <span class="hljs-comment">// Jest CLI 명령문 설정</span>
   },
-}</code></pre></h5>
+}</code></pre>
 <h4 id="임시-소스-삽입/테스트">임시 소스 삽입/테스트</h4>
 <p>우선 참고할 수 있는 소스를 <a href="https://jestjs.io/docs/getting-started">Jest 공식문서</a>에서 가져와 넣어두었다.</p>
-<h5 id="__test__graphtestjsprec17cpre">📃 _<em>test</em>_/graph.test.js <pre><code>// 임시 확인용 소스
+<h5 id="__test__graphtestjs">📃 _<em>test</em>_/graph.test.js</h5>
+<pre><code>// 임시 확인용 소스
 const sum = require('../lib/graph');
 
 test('adds 1 + 2 to equal 3', () =&gt; {
   expect(sum(1, 2)).toBe(3);
-});</code></pre></h5>
-<h5 id="libgraphjsprec18cpre">📃 lib/graph.js<pre><code class="language-javascript">&lt;span class="hljs-comment"&gt;// 임시 확인용 소스&lt;/span&gt;
-&lt;span class="hljs-function"&gt;&lt;span class="hljs-keyword"&gt;function&lt;/span&gt; &lt;span class="hljs-title"&gt;sum&lt;/span&gt;(&lt;span class="hljs-params"&gt;a, b&lt;/span&gt;) &lt;/span&gt;{
-  &lt;span class="hljs-keyword"&gt;return&lt;/span&gt; a + b;
+});</code></pre>
+<h5 id="libgraphjs">📃 lib/graph.js</h5>
+<pre><code class="language-javascript"><span class="hljs-comment">// 임시 확인용 소스</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-keyword">return</span> a + b;
 }
-&lt;span class="hljs-built_in"&gt;module&lt;/span&gt;.exports = sum;</code></pre></h5>
-<p>커맨트 입력하여 테스트 실행</p><pre><code>yarn test</code></pre>
-PASS! 이렇게 뜨는구나.
+<span class="hljs-built_in">module</span>.exports = sum;</code></pre>
+<p>커맨트 입력하여 테스트 실행</p>
+<pre><code>yarn test</code></pre>
+<p>PASS! 이렇게 뜨는구나.
 테스트 코드에 대해 감이 좀 잡히면 포스팅에 업데이트해야지😋
-<img src="https://images.velog.io/images/sssjsjj/post/f10a877f-222d-48c1-967a-1aea133294f8/image.png" alt="Jest 실행 성공"><p></p></article><div class="article-bottom" data-v-6c33a998=""><p class="text-ps" data-v-6c33a998=""><strong data-v-6c33a998="">수정이 필요한 부분</strong> 혹은 <strong data-v-6c33a998="">더 나은 방법</strong>을 알고계신가요? <br data-v-6c33a998=""> 댓글로 알려주시면 저에게 큰 도움이 됩니다! 😊💜 </p><div class="vue-utterances" data-v-6c33a998=""><div class="utterances">
+<img src="https://images.velog.io/images/sssjsjj/post/f10a877f-222d-48c1-967a-1aea133294f8/image.png" alt="Jest 실행 성공"></p></article><div class="article-bottom" data-v-6c33a998=""><p class="text-ps" data-v-6c33a998=""><strong data-v-6c33a998="">수정이 필요한 부분</strong> 혹은 <strong data-v-6c33a998="">더 나은 방법</strong>을 알고계신가요? <br data-v-6c33a998=""> 댓글로 알려주시면 저에게 큰 도움이 됩니다! 😊💜 </p><div class="vue-utterances" data-v-6c33a998=""><div class="utterances">
     <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?async=&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=yemsu%2Fyemsu.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A8001%2Fnode-js-es6-plus-env-setting-1&amp;origin=http%3A%2F%2Flocalhost%3A8001&amp;pathname=node-js-es6-plus-env-setting-1&amp;title=ENJOY+DEV&amp;description=&amp;og%3Atitle=&amp;session=" loading="lazy"></iframe>
   </div></div></div></article></div></div><script src="/js/chunk-vendors.3a63ba27.js"></script><script src="/js/app.3434b35f.js"></script></body></html>

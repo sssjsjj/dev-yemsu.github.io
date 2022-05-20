@@ -125,9 +125,12 @@
 </ul>
 <h4 id="프로젝트-시작">프로젝트 시작</h4>
 <h4 id="Node.js-App-생성">Node.js App 생성</h4>
-<p>먼저 폴더를 생성하세요.</p><pre><code>$ mkdir nodejs-express-mongodb
-$ cd nodejs-express-mongodb</code></pre><p></p>
-<p>Node.js App을 생성하세요.</p><pre><code>yarn init</code></pre><pre><code>name: (nodejs-express-mongodb) 
+<p>먼저 폴더를 생성하세요.</p>
+<pre><code>$ mkdir nodejs-express-mongodb
+$ cd nodejs-express-mongodb</code></pre>
+<p>Node.js App을 생성하세요.</p>
+<pre><code>yarn init</code></pre>
+<pre><code>name: (nodejs-express-mongodb) 
 version: (1.0.0) 
 description: Node.js Restful CRUD API with Node.js, Express and MongoDB
 entry point: (index.js) server.js
@@ -136,30 +139,32 @@ git repository:
 keywords: nodejs, express, mongodb, rest, api
 author: sujin
 license: (ISC)
-Is this ok? (yes) yes</code></pre><p></p>
-<p>필요한 모듈을 설치합니다: <code>express</code>, <code>mongoose</code>, <code>body-parser</code>, <code>cors</code>.</p><pre><code>yarn add express mongoose body-parser cors</code></pre><p></p>
+Is this ok? (yes) yes</code></pre>
+<p>필요한 모듈을 설치합니다: <code>express</code>, <code>mongoose</code>, <code>body-parser</code>, <code>cors</code>.</p>
+<pre><code>yarn add express mongoose body-parser cors</code></pre>
 <h4 id="Express-웹-서버-만들기">Express 웹 서버 만들기</h4>
-<p>root 경로에 server.js파일을 생성합시다!</p><pre><code>const express = require("express");
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const app = express();
-var corsOptions = {
-  origin: "http://localhost:8081"
+<p>root 경로에 server.js파일을 생성합시다!</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">"express"</span>);
+<span class="hljs-keyword">const</span> bodyParser = <span class="hljs-built_in">require</span>(<span class="hljs-string">"body-parser"</span>);
+<span class="hljs-keyword">const</span> cors = <span class="hljs-built_in">require</span>(<span class="hljs-string">"cors"</span>);
+<span class="hljs-keyword">const</span> app = express();
+<span class="hljs-keyword">var</span> corsOptions = {
+  <span class="hljs-attr">origin</span>: <span class="hljs-string">"http://localhost:8081"</span>
 };
 app.use(cors(corsOptions));
-// parse requests of content-type - application/json
+<span class="hljs-comment">// parse requests of content-type - application/json</span>
 app.use(bodyParser.json());
-// parse requests of content-type - application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
-// simple route
-app.get("/", (req, res) =&gt; {
-  res.json({ message: "Welcome to bezkoder application." });
+<span class="hljs-comment">// parse requests of content-type - application/x-www-form-urlencoded</span>
+app.use(bodyParser.urlencoded({ <span class="hljs-attr">extended</span>: <span class="hljs-literal">true</span> }));
+<span class="hljs-comment">// simple route</span>
+app.get(<span class="hljs-string">"/"</span>, <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> {
+  res.json({ <span class="hljs-attr">message</span>: <span class="hljs-string">"Welcome to bezkoder application."</span> });
 });
-// set port, listen for requests
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () =&gt; {
-  console.log(`Server is running on port ${PORT}.`);
-});</code></pre><p></p>
+<span class="hljs-comment">// set port, listen for requests</span>
+<span class="hljs-keyword">const</span> PORT = process.env.PORT || <span class="hljs-number">8080</span>;
+app.listen(PORT, <span class="hljs-function">() =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Server is running on port <span class="hljs-subst">${PORT}</span>.`</span>);
+});</code></pre>
 <ul>
 <li><code>express</code>, <code>body-parser</code>, <code>cors</code> 모듈을 import 했습니다.<ul>
 <li>Express는 Rest API 생성에 필요합니다.</li>
@@ -177,86 +182,93 @@ app.listen(PORT, () =&gt; {
 </figure>
 <p>예~~ 첫번째 단계가 끝났습니다! 다음 섹션에서는 Mongoose를 이용한 작업을 해볼거예요.</p>
 <h4 id="MongoDB-데이터베이스와-Mongoose-설정">MongoDB 데이터베이스와 Mongoose 설정</h4>
-<p>app/config/db.config.js 파일을 생성한 뒤 아래와 같이 내용을 작성하세요.</p><pre><code class="language-javascript">&lt;span class="hljs-built_in"&gt;module&lt;/span&gt;.exports = {
-  &lt;span class="hljs-attr"&gt;url&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;mongodb://localhost:27017/bezkoder_db&amp;quot;&lt;/span&gt;
-};</code></pre><p></p>
+<p>app/config/db.config.js 파일을 생성한 뒤 아래와 같이 내용을 작성하세요.</p>
+<pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">url</span>: <span class="hljs-string">"mongodb://localhost:27017/bezkoder_db"</span>
+};</code></pre>
 <h4 id="Mongoose-정의">Mongoose 정의</h4>
 <p>다음 단계에서는 app/models/tutorial.model.js에 Mongoose model을 정의할거예요.</p>
-<p>지금은 우선 app/models/index.js에 아래 코드를 작성하세요.</p><pre><code class="language-javascript">&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; dbConfig = &lt;span class="hljs-built_in"&gt;require&lt;/span&gt;(&lt;span class="hljs-string"&gt;&amp;quot;../config/db.config.js&amp;quot;&lt;/span&gt;);
-&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; mongoose = &lt;span class="hljs-built_in"&gt;require&lt;/span&gt;(&lt;span class="hljs-string"&gt;&amp;quot;mongoose&amp;quot;&lt;/span&gt;);
-mongoose.Promise = &lt;span class="hljs-built_in"&gt;global&lt;/span&gt;.Promise;
-&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; db = {};
+<p>지금은 우선 app/models/index.js에 아래 코드를 작성하세요.</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">const</span> dbConfig = <span class="hljs-built_in">require</span>(<span class="hljs-string">"../config/db.config.js"</span>);
+<span class="hljs-keyword">const</span> mongoose = <span class="hljs-built_in">require</span>(<span class="hljs-string">"mongoose"</span>);
+mongoose.Promise = <span class="hljs-built_in">global</span>.Promise;
+<span class="hljs-keyword">const</span> db = {};
 db.mongoose = mongoose;
 db.url = dbConfig.url;
-db.tutorials = &lt;span class="hljs-built_in"&gt;require&lt;/span&gt;(&lt;span class="hljs-string"&gt;&amp;quot;./tutorial.model.js&amp;quot;&lt;/span&gt;)(mongoose);
-&lt;span class="hljs-built_in"&gt;module&lt;/span&gt;.exports = db;</code></pre><p></p>
-<p>server.js에 <code>connect()</code> 메서드로 요청하는것도 잊지말아요!</p><pre><code class="language-javascript">...
-&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; app = express();
+db.tutorials = <span class="hljs-built_in">require</span>(<span class="hljs-string">"./tutorial.model.js"</span>)(mongoose);
+<span class="hljs-built_in">module</span>.exports = db;</code></pre>
+<p>server.js에 <code>connect()</code> 메서드로 요청하는것도 잊지말아요!</p>
+<pre><code class="language-javascript">...
+<span class="hljs-keyword">const</span> app = express();
 app.use(...);
-&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; db = &lt;span class="hljs-built_in"&gt;require&lt;/span&gt;(&lt;span class="hljs-string"&gt;&amp;quot;./app/models&amp;quot;&lt;/span&gt;);
+<span class="hljs-keyword">const</span> db = <span class="hljs-built_in">require</span>(<span class="hljs-string">"./app/models"</span>);
 db.mongoose
   .connect(db.url, {
-    &lt;span class="hljs-attr"&gt;useNewUrlParser&lt;/span&gt;: &lt;span class="hljs-literal"&gt;true&lt;/span&gt;,
-    &lt;span class="hljs-attr"&gt;useUnifiedTopology&lt;/span&gt;: &lt;span class="hljs-literal"&gt;true&lt;/span&gt;
+    <span class="hljs-attr">useNewUrlParser</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">useUnifiedTopology</span>: <span class="hljs-literal">true</span>
   })
-  .then(&lt;span class="hljs-function"&gt;() =&amp;gt;&lt;/span&gt; {
-    &lt;span class="hljs-built_in"&gt;console&lt;/span&gt;.log(&lt;span class="hljs-string"&gt;&amp;quot;Connected to the database!&amp;quot;&lt;/span&gt;);
+  .then(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Connected to the database!"</span>);
   })
-  .catch(&lt;span class="hljs-function"&gt;&lt;span class="hljs-params"&gt;err&lt;/span&gt; =&amp;gt;&lt;/span&gt; {
-    &lt;span class="hljs-built_in"&gt;console&lt;/span&gt;.log(&lt;span class="hljs-string"&gt;&amp;quot;Cannot connect to the database!&amp;quot;&lt;/span&gt;, err);
+  .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Cannot connect to the database!"</span>, err);
     process.exit();
-  });</code></pre><p></p>
+  });</code></pre>
 <h4 id="Mongoose-Model-정의">Mongoose Model 정의</h4>
-<p>model 폴더에 tutorial.model.js파일을 생성하고 아래와 같이 작성하세요</p><pre><code class="language-javascript">&lt;span class="hljs-built_in"&gt;module&lt;/span&gt;.exports = &lt;span class="hljs-function"&gt;&lt;span class="hljs-params"&gt;mongoose&lt;/span&gt; =&amp;gt;&lt;/span&gt; {
-&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; Tutorial = mongoose.model(
-  &lt;span class="hljs-string"&gt;&amp;quot;tutorial&amp;quot;&lt;/span&gt;,
+<p>model 폴더에 tutorial.model.js파일을 생성하고 아래와 같이 작성하세요.</p>
+<pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-params">mongoose</span> =&gt;</span> {
+<span class="hljs-keyword">const</span> Tutorial = mongoose.model(
+  <span class="hljs-string">"tutorial"</span>,
   mongoose.Schema(
     {
-      &lt;span class="hljs-attr"&gt;title&lt;/span&gt;: &lt;span class="hljs-built_in"&gt;String&lt;/span&gt;,
-      &lt;span class="hljs-attr"&gt;description&lt;/span&gt;: &lt;span class="hljs-built_in"&gt;String&lt;/span&gt;,
-      &lt;span class="hljs-attr"&gt;published&lt;/span&gt;: &lt;span class="hljs-built_in"&gt;Boolean&lt;/span&gt;
+      <span class="hljs-attr">title</span>: <span class="hljs-built_in">String</span>,
+      <span class="hljs-attr">description</span>: <span class="hljs-built_in">String</span>,
+      <span class="hljs-attr">published</span>: <span class="hljs-built_in">Boolean</span>
     },
-    { &lt;span class="hljs-attr"&gt;timestamps&lt;/span&gt;: &lt;span class="hljs-literal"&gt;true&lt;/span&gt; }
+    { <span class="hljs-attr">timestamps</span>: <span class="hljs-literal">true</span> }
   )
 );
-&lt;span class="hljs-keyword"&gt;return&lt;/span&gt; Tutorial;
-};</code></pre><p></p>
-<p>위 Mongoose Model은 MongoDB 데이터베이스에 있는 'tutorials'의 구조를 나타냅니다. 이 필드들은 각각의 tutorial에 대해 자동으로 생성될거예요. (_id, title, description, published, createdAt, updatedAt, __v)<br>
-아래와 같이요!</p><pre><code class="language-javascript">{
-  &lt;span class="hljs-string"&gt;&amp;quot;_id&amp;quot;&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;5e363b135036a835ac1a7da8&amp;quot;&lt;/span&gt;,
-  &lt;span class="hljs-string"&gt;&amp;quot;title&amp;quot;&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;Js Tut#&amp;quot;&lt;/span&gt;,
-  &lt;span class="hljs-string"&gt;&amp;quot;description&amp;quot;&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;Description for Tut#&amp;quot;&lt;/span&gt;,
-  &lt;span class="hljs-string"&gt;&amp;quot;published&amp;quot;&lt;/span&gt;: &lt;span class="hljs-literal"&gt;true&lt;/span&gt;,
-  &lt;span class="hljs-string"&gt;&amp;quot;createdAt&amp;quot;&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;2020-02-02T02:59:31.198Z&amp;quot;&lt;/span&gt;,
-  &lt;span class="hljs-string"&gt;&amp;quot;updatedAt&amp;quot;&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;2020-02-02T02:59:31.198Z&amp;quot;&lt;/span&gt;,
-  &lt;span class="hljs-string"&gt;&amp;quot;__v&amp;quot;&lt;/span&gt;: &lt;span class="hljs-number"&gt;0&lt;/span&gt;
-}</code></pre><p></p>
-<p>프론트엔드에서 __id가 아닌 id로 필드명을 사용해야한다면 <code>toJSON</code> 메서드를 사용하여 default object를 커스텀 object로 override해야합니다. Mongoose model을 아래와 같이 수정하면됩니다.</p><pre><code class="language-javascript">&lt;span class="hljs-built_in"&gt;module&lt;/span&gt;.exports = &lt;span class="hljs-function"&gt;&lt;span class="hljs-params"&gt;mongoose&lt;/span&gt; =&amp;gt;&lt;/span&gt; {
-  &lt;span class="hljs-keyword"&gt;var&lt;/span&gt; schema = mongoose.Schema(
-    {
-      &lt;span class="hljs-attr"&gt;title&lt;/span&gt;: &lt;span class="hljs-built_in"&gt;String&lt;/span&gt;,
-      &lt;span class="hljs-attr"&gt;description&lt;/span&gt;: &lt;span class="hljs-built_in"&gt;String&lt;/span&gt;,
-      &lt;span class="hljs-attr"&gt;published&lt;/span&gt;: &lt;span class="hljs-built_in"&gt;Boolean&lt;/span&gt;
-    },
-    { &lt;span class="hljs-attr"&gt;timestamps&lt;/span&gt;: &lt;span class="hljs-literal"&gt;true&lt;/span&gt; }
-  );
-  schema.method(&lt;span class="hljs-string"&gt;&amp;quot;toJSON&amp;quot;&lt;/span&gt;, &lt;span class="hljs-function"&gt;&lt;span class="hljs-keyword"&gt;function&lt;/span&gt;(&lt;span class="hljs-params"&gt;&lt;/span&gt;) &lt;/span&gt;{
-    &lt;span class="hljs-keyword"&gt;const&lt;/span&gt; { __v, _id, ...object } = &lt;span class="hljs-built_in"&gt;this&lt;/span&gt;.toObject();
-    object.id = _id;
-    &lt;span class="hljs-keyword"&gt;return&lt;/span&gt; object;
-  });
-  &lt;span class="hljs-keyword"&gt;const&lt;/span&gt; Tutorial = mongoose.model(&lt;span class="hljs-string"&gt;&amp;quot;tutorial&amp;quot;&lt;/span&gt;, schema);
-  &lt;span class="hljs-keyword"&gt;return&lt;/span&gt; Tutorial;
+<span class="hljs-keyword">return</span> Tutorial;
 };</code></pre>
-그러면 결과는 아래와 같아집니다.<pre><code class="language-javascript">{
-  &lt;span class="hljs-string"&gt;&amp;quot;title&amp;quot;&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;Js Tut#&amp;quot;&lt;/span&gt;,
-  &lt;span class="hljs-string"&gt;&amp;quot;description&amp;quot;&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;Description for Tut#&amp;quot;&lt;/span&gt;,
-  &lt;span class="hljs-string"&gt;&amp;quot;published&amp;quot;&lt;/span&gt;: &lt;span class="hljs-literal"&gt;true&lt;/span&gt;,
-  &lt;span class="hljs-string"&gt;&amp;quot;createdAt&amp;quot;&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;2020-02-02T02:59:31.198Z&amp;quot;&lt;/span&gt;,
-  &lt;span class="hljs-string"&gt;&amp;quot;updatedAt&amp;quot;&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;2020-02-02T02:59:31.198Z&amp;quot;&lt;/span&gt;,
-  &lt;span class="hljs-string"&gt;&amp;quot;id&amp;quot;&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;5e363b135036a835ac1a7da8&amp;quot;&lt;/span&gt;
+<p>위 Mongoose Model은 MongoDB 데이터베이스에 있는 'tutorials'의 구조를 나타냅니다. 이 필드들은 각각의 tutorial에 대해 자동으로 생성될거예요. (_id, title, description, published, createdAt, updatedAt, __v)<br>
+아래와 같이요!</p>
+<pre><code class="language-javascript">{
+  <span class="hljs-string">"_id"</span>: <span class="hljs-string">"5e363b135036a835ac1a7da8"</span>,
+  <span class="hljs-string">"title"</span>: <span class="hljs-string">"Js Tut#"</span>,
+  <span class="hljs-string">"description"</span>: <span class="hljs-string">"Description for Tut#"</span>,
+  <span class="hljs-string">"published"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"createdAt"</span>: <span class="hljs-string">"2020-02-02T02:59:31.198Z"</span>,
+  <span class="hljs-string">"updatedAt"</span>: <span class="hljs-string">"2020-02-02T02:59:31.198Z"</span>,
+  <span class="hljs-string">"__v"</span>: <span class="hljs-number">0</span>
 }</code></pre>
-위 단계가 끝나면 우리는 CRUD 함수들을 따로 작성할 필요가 없어요. Mongoose Model이 모두 지원한답니다.<p></p>
+<p>프론트엔드에서 __id가 아닌 id로 필드명을 사용해야한다면 <code>toJSON</code> 메서드를 사용하여 default object를 커스텀 object로 override해야합니다. Mongoose model을 아래와 같이 수정하면됩니다.</p>
+<pre><code class="language-javascript"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-params">mongoose</span> =&gt;</span> {
+  <span class="hljs-keyword">var</span> schema = mongoose.Schema(
+    {
+      <span class="hljs-attr">title</span>: <span class="hljs-built_in">String</span>,
+      <span class="hljs-attr">description</span>: <span class="hljs-built_in">String</span>,
+      <span class="hljs-attr">published</span>: <span class="hljs-built_in">Boolean</span>
+    },
+    { <span class="hljs-attr">timestamps</span>: <span class="hljs-literal">true</span> }
+  );
+  schema.method(<span class="hljs-string">"toJSON"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">const</span> { __v, _id, ...object } = <span class="hljs-built_in">this</span>.toObject();
+    object.id = _id;
+    <span class="hljs-keyword">return</span> object;
+  });
+  <span class="hljs-keyword">const</span> Tutorial = mongoose.model(<span class="hljs-string">"tutorial"</span>, schema);
+  <span class="hljs-keyword">return</span> Tutorial;
+};</code></pre>
+<p>그러면 결과는 아래와 같아집니다.</p>
+<pre><code class="language-javascript">{
+  <span class="hljs-string">"title"</span>: <span class="hljs-string">"Js Tut#"</span>,
+  <span class="hljs-string">"description"</span>: <span class="hljs-string">"Description for Tut#"</span>,
+  <span class="hljs-string">"published"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">"createdAt"</span>: <span class="hljs-string">"2020-02-02T02:59:31.198Z"</span>,
+  <span class="hljs-string">"updatedAt"</span>: <span class="hljs-string">"2020-02-02T02:59:31.198Z"</span>,
+  <span class="hljs-string">"id"</span>: <span class="hljs-string">"5e363b135036a835ac1a7da8"</span>
+}</code></pre>
+<p>위 단계가 끝나면 우리는 CRUD 함수들을 따로 작성할 필요가 없어요. Mongoose Model이 모두 지원한답니다.</p>
 <ul>
 <li>새 튜토리얼 생성: object.save()</li>
 <li>id값으로 튜토리얼 검색하기: findById(id)</li>
@@ -357,17 +369,18 @@ db.mongoose
   ㄴ App.vue
   ㄴ main.js
  package.json</code></pre>
-<p>public/index.html을 열고 <code>\&lt;head\&gt;</code>태그 내부에 bootstrap을 추가하세요.</p><pre><code class="language-html">&lt;span class="hljs-meta"&gt;&amp;lt;!DOCTYPE &lt;span class="hljs-meta-keyword"&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;html&lt;/span&gt; &lt;span class="hljs-attr"&gt;lang&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;en&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;
+<p>public/index.html을 열고 <code>\&lt;head\&gt;</code>태그 내부에 bootstrap을 추가하세요.</p>
+<pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
     ...
-    &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;vue-js-client-crud&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;link&lt;/span&gt; &lt;span class="hljs-attr"&gt;type&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;text/css&amp;quot;&lt;/span&gt; &lt;span class="hljs-attr"&gt;rel&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;stylesheet&amp;quot;&lt;/span&gt; &lt;span class="hljs-attr"&gt;href&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;//unpkg.com/bootstrap/dist/css/bootstrap.min.css&amp;quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;
-  &lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>vue-js-client-crud<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"//unpkg.com/bootstrap/dist/css/bootstrap.min.css"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
     ...
-  &lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;</code></pre><p></p>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
 <h5 id="vueroutervue3">Vue Router 추가 (Vue 3)</h5>
 <ul>
 <li>커맨드 입력으로 패키지를 설치합니다: <code>yarn add vue-router@next</code></li>
@@ -401,74 +414,78 @@ db.mongoose
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> router</code></pre>
 <ul>
-<li>src/main.js 파일을 열고 router를 import하세요.<pre><code class="language-javascript">&lt;span class="hljs-keyword"&gt;import&lt;/span&gt; { createApp } &lt;span class="hljs-keyword"&gt;from&lt;/span&gt; &lt;span class="hljs-string"&gt;&amp;#x27;vue&amp;#x27;&lt;/span&gt;
-&lt;span class="hljs-keyword"&gt;import&lt;/span&gt; App &lt;span class="hljs-keyword"&gt;from&lt;/span&gt; &lt;span class="hljs-string"&gt;&amp;#x27;./App.vue&amp;#x27;&lt;/span&gt;
-&lt;span class="hljs-keyword"&gt;import&lt;/span&gt; router &lt;span class="hljs-keyword"&gt;from&lt;/span&gt; &lt;span class="hljs-string"&gt;&amp;#x27;./router&amp;#x27;&lt;/span&gt;
-&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; app = createApp(App)
-app.config.productionTip = &lt;span class="hljs-literal"&gt;false&lt;/span&gt;
-app.use(router).mount(&lt;span class="hljs-string"&gt;&amp;#x27;#app&amp;#x27;&lt;/span&gt;)</code></pre></li>
+<li>src/main.js 파일을 열고 router를 import하세요.</li>
 </ul>
+<pre><code class="language-javascript"><span class="hljs-keyword">import</span> { createApp } <span class="hljs-keyword">from</span> <span class="hljs-string">'vue'</span>
+<span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">'./App.vue'</span>
+<span class="hljs-keyword">import</span> router <span class="hljs-keyword">from</span> <span class="hljs-string">'./router'</span>
+<span class="hljs-keyword">const</span> app = createApp(App)
+app.config.productionTip = <span class="hljs-literal">false</span>
+app.use(router).mount(<span class="hljs-string">'#app'</span>)</code></pre>
 <h5 id="navbarrouterview">Navbar와 Router View 추가</h5>
-<p>src/App.vue를 열어봅시다. 이 <code>App</code> 컴포넌트는 우리 어플리케이션의 루트 컨테이너 입니다. 이 컴포넌트가 <code>navbar</code>를 가질거예요.</p><pre><code class="language-html">&lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;template&lt;/span&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;div&lt;/span&gt; &lt;span class="hljs-attr"&gt;id&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;app&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;nav&lt;/span&gt; &lt;span class="hljs-attr"&gt;class&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;navbar navbar-expand navbar-dark bg-dark&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;router-link&lt;/span&gt; &lt;span class="hljs-attr"&gt;to&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;/&amp;quot;&lt;/span&gt; &lt;span class="hljs-attr"&gt;class&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;navbar-brand&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;bezKoder&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;router-link&lt;/span&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;div&lt;/span&gt; &lt;span class="hljs-attr"&gt;class&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;navbar-nav mr-auto&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;li&lt;/span&gt; &lt;span class="hljs-attr"&gt;class&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;nav-item&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
-          &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;router-link&lt;/span&gt; &lt;span class="hljs-attr"&gt;to&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;/tutorials&amp;quot;&lt;/span&gt; &lt;span class="hljs-attr"&gt;class&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;nav-link&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;Tutorials&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;router-link&lt;/span&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;li&lt;/span&gt; &lt;span class="hljs-attr"&gt;class&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;nav-item&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
-          &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;router-link&lt;/span&gt; &lt;span class="hljs-attr"&gt;to&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;/add&amp;quot;&lt;/span&gt; &lt;span class="hljs-attr"&gt;class&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;nav-link&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;Add&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;router-link&lt;/span&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;nav&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;div&lt;/span&gt; &lt;span class="hljs-attr"&gt;class&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;container mt-3&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;router-view&lt;/span&gt; /&amp;gt;&lt;/span&gt;
-    &lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;template&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class="javascript"&gt;
-&lt;span class="hljs-keyword"&gt;export&lt;/span&gt; &lt;span class="hljs-keyword"&gt;default&lt;/span&gt; {
-  &lt;span class="hljs-attr"&gt;name&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;app&amp;quot;&lt;/span&gt;
+<p>src/App.vue를 열어봅시다. 이 <code>App</code> 컴포넌트는 우리 어플리케이션의 루트 컨테이너 입니다. 이 컴포넌트가 <code>navbar</code>를 가질거예요.</p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"app"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar navbar-expand navbar-dark bg-dark"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"/"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar-brand"</span>&gt;</span>bezKoder<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"navbar-nav mr-auto"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-item"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"/tutorials"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-link"</span>&gt;</span>Tutorials<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-item"</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">router-link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"/add"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"nav-link"</span>&gt;</span>Add<span class="hljs-tag">&lt;/<span class="hljs-name">router-link</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container mt-3"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">router-view</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">name</span>: <span class="hljs-string">"app"</span>
 };
-&lt;/span&gt;&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;</code></pre><p></p>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 <h5 id="axios">Axios 초기 설정</h5>
 <p>이제 커맨드를 입력해 axios를 설치하세요: <code>yarn add axios</code>
-그리고 src폴더 내부에 http-common.js파일을 생성하고 아래와 같이 작성하세요</p><pre><code class="language-javascript">&lt;span class="hljs-keyword"&gt;import&lt;/span&gt; axios &lt;span class="hljs-keyword"&gt;from&lt;/span&gt; &lt;span class="hljs-string"&gt;&amp;quot;axios&amp;quot;&lt;/span&gt;;
-&lt;span class="hljs-keyword"&gt;export&lt;/span&gt; &lt;span class="hljs-keyword"&gt;default&lt;/span&gt; axios.create({
-  &lt;span class="hljs-attr"&gt;baseURL&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;http://localhost:8080/api&amp;quot;&lt;/span&gt;,
-  &lt;span class="hljs-attr"&gt;headers&lt;/span&gt;: {
-    &lt;span class="hljs-string"&gt;&amp;quot;Content-type&amp;quot;&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;application/json&amp;quot;&lt;/span&gt;
+그리고 src폴더 내부에 http-common.js파일을 생성하고 아래와 같이 작성하세요</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">"axios"</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> axios.create({
+  <span class="hljs-attr">baseURL</span>: <span class="hljs-string">"http://localhost:8080/api"</span>,
+  <span class="hljs-attr">headers</span>: {
+    <span class="hljs-string">"Content-type"</span>: <span class="hljs-string">"application/json"</span>
   }
 });</code></pre>
-<code>baseUrl</code>을 바꾸고싶다면 서버 정의에 있는 REST Api의 url도 바꿔야 하는 걸 잊지 마세요!<p></p>
+<p><code>baseUrl</code>을 바꾸고싶다면 서버 정의에 있는 REST Api의 url도 바꿔야 하는 걸 잊지 마세요!</p>
 <h5 id="dataservice">Data Service 생성</h5>
 <p>우리 서비스는 HTTP 요청에 axios를 사용할거예요.<br>
-services/TutorialDataService.js</p><pre><code class="language-javascript">&lt;span class="hljs-keyword"&gt;import&lt;/span&gt; http &lt;span class="hljs-keyword"&gt;from&lt;/span&gt; &lt;span class="hljs-string"&gt;&amp;quot;../http-common&amp;quot;&lt;/span&gt;;
-&lt;span class="hljs-class"&gt;&lt;span class="hljs-keyword"&gt;class&lt;/span&gt; &lt;span class="hljs-title"&gt;TutorialDataService&lt;/span&gt; &lt;/span&gt;{
-  &lt;span class="hljs-function"&gt;&lt;span class="hljs-title"&gt;getAll&lt;/span&gt;(&lt;span class="hljs-params"&gt;&lt;/span&gt;)&lt;/span&gt; {
-    &lt;span class="hljs-keyword"&gt;return&lt;/span&gt; http.get(&lt;span class="hljs-string"&gt;&amp;quot;/tutorials&amp;quot;&lt;/span&gt;);
+services/TutorialDataService.js</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">import</span> http <span class="hljs-keyword">from</span> <span class="hljs-string">"../http-common"</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TutorialDataService</span> </span>{
+  <span class="hljs-function"><span class="hljs-title">getAll</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> http.get(<span class="hljs-string">"/tutorials"</span>);
   }
-  &lt;span class="hljs-function"&gt;&lt;span class="hljs-title"&gt;get&lt;/span&gt;(&lt;span class="hljs-params"&gt;id&lt;/span&gt;)&lt;/span&gt; {
-    &lt;span class="hljs-keyword"&gt;return&lt;/span&gt; http.get(&lt;span class="hljs-string"&gt;`/tutorials/&lt;span class="hljs-subst"&gt;${id}&lt;/span&gt;`&lt;/span&gt;);
+  <span class="hljs-function"><span class="hljs-title">get</span>(<span class="hljs-params">id</span>)</span> {
+    <span class="hljs-keyword">return</span> http.get(<span class="hljs-string">`/tutorials/<span class="hljs-subst">${id}</span>`</span>);
   }
-  &lt;span class="hljs-function"&gt;&lt;span class="hljs-title"&gt;create&lt;/span&gt;(&lt;span class="hljs-params"&gt;data&lt;/span&gt;)&lt;/span&gt; {
-    &lt;span class="hljs-keyword"&gt;return&lt;/span&gt; http.post(&lt;span class="hljs-string"&gt;&amp;quot;/tutorials&amp;quot;&lt;/span&gt;, data);
+  <span class="hljs-function"><span class="hljs-title">create</span>(<span class="hljs-params">data</span>)</span> {
+    <span class="hljs-keyword">return</span> http.post(<span class="hljs-string">"/tutorials"</span>, data);
   }
-  &lt;span class="hljs-function"&gt;&lt;span class="hljs-title"&gt;update&lt;/span&gt;(&lt;span class="hljs-params"&gt;id, data&lt;/span&gt;)&lt;/span&gt; {
-    &lt;span class="hljs-keyword"&gt;return&lt;/span&gt; http.put(&lt;span class="hljs-string"&gt;`/tutorials/&lt;span class="hljs-subst"&gt;${id}&lt;/span&gt;`&lt;/span&gt;, data);
+  <span class="hljs-function"><span class="hljs-title">update</span>(<span class="hljs-params">id, data</span>)</span> {
+    <span class="hljs-keyword">return</span> http.put(<span class="hljs-string">`/tutorials/<span class="hljs-subst">${id}</span>`</span>, data);
   }
-  &lt;span class="hljs-function"&gt;&lt;span class="hljs-title"&gt;delete&lt;/span&gt;(&lt;span class="hljs-params"&gt;id&lt;/span&gt;)&lt;/span&gt; {
-    &lt;span class="hljs-keyword"&gt;return&lt;/span&gt; http.delete(&lt;span class="hljs-string"&gt;`/tutorials/&lt;span class="hljs-subst"&gt;${id}&lt;/span&gt;`&lt;/span&gt;);
+  <span class="hljs-function"><span class="hljs-title">delete</span>(<span class="hljs-params">id</span>)</span> {
+    <span class="hljs-keyword">return</span> http.delete(<span class="hljs-string">`/tutorials/<span class="hljs-subst">${id}</span>`</span>);
   }
-  &lt;span class="hljs-function"&gt;&lt;span class="hljs-title"&gt;deleteAll&lt;/span&gt;(&lt;span class="hljs-params"&gt;&lt;/span&gt;)&lt;/span&gt; {
-    &lt;span class="hljs-keyword"&gt;return&lt;/span&gt; http.delete(&lt;span class="hljs-string"&gt;`/tutorials`&lt;/span&gt;);
+  <span class="hljs-function"><span class="hljs-title">deleteAll</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> http.delete(<span class="hljs-string">`/tutorials`</span>);
   }
-  &lt;span class="hljs-function"&gt;&lt;span class="hljs-title"&gt;findByTitle&lt;/span&gt;(&lt;span class="hljs-params"&gt;title&lt;/span&gt;)&lt;/span&gt; {
-    &lt;span class="hljs-keyword"&gt;return&lt;/span&gt; http.get(&lt;span class="hljs-string"&gt;`/tutorials?title=&lt;span class="hljs-subst"&gt;${title}&lt;/span&gt;`&lt;/span&gt;);
+  <span class="hljs-function"><span class="hljs-title">findByTitle</span>(<span class="hljs-params">title</span>)</span> {
+    <span class="hljs-keyword">return</span> http.get(<span class="hljs-string">`/tutorials?title=<span class="hljs-subst">${title}</span>`</span>);
   }
 }
-&lt;span class="hljs-keyword"&gt;export&lt;/span&gt; &lt;span class="hljs-keyword"&gt;default&lt;/span&gt; &lt;span class="hljs-keyword"&gt;new&lt;/span&gt; TutorialDataService();</code></pre><p></p>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-keyword">new</span> TutorialDataService();</code></pre>
 <h5 id="vue">Vue 컴포넌트 생성</h5>
 <p>이전에 말했던 것처럼, 우리는 3개의 라우터에 해당하는 3개의 컴포넌트가 있습니다.</p>
 <ul>

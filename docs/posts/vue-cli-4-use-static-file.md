@@ -88,6 +88,7 @@ export default {
 ```
 
 ##### 📃 src/router/views/PostDetail.vue
+
 ```html
 <template>
   <div v-html="contents"></div>
@@ -137,6 +138,7 @@ export default {
 따라서 나는 로컬에서만 사용할 <code>.env.local</code>과 <code>.env.production</code> 파일 두개를 생성해 아래와 같이 작성했다.
 
 ##### 📃 .env.local
+
 ```
 VUE_APP_TITLE=local | DEV BLOG
 VUE_APP_BASE_URL=http://localhost:6060
@@ -144,6 +146,7 @@ PORT=6060
 ```
 
 ##### 📃 .env.production
+
 ```
 VUE_APP_TITLE=DEV BLOG
 VUE_APP_BASE_URL=https://sssjsjj.github.io
@@ -151,6 +154,7 @@ VUE_APP_BASE_URL=https://sssjsjj.github.io
 나는 <code>VUE_APP_TITLE</code>도 지정해놨는데 <code>public/index.html</code>에서 <code>title</code>값을 해당 변수명으로 아래와 같이 지정해주면 사이트 타이틀값이 해당 변수 값으로 적용된다.
 
 ##### 📃 public/index.html
+
 ```html
 <!DOCTYPE html>
 <html lang="">

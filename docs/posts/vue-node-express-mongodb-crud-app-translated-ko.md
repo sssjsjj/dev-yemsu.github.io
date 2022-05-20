@@ -89,15 +89,18 @@ Node.js Express App이 export할 API들 입니다.
 #### 프로젝트 시작
 #### Node.js App 생성
 먼저 폴더를 생성하세요.
+
 ```
 $ mkdir nodejs-express-mongodb
 $ cd nodejs-express-mongodb
 ```
 
 Node.js App을 생성하세요.
+
 ```
 yarn init
 ```
+
 ```
 name: (nodejs-express-mongodb) 
 version: (1.0.0) 
@@ -112,6 +115,7 @@ Is this ok? (yes) yes
 ```
 
 필요한 모듈을 설치합니다: <code>express</code>, <code>mongoose</code>, <code>body-parser</code>, <code>cors</code>.
+
 ```
 yarn add express mongoose body-parser cors
 ```
@@ -172,6 +176,7 @@ module.exports = {
 다음 단계에서는 app/models/tutorial.model.js에 Mongoose model을 정의할거예요.
 
 지금은 우선 app/models/index.js에 아래 코드를 작성하세요.
+
 ```javascript
 const dbConfig = require("../config/db.config.js");
 const mongoose = require("mongoose");
@@ -381,6 +386,7 @@ cmd 창에서 원하는 폴더 경로로 지정하고 커맨드를 입력하세�
  package.json
 ```
 public/index.html을 열고 <code>\<head\></code>태그 내부에 bootstrap을 추가하세요.
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -429,6 +435,7 @@ export default router
 ```
 
 - src/main.js 파일을 열고 router를 import하세요.
+
 ```javascript
 import { createApp } from 'vue'
 import App from './App.vue'
@@ -440,6 +447,7 @@ app.use(router).mount('#app')
 
 ##### Navbar와 Router View 추가
 src/App.vue를 열어봅시다. 이 <code>App</code> 컴포넌트는 우리 어플리케이션의 루트 컨테이너 입니다. 이 컴포넌트가 <code>navbar</code>를 가질거예요.
+
 ```html
 <template>
   <div id="app">
@@ -469,6 +477,7 @@ export default {
 ##### Axios 초기 설정
 이제 커맨드를 입력해 axios를 설치하세요: <code>yarn add axios</code>
 그리고 src폴더 내부에 http-common.js파일을 생성하고 아래와 같이 작성하세요
+
 ```javascript
 import axios from "axios";
 export default axios.create({
@@ -483,6 +492,7 @@ export default axios.create({
 ##### Data Service 생성
 우리 서비스는 HTTP 요청에 axios를 사용할거예요.  
 services/TutorialDataService.js
+
 ```javascript
 import http from "../http-common";
 class TutorialDataService {

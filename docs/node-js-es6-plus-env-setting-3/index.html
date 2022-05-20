@@ -49,51 +49,53 @@ Node.js로만 서버 구축하는건 아래처럼 불편한점이 많다고 한�
 </blockquote>
 <h3 id="Node.js-서버-설정">Node.js 서버 설정</h3>
 <p>💡 개발 서버 실행을 위해 세팅 했던 것으로, <a href="node-js-es6-plus-env-setting-4">다음 포스팅</a>에서 webpack-dev-server로 대체됨 💡
-프로젝트 루트에 <code>app.js</code> 파일 생성</p><pre><code>$ touch app.js</code></pre>
-<a href="https://nodejs.org/ko/docs/guides/getting-started-guide/">node.js 공식 문서</a> 와 <a href="https://www.zerocho.com/category/NodeJS/post/57774a8eacbd2e9803de0195">zerocho 블로그</a>를 참고해서 아래와 같이 작성했다.<p></p>
-<h5 id="appjsprec2cpre">📃 app.js<pre><code class="language-javascript">&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; http = &lt;span class="hljs-built_in"&gt;require&lt;/span&gt;(&lt;span class="hljs-string"&gt;&amp;#x27;http&amp;#x27;&lt;/span&gt;); &lt;span class="hljs-comment"&gt;// 서버 만드는 모듈&lt;/span&gt;
-&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; url = &lt;span class="hljs-built_in"&gt;require&lt;/span&gt;(&lt;span class="hljs-string"&gt;&amp;#x27;url&amp;#x27;&lt;/span&gt;); &lt;span class="hljs-comment"&gt;// 주소 분석 모듈&lt;/span&gt;
-&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; fs = &lt;span class="hljs-built_in"&gt;require&lt;/span&gt;(&lt;span class="hljs-string"&gt;&amp;#x27;fs&amp;#x27;&lt;/span&gt;); &lt;span class="hljs-comment"&gt;// 파일을 읽고 쓰는 모듈&lt;/span&gt;
+프로젝트 루트에 <code>app.js</code> 파일 생성</p>
+<pre><code>$ touch app.js</code></pre>
+<p><a href="https://nodejs.org/ko/docs/guides/getting-started-guide/">node.js 공식 문서</a> 와 <a href="https://www.zerocho.com/category/NodeJS/post/57774a8eacbd2e9803de0195">zerocho 블로그</a>를 참고해서 아래와 같이 작성했다.</p>
+<h5 id="appjs">📃 app.js</h5>
+<pre><code class="language-javascript"><span class="hljs-keyword">const</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>); <span class="hljs-comment">// 서버 만드는 모듈</span>
+<span class="hljs-keyword">const</span> url = <span class="hljs-built_in">require</span>(<span class="hljs-string">'url'</span>); <span class="hljs-comment">// 주소 분석 모듈</span>
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>); <span class="hljs-comment">// 파일을 읽고 쓰는 모듈</span>
 
-&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; hostname = &lt;span class="hljs-string"&gt;&amp;#x27;127.0.0.1&amp;#x27;&lt;/span&gt;;
-&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; port = &lt;span class="hljs-number"&gt;3000&lt;/span&gt;;
-&lt;span class="hljs-comment"&gt;/*
-localhost주소를 입력하면 서버에 &amp;#x27;정보&amp;#x27;를 달라고 &amp;#x27;요청&amp;#x27;한다.
-대기중이던 서버는 &amp;#x27;요청&amp;#x27;을 처리 후 클라리언트로 &amp;#x27;정보&amp;#x27;를 돌려준다.
-&amp;gt; 요청(request)와 정보(response)에는 header와 body가 있다.
+<span class="hljs-keyword">const</span> hostname = <span class="hljs-string">'127.0.0.1'</span>;
+<span class="hljs-keyword">const</span> port = <span class="hljs-number">3000</span>;
+<span class="hljs-comment">/*
+localhost주소를 입력하면 서버에 '정보'를 달라고 '요청'한다.
+대기중이던 서버는 '요청'을 처리 후 클라리언트로 '정보'를 돌려준다.
+&gt; 요청(request)와 정보(response)에는 header와 body가 있다.
     * header - request, response에 대한 정보(종류, 크기, 캐시) 등
     * body - 주고 받고자 하는 메인 정보
-*/&lt;/span&gt;
-&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; server = http.createServer(&lt;span class="hljs-function"&gt;(&lt;span class="hljs-params"&gt;req, res&lt;/span&gt;) =&amp;gt;&lt;/span&gt; { &lt;span class="hljs-comment"&gt;// 서버 만드는 메소드&lt;/span&gt;
-  &lt;span class="hljs-comment"&gt;// url모듈을 이용해서 url에 따라 다른 HTML을 전송하는 라우팅을 구현&lt;/span&gt;
-  &lt;span class="hljs-keyword"&gt;const&lt;/span&gt; path = url.parse(req.url, &lt;span class="hljs-literal"&gt;true&lt;/span&gt;).pathname; 
-  &lt;span class="hljs-keyword"&gt;if&lt;/span&gt; (req.method === &lt;span class="hljs-string"&gt;&amp;#x27;GET&amp;#x27;&lt;/span&gt;) { &lt;span class="hljs-comment"&gt;// GET 요청이면 &lt;/span&gt;
-    &lt;span class="hljs-keyword"&gt;if&lt;/span&gt; (path.includes(&lt;span class="hljs-string"&gt;&amp;#x27;.js&amp;#x27;&lt;/span&gt;)) {
-      res.writeHead (&lt;span class="hljs-number"&gt;200&lt;/span&gt;, &lt;span class="hljs-string"&gt;&amp;#x27;Content-Type&amp;#x27;&lt;/span&gt;, &lt;span class="hljs-string"&gt;&amp;#x27;text/javascript&amp;#x27;&lt;/span&gt;);
-      &lt;span class="hljs-comment"&gt;// readFile 메소드로 HTML 파일을 읽어서 읽은 데이터를 브라우저로 보낸다.&lt;/span&gt;
-      fs.readFile(__dirname + path, &lt;span class="hljs-function"&gt;(&lt;span class="hljs-params"&gt;err, data&lt;/span&gt;) =&amp;gt;&lt;/span&gt; {
-        &lt;span class="hljs-keyword"&gt;if&lt;/span&gt; (err) {
-          &lt;span class="hljs-keyword"&gt;return&lt;/span&gt; &lt;span class="hljs-built_in"&gt;console&lt;/span&gt;.error(err);
+*/</span>
+<span class="hljs-keyword">const</span> server = http.createServer(<span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> { <span class="hljs-comment">// 서버 만드는 메소드</span>
+  <span class="hljs-comment">// url모듈을 이용해서 url에 따라 다른 HTML을 전송하는 라우팅을 구현</span>
+  <span class="hljs-keyword">const</span> path = url.parse(req.url, <span class="hljs-literal">true</span>).pathname; 
+  <span class="hljs-keyword">if</span> (req.method === <span class="hljs-string">'GET'</span>) { <span class="hljs-comment">// GET 요청이면 </span>
+    <span class="hljs-keyword">if</span> (path.includes(<span class="hljs-string">'.js'</span>)) {
+      res.writeHead (<span class="hljs-number">200</span>, <span class="hljs-string">'Content-Type'</span>, <span class="hljs-string">'text/javascript'</span>);
+      <span class="hljs-comment">// readFile 메소드로 HTML 파일을 읽어서 읽은 데이터를 브라우저로 보낸다.</span>
+      fs.readFile(__dirname + path, <span class="hljs-function">(<span class="hljs-params">err, data</span>) =&gt;</span> {
+        <span class="hljs-keyword">if</span> (err) {
+          <span class="hljs-keyword">return</span> <span class="hljs-built_in">console</span>.error(err);
         }
         res.end(data);
       });
-    } &lt;span class="hljs-keyword"&gt;else&lt;/span&gt; &lt;span class="hljs-keyword"&gt;if&lt;/span&gt; (path === &lt;span class="hljs-string"&gt;&amp;#x27;/&amp;#x27;&lt;/span&gt;) {
-      res.writeHead (&lt;span class="hljs-number"&gt;200&lt;/span&gt;, &lt;span class="hljs-string"&gt;&amp;#x27;Content-Type&amp;#x27;&lt;/span&gt;, &lt;span class="hljs-string"&gt;&amp;#x27;text/html&amp;#x27;&lt;/span&gt;);
-      &lt;span class="hljs-comment"&gt;// __dirname - 현재 프로젝트의 경로&lt;/span&gt;
-      fs.readFile(__dirname + &lt;span class="hljs-string"&gt;&amp;#x27;/index.html&amp;#x27;&lt;/span&gt;, &lt;span class="hljs-function"&gt;(&lt;span class="hljs-params"&gt;err, data&lt;/span&gt;) =&amp;gt;&lt;/span&gt; {
-        &lt;span class="hljs-keyword"&gt;if&lt;/span&gt; (err) {
-          &lt;span class="hljs-keyword"&gt;return&lt;/span&gt; &lt;span class="hljs-built_in"&gt;console&lt;/span&gt;.error(err);
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (path === <span class="hljs-string">'/'</span>) {
+      res.writeHead (<span class="hljs-number">200</span>, <span class="hljs-string">'Content-Type'</span>, <span class="hljs-string">'text/html'</span>);
+      <span class="hljs-comment">// __dirname - 현재 프로젝트의 경로</span>
+      fs.readFile(__dirname + <span class="hljs-string">'/index.html'</span>, <span class="hljs-function">(<span class="hljs-params">err, data</span>) =&gt;</span> {
+        <span class="hljs-keyword">if</span> (err) {
+          <span class="hljs-keyword">return</span> <span class="hljs-built_in">console</span>.error(err);
         }
-        res.end(data, &lt;span class="hljs-string"&gt;&amp;#x27;utf-8&amp;#x27;&lt;/span&gt;);
+        res.end(data, <span class="hljs-string">'utf-8'</span>);
       });
-    } &lt;span class="hljs-keyword"&gt;else&lt;/span&gt; {
-      res.writeHead(&lt;span class="hljs-number"&gt;404&lt;/span&gt;, &lt;span class="hljs-string"&gt;&amp;#x27;Content-Type&amp;#x27;&lt;/span&gt;, &lt;span class="hljs-string"&gt;&amp;#x27;text/plain; charset=UTF-8&amp;#x27;&lt;/span&gt;);
-      res.end(&lt;span class="hljs-string"&gt;&amp;#x27;주소가 없습니다&amp;#x27;&lt;/span&gt;, &lt;span class="hljs-string"&gt;&amp;#x27;utf-8&amp;#x27;&lt;/span&gt;);
+    } <span class="hljs-keyword">else</span> {
+      res.writeHead(<span class="hljs-number">404</span>, <span class="hljs-string">'Content-Type'</span>, <span class="hljs-string">'text/plain; charset=UTF-8'</span>);
+      res.end(<span class="hljs-string">'주소가 없습니다'</span>, <span class="hljs-string">'utf-8'</span>);
     }
   }
 }).listen(port);
 
-&lt;span class="hljs-built_in"&gt;console&lt;/span&gt;.log(&lt;span class="hljs-string"&gt;`Server running at http://&lt;span class="hljs-subst"&gt;${hostname}&lt;/span&gt;:&lt;span class="hljs-subst"&gt;${port}&lt;/span&gt;/`&lt;/span&gt;);</code></pre></h5>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Server running at http://<span class="hljs-subst">${hostname}</span>:<span class="hljs-subst">${port}</span>/`</span>);</code></pre>
 <h3 id="커맨드-지정">커맨드 지정</h3>
 <p>커맨드 지정 후 서버를 실행해봤다.</p>
 <h5 id="packagejson">📃 package.json</h5>

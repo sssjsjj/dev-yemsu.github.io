@@ -37,55 +37,7 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-922R4CGCRZ');</script><link href="/css/chunk-74d2d95d.9fbeb06c.css" rel="prefetch"><link href="/css/chunk-773fa2dd.9276efd2.css" rel="prefetch"><link href="/js/chunk-74d2d95d.9bc6a593.js" rel="prefetch"><link href="/js/chunk-773fa2dd.9dc87749.js" rel="prefetch"><link href="/css/app.6b281f6b.css" rel="preload" as="style"><link href="/js/app.3434b35f.js" rel="preload" as="script"><link href="/js/chunk-vendors.3a63ba27.js" rel="preload" as="script"><link href="/css/app.6b281f6b.css" rel="stylesheet"><link rel="stylesheet" type="text/css" href="/css/chunk-74d2d95d.9fbeb06c.css"><script charset="utf-8" src="/js/chunk-74d2d95d.9bc6a593.js"></script></head><body><noscript><strong>We're sorry but ENJOY DEV doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app" data-v-app=""><metainfo></metainfo><header data-v-49c83e62=""><h1 data-v-49c83e62=""><a href="/" class="logo size-medium" data-v-295f0452="" data-v-49c83e62=""><span class="logo-text dev" data-v-295f0452=""> D<span class="hidden" data-v-295f0452="">E</span>V </span><span class="logo-text enjoy" data-v-295f0452=""><span class="common-e" data-v-295f0452="">E</span>NJOY🌊 </span></a></h1><div class="links" data-v-49c83e62=""><a href="https://github.com/yemsu/" title="Yemsu Github" target="_blank" data-v-49c83e62=""><svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="26" data-view-component="true" class="octicon octicon-mark-github v-align-middle"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a></div></header><div class="container size-narrow" data-v-c8c5d468="" data-v-6c33a998=""><article data-v-6c33a998=""><nav class="outLiner" data-v-6c33a998=""><ul><li class=""><a href="#Import-Markdown">1. Import Markdown</a></li><li class="subTitle"><a href="#Inline으로-md파일을-호출하고싶다면?">1-1. Inline으로 md파일을 호출하고싶다면?</a></li><li class=""><a href="#Convert-Markdown-to-HTML">2. Convert Markdown to HTML</a></li><li class=""><a href="#동적으로-import하기">3. 동적으로 import하기</a></li><li class="subTitle"><a href="#📃-src/router/views/PostDetail.vue
-&amp;lt;template&amp;gt;
---<span-class=&quot;xml&quot;><span-class=&quot;hljs-tag&quot;>&amp;lt;<span-class=&quot;hljs-name&quot;>div</span>-<span-class=&quot;hljs-attr&quot;>v-html</span>=<span-class=&quot;hljs-string&quot;>&amp;quot;contents&amp;quot;</span>&amp;gt;</span><span-class=&quot;hljs-tag&quot;>&amp;lt;/<span-class=&quot;hljs-name&quot;>div</span>&amp;gt;</span></span>
-&amp;lt;/template&amp;gt;
-
-<span-class=&quot;xml&quot;><span-class=&quot;hljs-tag&quot;>&amp;lt;<span-class=&quot;hljs-name&quot;>script</span>&amp;gt;</span><span-class=&quot;javascript&quot;>
-<span-class=&quot;hljs-keyword&quot;>import</span>-htmlConverter-<span-class=&quot;hljs-keyword&quot;>from</span>-<span-class=&quot;hljs-string&quot;>&amp;quot;@/utils/htmlConverter&amp;quot;</span>;
-
-<span-class=&quot;hljs-keyword&quot;>export</span>-<span-class=&quot;hljs-keyword&quot;>default</span>-{
---<span-class=&quot;hljs-function&quot;><span-class=&quot;hljs-title&quot;>data</span>(<span-class=&quot;hljs-params&quot;></span>)</span>-{
-----<span-class=&quot;hljs-keyword&quot;>return</span>-{
-------<span-class=&quot;hljs-attr&quot;>contents</span>:-<span-class=&quot;hljs-literal&quot;>null</span>
-----}
---},
---<span-class=&quot;hljs-keyword&quot;>async</span>-<span-class=&quot;hljs-function&quot;><span-class=&quot;hljs-title&quot;>created</span>(<span-class=&quot;hljs-params&quot;></span>)</span>-{
-----<span-class=&quot;hljs-keyword&quot;>try</span>-{
-------<span-class=&quot;hljs-keyword&quot;>const</span>-param-=-<span-class=&quot;hljs-built_in&quot;>this</span>.$route.params.title
-------<span-class=&quot;hljs-keyword&quot;>const</span>-post-=-<span-class=&quot;hljs-keyword&quot;>await</span>-<span-class=&quot;hljs-keyword&quot;>import</span>(<span-class=&quot;hljs-string&quot;>`@/contents/<span-class=&quot;hljs-subst&quot;>${param}</span>.md`</span>)
-------<span-class=&quot;hljs-built_in&quot;>this</span>.contents-=-htmlConverter(post.default)
-----}-<span-class=&quot;hljs-keyword&quot;>catch</span>-(e)-{
-------<span-class=&quot;hljs-built_in&quot;>console</span>.log(e)
-----}
---},
-}
-</span><span-class=&quot;hljs-tag&quot;>&amp;lt;/<span-class=&quot;hljs-name&quot;>script</span>&amp;gt;</span></span>">3-1. 📃 src/router/views/PostDetail.vue
-&amp;lt;template&amp;gt;
-  &lt;span class="xml"&gt;&lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;div&lt;/span&gt; &lt;span class="hljs-attr"&gt;v-html&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;contents&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&amp;lt;/template&amp;gt;
-
-&lt;span class="xml"&gt;&lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class="javascript"&gt;
-&lt;span class="hljs-keyword"&gt;import&lt;/span&gt; htmlConverter &lt;span class="hljs-keyword"&gt;from&lt;/span&gt; &lt;span class="hljs-string"&gt;&amp;quot;@/utils/htmlConverter&amp;quot;&lt;/span&gt;;
-
-&lt;span class="hljs-keyword"&gt;export&lt;/span&gt; &lt;span class="hljs-keyword"&gt;default&lt;/span&gt; {
-  &lt;span class="hljs-function"&gt;&lt;span class="hljs-title"&gt;data&lt;/span&gt;(&lt;span class="hljs-params"&gt;&lt;/span&gt;)&lt;/span&gt; {
-    &lt;span class="hljs-keyword"&gt;return&lt;/span&gt; {
-      &lt;span class="hljs-attr"&gt;contents&lt;/span&gt;: &lt;span class="hljs-literal"&gt;null&lt;/span&gt;
-    }
-  },
-  &lt;span class="hljs-keyword"&gt;async&lt;/span&gt; &lt;span class="hljs-function"&gt;&lt;span class="hljs-title"&gt;created&lt;/span&gt;(&lt;span class="hljs-params"&gt;&lt;/span&gt;)&lt;/span&gt; {
-    &lt;span class="hljs-keyword"&gt;try&lt;/span&gt; {
-      &lt;span class="hljs-keyword"&gt;const&lt;/span&gt; param = &lt;span class="hljs-built_in"&gt;this&lt;/span&gt;.$route.params.title
-      &lt;span class="hljs-keyword"&gt;const&lt;/span&gt; post = &lt;span class="hljs-keyword"&gt;await&lt;/span&gt; &lt;span class="hljs-keyword"&gt;import&lt;/span&gt;(&lt;span class="hljs-string"&gt;`@/contents/&lt;span class="hljs-subst"&gt;${param}&lt;/span&gt;.md`&lt;/span&gt;)
-      &lt;span class="hljs-built_in"&gt;this&lt;/span&gt;.contents = htmlConverter(post.default)
-    } &lt;span class="hljs-keyword"&gt;catch&lt;/span&gt; (e) {
-      &lt;span class="hljs-built_in"&gt;console&lt;/span&gt;.log(e)
-    }
-  },
-}
-&lt;/span&gt;&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;</a></li><li class=""><a href="#Next">4. Next</a></li></ul></nav><div class="wrap-info" data-v-6c33a998=""><h2 class="title" data-v-6c33a998="">Vue CLI 4 마크다운 파일을 불러와 HTML로 변환하기</h2><p class="date" data-v-6c33a998="">2022-03-29</p><ul class="keywords" data-v-6c33a998=""><li class="keyword" data-v-6c33a998="">Vue CLI 4</li><li class="keyword" data-v-6c33a998="">Vue3</li><li class="keyword" data-v-6c33a998="">import markdown</li><li class="keyword" data-v-6c33a998="">convert to HTML</li></ul></div><article class="article" data-v-6c33a998=""><h3 id="Import-Markdown">Import Markdown</h3>
+      gtag('config', 'G-922R4CGCRZ');</script><link href="/css/chunk-74d2d95d.9fbeb06c.css" rel="prefetch"><link href="/css/chunk-773fa2dd.9276efd2.css" rel="prefetch"><link href="/js/chunk-74d2d95d.9bc6a593.js" rel="prefetch"><link href="/js/chunk-773fa2dd.9dc87749.js" rel="prefetch"><link href="/css/app.6b281f6b.css" rel="preload" as="style"><link href="/js/app.3434b35f.js" rel="preload" as="script"><link href="/js/chunk-vendors.3a63ba27.js" rel="preload" as="script"><link href="/css/app.6b281f6b.css" rel="stylesheet"><link rel="stylesheet" type="text/css" href="/css/chunk-74d2d95d.9fbeb06c.css"><script charset="utf-8" src="/js/chunk-74d2d95d.9bc6a593.js"></script></head><body><noscript><strong>We're sorry but ENJOY DEV doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app" data-v-app=""><metainfo></metainfo><header data-v-49c83e62=""><h1 data-v-49c83e62=""><a href="/" class="logo size-medium" data-v-295f0452="" data-v-49c83e62=""><span class="logo-text dev" data-v-295f0452=""> D<span class="hidden" data-v-295f0452="">E</span>V </span><span class="logo-text enjoy" data-v-295f0452=""><span class="common-e" data-v-295f0452="">E</span>NJOY🌊 </span></a></h1><div class="links" data-v-49c83e62=""><a href="https://github.com/yemsu/" title="Yemsu Github" target="_blank" data-v-49c83e62=""><svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="26" data-view-component="true" class="octicon octicon-mark-github v-align-middle"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a></div></header><div class="container size-narrow" data-v-c8c5d468="" data-v-6c33a998=""><article data-v-6c33a998=""><nav class="outLiner" data-v-6c33a998=""><ul><li class=""><a href="#Import-Markdown">1. Import Markdown</a></li><li class="subTitle"><a href="#Inline으로-md파일을-호출하고싶다면?">1-1. Inline으로 md파일을 호출하고싶다면?</a></li><li class=""><a href="#Convert-Markdown-to-HTML">2. Convert Markdown to HTML</a></li><li class=""><a href="#동적으로-import하기">3. 동적으로 import하기</a></li><li class="subTitle"><a href="#📃-src/router/views/PostDetail.vue">3-1. 📃 src/router/views/PostDetail.vue</a></li><li class=""><a href="#Next">4. Next</a></li></ul></nav><div class="wrap-info" data-v-6c33a998=""><h2 class="title" data-v-6c33a998="">Vue CLI 4 마크다운 파일을 불러와 HTML로 변환하기</h2><p class="date" data-v-6c33a998="">2022-03-29</p><ul class="keywords" data-v-6c33a998=""><li class="keyword" data-v-6c33a998="">Vue CLI 4</li><li class="keyword" data-v-6c33a998="">Vue3</li><li class="keyword" data-v-6c33a998="">import markdown</li><li class="keyword" data-v-6c33a998="">convert to HTML</li></ul></div><article class="article" data-v-6c33a998=""><h3 id="Import-Markdown">Import Markdown</h3>
 <p>우선 마크다운 파일 호출을 위해 Webpack 일반 텍스트 파일 로더인 <a href="https://v4.webpack.js.org/loaders/raw-loader/">raw-loader</a>를 설치한다.</p>
 <pre><code>yarn add raw-loader -D</code></pre>
 <h5 id="vueconfigjs">📃 vue.config.js</h5>
@@ -192,59 +144,36 @@ route.params 설정에 대한 자세한 내용은 <a href="vue3-router">"Vue3 Ro
 <code>import()</code>는 <code>promise</code>객체를 반환하고 <code>.default</code>로 데이터에 접근할 수 있다.
 해당 값을 html로 convert해서 <code>this.contents</code>에 할당하도록 작성했다.</p>
 <p>promise 객체를 객체 구조 분해 할당으로 바로 default에 담아보려고 했으나 default라는 변수명은 작성할 수 없는 것 같다.</p>
-<h4 id="📃-src/router/views/PostDetail.vue
-&amp;lt;template&amp;gt;
---<span-class=&quot;xml&quot;><span-class=&quot;hljs-tag&quot;>&amp;lt;<span-class=&quot;hljs-name&quot;>div</span>-<span-class=&quot;hljs-attr&quot;>v-html</span>=<span-class=&quot;hljs-string&quot;>&amp;quot;contents&amp;quot;</span>&amp;gt;</span><span-class=&quot;hljs-tag&quot;>&amp;lt;/<span-class=&quot;hljs-name&quot;>div</span>&amp;gt;</span></span>
-&amp;lt;/template&amp;gt;
+<h4 id="📃-src/router/views/PostDetail.vue">📃 src/router/views/PostDetail.vue</h4>
+<pre><code class="language-javascript">&lt;template&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">v-html</span>=<span class="hljs-string">"contents"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+&lt;/template&gt;
 
-<span-class=&quot;xml&quot;><span-class=&quot;hljs-tag&quot;>&amp;lt;<span-class=&quot;hljs-name&quot;>script</span>&amp;gt;</span><span-class=&quot;javascript&quot;>
-<span-class=&quot;hljs-keyword&quot;>import</span>-htmlConverter-<span-class=&quot;hljs-keyword&quot;>from</span>-<span-class=&quot;hljs-string&quot;>&amp;quot;@/utils/htmlConverter&amp;quot;</span>;
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">import</span> htmlConverter <span class="hljs-keyword">from</span> <span class="hljs-string">"@/utils/htmlConverter"</span>;
 
-<span-class=&quot;hljs-keyword&quot;>export</span>-<span-class=&quot;hljs-keyword&quot;>default</span>-{
---<span-class=&quot;hljs-function&quot;><span-class=&quot;hljs-title&quot;>data</span>(<span-class=&quot;hljs-params&quot;></span>)</span>-{
-----<span-class=&quot;hljs-keyword&quot;>return</span>-{
-------<span-class=&quot;hljs-attr&quot;>contents</span>:-<span-class=&quot;hljs-literal&quot;>null</span>
-----}
---},
---<span-class=&quot;hljs-keyword&quot;>async</span>-<span-class=&quot;hljs-function&quot;><span-class=&quot;hljs-title&quot;>created</span>(<span-class=&quot;hljs-params&quot;></span>)</span>-{
-----<span-class=&quot;hljs-keyword&quot;>try</span>-{
-------<span-class=&quot;hljs-keyword&quot;>const</span>-param-=-<span-class=&quot;hljs-built_in&quot;>this</span>.$route.params.title
-------<span-class=&quot;hljs-keyword&quot;>const</span>-post-=-<span-class=&quot;hljs-keyword&quot;>await</span>-<span-class=&quot;hljs-keyword&quot;>import</span>(<span-class=&quot;hljs-string&quot;>`@/contents/<span-class=&quot;hljs-subst&quot;>${param}</span>.md`</span>)
-------<span-class=&quot;hljs-built_in&quot;>this</span>.contents-=-htmlConverter(post.default)
-----}-<span-class=&quot;hljs-keyword&quot;>catch</span>-(e)-{
-------<span-class=&quot;hljs-built_in&quot;>console</span>.log(e)
-----}
---},
-}
-</span><span-class=&quot;hljs-tag&quot;>&amp;lt;/<span-class=&quot;hljs-name&quot;>script</span>&amp;gt;</span></span>">📃 src/router/views/PostDetail.vue<pre><code class="language-javascript">&amp;lt;template&amp;gt;
-  &lt;span class="xml"&gt;&lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;div&lt;/span&gt; &lt;span class="hljs-attr"&gt;v-html&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;contents&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
-&amp;lt;/template&amp;gt;
-
-&lt;span class="xml"&gt;&lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class="javascript"&gt;
-&lt;span class="hljs-keyword"&gt;import&lt;/span&gt; htmlConverter &lt;span class="hljs-keyword"&gt;from&lt;/span&gt; &lt;span class="hljs-string"&gt;&amp;quot;@/utils/htmlConverter&amp;quot;&lt;/span&gt;;
-
-&lt;span class="hljs-keyword"&gt;export&lt;/span&gt; &lt;span class="hljs-keyword"&gt;default&lt;/span&gt; {
-  &lt;span class="hljs-function"&gt;&lt;span class="hljs-title"&gt;data&lt;/span&gt;(&lt;span class="hljs-params"&gt;&lt;/span&gt;)&lt;/span&gt; {
-    &lt;span class="hljs-keyword"&gt;return&lt;/span&gt; {
-      &lt;span class="hljs-attr"&gt;contents&lt;/span&gt;: &lt;span class="hljs-literal"&gt;null&lt;/span&gt;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-function"><span class="hljs-title">data</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> {
+      <span class="hljs-attr">contents</span>: <span class="hljs-literal">null</span>
     }
   },
-  &lt;span class="hljs-keyword"&gt;async&lt;/span&gt; &lt;span class="hljs-function"&gt;&lt;span class="hljs-title"&gt;created&lt;/span&gt;(&lt;span class="hljs-params"&gt;&lt;/span&gt;)&lt;/span&gt; {
-    &lt;span class="hljs-keyword"&gt;try&lt;/span&gt; {
-      &lt;span class="hljs-keyword"&gt;const&lt;/span&gt; param = &lt;span class="hljs-built_in"&gt;this&lt;/span&gt;.$route.params.title
-      &lt;span class="hljs-keyword"&gt;const&lt;/span&gt; post = &lt;span class="hljs-keyword"&gt;await&lt;/span&gt; &lt;span class="hljs-keyword"&gt;import&lt;/span&gt;(&lt;span class="hljs-string"&gt;`@/contents/&lt;span class="hljs-subst"&gt;${param}&lt;/span&gt;.md`&lt;/span&gt;)
-      &lt;span class="hljs-built_in"&gt;this&lt;/span&gt;.contents = htmlConverter(post.default)
-    } &lt;span class="hljs-keyword"&gt;catch&lt;/span&gt; (e) {
-      &lt;span class="hljs-built_in"&gt;console&lt;/span&gt;.log(e)
+  <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-title">created</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">try</span> {
+      <span class="hljs-keyword">const</span> param = <span class="hljs-built_in">this</span>.$route.params.title
+      <span class="hljs-keyword">const</span> post = <span class="hljs-keyword">await</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">`@/contents/<span class="hljs-subst">${param}</span>.md`</span>)
+      <span class="hljs-built_in">this</span>.contents = htmlConverter(post.default)
+    } <span class="hljs-keyword">catch</span> (e) {
+      <span class="hljs-built_in">console</span>.log(e)
     }
   },
 }
-&lt;/span&gt;&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;</code></pre></h4>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span></code></pre>
 <h3 id="Next">Next</h3>
 <p>이렇게 마크다운 파일을 import하고 HTML로 convert 해보았다.<br>
 그런데 마크다운, 이미지같이 별다른 가공이 필요하지 않은 static 파일들은 컴파일 과정이 필요없다.<br>
 따라서 나는 raw-loader로 마크다운을 import하는 방법에서 public폴더로 옮기고 axios로 마크다운파일을 가져오도록 변경했다.<br>
 자세한 내용은 다음 포스팅에 정리하도록 하겠다.</p>
-<p>다음 포스팅 - <a href="vue-cli-4-use-static-file">Vue CLI 4 static 파일 사용하기</a>  </p></article><div class="article-bottom" data-v-6c33a998=""><p class="text-ps" data-v-6c33a998=""><strong data-v-6c33a998="">수정이 필요한 부분</strong> 혹은 <strong data-v-6c33a998="">더 나은 방법</strong>을 알고계신가요? <br data-v-6c33a998=""> 댓글로 알려주시면 저에게 큰 도움이 됩니다! 😊💜 </p><div class="vue-utterances" data-v-6c33a998=""><div class="utterances" style="height: 269px;">
+<p>다음 포스팅 - <a href="vue-cli-4-use-static-file">Vue CLI 4 static 파일 사용하기</a>  </p></article><div class="article-bottom" data-v-6c33a998=""><p class="text-ps" data-v-6c33a998=""><strong data-v-6c33a998="">수정이 필요한 부분</strong> 혹은 <strong data-v-6c33a998="">더 나은 방법</strong>을 알고계신가요? <br data-v-6c33a998=""> 댓글로 알려주시면 저에게 큰 도움이 됩니다! 😊💜 </p><div class="vue-utterances" data-v-6c33a998=""><div class="utterances">
     <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?async=&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=yemsu%2Fyemsu.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A8001%2Fvue-cli-4-import-markdown-convert-to-html&amp;origin=http%3A%2F%2Flocalhost%3A8001&amp;pathname=vue-cli-4-import-markdown-convert-to-html&amp;title=ENJOY+DEV&amp;description=&amp;og%3Atitle=&amp;session=" loading="lazy"></iframe>
   </div></div></div></article></div></div><script src="/js/chunk-vendors.3a63ba27.js"></script><script src="/js/app.3434b35f.js"></script></body></html>

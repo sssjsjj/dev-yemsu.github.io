@@ -42,59 +42,62 @@
 <code>node.js</code>의 <code>fs</code>모듈로 파일 목록을 불러올 수 있다고해서 이렇게 저렇게 시도해보았는데 새로 공부할게 생각보다 훨씬 많았다. 작업이 많이 복잡한 듯 해서 파일 리스트 자동으로 가져오는 기능은 우선순위를 뒤쪽으로 두고, 파일리스트를 직접 작성했다.</p>
 <h5 id="srcutilspostsjs">📃 src/utils/posts.js</h5>
 <p>리스트를 그릴때 사용할 포스팅에 대한 정보를 아래와 같은 형식으로 만들었다.<br>
-내용이 점점 많아질테니 컴포넌트에서 <code>import</code>할 시간을 절약하기 위해 <code>string</code>으로 변환해서 <code>export</code>했다.</p><pre><code class="language-javascript">&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; posts = [
+내용이 점점 많아질테니 컴포넌트에서 <code>import</code>할 시간을 절약하기 위해 <code>string</code>으로 변환해서 <code>export</code>했다.</p>
+<pre><code class="language-javascript"><span class="hljs-keyword">const</span> posts = [
   {
-    &lt;span class="hljs-string"&gt;&amp;#x27;name&amp;#x27;&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;#x27;markdown-file-name&amp;#x27;&lt;/span&gt;,
-    &lt;span class="hljs-string"&gt;&amp;#x27;title&amp;#x27;&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;#x27;title&amp;#x27;&lt;/span&gt;,
-    &lt;span class="hljs-string"&gt;&amp;#x27;date&amp;#x27;&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;#x27;2022-02-27&amp;#x27;&lt;/span&gt;,
-    &lt;span class="hljs-string"&gt;&amp;#x27;keywords&amp;#x27;&lt;/span&gt;: [&lt;span class="hljs-string"&gt;&amp;#x27;keywords0&amp;#x27;&lt;/span&gt;, &lt;span class="hljs-string"&gt;&amp;#x27;keywords1&amp;#x27;&lt;/span&gt;, &lt;span class="hljs-string"&gt;&amp;#x27;keywords2&amp;#x27;&lt;/span&gt;],
-    &lt;span class="hljs-string"&gt;&amp;#x27;description&amp;#x27;&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;#x27;description&amp;#x27;&lt;/span&gt;,
+    <span class="hljs-string">'name'</span>: <span class="hljs-string">'markdown-file-name'</span>,
+    <span class="hljs-string">'title'</span>: <span class="hljs-string">'title'</span>,
+    <span class="hljs-string">'date'</span>: <span class="hljs-string">'2022-02-27'</span>,
+    <span class="hljs-string">'keywords'</span>: [<span class="hljs-string">'keywords0'</span>, <span class="hljs-string">'keywords1'</span>, <span class="hljs-string">'keywords2'</span>],
+    <span class="hljs-string">'description'</span>: <span class="hljs-string">'description'</span>,
   }
 ]
 
-&lt;span class="hljs-keyword"&gt;export&lt;/span&gt; &lt;span class="hljs-keyword"&gt;default&lt;/span&gt; &lt;span class="hljs-built_in"&gt;JSON&lt;/span&gt;.stringify(posts)</code></pre><p></p>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-built_in">JSON</span>.stringify(posts)</code></pre>
 <h5 id="srcrouterviewspostlistvue">📃 src/router/views/PostList.vue</h5>
-<p>만들어놨던 데이터를 <code>import</code>해서 <code>json</code>으로 <code>parse</code>한 후에 임시로 데이터 바인딩했다.</p><pre><code class="language-html">&lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;template&lt;/span&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;div&lt;/span&gt;
-      &lt;span class="hljs-attr"&gt;v-for&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;(post, i) in posts&amp;quot;&lt;/span&gt;
-      &lt;span class="hljs-attr"&gt;:key&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;`post${i}`&amp;quot;&lt;/span&gt;
-    &amp;gt;&lt;/span&gt;
-      &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;a&lt;/span&gt; &lt;span class="hljs-attr"&gt;:href&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;post.name&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
+<p>만들어놨던 데이터를 <code>import</code>해서 <code>json</code>으로 <code>parse</code>한 후에 임시로 데이터 바인딩했다.</p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>
+      <span class="hljs-attr">v-for</span>=<span class="hljs-string">"(post, i) in posts"</span>
+      <span class="hljs-attr">:key</span>=<span class="hljs-string">"`post${i}`"</span>
+    &gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">:href</span>=<span class="hljs-string">"post.name"</span>&gt;</span>
         {{ post.title }}
         {{ post.date }}
         {{ post.description }}
-      &lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;
-        &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;li&lt;/span&gt;
-          &lt;span class="hljs-attr"&gt;v-for&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;(keyword, keywordIndex) in post.keywords&amp;quot;&lt;/span&gt;
-          &lt;span class="hljs-attr"&gt;:key&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;`keyword${keywordIndex}`&amp;quot;&lt;/span&gt;
-        &amp;gt;&lt;/span&gt;
+      <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>
+          <span class="hljs-attr">v-for</span>=<span class="hljs-string">"(keyword, keywordIndex) in post.keywords"</span>
+          <span class="hljs-attr">:key</span>=<span class="hljs-string">"`keyword${keywordIndex}`"</span>
+        &gt;</span>
           {{ keyword }}
-        &lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;li&lt;/span&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;ul&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;template&lt;/span&gt;&amp;gt;&lt;/span&gt;
+        <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
-&lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class="javascript"&gt;
-&lt;span class="hljs-keyword"&gt;import&lt;/span&gt; posts &lt;span class="hljs-keyword"&gt;from&lt;/span&gt; &lt;span class="hljs-string"&gt;&amp;#x27;@/utils/posts&amp;#x27;&lt;/span&gt;
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">import</span> posts <span class="hljs-keyword">from</span> <span class="hljs-string">'@/utils/posts'</span>
 
-&lt;span class="hljs-keyword"&gt;export&lt;/span&gt; &lt;span class="hljs-keyword"&gt;default&lt;/span&gt; {
-  &lt;span class="hljs-function"&gt;&lt;span class="hljs-title"&gt;data&lt;/span&gt;(&lt;span class="hljs-params"&gt;&lt;/span&gt;)&lt;/span&gt; {
-    &lt;span class="hljs-keyword"&gt;return&lt;/span&gt; {
-      &lt;span class="hljs-attr"&gt;posts&lt;/span&gt;: []
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-function"><span class="hljs-title">data</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> {
+      <span class="hljs-attr">posts</span>: []
     }
   },
-  &lt;span class="hljs-function"&gt;&lt;span class="hljs-title"&gt;created&lt;/span&gt;(&lt;span class="hljs-params"&gt;&lt;/span&gt;)&lt;/span&gt; {
-    &lt;span class="hljs-built_in"&gt;this&lt;/span&gt;.posts = &lt;span class="hljs-built_in"&gt;JSON&lt;/span&gt;.parse(posts)
+  <span class="hljs-function"><span class="hljs-title">created</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-built_in">this</span>.posts = <span class="hljs-built_in">JSON</span>.parse(posts)
   },
 }
-&lt;/span&gt;&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;</code></pre><p></p>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 <hr>
 <h3 id="sass-설치-하기">sass 설치 하기</h3>
-<p>스타일을 적용하기 위해 <code>css</code> 전처리기인 <code>sass</code>를 사용했다.</p><pre><code>yarn add sass sass-loader@10 -D</code></pre>
-자세한 과정은 <a href="vue-cli-working-with-sass">VUE CLI Sass 사용하기</a> 포스팅에 정리해두었다!<p></p>
+<p>스타일을 적용하기 위해 <code>css</code> 전처리기인 <code>sass</code>를 사용했다.</p>
+<pre><code>yarn add sass sass-loader@10 -D</code></pre>
+<p>자세한 과정은 <a href="vue-cli-working-with-sass">VUE CLI Sass 사용하기</a> 포스팅에 정리해두었다!</p>
 <hr>
 <h3 id="폰트-설정">폰트 설정</h3>
 <p>폰트는 <a href="https://github.com/">Github</a>의 <a href="https://github.com/orioncactus/pretendard">Pretendard</a>를 사용한다.<br>
@@ -109,99 +112,101 @@
 <h3 id="header-만들기">header 만들기</h3>
 <p><code>header</code> 컴포넌트를 만들었다.<br>
 로고랑 깃헙링크도 컴포넌트로 만들어서 <code>header</code> 컴포넌트 내부에 삽입해줬다.</p>
-<h5 id="srccomponentslayoutheadervueprec16cpre">📃 /src/components/layout/Header.vue<pre><code class="language-html">&lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;template&lt;/span&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;header&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;h1&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;Logo&lt;/span&gt; &lt;span class="hljs-attr"&gt;:size&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;&amp;#x27;medium&amp;#x27;&amp;quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;h1&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;div&lt;/span&gt; &lt;span class="hljs-attr"&gt;class&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;links&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;LinkGithub&lt;/span&gt; /&amp;gt;&lt;/span&gt;
-    &lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;header&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;template&lt;/span&gt;&amp;gt;&lt;/span&gt;
+<h5 id="srccomponentslayoutheadervue">📃 /src/components/layout/Header.vue</h5>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">header</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Logo</span> <span class="hljs-attr">:size</span>=<span class="hljs-string">"'medium'"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"links"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">LinkGithub</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
-&lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class="javascript"&gt;
-&lt;span class="hljs-keyword"&gt;import&lt;/span&gt; Logo &lt;span class="hljs-keyword"&gt;from&lt;/span&gt; &lt;span class="hljs-string"&gt;&amp;#x27;@/components/Logo.vue&amp;#x27;&lt;/span&gt;
-&lt;span class="hljs-keyword"&gt;import&lt;/span&gt; LinkGithub &lt;span class="hljs-keyword"&gt;from&lt;/span&gt; &lt;span class="hljs-string"&gt;&amp;#x27;@/components/LinkGithub.vue&amp;#x27;&lt;/span&gt;
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">import</span> Logo <span class="hljs-keyword">from</span> <span class="hljs-string">'@/components/Logo.vue'</span>
+<span class="hljs-keyword">import</span> LinkGithub <span class="hljs-keyword">from</span> <span class="hljs-string">'@/components/LinkGithub.vue'</span>
 
-&lt;span class="hljs-keyword"&gt;export&lt;/span&gt; &lt;span class="hljs-keyword"&gt;default&lt;/span&gt; {
-  &lt;span class="hljs-attr"&gt;components&lt;/span&gt;: {
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">components</span>: {
     Logo,
     LinkGithub
   },
-  &lt;span class="hljs-function"&gt;&lt;span class="hljs-title"&gt;data&lt;/span&gt;(&lt;span class="hljs-params"&gt;&lt;/span&gt;)&lt;/span&gt; {
-    &lt;span class="hljs-keyword"&gt;return&lt;/span&gt; {
+  <span class="hljs-function"><span class="hljs-title">data</span>(<span class="hljs-params"></span>)</span> {
+    <span class="hljs-keyword">return</span> {
     }
   }
 }
-&lt;/span&gt;&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 
-&lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;style&lt;/span&gt; &lt;span class="hljs-attr"&gt;lang&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;scss&amp;quot;&lt;/span&gt; &lt;span class="hljs-attr"&gt;scoped&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class="css"&gt;
-&lt;span class="hljs-selector-tag"&gt;header&lt;/span&gt; {
-  &lt;span class="hljs-attribute"&gt;display&lt;/span&gt;: flex;
-  &lt;span class="hljs-attribute"&gt;align-items&lt;/span&gt;: center;
-  &lt;span class="hljs-attribute"&gt;justify-content&lt;/span&gt;: space-between;
-  &lt;span class="hljs-attribute"&gt;padding&lt;/span&gt;: &lt;span class="hljs-number"&gt;50px&lt;/span&gt; &lt;span class="hljs-number"&gt;50px&lt;/span&gt; &lt;span class="hljs-number"&gt;30px&lt;/span&gt;;
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"scss"</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
+<span class="hljs-selector-tag">header</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">justify-content</span>: space-between;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">50px</span> <span class="hljs-number">50px</span> <span class="hljs-number">30px</span>;
 }
-&lt;span class="hljs-selector-tag"&gt;nav&lt;/span&gt; {
-  &lt;span class="hljs-selector-tag"&gt;ul&lt;/span&gt; {
-    &lt;span class="hljs-attribute"&gt;display&lt;/span&gt;: flex;
-    gap: &lt;span class="hljs-number"&gt;20px&lt;/span&gt;;
+<span class="hljs-selector-tag">nav</span> {
+  <span class="hljs-selector-tag">ul</span> {
+    <span class="hljs-attribute">display</span>: flex;
+    gap: <span class="hljs-number">20px</span>;
   }
 }
-&lt;/span&gt;&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;style&lt;/span&gt;&amp;gt;&lt;/span&gt;</code></pre></h5>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
 <p>로고 컴포넌트는 <code>props</code>값을 받아서 사이즈를 지정할 수 있도록했다.<br>
 우선은 <code>header</code>에서 필요한 사이즈만 지정하고 추후 다른 사이즈가 필요하게 되면 사이즈 옵션을 추가할 예정이다.</p>
-<h5 id="srccomponentslogovueprec19cpre">📃 src/components/Logo.vue<pre><code class="language-html">&lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;template&lt;/span&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;a&lt;/span&gt; &lt;span class="hljs-attr"&gt;href&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;/&amp;quot;&lt;/span&gt; &lt;span class="hljs-attr"&gt;:class&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;`logo size-${size}`&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;span&lt;/span&gt; &lt;span class="hljs-attr"&gt;class&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;logo-text dev&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
-      D&lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;span&lt;/span&gt; &lt;span class="hljs-attr"&gt;class&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;hidden&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;E&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;span&lt;/span&gt;&amp;gt;&lt;/span&gt;V
-    &lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;span&lt;/span&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;span&lt;/span&gt; &lt;span class="hljs-attr"&gt;class&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;logo-text enjoy&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
-      &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;span&lt;/span&gt; &lt;span class="hljs-attr"&gt;class&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;common-e&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;E&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;span&lt;/span&gt;&amp;gt;&lt;/span&gt;NJOY🌊
-    &lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;span&lt;/span&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;
-&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;template&lt;/span&gt;&amp;gt;&lt;/span&gt;
+<h5 id="srccomponentslogovue">📃 src/components/Logo.vue</h5>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span> <span class="hljs-attr">:class</span>=<span class="hljs-string">"`logo size-${size}`"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"logo-text dev"</span>&gt;</span>
+      D<span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"hidden"</span>&gt;</span>E<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>V
+    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"logo-text enjoy"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"common-e"</span>&gt;</span>E<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>NJOY🌊
+    <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
 
-&lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class="javascript"&gt;
-&lt;span class="hljs-keyword"&gt;export&lt;/span&gt; &lt;span class="hljs-keyword"&gt;default&lt;/span&gt; {
-  &lt;span class="hljs-attr"&gt;props&lt;/span&gt;: {
-    &lt;span class="hljs-attr"&gt;size&lt;/span&gt;: {
-      &lt;span class="hljs-attr"&gt;type&lt;/span&gt;: &lt;span class="hljs-built_in"&gt;String&lt;/span&gt;,
-      &lt;span class="hljs-attr"&gt;default&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;#x27;medium&amp;#x27;&lt;/span&gt;
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">props</span>: {
+    <span class="hljs-attr">size</span>: {
+      <span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>,
+      <span class="hljs-attr">default</span>: <span class="hljs-string">'medium'</span>
     }
   }
 }
-&lt;/span&gt;&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 
-&lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;style&lt;/span&gt; &lt;span class="hljs-attr"&gt;lang&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;scss&amp;quot;&lt;/span&gt; &lt;span class="hljs-attr"&gt;scoped&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class="css"&gt;
-&lt;span class="hljs-selector-class"&gt;.logo&lt;/span&gt; {
-  &lt;span class="hljs-attribute"&gt;display&lt;/span&gt;: block;
-  &lt;span class="hljs-attribute"&gt;position&lt;/span&gt;: relative;
-  &lt;span class="hljs-attribute"&gt;font-weight&lt;/span&gt;: &lt;span class="hljs-number"&gt;500&lt;/span&gt;;
-  &lt;span class="hljs-attribute"&gt;transform&lt;/span&gt;: &lt;span class="hljs-built_in"&gt;rotate&lt;/span&gt;(-&lt;span class="hljs-number"&gt;18deg&lt;/span&gt;);
-  &amp;amp;&lt;span class="hljs-selector-class"&gt;.size-medium&lt;/span&gt; {
-    &lt;span class="hljs-attribute"&gt;font-size&lt;/span&gt;: &lt;span class="hljs-number"&gt;20px&lt;/span&gt;;
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"scss"</span> <span class="hljs-attr">scoped</span>&gt;</span><span class="css">
+<span class="hljs-selector-class">.logo</span> {
+  <span class="hljs-attribute">display</span>: block;
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-attribute">font-weight</span>: <span class="hljs-number">500</span>;
+  <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(-<span class="hljs-number">18deg</span>);
+  &amp;<span class="hljs-selector-class">.size-medium</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;
   }
 
-  &lt;span class="hljs-selector-class"&gt;.emoji-main&lt;/span&gt; {
-    &lt;span class="hljs-attribute"&gt;font-size&lt;/span&gt;: &lt;span class="hljs-number"&gt;50px&lt;/span&gt;;
+  <span class="hljs-selector-class">.emoji-main</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-number">50px</span>;
   }
-  &lt;span class="hljs-selector-class"&gt;.logo-text&lt;/span&gt; {
-    &amp;amp;&lt;span class="hljs-selector-class"&gt;.dev&lt;/span&gt; {
-      &lt;span class="hljs-attribute"&gt;margin-top&lt;/span&gt;: -&lt;span class="hljs-number"&gt;1.05em&lt;/span&gt;;
-      &lt;span class="hljs-attribute"&gt;margin-right&lt;/span&gt;: -&lt;span class="hljs-number"&gt;1.1em&lt;/span&gt;;
+  <span class="hljs-selector-class">.logo-text</span> {
+    &amp;<span class="hljs-selector-class">.dev</span> {
+      <span class="hljs-attribute">margin-top</span>: -<span class="hljs-number">1.05em</span>;
+      <span class="hljs-attribute">margin-right</span>: -<span class="hljs-number">1.1em</span>;
       writing-mode: vertical-rl;
       text-orientation: upright;
     }
-    &amp;amp;&lt;span class="hljs-selector-class"&gt;.enjoy&lt;/span&gt; {
-      &lt;span class="hljs-attribute"&gt;letter-spacing&lt;/span&gt;: &lt;span class="hljs-number"&gt;0.1em&lt;/span&gt;;
-      &lt;span class="hljs-attribute"&gt;color&lt;/span&gt;: &lt;span class="hljs-built_in"&gt;rgb&lt;/span&gt;(&lt;span class="hljs-number"&gt;111&lt;/span&gt;, &lt;span class="hljs-number"&gt;0&lt;/span&gt;, &lt;span class="hljs-number"&gt;255&lt;/span&gt;);
+    &amp;<span class="hljs-selector-class">.enjoy</span> {
+      <span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">0.1em</span>;
+      <span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgb</span>(<span class="hljs-number">111</span>, <span class="hljs-number">0</span>, <span class="hljs-number">255</span>);
     } 
-    &lt;span class="hljs-selector-class"&gt;.hidden&lt;/span&gt; {
-      &lt;span class="hljs-attribute"&gt;color&lt;/span&gt;: &lt;span class="hljs-number"&gt;#fff&lt;/span&gt;;
+    <span class="hljs-selector-class">.hidden</span> {
+      <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
     }
   }
 }
-&lt;/span&gt;&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;style&lt;/span&gt;&amp;gt;&lt;/span&gt;</code></pre></h5>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></code></pre>
 <hr>
 <h3 id="배포해서-확인-해보기">배포해서 확인 해보기</h3>
 <p>포스팅을 임시로 올려놓고 배포해보았다.<br>
@@ -242,6 +247,6 @@
 <p>public 폴더 내에 있는 static 파일들의 내용을 가져올 때 axios로 http요청을 하고있다.<br>
 비슷한 코드가 반복되어 http요청과 관련된 내용을 모듈로 만들었다.<br>
 자세한 과정은 아래 포스팅에!<br>
-<a href="vue-make-http-module">Vue - HTTP 호출 모듈 만들기</a> </p></article><div class="article-bottom" data-v-6c33a998=""><p class="text-ps" data-v-6c33a998=""><strong data-v-6c33a998="">수정이 필요한 부분</strong> 혹은 <strong data-v-6c33a998="">더 나은 방법</strong>을 알고계신가요? <br data-v-6c33a998=""> 댓글로 알려주시면 저에게 큰 도움이 됩니다! 😊💜 </p><div class="vue-utterances" data-v-6c33a998=""><div class="utterances" style="height: 269px;">
+<a href="vue-make-http-module">Vue - HTTP 호출 모듈 만들기</a> </p></article><div class="article-bottom" data-v-6c33a998=""><p class="text-ps" data-v-6c33a998=""><strong data-v-6c33a998="">수정이 필요한 부분</strong> 혹은 <strong data-v-6c33a998="">더 나은 방법</strong>을 알고계신가요? <br data-v-6c33a998=""> 댓글로 알려주시면 저에게 큰 도움이 됩니다! 😊💜 </p><div class="vue-utterances" data-v-6c33a998=""><div class="utterances">
     <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?async=&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=yemsu%2Fyemsu.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A8001%2Fmake-github-io-blog-with-vue3-2&amp;origin=http%3A%2F%2Flocalhost%3A8001&amp;pathname=make-github-io-blog-with-vue3-2&amp;title=ENJOY+DEV&amp;description=&amp;og%3Atitle=&amp;session=" loading="lazy"></iframe>
   </div></div></div></article></div></div><script src="/js/chunk-vendors.3a63ba27.js"></script><script src="/js/app.3434b35f.js"></script></body></html>

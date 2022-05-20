@@ -9,6 +9,7 @@
 처음엔 Https 클래스로 할까 고민하다가 굳이 그럴 필요가 없을 것 같아 객체로 만들었다.
 
 ##### 📃 src/utils/http.js
+
 ``` javascript
 import axios from 'axios'
 
@@ -30,6 +31,7 @@ const Https = {
 이것도 파일을 따로 분리할까 고민했지만 아직 소스분량이 얼마되지 않기 때문에 한 파일안에 작업했다.
 
 ##### 📃 src/utils/http.js (모듈 세분화)
+
 ```javascript
 export const importPostsInfo = () => {
   return Https.get('/posts/index.json')
@@ -54,6 +56,7 @@ export const importMD = (param = '') => {
 훨씬 코드가 깔끔해졌다. 뿌듯!  
 
 ##### 📃 src/router/views/Main.vue 
+
 ```html
 <script>
 // import axios from 'axios'  // as-is
