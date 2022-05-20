@@ -37,42 +37,36 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-922R4CGCRZ');</script><link href="/css/app.6e54af70.css" rel="preload" as="style"><link href="/js/app.fb199b15.js" rel="preload" as="script"><link href="/js/chunk-vendors.ae88b7ad.js" rel="preload" as="script"><link href="/css/app.6e54af70.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but ENJOY DEV doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app" data-v-app=""><metainfo></metainfo><header data-v-49c83e62=""><h1 data-v-49c83e62=""><a href="/" class="logo size-medium" data-v-295f0452="" data-v-49c83e62=""><span class="logo-text dev" data-v-295f0452=""> D<span class="hidden" data-v-295f0452="">E</span>V </span><span class="logo-text enjoy" data-v-295f0452=""><span class="common-e" data-v-295f0452="">E</span>NJOY🌊 </span></a></h1><div class="links" data-v-49c83e62=""><a href="https://github.com/yemsu/" title="Yemsu Github" target="_blank" data-v-49c83e62=""><svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="26" data-view-component="true" class="octicon octicon-mark-github v-align-middle"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a></div></header><div class="container size-narrow" data-v-c8c5d468="" data-v-f9dcc070=""><article data-v-f9dcc070=""><nav class="outLiner" data-v-f9dcc070=""><ul><li class=""><a href="#router-설치">1. router 설치</a></li><li class=""><a href="#폴더-/-모듈-생성">2. 폴더 / 모듈 생성</a></li><li class=""><a href="#라우터-모듈-작성">3. 라우터 모듈 작성</a></li><li class="subTitle"><a href="#🔎-route-옵션">3-1. 🔎 route 옵션</a></li><li class="subTitle"><a href="#🔎-history-mode">3-2. 🔎 history mode</a></li><li class=""><a href="#라우터-모듈-가져오기">4. 라우터 모듈 가져오기</a></li><li class=""><a href="#라우터-영역-지정하기">5. 라우터 영역 지정하기</a></li><li class=""><a href="#동적-라우팅">6. 동적 라우팅</a></li></ul></nav><div class="wrap-info" data-v-f9dcc070=""><h2 class="title" data-v-f9dcc070="">Vue3 Router 사용하기  (+ 동적 라우팅)</h2><p class="date" data-v-f9dcc070="">2022-03-10</p><ul class="keywords" data-v-f9dcc070=""><li class="keyword" data-v-f9dcc070="">Vue3</li><li class="keyword" data-v-f9dcc070="">Router</li><li class="keyword" data-v-f9dcc070="">Dynamic Segments</li></ul></div><article class="article" data-v-f9dcc070=""><h3 id="router-설치">router 설치</h3>
-<p>vue3부터는 <code>vue-router</code>가 아닌 <code>vue-router@next</code>를 설치해줘야합니다.</p>
-<pre><code>yarn add vue-router@next
-</code></pre>
+      gtag('config', 'G-922R4CGCRZ');</script><link href="/css/chunk-74d2d95d.9fbeb06c.css" rel="prefetch"><link href="/css/chunk-773fa2dd.9276efd2.css" rel="prefetch"><link href="/js/chunk-74d2d95d.9bc6a593.js" rel="prefetch"><link href="/js/chunk-773fa2dd.9dc87749.js" rel="prefetch"><link href="/css/app.6b281f6b.css" rel="preload" as="style"><link href="/js/app.3434b35f.js" rel="preload" as="script"><link href="/js/chunk-vendors.3a63ba27.js" rel="preload" as="script"><link href="/css/app.6b281f6b.css" rel="stylesheet"><link rel="stylesheet" type="text/css" href="/css/chunk-74d2d95d.9fbeb06c.css"><script charset="utf-8" src="/js/chunk-74d2d95d.9bc6a593.js"></script></head><body><noscript><strong>We're sorry but ENJOY DEV doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app" data-v-app=""><metainfo></metainfo><header data-v-49c83e62=""><h1 data-v-49c83e62=""><a href="/" class="logo size-medium" data-v-295f0452="" data-v-49c83e62=""><span class="logo-text dev" data-v-295f0452=""> D<span class="hidden" data-v-295f0452="">E</span>V </span><span class="logo-text enjoy" data-v-295f0452=""><span class="common-e" data-v-295f0452="">E</span>NJOY🌊 </span></a></h1><div class="links" data-v-49c83e62=""><a href="https://github.com/yemsu/" title="Yemsu Github" target="_blank" data-v-49c83e62=""><svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="26" data-view-component="true" class="octicon octicon-mark-github v-align-middle"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a></div></header><div class="container size-narrow" data-v-c8c5d468="" data-v-6c33a998=""><article data-v-6c33a998=""><nav class="outLiner" data-v-6c33a998=""><ul><li class=""><a href="#router-설치">1. router 설치</a></li><li class=""><a href="#폴더-/-모듈-생성">2. 폴더 / 모듈 생성</a></li><li class=""><a href="#라우터-모듈-작성">3. 라우터 모듈 작성</a></li><li class="subTitle"><a href="#🔎-route-옵션">3-1. 🔎 route 옵션</a></li><li class="subTitle"><a href="#🔎-history-mode">3-2. 🔎 history mode</a></li><li class=""><a href="#라우터-모듈-가져오기">4. 라우터 모듈 가져오기</a></li><li class=""><a href="#라우터-영역-지정하기">5. 라우터 영역 지정하기</a></li><li class=""><a href="#동적-라우팅">6. 동적 라우팅</a></li></ul></nav><div class="wrap-info" data-v-6c33a998=""><h2 class="title" data-v-6c33a998="">Vue3 Router 사용하기  (+ 동적 라우팅)</h2><p class="date" data-v-6c33a998="">2022-03-10</p><ul class="keywords" data-v-6c33a998=""><li class="keyword" data-v-6c33a998="">Vue3</li><li class="keyword" data-v-6c33a998="">Router</li><li class="keyword" data-v-6c33a998="">Dynamic Segments</li></ul></div><article class="article" data-v-6c33a998=""><h3 id="router-설치">router 설치</h3>
+<p>vue3부터는 <code>vue-router</code>가 아닌 <code>vue-router@next</code>를 설치해줘야합니다.</p><pre><code>yarn add vue-router@next</code></pre><p></p>
 <h3 id="폴더-/-모듈-생성">폴더 / 모듈 생성</h3>
-<p>src 폴더 내부에 router 폴더를 생성하고 폴더 안에 index.js로 라우터 모듈을 생성해줍니다.</p>
-<pre><code>mkdir src/router
-touch src/router/index.js
-</code></pre>
+<p>src 폴더 내부에 router 폴더를 생성하고 폴더 안에 index.js로 라우터 모듈을 생성해줍니다.</p><pre><code>mkdir src/router
+touch src/router/index.js</code></pre><p></p>
 <h3 id="라우터-모듈-작성">라우터 모듈 작성</h3>
 <p>아래와 같이 라우터 모듈을 작성합니다.</p>
-<h5 id="srcrouterindexjs">📃 src/router/index.js</h5>
-<pre><code class="javascript language-javascript">import { createWebHistory, createRouter } from "vue-router";
-import PostList from "./views/Main.vue";
-import PostDetail from "./views/PostDetail.vue";
+<h5 id="srcrouterindexjsprec4cpre">📃 src/router/index.js<pre><code class="language-javascript">&lt;span class="hljs-keyword"&gt;import&lt;/span&gt; { createWebHistory, createRouter } &lt;span class="hljs-keyword"&gt;from&lt;/span&gt; &lt;span class="hljs-string"&gt;&amp;quot;vue-router&amp;quot;&lt;/span&gt;;
+&lt;span class="hljs-keyword"&gt;import&lt;/span&gt; PostList &lt;span class="hljs-keyword"&gt;from&lt;/span&gt; &lt;span class="hljs-string"&gt;&amp;quot;./views/Main.vue&amp;quot;&lt;/span&gt;;
+&lt;span class="hljs-keyword"&gt;import&lt;/span&gt; PostDetail &lt;span class="hljs-keyword"&gt;from&lt;/span&gt; &lt;span class="hljs-string"&gt;&amp;quot;./views/PostDetail.vue&amp;quot;&lt;/span&gt;;
 
-const routes = [
+&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; routes = [
   {
-    path: "/",
-    name: "Post List",
-    component: Main,
+    &lt;span class="hljs-attr"&gt;path&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;/&amp;quot;&lt;/span&gt;,
+    &lt;span class="hljs-attr"&gt;name&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;Post List&amp;quot;&lt;/span&gt;,
+    &lt;span class="hljs-attr"&gt;component&lt;/span&gt;: Main,
   },
   {
-    path: "/:title",
-    name: "PostDetail",
-    component: PostDetail,
+    &lt;span class="hljs-attr"&gt;path&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;/:title&amp;quot;&lt;/span&gt;,
+    &lt;span class="hljs-attr"&gt;name&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;PostDetail&amp;quot;&lt;/span&gt;,
+    &lt;span class="hljs-attr"&gt;component&lt;/span&gt;: PostDetail,
   },
 ];
 
-const router = createRouter({
-  history: createWebHistory(),
+&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; router = createRouter({
+  &lt;span class="hljs-attr"&gt;history&lt;/span&gt;: createWebHistory(),
   routes,
 });
 
-export default router;
-</code></pre>
+&lt;span class="hljs-keyword"&gt;export&lt;/span&gt; &lt;span class="hljs-keyword"&gt;default&lt;/span&gt; router;</code></pre></h5>
 <blockquote>
   <h4 id="🔎-route-옵션">🔎 route 옵션</h4>
   <ul>
@@ -100,46 +94,46 @@ export default router;
 </blockquote>
 <h3 id="라우터-모듈-가져오기">라우터 모듈 가져오기</h3>
 <p>라우터를 사용한다고 어플리케이션에게 알려줍니다.</p>
-<h5 id="srcmainjs">📃 /src/main.js</h5>
-<pre><code class="javascript language-javascript">import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+<h5 id="srcmainjsprec11cpre">📃 /src/main.js<pre><code class="language-javascript">&lt;span class="hljs-keyword"&gt;import&lt;/span&gt; { createApp } &lt;span class="hljs-keyword"&gt;from&lt;/span&gt; &lt;span class="hljs-string"&gt;&amp;#x27;vue&amp;#x27;&lt;/span&gt;
+&lt;span class="hljs-keyword"&gt;import&lt;/span&gt; App &lt;span class="hljs-keyword"&gt;from&lt;/span&gt; &lt;span class="hljs-string"&gt;&amp;#x27;./App.vue&amp;#x27;&lt;/span&gt;
+&lt;span class="hljs-keyword"&gt;import&lt;/span&gt; router &lt;span class="hljs-keyword"&gt;from&lt;/span&gt; &lt;span class="hljs-string"&gt;&amp;#x27;./router&amp;#x27;&lt;/span&gt;
 
-const app = createApp(App)
+&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; app = createApp(App)
 
-app.use(router).mount('#app')
-</code></pre>
+app.use(router).mount(&lt;span class="hljs-string"&gt;&amp;#x27;#app&amp;#x27;&lt;/span&gt;)</code></pre></h5>
 <h3 id="라우터-영역-지정하기">라우터 영역 지정하기</h3>
 <p>라우터 영역을 지정해줍니다.</p>
-<h5 id="srcappvue">📃 /src/App.vue</h5>
-<pre><code class="javascript language-javascript">&lt;template&gt;
-  &lt;div id="nav"&gt;
-      &lt;router-link to="/"&gt;Home&lt;/router-link&gt;
-      &lt;router-link to="/about"&gt;About&lt;/router-link&gt;
-  &lt;/div&gt;
-  &lt;router-view /&gt;
-&lt;/template&gt;
-</code></pre>
+<h5 id="srcappvueprec12cpre">📃 /src/App.vue<pre><code class="language-javascript">&amp;lt;template&amp;gt;
+  &lt;span class="xml"&gt;&lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;div&lt;/span&gt; &lt;span class="hljs-attr"&gt;id&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;nav&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;router-link&lt;/span&gt; &lt;span class="hljs-attr"&gt;to&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;/&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;Home&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;router-link&lt;/span&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;router-link&lt;/span&gt; &lt;span class="hljs-attr"&gt;to&lt;/span&gt;=&lt;span class="hljs-string"&gt;&amp;quot;/about&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;About&lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;router-link&lt;/span&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="hljs-tag"&gt;&amp;lt;/&lt;span class="hljs-name"&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="xml"&gt;&lt;span class="hljs-tag"&gt;&amp;lt;&lt;span class="hljs-name"&gt;router-view&lt;/span&gt; /&amp;gt;&lt;/span&gt;&lt;/span&gt;
+&amp;lt;/template&amp;gt;</code></pre></h5>
 <h3 id="동적-라우팅">동적 라우팅</h3>
 <p>위 소스에서 동적라우팅을 사용한 부분입니다.
-동적으로 적용할 부분은 콜론(:)이 앞에 붙습니다.</p>
-<pre><code class="javascript language-javascript">  {
-    path: "/:title",
-    name: "PostDetail",
-    component: PostDetail,
-  }
-</code></pre>
+동적으로 적용할 부분은 콜론(:)이 앞에 붙습니다.</p><pre><code class="language-javascript">{
+    &lt;span class="hljs-attr"&gt;path&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;/:title&amp;quot;&lt;/span&gt;,
+    &lt;span class="hljs-attr"&gt;name&lt;/span&gt;: &lt;span class="hljs-string"&gt;&amp;quot;PostDetail&amp;quot;&lt;/span&gt;,
+    &lt;span class="hljs-attr"&gt;component&lt;/span&gt;: PostDetail,
+  }</code></pre><p></p>
 <p>동적 라우팅으로 지정한 <code>:title</code>은 아래와 같이 <code>$route.params.title</code>과 같은 형태로 사용할 수 있습니다.</p>
-<h5 id="srcrouterviewspostdetailvue">📃 src/router/views/PostDetail.vue</h5>
-<pre><code>&lt;template&gt;
-  &lt;h1&gt;PostDetail&lt;/h1&gt;
-  &lt;p&gt;{{ $route.params.title }}&lt;/p&gt;
-&lt;/template&gt;
-</code></pre>
+<h5 id="srcrouterviewspostdetailvueprec16cpre">📃 src/router/views/PostDetail.vue<pre><code>&lt;template&gt;
+  
+
+¨K0K
+
+
+  
+
+¨K2K
+
+
+&lt;/template&gt;</code></pre></h5>
 <p>결과는 아래와 같습니다.</p>
 <figure>
   <img src="/posts/images/vue3-dynamic-route-result-in-browser.jpg" alt="router params값 호출 화면">
   <figcaption><code>:title</code>로 지정한 부분이 <code>$route.params.title</code>로 불러와지고 있습니다.</figcaption>
-</figure></article><div class="article-bottom" data-v-f9dcc070=""><p class="text-ps" data-v-f9dcc070=""><strong data-v-f9dcc070="">수정이 필요한 부분</strong> 혹은 <strong data-v-f9dcc070="">더 나은 방법</strong>을 알고계신가요? <br data-v-f9dcc070=""> 댓글로 알려주시면 저에게 큰 도움이 됩니다! 😊💜 </p><div class="vue-utterances" data-v-f9dcc070=""><div class="utterances">
+</figure></article><div class="article-bottom" data-v-6c33a998=""><p class="text-ps" data-v-6c33a998=""><strong data-v-6c33a998="">수정이 필요한 부분</strong> 혹은 <strong data-v-6c33a998="">더 나은 방법</strong>을 알고계신가요? <br data-v-6c33a998=""> 댓글로 알려주시면 저에게 큰 도움이 됩니다! 😊💜 </p><div class="vue-utterances" data-v-6c33a998=""><div class="utterances">
     <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?async=&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=yemsu%2Fyemsu.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A8001%2Fvue3-router&amp;origin=http%3A%2F%2Flocalhost%3A8001&amp;pathname=vue3-router&amp;title=ENJOY+DEV&amp;description=&amp;og%3Atitle=&amp;session=" loading="lazy"></iframe>
-  </div></div></div></article></div></div><script src="/js/chunk-vendors.ae88b7ad.js"></script><script src="/js/app.fb199b15.js"></script></body></html>
+  </div></div></div></article></div></div><script src="/js/chunk-vendors.3a63ba27.js"></script><script src="/js/app.3434b35f.js"></script></body></html>

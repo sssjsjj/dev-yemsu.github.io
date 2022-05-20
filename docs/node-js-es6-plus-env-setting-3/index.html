@@ -37,7 +37,7 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-922R4CGCRZ');</script><link href="/css/app.6e54af70.css" rel="preload" as="style"><link href="/js/app.fb199b15.js" rel="preload" as="script"><link href="/js/chunk-vendors.ae88b7ad.js" rel="preload" as="script"><link href="/css/app.6e54af70.css" rel="stylesheet"></head><body><noscript><strong>We're sorry but ENJOY DEV doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app" data-v-app=""><metainfo></metainfo><header data-v-49c83e62=""><h1 data-v-49c83e62=""><a href="/" class="logo size-medium" data-v-295f0452="" data-v-49c83e62=""><span class="logo-text dev" data-v-295f0452=""> D<span class="hidden" data-v-295f0452="">E</span>V </span><span class="logo-text enjoy" data-v-295f0452=""><span class="common-e" data-v-295f0452="">E</span>NJOY🌊 </span></a></h1><div class="links" data-v-49c83e62=""><a href="https://github.com/yemsu/" title="Yemsu Github" target="_blank" data-v-49c83e62=""><svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="26" data-view-component="true" class="octicon octicon-mark-github v-align-middle"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a></div></header><div class="container size-narrow" data-v-c8c5d468="" data-v-f9dcc070=""><article data-v-f9dcc070=""><nav class="outLiner" data-v-f9dcc070=""><ul><li class=""><a href="#Intro">1. Intro</a></li><li class=""><a href="#Node.js-서버-설정">2. Node.js 서버 설정</a></li><li class=""><a href="#커맨드-지정">3. 커맨드 지정</a></li><li class=""><a href="#require-is-not-defined">4. require is not defined</a></li><li class="subTitle"><a href="#🔎-require-?">4-1. 🔎 require ?</a></li></ul></nav><div class="wrap-info" data-v-f9dcc070=""><h2 class="title" data-v-f9dcc070="">Node.js ES6+ 개발 환경 구축하기 Part 3. 로컬 서버</h2><p class="date" data-v-f9dcc070="">2022-02-27</p><ul class="keywords" data-v-f9dcc070=""><li class="keyword" data-v-f9dcc070="">Node.js</li><li class="keyword" data-v-f9dcc070="">ES6</li><li class="keyword" data-v-f9dcc070="">setup</li><li class="keyword" data-v-f9dcc070="">Local Server</li></ul></div><article class="article" data-v-f9dcc070=""><h3 id="Intro">Intro</h3>
+      gtag('config', 'G-922R4CGCRZ');</script><link href="/css/chunk-74d2d95d.9fbeb06c.css" rel="prefetch"><link href="/css/chunk-773fa2dd.9276efd2.css" rel="prefetch"><link href="/js/chunk-74d2d95d.9bc6a593.js" rel="prefetch"><link href="/js/chunk-773fa2dd.9dc87749.js" rel="prefetch"><link href="/css/app.6b281f6b.css" rel="preload" as="style"><link href="/js/app.3434b35f.js" rel="preload" as="script"><link href="/js/chunk-vendors.3a63ba27.js" rel="preload" as="script"><link href="/css/app.6b281f6b.css" rel="stylesheet"><link rel="stylesheet" type="text/css" href="/css/chunk-74d2d95d.9fbeb06c.css"><script charset="utf-8" src="/js/chunk-74d2d95d.9bc6a593.js"></script></head><body><noscript><strong>We're sorry but ENJOY DEV doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app" data-v-app=""><metainfo></metainfo><header data-v-49c83e62=""><h1 data-v-49c83e62=""><a href="/" class="logo size-medium" data-v-295f0452="" data-v-49c83e62=""><span class="logo-text dev" data-v-295f0452=""> D<span class="hidden" data-v-295f0452="">E</span>V </span><span class="logo-text enjoy" data-v-295f0452=""><span class="common-e" data-v-295f0452="">E</span>NJOY🌊 </span></a></h1><div class="links" data-v-49c83e62=""><a href="https://github.com/yemsu/" title="Yemsu Github" target="_blank" data-v-49c83e62=""><svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="26" data-view-component="true" class="octicon octicon-mark-github v-align-middle"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a></div></header><div class="container size-narrow" data-v-c8c5d468="" data-v-6c33a998=""><article data-v-6c33a998=""><nav class="outLiner" data-v-6c33a998=""><ul><li class=""><a href="#Intro">1. Intro</a></li><li class=""><a href="#Node.js-서버-설정">2. Node.js 서버 설정</a></li><li class=""><a href="#커맨드-지정">3. 커맨드 지정</a></li><li class=""><a href="#require-is-not-defined">4. require is not defined</a></li><li class="subTitle"><a href="#🔎-require-?">4-1. 🔎 require ?</a></li></ul></nav><div class="wrap-info" data-v-6c33a998=""><h2 class="title" data-v-6c33a998="">Node.js ES6+ 개발 환경 구축하기 Part 3. 로컬 서버</h2><p class="date" data-v-6c33a998="">2022-02-27</p><ul class="keywords" data-v-6c33a998=""><li class="keyword" data-v-6c33a998="">Node.js</li><li class="keyword" data-v-6c33a998="">ES6</li><li class="keyword" data-v-6c33a998="">setup</li><li class="keyword" data-v-6c33a998="">Local Server</li></ul></div><article class="article" data-v-6c33a998=""><h3 id="Intro">Intro</h3>
 <p>Express가 많이 나와있지만 우선 Node.js로만 구축해보기로했다.
 Node.js로만 서버 구축하는건 아래처럼 불편한점이 많다고 한다.
 직접 느껴보고 나중에 Express 프레임워크를 써보기로 한다.</p>
@@ -49,72 +49,67 @@ Node.js로만 서버 구축하는건 아래처럼 불편한점이 많다고 한�
 </blockquote>
 <h3 id="Node.js-서버-설정">Node.js 서버 설정</h3>
 <p>💡 개발 서버 실행을 위해 세팅 했던 것으로, <a href="node-js-es6-plus-env-setting-4">다음 포스팅</a>에서 webpack-dev-server로 대체됨 💡
-프로젝트 루트에 <code>app.js</code> 파일 생성</p>
-<pre><code>$ touch app.js
-</code></pre>
-<p><a href="https://nodejs.org/ko/docs/guides/getting-started-guide/">node.js 공식 문서</a> 와 <a href="https://www.zerocho.com/category/NodeJS/post/57774a8eacbd2e9803de0195">zerocho 블로그</a>를 참고해서 아래와 같이 작성했다.</p>
-<h5 id="appjs">📃 app.js</h5>
-<pre><code class="javascript language-javascript">const http = require('http'); // 서버 만드는 모듈
-const url = require('url'); // 주소 분석 모듈
-const fs = require('fs'); // 파일을 읽고 쓰는 모듈
+프로젝트 루트에 <code>app.js</code> 파일 생성</p><pre><code>$ touch app.js</code></pre>
+<a href="https://nodejs.org/ko/docs/guides/getting-started-guide/">node.js 공식 문서</a> 와 <a href="https://www.zerocho.com/category/NodeJS/post/57774a8eacbd2e9803de0195">zerocho 블로그</a>를 참고해서 아래와 같이 작성했다.<p></p>
+<h5 id="appjsprec2cpre">📃 app.js<pre><code class="language-javascript">&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; http = &lt;span class="hljs-built_in"&gt;require&lt;/span&gt;(&lt;span class="hljs-string"&gt;&amp;#x27;http&amp;#x27;&lt;/span&gt;); &lt;span class="hljs-comment"&gt;// 서버 만드는 모듈&lt;/span&gt;
+&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; url = &lt;span class="hljs-built_in"&gt;require&lt;/span&gt;(&lt;span class="hljs-string"&gt;&amp;#x27;url&amp;#x27;&lt;/span&gt;); &lt;span class="hljs-comment"&gt;// 주소 분석 모듈&lt;/span&gt;
+&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; fs = &lt;span class="hljs-built_in"&gt;require&lt;/span&gt;(&lt;span class="hljs-string"&gt;&amp;#x27;fs&amp;#x27;&lt;/span&gt;); &lt;span class="hljs-comment"&gt;// 파일을 읽고 쓰는 모듈&lt;/span&gt;
 
-const hostname = '127.0.0.1';
-const port = 3000;
-/*
-localhost주소를 입력하면 서버에 '정보'를 달라고 '요청'한다.
-대기중이던 서버는 '요청'을 처리 후 클라리언트로 '정보'를 돌려준다.
-&gt; 요청(request)와 정보(response)에는 header와 body가 있다.
+&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; hostname = &lt;span class="hljs-string"&gt;&amp;#x27;127.0.0.1&amp;#x27;&lt;/span&gt;;
+&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; port = &lt;span class="hljs-number"&gt;3000&lt;/span&gt;;
+&lt;span class="hljs-comment"&gt;/*
+localhost주소를 입력하면 서버에 &amp;#x27;정보&amp;#x27;를 달라고 &amp;#x27;요청&amp;#x27;한다.
+대기중이던 서버는 &amp;#x27;요청&amp;#x27;을 처리 후 클라리언트로 &amp;#x27;정보&amp;#x27;를 돌려준다.
+&amp;gt; 요청(request)와 정보(response)에는 header와 body가 있다.
     * header - request, response에 대한 정보(종류, 크기, 캐시) 등
     * body - 주고 받고자 하는 메인 정보
-*/
-const server = http.createServer((req, res) =&gt; { // 서버 만드는 메소드
-  // url모듈을 이용해서 url에 따라 다른 HTML을 전송하는 라우팅을 구현
-  const path = url.parse(req.url, true).pathname; 
-  if (req.method === 'GET') { // GET 요청이면 
-    if (path.includes('.js')) {
-      res.writeHead (200, 'Content-Type', 'text/javascript');
-      // readFile 메소드로 HTML 파일을 읽어서 읽은 데이터를 브라우저로 보낸다.
-      fs.readFile(__dirname + path, (err, data) =&gt; {
-        if (err) {
-          return console.error(err);
+*/&lt;/span&gt;
+&lt;span class="hljs-keyword"&gt;const&lt;/span&gt; server = http.createServer(&lt;span class="hljs-function"&gt;(&lt;span class="hljs-params"&gt;req, res&lt;/span&gt;) =&amp;gt;&lt;/span&gt; { &lt;span class="hljs-comment"&gt;// 서버 만드는 메소드&lt;/span&gt;
+  &lt;span class="hljs-comment"&gt;// url모듈을 이용해서 url에 따라 다른 HTML을 전송하는 라우팅을 구현&lt;/span&gt;
+  &lt;span class="hljs-keyword"&gt;const&lt;/span&gt; path = url.parse(req.url, &lt;span class="hljs-literal"&gt;true&lt;/span&gt;).pathname; 
+  &lt;span class="hljs-keyword"&gt;if&lt;/span&gt; (req.method === &lt;span class="hljs-string"&gt;&amp;#x27;GET&amp;#x27;&lt;/span&gt;) { &lt;span class="hljs-comment"&gt;// GET 요청이면 &lt;/span&gt;
+    &lt;span class="hljs-keyword"&gt;if&lt;/span&gt; (path.includes(&lt;span class="hljs-string"&gt;&amp;#x27;.js&amp;#x27;&lt;/span&gt;)) {
+      res.writeHead (&lt;span class="hljs-number"&gt;200&lt;/span&gt;, &lt;span class="hljs-string"&gt;&amp;#x27;Content-Type&amp;#x27;&lt;/span&gt;, &lt;span class="hljs-string"&gt;&amp;#x27;text/javascript&amp;#x27;&lt;/span&gt;);
+      &lt;span class="hljs-comment"&gt;// readFile 메소드로 HTML 파일을 읽어서 읽은 데이터를 브라우저로 보낸다.&lt;/span&gt;
+      fs.readFile(__dirname + path, &lt;span class="hljs-function"&gt;(&lt;span class="hljs-params"&gt;err, data&lt;/span&gt;) =&amp;gt;&lt;/span&gt; {
+        &lt;span class="hljs-keyword"&gt;if&lt;/span&gt; (err) {
+          &lt;span class="hljs-keyword"&gt;return&lt;/span&gt; &lt;span class="hljs-built_in"&gt;console&lt;/span&gt;.error(err);
         }
         res.end(data);
       });
-    } else if (path === '/') {
-      res.writeHead (200, 'Content-Type', 'text/html');
-      // __dirname - 현재 프로젝트의 경로
-      fs.readFile(__dirname + '/index.html', (err, data) =&gt; {
-        if (err) {
-          return console.error(err);
+    } &lt;span class="hljs-keyword"&gt;else&lt;/span&gt; &lt;span class="hljs-keyword"&gt;if&lt;/span&gt; (path === &lt;span class="hljs-string"&gt;&amp;#x27;/&amp;#x27;&lt;/span&gt;) {
+      res.writeHead (&lt;span class="hljs-number"&gt;200&lt;/span&gt;, &lt;span class="hljs-string"&gt;&amp;#x27;Content-Type&amp;#x27;&lt;/span&gt;, &lt;span class="hljs-string"&gt;&amp;#x27;text/html&amp;#x27;&lt;/span&gt;);
+      &lt;span class="hljs-comment"&gt;// __dirname - 현재 프로젝트의 경로&lt;/span&gt;
+      fs.readFile(__dirname + &lt;span class="hljs-string"&gt;&amp;#x27;/index.html&amp;#x27;&lt;/span&gt;, &lt;span class="hljs-function"&gt;(&lt;span class="hljs-params"&gt;err, data&lt;/span&gt;) =&amp;gt;&lt;/span&gt; {
+        &lt;span class="hljs-keyword"&gt;if&lt;/span&gt; (err) {
+          &lt;span class="hljs-keyword"&gt;return&lt;/span&gt; &lt;span class="hljs-built_in"&gt;console&lt;/span&gt;.error(err);
         }
-        res.end(data, 'utf-8');
+        res.end(data, &lt;span class="hljs-string"&gt;&amp;#x27;utf-8&amp;#x27;&lt;/span&gt;);
       });
-    } else {
-      res.writeHead(404, 'Content-Type', 'text/plain; charset=UTF-8');
-      res.end('주소가 없습니다', 'utf-8');
+    } &lt;span class="hljs-keyword"&gt;else&lt;/span&gt; {
+      res.writeHead(&lt;span class="hljs-number"&gt;404&lt;/span&gt;, &lt;span class="hljs-string"&gt;&amp;#x27;Content-Type&amp;#x27;&lt;/span&gt;, &lt;span class="hljs-string"&gt;&amp;#x27;text/plain; charset=UTF-8&amp;#x27;&lt;/span&gt;);
+      res.end(&lt;span class="hljs-string"&gt;&amp;#x27;주소가 없습니다&amp;#x27;&lt;/span&gt;, &lt;span class="hljs-string"&gt;&amp;#x27;utf-8&amp;#x27;&lt;/span&gt;);
     }
   }
 }).listen(port);
 
-console.log(`Server running at http://${hostname}:${port}/`);
-</code></pre>
+&lt;span class="hljs-built_in"&gt;console&lt;/span&gt;.log(&lt;span class="hljs-string"&gt;`Server running at http://&lt;span class="hljs-subst"&gt;${hostname}&lt;/span&gt;:&lt;span class="hljs-subst"&gt;${port}&lt;/span&gt;/`&lt;/span&gt;);</code></pre></h5>
 <h3 id="커맨드-지정">커맨드 지정</h3>
 <p>커맨드 지정 후 서버를 실행해봤다.</p>
 <h5 id="packagejson">📃 package.json</h5>
-<pre><code class="json language-json">{
-  "scripts": {
-    "dev": "node app.js",                 // NEW
-    "build": "babel lib -w -d dist/js" 
-    "test": "jest"
+<pre><code class="language-json">{
+  <span class="hljs-attr">"scripts"</span>: {
+    <span class="hljs-attr">"dev"</span>: <span class="hljs-string">"node app.js"</span>,                 <span class="hljs-comment">// NEW</span>
+    <span class="hljs-attr">"build"</span>: <span class="hljs-string">"babel lib -w -d dist/js"</span> 
+    <span class="hljs-string">"test"</span>: <span class="hljs-string">"jest"</span>
   },
-}
-</code></pre>
+}</code></pre>
 <h3 id="require-is-not-defined">require is not defined</h3>
 <p>엇 그런데 <code>Uncaught ReferenceError: require is not defined</code> 에러가 떴다.<br>
 요고 아까 바벨로 트랜스파일링한 파일에서도 봤엇는데. require에 대해 알아봤다.</p>
 <h4 id="🔎-require-?">🔎 <code>require</code> ?</h4>
 <p>Node.js의 모듈시스템인 CommonJs에서 모듈을 불러오는 키워드라고 한다.<br>
 CommonJs는 웹에서 쓰려면 Webpack같은 번들러를 사용해야 한다고한다.</p>
-<p>그래서 설치하게된 Webpack은 다음 글에 계속!</p></article><div class="article-bottom" data-v-f9dcc070=""><p class="text-ps" data-v-f9dcc070=""><strong data-v-f9dcc070="">수정이 필요한 부분</strong> 혹은 <strong data-v-f9dcc070="">더 나은 방법</strong>을 알고계신가요? <br data-v-f9dcc070=""> 댓글로 알려주시면 저에게 큰 도움이 됩니다! 😊💜 </p><div class="vue-utterances" data-v-f9dcc070=""><div class="utterances">
+<p>그래서 설치하게된 Webpack은 다음 글에 계속!</p></article><div class="article-bottom" data-v-6c33a998=""><p class="text-ps" data-v-6c33a998=""><strong data-v-6c33a998="">수정이 필요한 부분</strong> 혹은 <strong data-v-6c33a998="">더 나은 방법</strong>을 알고계신가요? <br data-v-6c33a998=""> 댓글로 알려주시면 저에게 큰 도움이 됩니다! 😊💜 </p><div class="vue-utterances" data-v-6c33a998=""><div class="utterances">
     <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?async=&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=yemsu%2Fyemsu.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A8001%2Fnode-js-es6-plus-env-setting-3&amp;origin=http%3A%2F%2Flocalhost%3A8001&amp;pathname=node-js-es6-plus-env-setting-3&amp;title=ENJOY+DEV&amp;description=&amp;og%3Atitle=&amp;session=" loading="lazy"></iframe>
-  </div></div></div></article></div></div><script src="/js/chunk-vendors.ae88b7ad.js"></script><script src="/js/app.fb199b15.js"></script></body></html>
+  </div></div></div></article></div></div><script src="/js/chunk-vendors.3a63ba27.js"></script><script src="/js/app.3434b35f.js"></script></body></html>
