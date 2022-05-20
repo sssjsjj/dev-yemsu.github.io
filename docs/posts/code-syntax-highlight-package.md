@@ -7,6 +7,7 @@ Vue 프로젝트는 [@highlightjs/vue-plugin](https://www.npmjs.com/package/@hig
 ### Highlight.js 알아보기
 패키지 설명을 보면서 차근차근 적용했다.
 #### 설치
+
 ```bash
 yarn add highlight.js
 ```
@@ -14,6 +15,7 @@ yarn add highlight.js
 #### 기본적인 사용법
 ##### 브라우저
 웹페이지에서 highlight.js를 사용하는 간단한 방법은 라이브러리와 테마를 삽입하고 <code>highlightAll</code> 함수를 사용하는 것이다.
+
 ```html
 <link rel="stylesheet" href="/path/to/styles/default.min.css">
 <script src="/path/to/highlight.min.js"></script>
@@ -34,36 +36,46 @@ yarn add highlight.js
 #### Importing the Library 
 ##### Node.js - <code>require</code>
 라이브러리 최상위를 requiring하면 모든 언어가 로드된다.
+
 ```javascript
 const hljs = require('./highlight.js');
 ```
+
 용량을 좀 싶다면 줄이고 인기있는 언어들만 하이라이트해주는 common subset만 불러와도된다. 
+
 ```javascript
 hljs = require('highlight.js/lib/common');
 ```
+
 용량을 최소한으로 줄이고 싶다면, 필요한 언어만 불러올 수 있다.
+
 ```javascript
 const hljs = require('highlight.js/lib/core');
 hljs.registerLanguage('xml', require('highlight.js/lib/languages/xml'));
 
 const highlightedCode = hljs.highlight('<span>Hello World!</span>', {language: 'xml'}).value
 ```
+
 ##### ES6 Modules - <code>import</code>
-default import는 모든 언어가 등록된다.
+default import는 모든 언어가 등
+록된다.
 ```javascript
 import hljs from 'highlight.js';
 ```
 코어 라이브러리만 호출하고 필요한 언어는 따로 등록할 수 있다.
+
 ```javascript
 import hljs from 'highlight.js/lib/core';
 import javascript from 'highlight.js/lib/languages/javascript';
 hljs.registerLanguage('javascript', javascript);
 ```
 build tool이 css import도 가능하다면, 테마도 모듈로 바로 import할 수 있다.
+
 ```javascript
 import hljs from 'highlight.js';
 import 'highlight.js/styles/github.css';
 ```
+
 💡 어떤 언어를 지원하는지, 어떤 테마가 있는지 궁금하다면: [highlight.js demo](https://highlightjs.org/static/demo/)
 ### 블로그에 적용하기
 #### highlight or highlightAll ?
@@ -104,6 +116,7 @@ export default htmlConverter
 
 🗨 원래는 다크모드 여부에 따라 url 스트링값을 변수에 저장해놓고 그 변수를 <code>import()</code> 인자로 넣었었다. 그런데 자꾸 해당 경로에 module이 없다고 에러가 떠서 인자값을 변수가 아니라 직접 스트링 값으로 넣으니까 잘 됐다. <code>import()</code>는 변수를 인자로 사용할 수 없는것인가..?
 ##### 📃 src/utils/highlighter.js (상단)
+
 ```javascript
 import hljs from 'highlight.js';
 import { isDarkMode } from '@/utils'
@@ -122,6 +135,7 @@ isDarkMode
 함수는 언제나 사용할 수 있는 <code>highlighter</code>와 마크다운에만 사용할 수 있는 <code>mdHighlighter</code> 두가지로 분리했다.  
 highlight.js는 <code> pre > code</code>태그를 감지해서 내부 코드를 마크업으로 감싸는 방식이다. 그래서 마크다운 파일에서 코드블럭 영역만 미리 <code> pre > code</code>태그로 감싸서 <code>highlight()</code>메서드에 넘겨줘야했다 . 그리고 그 과정에서 마크다운에 작성해놨던 코드블럭 언어 설정도 클래스명으로 삽입하도록 작업했다.
 ##### 📃 src/utils/highlighter.js (하단)
+
 ```javascript
 export const highlighter = (code, codeType) => {
   return hljs.highlight(code, {language: codeType}).value

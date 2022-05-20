@@ -118,7 +118,8 @@ yarn add express mongoose body-parser cors
 
 #### Express 웹 서버 만들기
 root 경로에 server.js파일을 생성합시다!
-```
+
+```javascript
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -160,6 +161,7 @@ app.listen(PORT, () => {
 
 #### MongoDB 데이터베이스와 Mongoose 설정
 app/config/db.config.js 파일을 생성한 뒤 아래와 같이 내용을 작성하세요.
+
 ```javascript
 module.exports = {
   url: "mongodb://localhost:27017/bezkoder_db"
@@ -182,6 +184,7 @@ module.exports = db;
 ```
 
 server.js에 <code>connect()</code> 메서드로 요청하는것도 잊지말아요!
+
 ```javascript
 ...
 const app = express();
@@ -202,7 +205,8 @@ db.mongoose
 ```
 
 #### Mongoose Model 정의
-model 폴더에 tutorial.model.js파일을 생성하고 아래와 같이 작성하세요
+model 폴더에 tutorial.model.js파일을 생성하고 아래와 같이 작성하세요.
+
 ```javascript
 module.exports = mongoose => {
 const Tutorial = mongoose.model(
@@ -222,6 +226,7 @@ return Tutorial;
 
 위 Mongoose Model은 MongoDB 데이터베이스에 있는 'tutorials'의 구조를 나타냅니다. 이 필드들은 각각의 tutorial에 대해 자동으로 생성될거예요. (_id, title, description, published, createdAt, updatedAt, __v)  
 아래와 같이요!
+
 ``` javascript
 {
   "_id": "5e363b135036a835ac1a7da8",
@@ -235,6 +240,7 @@ return Tutorial;
 ```
 
 프론트엔드에서 __id가 아닌 id로 필드명을 사용해야한다면 <code>toJSON</code> 메서드를 사용하여 default object를 커스텀 object로 override해야합니다. Mongoose model을 아래와 같이 수정하면됩니다.
+
 ```javascript
 module.exports = mongoose => {
   var schema = mongoose.Schema(
@@ -255,6 +261,7 @@ module.exports = mongoose => {
 };
 ```
 그러면 결과는 아래와 같아집니다.
+
 ```javascript
 {
   "title": "Js Tut#",
