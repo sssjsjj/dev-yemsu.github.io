@@ -9,6 +9,7 @@
     "sitemap": "vue-cli-service sitemap"
   },
   "dependencies": {
+    "@highlightjs/vue-plugin": "^2.1.0",
     "axios": "^0.26.1",
     "core-js": "^3.6.5",
     "showdown": "^2.0.1",
