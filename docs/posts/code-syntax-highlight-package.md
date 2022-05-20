@@ -57,8 +57,7 @@ const highlightedCode = hljs.highlight('<span>Hello World!</span>', {language: '
 ```
 
 ##### ES6 Modules - <code>import</code>
-default import는 모든 언어가 등
-록된다.
+default import는 모든 언어가 등록된다.
 ```javascript
 import hljs from 'highlight.js';
 ```
@@ -177,3 +176,6 @@ export const mdHighlighter = (md) => {
   <img src="/posts/images/code-syntax-highlight-package/highlight-code-screen.jpg" alt="코드 하이라이트가 잘 적용된 포스팅">
   <figcaption>잘 적용이 되었다</figcaption>
 </figure>
+
+
+##### 배포 이슈
