@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import randomRgba from '@/utils/randomRgba'
+import { randomRgba } from '@/utils'
 
 export default {
   props: {
