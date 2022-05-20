@@ -4,3 +4,7 @@ export const randomRgba = (min, max) => {
   const randomCssRgba = `rgba(${[randomByte(), randomByte(), randomByte(), 1].join(',')})`
   return randomCssRgba
 }
+
+export const isDarkMode = () =>
+  window.matchMedia &&
+  window.matchMedia("(prefers-color-scheme: dark)").matches;
