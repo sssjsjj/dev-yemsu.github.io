@@ -4,115 +4,51 @@
     <div class="container">
       <ul class="list-icon">
         <li>
-          <a href="https://github.com/sssjsjj" target="_blank" title="새창">
-            <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github v-align-middle">
-              <title>Github 로고</title>
-              <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-          </svg>
+          <a href="https://github.com/yemsu" target="_blank" title="새창">
+            github
           </a>
         </li>
         <li>
-          <a href="https://dribbles.tistory.com/" target="_blank" title="새창">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 459 459">
-              <title>tistory 로고</title>
-              <path d="M229.5,0C102.75,0,0,102.75,0,229.5S102.75,459,229.5,459,459,356.25,459,229.5,356.25,0,229.5,0ZM130.21,191.45a39.57,39.57,0,1,1,39.56-39.57A39.58,39.58,0,0,1,130.21,191.45ZM229.5,390a39.56,39.56,0,1,1,39.56-39.56A39.56,39.56,0,0,1,229.5,390Zm0-99.29a39.56,39.56,0,1,1,39.56-39.56A39.56,39.56,0,0,1,229.5,290.74Zm0-99.29a39.57,39.57,0,1,1,39.56-39.57A39.57,39.57,0,0,1,229.5,191.45Zm99.29,0a39.57,39.57,0,1,1,39.57-39.57A39.57,39.57,0,0,1,328.79,191.45Z"/></svg>
+          <a href="https://yemsu.github.io/" target="_blank" title="새창">
+            blog
           </a>
         </li>
       </ul>
       <div class="container-top">
-        <h1>
-          <span class="smaller-1 weight-normal">7년차 퍼블리싱 경력으로 기반을 다져, 
-          한단계 나아갈 준비를 하고 있는<br></span>
-          <span class="bigger-1">프론트엔드 개발자 정수진입니다. </span>         
-        </h1>
-        <p>
-          크고 작은 규모의 다양한 웹사이트를 작업하며 코드 가독성과 확장성, 유지보수성에 대해 항상 고민해왔습니다.<br>
-          웹표준 마크업, 웹 접근성, 반응형 개발 등 주어진 업무에서 나아가 더 많은 기회를 만들어 작업 영역을 확장해가면서 자바스크립트 대한 실무 경험을 쌓았습니다.
-        </p>
-        <p>
-          바닐라 자바스크립트, 프레임워크, 라이브러리들을 학습 및 팀 스터디에 참여하여<br>
-          현재 운영 중인 Vue.js 프로젝트에 투입될 수 있었고 기능 구현 위주의 업무를 맡고 있습니다.<br>
-          스터디와 프로젝트 소스 파악을 병행하며 프론트엔드 개발 영역까지 넓혀가며 작업하고 있습니다.
-        </p>
+        <div class="wrap-title">
+          <!-- <div class="wrap-image profile">
+            <img src="./assets/images/profile-1.jpg" alt="먼 하늘을 보며 바람을 느끼는 정수진">
+          </div> -->
+          <h1>
+            <span class="smaller-1 weight-normal">7년차 퍼블리싱 경력</span><br>
+            <span class="bigger-1">프론트엔드 개발자 정수진입니다. </span>
+          </h1>
+        </div>
+        <div class="wrap-contents">
+          <div class="wrap-text">
+            <p>
+              크고 작은 규모의 다양한 웹사이트를 작업하며 코드 가독성과 확장성, 유지보수성에 대해 고민해왔습니다.<br>
+              웹표준, 웹 접근성, 반응형 개발 등의 주어진 업무에서 나아가 더 많은 기회를 만들어 작업 영역을 확장해가면서 자바스크립트에 대한 실무 경험을 쌓았습니다.
+            </p>
+            <p>
+              익혀왔던 내용들을 바탕으로 현재 운영 중인 Vue.js 프로젝트에 투입될 수 있었고 기능 구현 위주의 업무를 맡고 있습니다.<br>
+              스터디와 프로젝트 소스 파악을 병행하며 프론트엔드 개발자 영역까지 조금씩 넓혀가며 작업하고 있습니다.
+            </p>
+            <h3>인프런 지원 동기</h3>
+            <p>
+              현재는 자회사 서비스가 아닌 고객의 사이트를 주로 작업합니다. 때문에 거쳐야 하는 커뮤니케이션 단계들이 많고 고객 요청에 의해 작업이 진행되고있습니다. 작업에 대한 내용이 정해진 후 요청이 오기 때문에 작업자가 의견을 제시할 수 경우가 많지 않았습니다. <br>
+              그래서 이런 회사에서 일해보고 싶다고 생각했습니다. 
+            </p>
+            <ul class="list-bullet dot">
+              <li>수동적인 프로세스에서 벗어나, 더 나은 방법에 대해 고민하는 팀에 합류해 함께 생각을 공유하며 작업 할 수 있는 곳</li>
+              <li>능동적인 자세가 큰 장점이 될 수 있는 곳</li>
+            </ul>
+            <p>
+              그러다 유튜브를 통해 향로님을 알게되었고, 더 나은 개발 문화에 대해 항상 고민하시는 분이라는 생각이 들었습니다. 인프랩 CTO님이신 것을 알게되면서 인프랩 대해 좀 더 알아보았고 원하던 회사상과 부합해 멤버가 되고싶어 지원하게 되었습니다.
+            </p>
+          </div>
+        </div>
       </div>
-      <section class="section">
-        <div class="section-top">
-          <h2>Skills<span class="dot-point"><span class="dot-point">.</span></span></h2>
-          <!-- <ul class="list-col-right">
-            <li><small><span class="badge bg-main light-2">1</span>학습 경험</small></li>
-            <li><small><span class="badge bg-main light-1">2</span>유지보수 가능 수준 </small></li>
-            <li><small><span class="badge bg-main">3</span>Production 개발 가능 수준</small></li>
-          </ul> -->
-        </div>
-        <div class="row">
-          <div class="col col-title size-s-1">
-            <h3>Overall</h3>
-          </div>
-          <div class="col">
-            <ul class="list-bullet dot">
-              <li>코드의 재사용과 확장성, 가독성을 고려하며 작업합니다.</li>
-              <li>다양한 브라우저/디바이스 지원 경험이 다수 있습니다.</li>
-              <li>비효율적인 프로세스 개선 방안을 제시하고 보완한 경험이 있습니다.</li>
-              <li>능숙한 분야가 아니더라도 적극적으로 탐색하여 최선의 결과를 낼 수 있도록 노력합니다.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-title size-s-1">
-            <h3>HTML/CSS</h3>
-          </div>
-          <div class="col">
-            <ul class="list-bullet dot">
-              <li>웹표준을 준수하며 시맨틱한 마크업을 작성합니다.</li>
-              <li>Search Engine Optimization(SEO) 작업 경험이 있습니다.</li>
-              <li>웹 접근성 취득 경험이 다수 있습니다. (+ WAI-ARIA 사용 경험)</li>
-              <li>컴포넌트 단위 작업 경험이 다수 있습니다.</li>
-              <li>반응형을 작업 경험이 다수 있습니다.</li>
-              <li>Sass와 같은 CSS Preprocessor를 사용할 수 있습니다.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-title size-s-1">
-            <h3>JavaScript</h3>
-          </div>
-          <div class="col">
-            <ul class="list-bullet dot">
-              <li>ES6 이상 문법을 적극적으로 사용합니다.</li>
-              <li>Vanilla JS 를 이용해 DOM 을 조작할 수 있습니다.</li>
-              <li>응집도와 단일책임을 고려하며 작업합니다.</li>
-              <li>생성자 함수를 이용한 모듈 개발 경험이 있습니다.</li>
-              <li>Polyfill을 이용해 구형 브라우저를 지원한 경험이 있습니다.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-title size-s-1">
-            <h3>Vue.js</h3>
-          </div>
-          <div class="col">
-            <ul class="list-bullet dot">
-              <li>신규 기능 추가와 함께 기존 컴포넌트 리팩토링 경험이 있습니다.</li>
-              <li>slot을 이용한 신규 컴포넌트 작업 경험이 있습니다.</li>
-              <li>Vuex Store 사용 경험이 있습니다.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-title size-s-1">
-            <h3>Etc</h3>
-          </div>
-          <div class="col">
-            <ul class="list-bullet dot">
-              <li>VS Code 단축키와 스니펫을 이용하여 효율적으로 개발하는 것을 좋아합니다.</li>
-              <li>Git을 사용한 워크플로우에 익숙하며, 히스토리 파악에 용이하도록 커밋 내용을 작성하려고 노력합니다.</li>
-              <li>Adobe Experience Manager(AEM) 기반의 웹사이트 운영 경험이 있습니다.</li>
-              <li>Zeplin을 이용한 협업 경험이 있습니다.</li>
-              <li>Google Tag Manage 커스텀 태그 작업 경험이 있습니다.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
       <section class="section">
         <div class="section-top">
           <div class="wrap-title">
@@ -235,6 +171,85 @@
           </div>
         </section>
       </section>
+      <section class="section">
+        <div class="section-top">
+          <h2>Skills<span class="dot-point"><span class="dot-point">.</span></span></h2>
+          <!-- <ul class="list-col-right">
+            <li><small><span class="badge bg-main light-2">1</span>학습 경험</small></li>
+            <li><small><span class="badge bg-main light-1">2</span>유지보수 가능 수준 </small></li>
+            <li><small><span class="badge bg-main">3</span>Production 개발 가능 수준</small></li>
+          </ul> -->
+        </div>
+        <div class="row">
+          <div class="col col-title size-s-1">
+            <h3>Overall</h3>
+          </div>
+          <div class="col">
+            <ul class="list-bullet dot">
+              <li>코드의 재사용과 확장성, 가독성을 고려하며 작업합니다.</li>
+              <li>다양한 브라우저/디바이스 지원 경험이 다수 있습니다.</li>
+              <li>비효율적인 프로세스 개선 방안을 제시하고 보완한 경험이 있습니다.</li>
+              <li>능숙한 분야가 아니더라도 적극적으로 탐색하여 최선의 결과를 낼 수 있도록 노력합니다.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-title size-s-1">
+            <h3>HTML/CSS</h3>
+          </div>
+          <div class="col">
+            <ul class="list-bullet dot">
+              <li>웹표준을 준수하며 시맨틱한 마크업을 작성합니다.</li>
+              <li>Search Engine Optimization(SEO) 작업 경험이 있습니다.</li>
+              <li>웹 접근성 취득 경험이 다수 있습니다.</li>
+              <li>컴포넌트 단위 작업 경험이 다수 있습니다.</li>
+              <li>반응형 작업 경험이 다수 있습니다.</li>
+              <li>다양한 브라우저, 디바이스 호환 작업 경험이 있습니다.</li>
+              <li>Sass와 같은 CSS Preprocessor를 사용할 수 있습니다.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-title size-s-1">
+            <h3>JavaScript</h3>
+          </div>
+          <div class="col">
+            <ul class="list-bullet dot">
+              <li>ES6 이상 문법을 적극적으로 사용합니다.</li>
+              <li>Vanilla JS 를 이용해 DOM 을 조작할 수 있습니다.</li>
+              <li>응집도와 단일책임을 고려하며 작업하려 노력합니다.</li>
+              <li>생성자 함수를 이용한 모듈 개발 경험이 있습니다.</li>
+              <li>Polyfill을 이용해 구형 브라우저를 지원한 경험이 있습니다.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-title size-s-1">
+            <h3>Vue.js</h3>
+          </div>
+          <div class="col">
+            <ul class="list-bullet dot">
+              <li>기존 컴포넌트 기능 추가 및 리팩토링 경험이 있습니다.</li>
+              <li>slot을 이용한 신규 컴포넌트 작업 경험이 있습니다.</li>
+              <li>Vuex Store 사용 경험이 있습니다.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-title size-s-1">
+            <h3>Etc</h3>
+          </div>
+          <div class="col">
+            <ul class="list-bullet dot">
+              <li>VS Code 단축키와 스니펫을 이용하여 효율적으로 개발하는 것을 좋아합니다.</li>
+              <li>Git을 사용한 워크플로우에 익숙하며, 히스토리 파악에 용이하도록 커밋 내용을 작성하려고 노력합니다.</li>
+              <li>Adobe Experience Manager(AEM) 기반의 웹사이트 운영 경험이 있습니다.</li>
+              <li>Zeplin을 이용한 협업 경험이 있습니다.</li>
+              <li>Google Tag Manage 커스텀 태그 작업 경험이 있습니다.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
       <section class="section education">
         <div class="section-top">
           <h2>Education<span class="dot-point">.</span></h2>
@@ -267,7 +282,7 @@
               <li>html5, css3, scss, jquery</li>
               <li>웹표준 디자인 기획 및 모델설계, 제작</li>
               <li>포트폴리오 제작</li>
-              <li>학업성취최우수로 졸업</li>
+              <li>학업 성취 최우수로 졸업</li>
             </ul>
           </div>
         </div>
@@ -287,7 +302,7 @@
           </div>
         </div>
       </section>
-      <section class="section study">
+      <!-- <section class="section study">
         <div class="section-top">
           <h2>Mini Projects<span class="dot-point">.</span></h2>
         </div>
@@ -295,29 +310,29 @@
           <div class="col">
             <ul class="list-bullet dot">
               <li>
-                <a href="https://github.com/sssjsjj/study/tree/master/poll-bar-graph" target="_blank" title="새창 (Github)">
+                <a href="https://github.com/yemsu/study/tree/master/poll-bar-graph" target="_blank" title="새창 (Github)">
                   [JavaScript] 막대 그래프
                 </a>
               </li>
               <li>
-                <a href="https://github.com/sssjsjj/study/tree/master/gallery-slider" target="_blank" title="새창 (Github)">
+                <a href="https://github.com/yemsu/study/tree/master/gallery-slider" target="_blank" title="새창 (Github)">
                   [JavaScript] 갤러리 슬라이더
                 </a>
               </li>
               <li>
-                <a href="https://github.com/sssjsjj/study/tree/master/customize-favorite-homeMenu" target="_blank" title="새창 (Github)">
+                <a href="https://github.com/yemsu/study/tree/master/customize-favorite-homeMenu" target="_blank" title="새창 (Github)">
                   [JavaScript] 개인 홈메뉴 선택 기능
                 </a>
               </li>
               <li>
-                <a href="https://github.com/sssjsjj/study/tree/master/calendar" target="_blank" title="새창 (Github)">
+                <a href="https://github.com/yemsu/study/tree/master/calendar" target="_blank" title="새창 (Github)">
                   [JavaScript] 캘린더
                 </a>
               </li>
             </ul>
           </div>
         </div>
-      </section>
+      </section> -->
     </div>
   </div>
 </template>
