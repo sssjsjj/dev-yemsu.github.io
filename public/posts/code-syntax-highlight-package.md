@@ -1,6 +1,6 @@
 생각만 하고있다가 이번에 드디어 블로그에 코드 하이라이트 기능을 넣었다. 
 먼저 관련 패키지를 알아보다가 가장 유명한 패키지로 보이는 [highlight.js 패키지](https://www.npmjs.com/package/highlight.js)를 선택했다.
-Vue 프로젝트는 [@highlightjs/vue-plugin](https://www.npmjs.com/package/@highlightjs/vue-plugin) 플러그인을 추가로 설치하여 컴포넌트처럼 사용할수도 있다. 나는 마크다운 텍스트를 가져와서 최종 텍스트를 v-html로 삽입할거니까 생략했다.  
+Vue 프로젝트는 [@highlightjs/vue-plugin](https://www.npmjs.com/package/@highlightjs/vue-plugin) 플러그인을 추가로 설치하여 컴포넌트처럼 사용할수도 있다. 나는 마크다운 텍스트를 가져와서 v-html로 삽입할거니까 생략했다.  
 먼저 Highlight.js 모듈에 대해 알아보자.
 
 - - -
@@ -176,6 +176,3 @@ export const mdHighlighter = (md) => {
   <img src="/posts/images/code-syntax-highlight-package/highlight-code-screen.jpg" alt="코드 하이라이트가 잘 적용된 포스팅">
   <figcaption>잘 적용이 되었다</figcaption>
 </figure>
-
-
-##### 배포 이슈
