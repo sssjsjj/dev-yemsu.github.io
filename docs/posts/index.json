@@ -134,5 +134,19 @@
     "date": "2021-11-12",
     "keywords": ["Vue3", "Vue.js devtools"],
     "description": "Vue.js devtools - not detected 이슈 해결"
+  },
+  {
+    "name": "html-text-tags",
+    "title": "텍스트를 체계적으로 꾸며주는 HTML 태그들",
+    "date": "2020-4-1",
+    "keywords": ["HTML", "semantic", "strong", "em", "mark", "small", "del"],
+    "description": "다 안다고 생각했는데 막상 들춰 보니 잘 몰랐던 텍스트를 더 풍부하게 해주는 시맨틱 태그들."
+  },
+  {
+    "name": "all-about-dl-tag",
+    "title": "&lt;dl&gt; 태그, 어디까지 알고있나요?",
+    "date": "2019-3-5",
+    "keywords": ["dl", "HTML", "semantic"],
+    "description": "생각보다 다양한 쓰임! dl 태그에 대해 알아봅니다."
   }
 ]
