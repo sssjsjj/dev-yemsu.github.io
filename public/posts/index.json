@@ -28,7 +28,7 @@
     "description": "Vue3로 Github Pages 블로그를 만든 우여곡절 스토리 첫번째. 환경세팅."
   },
   {
-    "name": "Webpack-prerender-spa-plugin",
+    "name": "webpack-prerender-spa-plugin",
     "title": "Webpack <br>prerender-spa-plugin 사용하기",
     "date": "2022-04-13",
     "keywords": ["Vue CLI 4", "SPA", "SEO", "meta", "HTML5 mode"],
@@ -141,6 +141,13 @@
     "date": "2020-4-1",
     "keywords": ["HTML", "semantic", "strong", "em", "mark", "small", "del"],
     "description": "다 안다고 생각했는데 막상 들춰 보니 잘 몰랐던 텍스트를 더 풍부하게 해주는 시맨틱 태그들."
+  },
+  {
+    "name": "web-accessibility-text-contrast",
+    "title": "접근성 <br>텍스트 명도 대비 확인",
+    "date": "2020-4-1",
+    "keywords": ["web accessibility", "text color contrast", "color picker"],
+    "description": "접근성을 위한 텍스트 명도 대비 확인 사이트와, 컬러 피커"
   },
   {
     "name": "all-about-dl-tag",
