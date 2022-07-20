@@ -214,6 +214,9 @@ h4 {
 }
 /* col */
 .col {
+  > img {
+    max-width: 100%;
+  }
   &-title {
     width: 220px;
     margin-right: 50px;

@@ -34,7 +34,7 @@
               익혀왔던 내용들을 바탕으로 현재 운영 중인 Vue.js 프로젝트에 투입될 수 있었고 기능 구현 위주의 업무를 맡고 있습니다.<br>
               스터디와 프로젝트 소스 파악을 병행하며 프론트엔드 개발자 영역까지 조금씩 넓혀가며 작업하고 있습니다.
             </p>
-            <h3>인프런 지원 동기</h3>
+            <!-- <h3>인프런 지원 동기</h3>
             <p>
               현재는 자회사 서비스가 아닌 고객의 사이트를 주로 작업합니다. 때문에 거쳐야 하는 커뮤니케이션 단계들이 많고 고객 요청에 의해 작업이 진행되고있습니다. 작업에 대한 내용이 정해진 후 요청이 오기 때문에 작업자가 의견을 제시할 수 경우가 많지 않았습니다. <br>
               그래서 이런 회사에서 일해보고 싶다고 생각했습니다. 
@@ -45,7 +45,7 @@
             </ul>
             <p>
               그러다 유튜브를 통해 향로님을 알게되었고, 더 나은 개발 문화에 대해 항상 고민하시는 분이라는 생각이 들었습니다. 인프랩 CTO님이신 것을 알게되면서 인프랩 대해 좀 더 알아보았고 원하던 회사상과 부합해 멤버가 되고싶어 지원하게 되었습니다.
-            </p>
+            </p> -->
           </div>
         </div>
       </div>
@@ -181,20 +181,21 @@
           </ul> -->
         </div>
         <div class="row">
-          <div class="col col-title size-s-1">
+          <div class="col col-title">
             <h3>Overall</h3>
           </div>
           <div class="col">
             <ul class="list-bullet dot">
               <li>코드의 재사용과 확장성, 가독성을 고려하며 작업합니다.</li>
               <li>다양한 브라우저/디바이스 지원 경험이 다수 있습니다.</li>
-              <li>비효율적인 프로세스 개선 방안을 제시하고 보완한 경험이 있습니다.</li>
+              <li>비효율적인 프로세스 개선 방안을 제시하고 보완하는 것을 좋아합니다.</li>
+              <li>적절한 커뮤니케이션이 업무 효율을 높여준다고 믿습니다.</li>
               <li>능숙한 분야가 아니더라도 적극적으로 탐색하여 최선의 결과를 낼 수 있도록 노력합니다.</li>
             </ul>
           </div>
         </div>
         <div class="row">
-          <div class="col col-title size-s-1">
+          <div class="col col-title">
             <h3>HTML/CSS</h3>
           </div>
           <div class="col">
@@ -210,7 +211,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col col-title size-s-1">
+          <div class="col col-title">
             <h3>JavaScript</h3>
           </div>
           <div class="col">
@@ -224,7 +225,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col col-title size-s-1">
+          <div class="col col-title">
             <h3>Vue.js</h3>
           </div>
           <div class="col">
@@ -236,7 +237,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col col-title size-s-1">
+          <div class="col col-title">
             <h3>Etc</h3>
           </div>
           <div class="col">
@@ -246,6 +247,48 @@
               <li>Adobe Experience Manager(AEM) 기반의 웹사이트 운영 경험이 있습니다.</li>
               <li>Zeplin을 이용한 협업 경험이 있습니다.</li>
               <li>Google Tag Manage 커스텀 태그 작업 경험이 있습니다.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="section study">
+        <div class="section-top">
+          <h2>Personal Project<span class="dot-point">.</span></h2>
+        </div>
+        <div class="row">
+          <div class="col col-title">
+            <img src="./assets/images/oner-try-main.jpg" alt="">
+          </div>
+          <div class="col">
+            <ul class="list-bullet dot">
+              <h3><a href="https://onertry.fun/" target="_blank" title="새창">ONER TRY</a></h3>
+              <li>게임 정보 제공 사이트</li>
+              <li>
+                프론트엔드(1명): 데이터 출력/입력, UI 개발 등<br>
+                백엔드(1명): API 제공, 크롤링, DB 관리 등
+              </li>
+              <li>SEO / GA 데이터 분석을 위해 Nuxt.js 사용</li>
+              <li>
+                <strong>주요 기능</strong>
+                <ul class="list-bullet hyphen">
+                  <li>[공통] 검색, 검색 순위, 자동 완성 기능 구현</li>
+                  <li>[캐릭터] 보유 캐릭터별 장착 아이템</li>
+                  <li>[조합법] 아이템 조합 트리, 필요 재료 총계, 상위 조합 아이템</li>
+                  <li>[랭킹] infinite scroll</li>
+                  <li>[아이템 도감] 선택 옵션에 따른 아이템 필터링, 선택 옵션 하이라이트</li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="list-badge">
+              <li class="badge"> Nuxt.js </li>
+              <li class="badge"> Vue.js </li>
+              <li class="badge"> Vuex </li>
+              <li class="badge"> JavaScript </li>
+              <li class="badge"> SCSS </li>
+              <li class="badge"> Git </li>
+              <li class="badge"> Netlify </li>
+              <li class="badge"> Google Analytics </li>
+              <li class="badge"> HTML/CSS </li>
             </ul>
           </div>
         </div>
@@ -302,37 +345,6 @@
           </div>
         </div>
       </section>
-      <!-- <section class="section study">
-        <div class="section-top">
-          <h2>Mini Projects<span class="dot-point">.</span></h2>
-        </div>
-        <div class="row">
-          <div class="col">
-            <ul class="list-bullet dot">
-              <li>
-                <a href="https://github.com/yemsu/study/tree/master/poll-bar-graph" target="_blank" title="새창 (Github)">
-                  [JavaScript] 막대 그래프
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/yemsu/study/tree/master/gallery-slider" target="_blank" title="새창 (Github)">
-                  [JavaScript] 갤러리 슬라이더
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/yemsu/study/tree/master/customize-favorite-homeMenu" target="_blank" title="새창 (Github)">
-                  [JavaScript] 개인 홈메뉴 선택 기능
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/yemsu/study/tree/master/calendar" target="_blank" title="새창 (Github)">
-                  [JavaScript] 캘린더
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section> -->
     </div>
   </div>
 </template>

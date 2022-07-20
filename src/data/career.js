@@ -27,13 +27,13 @@ export default [
         members: 3,
         type: '운영',
         descriptions: [
+          'Project Leader',
           '웹 접근성 인증 갱신 작업',
           '[개선] 다국어 차량 상세 페이지 node.js 환경 적용',
           {
             title: '[개선] <a href="https://www.hyundai.com/kr/ko/e/vehicles/grandeur/intro" title="새창" tartget="_blank">차량 상세 페이지</a> - 디자인 개편 작업',
             desc: [
-              'PC는 Full page Carousel, Mobile에서는 스크롤로 변환',
-              '여러 컴포넌트들과 편리한 상태 공유를 위해 Vuex store 이용'
+              'PC는 Full page Carousel, Mobile에서는 스크롤로 변환'
             ],
           },
           {
@@ -54,7 +54,10 @@ export default [
               '모바일 스와이프, 차량 순서 이동 기능 추가',
               '반복되는 기존 소스 컴포넌트로 리팩토링하여 코드 용량 및 유지 보수성 개선'
             ]
-          }
+          },
+          {
+            title: '[기타] 차량 상세 가이드 페이지 제안 및 진행',
+          },
         ],
         keywords: [
           'Vue.js',
