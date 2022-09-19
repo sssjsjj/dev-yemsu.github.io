@@ -15,13 +15,20 @@ yarn dev
 yarn build
 ```
 
-### Lints and fixes files
+### Branches
+main > gh-pages (auto deploy)
+
+### Guide
+1. <code>/public/posts</code> 하위에 md파일 생성 
+2. <code>/public/posts/index.json</code>에 신규 object 아이템 추가. 해당 아이템 title값 md파일명과 동일하게 작성 후 meta data작성.
+<!-- ### Lints and fixes files
 ```
 yarn lint
 ```
 
 ### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+See [Configuration Reference](https://cli.vuejs.org/config/). -->
+
 
 
 ### update plan 1

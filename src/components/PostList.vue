@@ -8,21 +8,17 @@
       >
         <router-link
           :to="post.name"
-          :title="post.title.replace(/<br>/ig, '')"
           class="link-post"
         >
-          <h3
-            class="title"
-            :style="`background-color:${randomRgba()};`"
-          >
+          <p class="date">{{ post.date }}</p>
+          <h3 class="title">
             <span
               class="title-text"
               v-html="post.title"
             ></span>
           </h3>
           <div class="wrap-info">
-            <p class="description">{{ post.description }}</p>
-            <p class="date">{{ post.date }}</p>
+            <!-- <p class="description">{{ post.description }}</p> -->
             <ul class="keywords">
               <li
                 v-for="(keyword, keywordIndex) in post.keywords"
