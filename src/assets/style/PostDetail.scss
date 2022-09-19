@@ -128,7 +128,8 @@ $margin-medium: 40px;
   }
   hr {
     margin: 85px 0;
-    border-color: var(--line-gray);
+    border: none;
+    border-bottom: 1px solid var(--line-gray);
   }
   ul {
     margin: $margin-small 0 $margin-medium;
