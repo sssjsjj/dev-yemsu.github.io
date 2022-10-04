@@ -21,7 +21,7 @@ export const mdHighlighter = (md) => {
   const highlightSplittedMd = []
 
   // no code block
-  if(splittedMdLength === 1) return
+  if(splittedMdLength === 1) return md
 
   for(let i = 0; i < splittedMdLength / 2; i++) {
     const index = i * 2
