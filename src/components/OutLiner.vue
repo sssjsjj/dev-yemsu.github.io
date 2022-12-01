@@ -63,14 +63,19 @@ export default {
 </script>
 
 <style lang="scss">
+$top: 120px;
 .outLiner {
+  overflow-y: auto;
   position: fixed;
+  top: $top;
   left: calc(50% + ($container-narrow-width / 2));
+  max-height: calc(100vh - $top - 35px);
   margin-left: 10px;
-  padding-left: 15px;
+  padding: 0 5px 0 15px;
   border-left: 1px solid var(--line-light-gray);
   font-weight: var(--font-light);
   font-size: 14px;
+  @include scrollDesign;
   ul {
     li {
       opacity: .5;
