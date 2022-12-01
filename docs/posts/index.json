@@ -1,5 +1,12 @@
 [
   {
+    "name": "my-vscode-keyboard-shortcuts",
+    "title": "나의 멘탈을 지켜준 VS Code 단축키들 (+ 브라우저 단축키 찌꿈)",
+    "date": "2022-11-21",
+    "keywords": ["VS Code", "keyboard shortcuts"],
+    "description": "나의 멘탈을 지켜준 VS Code 단축키들을 소개합니다."
+  },
+  {
     "name": "code-syntax-highlight-package",
     "title": "마크다운으로 작성한 블로그 포스팅에 코드 하이라이트 적용하기",
     "date": "2022-05-20",

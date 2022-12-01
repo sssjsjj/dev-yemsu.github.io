@@ -2,7 +2,7 @@
 아래 문서를 번역한 포스팅입니다.   
 원문: [Vue.js + Node.js + Express + MongoDB example: MEVN stack CRUD Application](https://www.bezkoder.com/vue-node-express-mongodb-crud/)
 
-- 번역이 완벽하지 않을 수 있습니다.
+- 영어 실력이 미숙하여 번역이 완벽하지 않습니다.
 - 덧붙이고 싶은 내용은 🗨 표시와 함께 정리하였습니다.  
 
 - - -
