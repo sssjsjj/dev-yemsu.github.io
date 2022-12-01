@@ -60,6 +60,9 @@ $margin-medium: 40px;
   h4 {
     margin-top: $margin-medium;
     font-size: 1.3em;
+    & + h5:not(:first-child) {
+      margin-top: 1.5em;
+    }
   }
   h5 {
     margin-top: 30px;
@@ -113,9 +116,9 @@ $margin-medium: 40px;
   }
   code {
     margin-right: 1px;
-    padding: 0 0.2em 0.1em;
+    padding: 0.2em 0.4em;
     background-color: var(--bg-gray);
-    border-radius: 2px;
+    border-radius: 5px;
     font-size: 0.9em;
     line-height: 1.9;
     font-family: 'Source Code Pro', monospace;
@@ -125,6 +128,9 @@ $margin-medium: 40px;
     margin: 15px 0 25px;
     padding: 15px;
     background-color: var(--bg-gray);
+    code {
+      padding: 0;
+    }
   }
   hr {
     margin: 85px 0;
