@@ -1,0 +1,166 @@
+[
+  {
+    "name": "my-vscode-keyboard-shortcuts",
+    "title": "나의 멘탈을 지켜준 VS Code 단축키들 (+ 브라우저 단축키 찌꿈)",
+    "date": "2022-11-21",
+    "keywords": ["VS Code", "keyboard shortcuts"],
+    "description": "나의 멘탈을 지켜준 VS Code 단축키들을 소개합니다."
+  },
+  {
+    "name": "code-syntax-highlight-package",
+    "title": "마크다운으로 작성한 블로그 포스팅에 코드 하이라이트 적용하기",
+    "date": "2022-05-20",
+    "keywords": ["highlight.js", "markdown", "source code", "highlight theme", "dark mode"],
+    "description": "블로그 포스팅 마크다운에 코드 하이라이트를 적용합니다. 다크 모드 여부에 따라 다른 스타일을 적용합니다."
+  },
+  {
+    "name": "vue-node-express-mongodb-crud-app-translated-ko",
+    "title": "Vue.js + Node.js + Express + MongoDB 튜토리얼: MEVN stack CRUD Application (번역)",
+    "date": "2022-05-17",
+    "keywords": ["Vue.js", "Node.js", "Express", "MongoDB", "CRUD", "Data base"],
+    "description": "Vue.js + Node.js + Express + MongoDB를 이용하여 CRUD App 만들기 튜토리얼 포스팅을 한국어로 번역한 내용입니다."
+  },
+  {
+    "name": "make-github-io-blog-with-vue3-2",
+    "title": "Vue3로 Github Pages 블로그 만들기 Part 2. 포스팅 리스트와 헤더",
+    "date": "2022-05-11",
+    "keywords": ["Vue CLI 4", "Vue 3", "github pages", "blog", "posting"],
+    "description": "Vue3로 Github Pages 블로그를 만든 우여곡절 스토리 두번째. 포스팅 리스트, 헤더 작업 그리고 배포."
+  },
+  {
+    "name": "make-github-io-blog-with-vue3-1",
+    "title": "Vue3로 Github Pages 블로그 만들기 Part 1. 환경세팅",
+    "date": "2022-04-29",
+    "keywords": ["Vue CLI 4", "Vue 3", "github pages", "blog", "Octokit", "vue-markdown-loader", "markdown-to-vue-loader"],
+    "description": "Vue3로 Github Pages 블로그를 만든 우여곡절 스토리 첫번째. 환경세팅."
+  },
+  {
+    "name": "webpack-prerender-spa-plugin",
+    "title": "Webpack prerender-spa-plugin 사용하기",
+    "date": "2022-04-13",
+    "keywords": ["Vue CLI 4", "SPA", "SEO", "meta", "HTML5 mode"],
+    "description": "Vue CLI 4 환경에서 prerender-spa-plugin을 이용하여 CSR의 단점인 SEO와 router history mode의 단점을 해결합니다."
+  },
+  {
+    "name": "vue-make-http-module",
+    "title": "Vue HTTP 요청 모듈 만들기",
+    "date": "2022-03-31",
+    "keywords": ["Vue", "esModule", "axios"],
+    "description": "HTTP 요청 로직을 esModule로 제작해 재사용할 수 있도록 리팩토링 합니다."
+  },
+  {
+    "name": "vue-cli-4-use-static-file",
+    "title": "Vue CLI 4 static 파일 사용하기",
+    "date": "2022-03-31",
+    "keywords": ["Vue CLI 4", "Vue3", "static file", "axios", "env", "json", "markdown"],
+    "description": "Vue CLI 4 환경에서 json, markdown과 같은 static파일을 axios를 이용해 호출합니다. (+ 환경 파일 설정)"
+  },
+  {
+    "name": "vue-cli-4-import-markdown-convert-to-html",
+    "title": "Vue CLI 4 마크다운 파일을 불러와 HTML로 변환하기",
+    "date": "2022-03-29",
+    "keywords": ["Vue CLI 4", "Vue3", "import markdown", "convert to HTML"],
+    "description": "Vue CLI 4 환경에서 마크다운 파일을 불러오고 html로 변환합니다."
+  },
+  {
+    "name": "make-github-io-blog-with-vue3",
+    "title": "Vue3 Github Pages 블로그 직접 만들기",
+    "date": "2022-03-06",
+    "keywords": ["Vue3", "project"],
+    "description": "Vue3로 직접 개발해 Github Pages로 배포까지! 블로그 만들기 프로젝트",
+    "lastmod": "2022-03-17",
+    "hidden": true
+  },
+  {
+    "name": "vue-meta-with-vue3",
+    "title": "Vue3 vue-meta 패키지 적용하기",
+    "date": "2022-03-05",
+    "keywords": ["Vue3", "vue-meta", "SPA SEO", "Vue CLI"],
+    "description": "Vue3에서 vue-meta 패키지를 설치하고 페이지별 메타태그를 적용해봅니다.",
+    "lastmod": "2022-03-17"
+  },
+  {
+    "name": "vue-cli-working-with-sass",
+    "title": "Vue CLI Sass 사용하기",
+    "date": "2022-03-05",
+    "keywords": ["Vue CLI", "Sass"],
+    "description": "Vue CLI에서 Sass를 설치하고 Global Sass까지 적용해봅니다.",
+    "lastmod": "2022-03-05"
+  },
+  {
+    "name": "vue3-router",
+    "title": "Vue3 Router 사용하기  (+ 동적 라우팅)",
+    "date": "2022-03-10",
+    "keywords": ["Vue3", "Router", "Dynamic Segments"],
+    "description": "Vue CLI에서 Router를 설치하고 사용합니다. 각 옵션에 대한 내용과 함께 동적 라우팅도 설정합니다.",
+    "lastmod": "2022-03-10"
+  },
+  {
+    "name": "node-js-es6-plus-env-setting-4",
+    "title": "Node.js ES6+ 개발 환경 구축하기 Part 4. Webpack",
+    "date": "2022-02-27",
+    "keywords": ["Node.js", "ES6", "setup", "Webpack", "HtmlWebpackPlugin", "devServer", "devtool"],
+    "description": "마지막 과정. Webpack을 세팅하면서 들었던 생각들, 도움된 레퍼런스 등 전반적인 과정을 주로 다룹니다.",
+    "lastmod": "2022-04-18"
+  },
+  {
+    "name": "node-js-es6-plus-env-setting-3",
+    "title": "Node.js ES6+ 개발 환경 구축하기 Part 3. 로컬 서버",
+    "date": "2022-02-27",
+    "keywords": ["Node.js", "ES6", "setup", "Local Server"],
+    "description": "세번째 과정. Node.js 서버를 세팅하면서 들었던 생각들, 도움된 레퍼런스 등 전반적인 과정을 주로 다룹니다.",
+    "lastmod": "2022-04-18"
+  },
+  {
+    "name": "node-js-es6-plus-env-setting-2",
+    "title": "Node.js ES6+ 개발 환경 구축하기 Part 2. Babel",
+    "date": "2022-02-27",
+    "keywords": ["Node.js", "ES6", "setup", "Babel", "Polyfill", "useBuiltIns", "corejs"],
+    "description": "두번째 과정. Babel과 Babel Polyfill을 세팅하면서 들었던 생각들, 도움된 레퍼런스 등 전반적인 과정을 주로 다룹니다.",
+    "lastmod": "2022-04-18"
+  },
+  {
+    "name": "node-js-es6-plus-env-setting-1",
+    "title": "Node.js ES6+ 개발 환경 구축하기 Part 1. Jest",
+    "date": "2022-02-27",
+    "keywords": ["Node.js", "ES6", "setup", "Jest"],
+    "description": "첫번째 과정. 프로젝트 생성과 Jest를 세팅하면서 들었던 생각들, 도움된 레퍼런스 등 전반적인 과정을 주로 다룹니다.",
+    "lastmod": "2022-04-18"
+  },
+  {
+    "name": "compare-two-git-branches-vscode",
+    "title": "VScode Git 브랜치끼리 작업 내용 비교하기",
+    "date": "2021-12-27",
+    "keywords": ["Gitlens", "Git", "VScode", "branch", "compare"],
+    "description": "VScode의 Gitlens 확장프로그램을 이용하여 브랜치끼리 작업 내용을 비교합니다.",
+    "lastmod": "2022-04-01"
+  },
+  {
+    "name": "vue-devtools-not-detected-vue3",
+    "title": "Vue3 Vue.js devtools - not detected",
+    "date": "2021-11-12",
+    "keywords": ["Vue3", "Vue.js devtools"],
+    "description": "Vue.js devtools - not detected 이슈 해결"
+  },
+  {
+    "name": "html-text-tags",
+    "title": "텍스트를 체계적으로 꾸며주는 HTML 태그들",
+    "date": "2020-4-1",
+    "keywords": ["HTML", "semantic", "strong", "em", "mark", "small", "del"],
+    "description": "다 안다고 생각했는데 막상 들춰 보니 잘 몰랐던 텍스트를 더 풍부하게 해주는 시맨틱 태그들."
+  },
+  {
+    "name": "web-accessibility-text-contrast",
+    "title": "접근성 텍스트 명도 대비 확인",
+    "date": "2020-4-1",
+    "keywords": ["web accessibility", "text color contrast", "color picker"],
+    "description": "접근성을 위한 텍스트 명도 대비 확인 사이트와, 컬러 피커"
+  },
+  {
+    "name": "all-about-dl-tag",
+    "title": "&lt;dl&gt; 태그, 어디까지 알고있나요?",
+    "date": "2019-3-5",
+    "keywords": ["dl", "HTML", "semantic"],
+    "description": "생각보다 다양한 쓰임! dl 태그에 대해 알아봅니다."
+  }
+]
