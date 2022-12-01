@@ -1,0 +1,214 @@
+<!DOCTYPE html><html lang="ko"><head>
+        <title>Node.js ES6+ 개발 환경 구축하기 Part 2. Babel</title>
+        <meta name="title" content="Node.js ES6+ 개발 환경 구축하기 Part 2. Babel" />
+        <meta name="description" content="두번째 과정. Babel과 Babel Polyfill을 세팅하면서 들었던 생각들, 도움된 레퍼런스 등 전반적인 과정을 주로 다룹니다." />
+        <meta name="keywords" content="Node.js,ES6,setup,Babel,Polyfill,useBuiltIns,corejs" />
+        <meta property="og:url" content="https://yemsu.github.io/node-js-es6-plus-env-setting-2" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="Node.js ES6+ 개발 환경 구축하기 Part 2. Babel" />
+        <meta property="og:description" content="두번째 과정. Babel과 Babel Polyfill을 세팅하면서 들었던 생각들, 도움된 레퍼런스 등 전반적인 과정을 주로 다룹니다." />
+        <meta property="og:image" content="https://yemsu.github.io/images/og_image.jpg" />
+        <meta property="twitter:card" content="https://yemsu.github.io/images/og_image.jpg" />
+        <meta property="twitter:url" content="https://yemsu.github.io/node-js-es6-plus-env-setting-2" />
+        <meta property="twitter:title" content="Node.js ES6+ 개발 환경 구축하기 Part 2. Babel" />
+        <meta property="twitter:description" content="두번째 과정. Babel과 Babel Polyfill을 세팅하면서 들었던 생각들, 도움된 레퍼런스 등 전반적인 과정을 주로 다룹니다." />
+        <meta property="twitter:image" content="https://yemsu.github.io/images/og_image.jpg" />
+      <style>
+    .utterances {
+      position: relative;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .utterances-frame {
+      color-scheme: light;
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 1px;
+      min-width: 100%;
+      max-width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2284%22>🌊</text></svg>"><title>ENJOY DEV</title><meta name="naver-site-verification" content="c702bde42c5742aa62750f39d810dd87c91f4811"><meta name="google-site-verification" content="rRA_cKc94OITZM0hBG9JQUQBl8IbTx9G7cY6mUo1hgw"><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-922R4CGCRZ"></script><script>window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-922R4CGCRZ');</script><link href="/css/chunk-74d2d95d.9fbeb06c.css" rel="prefetch"><link href="/css/chunk-773fa2dd.9276efd2.css" rel="prefetch"><link href="/js/chunk-74d2d95d.9bc6a593.js" rel="prefetch"><link href="/js/chunk-773fa2dd.9dc87749.js" rel="prefetch"><link href="/css/app.7c38cbb7.css" rel="preload" as="style"><link href="/js/app.db06a461.js" rel="preload" as="script"><link href="/js/chunk-vendors.32d25a6b.js" rel="preload" as="script"><link href="/css/app.7c38cbb7.css" rel="stylesheet"><link rel="stylesheet" type="text/css" href="/css/chunk-74d2d95d.9fbeb06c.css"><script charset="utf-8" src="/js/chunk-74d2d95d.9bc6a593.js"></script></head><body><noscript><strong>We're sorry but ENJOY DEV doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app" data-v-app=""><metainfo></metainfo><header data-v-49c83e62=""><h1 data-v-49c83e62=""><a href="/" class="logo size-medium" data-v-295f0452="" data-v-49c83e62=""><span class="logo-text dev" data-v-295f0452=""> D<span class="hidden" data-v-295f0452="">E</span>V </span><span class="logo-text enjoy" data-v-295f0452=""><span class="common-e" data-v-295f0452="">E</span>NJOY🌊 </span></a></h1><div class="links" data-v-49c83e62=""><a href="https://github.com/yemsu/" title="Yemsu Github" target="_blank" data-v-49c83e62=""><svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="26" data-view-component="true" class="octicon octicon-mark-github v-align-middle"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a></div></header><div class="container size-narrow" data-v-c8c5d468="" data-v-2a2a6a5b=""><article data-v-2a2a6a5b=""><nav class="outLiner" data-v-2a2a6a5b=""><ul><li class=""><a href="#Babel로-ES6+-환경-설정하기">1. Babel로 ES6+ 환경 설정하기</a></li><li class="subTitle"><a href="#Babel-CLI-설치">1-1. Babel CLI 설치</a></li><li class="subTitle"><a href="#Babel-설정">1-2. Babel 설정</a></li><li class="subTitle"><a href="#NPM-커맨드-지정">1-3. NPM 커맨드 지정</a></li><li class="subTitle"><a href="#🔎-Babel-CLI-명령어">1-4. 🔎 Babel CLI 명령어</a></li><li class="subTitle"><a href="#Babel-실행">1-5. Babel 실행</a></li><li class=""><a href="#Babel-Polyfill-설정하기">2. Babel Polyfill 설정하기</a></li><li class="subTitle"><a href="#🔎-polyfill이란?">2-1. 🔎 polyfill이란?</a></li><li class="subTitle"><a href="#useBuiltIns-옵션-설정">2-2. useBuiltIns 옵션 설정</a></li><li class="subTitle"><a href="#🔎-useBuiltIns-옵션-종류">2-3. 🔎 useBuiltIns 옵션 종류</a></li><li class="subTitle"><a href="#corejs-옵션-설정">2-4. corejs 옵션 설정</a></li><li class="subTitle"><a href="#Babel-실행">2-5. Babel 실행</a></li></ul></nav><div class="wrap-info" data-v-2a2a6a5b=""><h2 class="title" data-v-2a2a6a5b="">Node.js ES6+ 개발 환경 구축하기 Part 2. Babel</h2><p class="date" data-v-2a2a6a5b="">2022-02-27</p><ul class="keywords" data-v-2a2a6a5b=""><li class="keyword" data-v-2a2a6a5b="">Node.js</li><li class="keyword" data-v-2a2a6a5b="">ES6</li><li class="keyword" data-v-2a2a6a5b="">setup</li><li class="keyword" data-v-2a2a6a5b="">Babel</li><li class="keyword" data-v-2a2a6a5b="">Polyfill</li><li class="keyword" data-v-2a2a6a5b="">useBuiltIns</li><li class="keyword" data-v-2a2a6a5b="">corejs</li></ul></div><article class="article" data-v-2a2a6a5b=""><h3 id="Babel로-ES6+-환경-설정하기"><a href="https://babeljs.io/docs/en/usage">Babel</a>로 ES6+ 환경 설정하기</h3>
+<h4 id="Babel-CLI-설치">Babel CLI 설치</h4>
+<pre><code>yarn add -D @babel/core @babel/cli @babel/preset-env</code></pre>
+<ul>
+<li><code>@babel/core</code> : babel이 트랜스파일 할 수 있게 해준다.</li>
+<li><code>@babel/cli</code> : CLI에서 babel을 실행할 수 있게 해준다.</li>
+<li><code>@babel/preset-env</code> : <code>.babelrc</code>의 <code>targets</code> 옵션에 선언된 환경에 대응할 수 있는 plugin들을 모아놓은 preset 라이브러리. 가장 많이 쓰인다.</li>
+</ul>
+<h5 id="packagejson">📃 package.json</h5>
+<pre><code class="language-json">{
+  <span class="hljs-attr">"devDependencies"</span>: {
+    <span class="hljs-attr">"@babel/cli"</span>: <span class="hljs-string">"^7.17.3"</span>,            <span class="hljs-comment">// NEW</span>
+    <span class="hljs-attr">"@babel/core"</span>: <span class="hljs-string">"^7.17.5"</span>,            <span class="hljs-comment">// NEW</span>
+    <span class="hljs-attr">"@babel/preset-env"</span>: <span class="hljs-string">"^7.16.11"</span>,    <span class="hljs-comment">// NEW</span>
+    <span class="hljs-attr">"jest"</span>: <span class="hljs-string">"^27.5.1"</span>
+  }
+}</code></pre>
+<h4 id="Babel-설정">Babel 설정</h4>
+<p>프로젝트 루트에 <code>.babelrc</code> 파일 생성</p>
+<pre><code>$ touch .babelrc</code></pre>
+<p>아래와 같이 <code>@babel/preset-env</code> preset을 사용하겠다고 설정하고
+어떤 브라우저에 대응할지 <code>targets</code> 옵션에 선언했다. (<a href="https://babeljs.io/docs/en/usage">바벨 공식 문서</a>에 있는 옵션)</p>
+<h5 id="babelrc">📃 .babelrc</h5>
+<pre><code class="language-json">{
+  <span class="hljs-attr">"presets"</span>: [
+    [
+      <span class="hljs-string">"@babel/preset-env"</span>,
+      {
+        <span class="hljs-attr">"targets"</span>: {        
+          <span class="hljs-attr">"edge"</span>: <span class="hljs-string">"17"</span>,
+          <span class="hljs-attr">"firefox"</span>: <span class="hljs-string">"60"</span>,
+          <span class="hljs-attr">"chrome"</span>: <span class="hljs-string">"67"</span>,
+          <span class="hljs-attr">"safari"</span>: <span class="hljs-string">"11.1"</span>
+        }
+    ]
+  ]
+}</code></pre>
+<h4 id="NPM-커맨드-지정">NPM 커맨드 지정</h4>
+<h5 id="packagejson-1">📃 package.json</h5>
+<pre><code class="language-json">{
+  <span class="hljs-attr">"scripts"</span>: {
+    <span class="hljs-attr">"build"</span>: <span class="hljs-string">"babel lib -w -d dist/js"</span>  <span class="hljs-comment">// Babel CLI 명령어</span>
+    <span class="hljs-string">"test"</span>: <span class="hljs-string">"jest"</span>
+  }
+}</code></pre>
+<h4 id="🔎-Babel-CLI-명령어">🔎 Babel CLI 명령어</h4>
+<pre><code>babel src/lib -w -d dist/js</code></pre>
+<ul>
+<li><code>lib</code> : 해당 경로의 폴더 안에 있는 JS파일을 트랜스파일링</li>
+<li><code>-w</code> : 파일들의 변경 감지 (--watch 축약형)</li>
+<li><code>-d dist/js</code> : 트랜스파일링된 파일 저장 경로 (--out-dir 축약형)</li>
+</ul>
+<h4 id="Babel-실행">Babel 실행</h4>
+<p>테스트 해보기 위해 graph.js에 <code>arrow function</code>과 <code>Set</code>을 사용 후 빌드해보았다.
+그러나 아래와 같이 상단에 <code>"use strict";</code>만 추가되고 변한게 없다.</p>
+<h5 id="libgraphjs">📃 lib/graph.js</h5>
+<pre><code class="language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">graph</span>(<span class="hljs-params">num</span>) </span>{
+  <span class="hljs-keyword">const</span> setInstance = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]);
+  <span class="hljs-keyword">const</span> hasNum = <span class="hljs-function">() =&gt;</span> setInstance.has(num)
+  <span class="hljs-keyword">return</span> hasNum
+}
+<span class="hljs-built_in">module</span>.exports = graph</code></pre>
+<h5 id="distjsgraphjs">📃 dist/js/graph.js</h5>
+<pre><code class="language-javascript"><span class="hljs-meta">"use strict"</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">graph</span>(<span class="hljs-params">num</span>) </span>{
+  <span class="hljs-keyword">const</span> setInstance = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]);
+
+  <span class="hljs-keyword">const</span> hasNum = <span class="hljs-function">() =&gt;</span> setInstance.has(num);
+
+  <span class="hljs-keyword">return</span> hasNum;
+}
+
+<span class="hljs-built_in">module</span>.exports = graph;</code></pre>
+<p><code>"ie": "11"</code>을 <code>targets</code>에 추가하고 빌드해봤더니 <code>const</code>와 <code>arrow function</code>이 바뀐 것을 볼 수 있다.</p>
+<h5 id="distjsgraphjs-1">📃 dist/js/graph.js</h5>
+<pre><code class="language-javascript"><span class="hljs-meta">"use strict"</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">graph</span>(<span class="hljs-params">num</span>) </span>{
+  <span class="hljs-keyword">var</span> setInstance = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]);
+
+  <span class="hljs-keyword">var</span> hasNum = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hasNum</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> setInstance.has(num);
+  };
+
+  <span class="hljs-keyword">return</span> hasNum;
+}
+
+<span class="hljs-built_in">module</span>.exports = graph;</code></pre>
+<p>그런데 <code>Set</code>은 여전하다. <code>Set</code>같은 ES6의 객체들은 ES5로 구문 변환만 해서는 안되고 해당 객체들을 정의하는 polyfill을 추가해줘야 한다.</p>
+<hr>
+<h3 id="Babel-Polyfill-설정하기">Babel Polyfill 설정하기</h3>
+<h4 id="🔎-polyfill이란?">🔎 polyfill이란?</h4>
+<p>polyfill이 정확히 무엇이고 왜 바벨 폴리필을 가져오는 방식이 바뀌었는지 아래 글에 잘 설명되어있다.</p>
+<blockquote>
+  <p>폴리필(Polyfill)은 구형 브라우저에서 지원하지 않는 기능을 제공하는 코드를 의미합니다. ES6의 Promise 같은 객체들은 ES5에 존재하지 않으므로 구문 변환 뿐만 아니라 해당 객체들을 정의하는 코드인 바벨 폴리필(babel polyfill)을 추가해야 합니다. 
+  …
+  폴리필(polyfill)은 충전솜이라는 의미를 가지고 있습니다.
+  ES5에 비어있는 ES6 객체, 메소드들을 충전솜처럼 폴리필이 채워줍니다
+  …
+  과거에는 <code>@babel/polyfill</code> 패키지를 직접 전역 스코프에 가져오는(import) 방식으로 바벨 폴리필을 추가했지만 deprecated 되었습니다. 현재는 <code>core-js/stable</code>과 <code>regenerator-runtime/runtime</code> 패키지를 직접 전역 스코프에 삽입합니다. 이러한 바벨 폴리필 삽입 방법은 웹채팅처럼 고객 페이지에 삽입되는 애플리케이션인 경우 고객의 전역 스코프를 오염시키는 문제가 있습니다.</p>
+  <p><cite><a href="https://tech.kakao.com/2020/12/01/frontend-growth-02/">kakao Tech</a></cite></p>
+</blockquote>
+<p><strong>전역 스코프를 오염시키는 문제</strong>가 있어서 오염시키지 않고 적용하는 방법이 있다고 하지만, 아직 완벽히 이해가 되진 않는다. 나중에 오류를 만나게되면 그때 해결하면서 이해하기로 했다.
+요번엔 전역으로 우선 설정한다.</p>
+<h4 id="useBuiltIns-옵션-설정">useBuiltIns 옵션 설정</h4>
+<blockquote>
+  <p><code>preset-env</code> 프리셋의 폴리필 삽입 방식을 설정하는 옵션입니다. 옵션 값으로 <code>usage</code>, <code>entry</code>, <code>false</code>를 사용할 수 있습니다. <code>false</code> 이외의 옵션을 사용하면 최신 자바스크립트 폴리필이 포함된 standard javascript library인 <code>core-js</code> 모듈을 가져오는(import) 코드를 타깃 브라우저에 맞게 삽입/수정합니다. 옵션 값에 따른 폴리필 삽입 방식을 살펴보겠습니다.</p>
+  <p><cite><a href="https://tech.kakao.com/2020/12/01/frontend-growth-02/">kakao Tech</a></cite></p>
+</blockquote>
+<h4 id="🔎-useBuiltIns-옵션-종류">🔎  useBuiltIns 옵션 종류</h4>
+<ul>
+<li><code>**usage**</code>
+: 실제 사용한 폴리필만 삽입된다. import 문 변경이 아닌 삽입이므로 폴리필 모듈을 전역 스코프에 삽입하지 않아도 된다.</li>
+</ul>
+<pre><code class="javascript language-javascript">  //before transpiling
+  Promise.resolve().finally();
+
+  //after transpiling
+  require("core-js/modules/es.promise.finally");
+
+  Promise.resolve().finally();
+</code></pre>
+<ul>
+<li><code>**entry**</code>
+: 폴리필 모듈을 전역 스코프에 직접 삽입하면 타깃 환경에 필요한 폴리필만 전역 스코프에 추가된다.</li>
+<li><code>**false**</code>
+: default 값. 사용 안함.</li>
+</ul>
+<p>실제 사용한 폴리필만 삽입되는 <code>usage</code>옵션이 있으면, 전역으로 타깃 환경에 필요한 폴리필을 미리 추가하는 <code>entry</code>를 사용할 일은 없지않나 싶었다.
+<code>entry</code>의 사용해도 되고 사용하면 얻을 수 있는 이점이 무엇인지 궁금했다.
+하지만 이쪽을 계속 파자니 한도 끝도 없어서 우선 나는 여기까지만 알아보고 <code>usage</code>를 사용하기로 결정!💃</p>
+<h4 id="corejs-옵션-설정">corejs 옵션 설정</h4>
+<blockquote>
+  <p>corejs 옵션은 useBuiltIns 옵션과 함께 사용해야 합니다. 해당 옵션은 삽입되는 core-js 모듈의 버전을 설정합니다. default 값은 2이고, version 2는 업데이트가 중단되었기 때문에 현재는 version 3를 사용해야 합니다.</p>
+  <p><cite><a href="https://tech.kakao.com/2020/12/01/frontend-growth-02/">kakao Tech</a></cite></p>
+</blockquote>
+<p>꼼꼼하게 정리된 kakao Tech 글을 보면서 차근차근 따라했다.
+테스트를 위해 넣었던 ie는 타겟옵션에서 제거했다.</p>
+<h5 id="babelrc-1">📃 .babelrc</h5>
+<pre><code class="language-json">{
+  <span class="hljs-attr">"presets"</span>: [
+    [
+      <span class="hljs-string">"@babel/preset-env"</span>,
+      {
+        <span class="hljs-attr">"targets"</span>: {
+          <span class="hljs-attr">"edge"</span>: <span class="hljs-string">"17"</span>,
+          <span class="hljs-attr">"firefox"</span>: <span class="hljs-string">"60"</span>,
+          <span class="hljs-attr">"chrome"</span>: <span class="hljs-string">"67"</span>,
+          <span class="hljs-attr">"safari"</span>: <span class="hljs-string">"11.1"</span>
+        },
+        <span class="hljs-attr">"useBuiltIns"</span>: <span class="hljs-string">"usage"</span>,
+        <span class="hljs-attr">"corejs"</span>: <span class="hljs-string">"3"</span>  <span class="hljs-comment">// NEW</span>
+      }
+    ]
+  ]
+}</code></pre>
+<h4 id="Babel-실행">Babel 실행</h4>
+<p>모듈이 추가 된 것을 확인할 수 있다.🕵️‍♀️</p>
+<h5 id="distjsgraphjs-2">📃 dist/js/graph.js</h5>
+<pre><code class="language-javascript"><span class="hljs-meta">"use strict"</span>;
+
+<span class="hljs-built_in">require</span>(<span class="hljs-string">"core-js/modules/web.dom-collections.iterator.js"</span>);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">graph</span>(<span class="hljs-params">num</span>) </span>{
+  <span class="hljs-keyword">const</span> setInstance = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]);
+
+  <span class="hljs-keyword">const</span> hasNum = <span class="hljs-function">() =&gt;</span> setInstance.has(num);
+
+  <span class="hljs-keyword">return</span> hasNum;
+}
+
+<span class="hljs-built_in">module</span>.exports = graph;</code></pre></article><div class="article-bottom" data-v-2a2a6a5b=""><p class="text-ps" data-v-2a2a6a5b=""><strong data-v-2a2a6a5b="">수정이 필요한 부분</strong> 혹은 <strong data-v-2a2a6a5b="">더 나은 방법</strong>을 알고계신가요? <br data-v-2a2a6a5b=""> 댓글로 알려주시면 저에게 큰 도움이 됩니다! 😊💜 </p><div class="vue-utterances" data-v-2a2a6a5b=""><div class="utterances">
+    <iframe class="utterances-frame" title="Comments" scrolling="no" src="https://utteranc.es/utterances.html?async=&amp;src=https%3A%2F%2Futteranc.es%2Fclient.js&amp;repo=yemsu%2Fyemsu.github.io&amp;issue-term=pathname&amp;theme=github-light&amp;crossorigin=anonymous&amp;url=http%3A%2F%2Flocalhost%3A8000%2Fnode-js-es6-plus-env-setting-2&amp;origin=http%3A%2F%2Flocalhost%3A8000&amp;pathname=node-js-es6-plus-env-setting-2&amp;title=ENJOY+DEV&amp;description=&amp;og%3Atitle=&amp;session=" loading="lazy"></iframe>
+  </div></div></div></article></div><footer data-v-183da9a0=""> copyright © <a href="https://github.com/yemsu" target="_blank" title="Github (새창)" data-v-183da9a0="">yemsu</a>. All right reserved. </footer></div><script src="/js/chunk-vendors.32d25a6b.js"></script><script src="/js/app.db06a461.js"></script></body></html>
