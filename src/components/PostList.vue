@@ -1,5 +1,14 @@
-<template>
-  <div class="wrap-list-post">
+ <template>  
+  <div :class="['wrap-list-post', `view-${isCardList ? 'card' : 'list'}`]">
+    <div class="list-top-area">
+      <button
+        class="toggle-list-type"
+        @click="(isCardList = !isCardList)"
+        :title="isCardList ? '리스트 스타일로 보기' : '카드 스타일로 보기'"
+      >
+        <Icon :type="isCardList ? 'list' : 'grid'" />
+      </button>
+    </div>
     <div class="list-post">
       <div
         v-for="(post, i) in posts"
@@ -10,8 +19,11 @@
           :to="post.name"
           class="link-post"
         >
-          <p class="date">{{ post.date }}</p>
-          <h3 class="title">
+          <p v-if="!isCardList" class="date">{{ post.date }}</p>
+          <h3
+            class="title"
+            :style="isCardList ?`background-color:${randomRgba()};` : ''"
+          >
             <span
               class="title-text"
               v-html="post.title"
@@ -28,6 +40,7 @@
                 {{ keyword }}
               </li>
             </ul>
+            <p v-if="isCardList" class="date">{{ post.date }}</p>
           </div>
         </router-link>
       </div>
@@ -45,9 +58,14 @@ export default {
       default: () => []
     }
   },
+  data() {
+    return {
+      isCardList: true
+    }
+  },
   methods: {
     randomRgba() {
-      return randomRgba(120, 170)
+      return randomRgba(120, 180, 0.6)
     }
   }
 }

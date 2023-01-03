@@ -1,7 +1,7 @@
-export const randomRgba = (min, max) => {
+export const randomRgba = (min, max, opacity = 1) => {
   const randomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) + min)
   const randomByte = () => randomNumber(min, max)
-  const randomCssRgba = `rgba(${[randomByte(), randomByte(), randomByte(), 1].join(',')})`
+  const randomCssRgba = `rgba(${[randomByte(), randomByte(), randomByte(), opacity].join(',')})`
   return randomCssRgba
 }
 
