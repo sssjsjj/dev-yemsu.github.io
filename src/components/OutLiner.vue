@@ -1,5 +1,6 @@
 <template>
   <nav class="outLiner">
+    <h2 class="ir">글 목차 (클릭하여 바로가기)</h2>
     <ul>
       <li 
         v-for="(title,i) in outlines"
