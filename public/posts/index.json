@@ -154,7 +154,7 @@
     "title": "레이어 팝업 WAI-ARIA 적용 예제 코드",
     "date": "2020-4-20",
     "keywords": ["웹접근성", "레이어팝업", "WAI-ARIA"],
-    "description": ""
+    "description": "레이어 팝업에 WAI-ARIA 적용한 예제 코드"
   },
   {
     "name": "css-rendering-process",
