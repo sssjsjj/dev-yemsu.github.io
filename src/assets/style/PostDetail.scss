@@ -137,17 +137,23 @@ $margin-medium: 40px;
     border: none;
     border-bottom: 1px solid var(--line-gray);
   }
-  ul {
+  ul, ol {
     margin: $margin-small 0 $margin-medium;
     padding-left: 2em;
     li {
-      list-style: disc;
       &:nth-child(n+2) {
         margin-top: 5px;
       }
       ul {
         margin-top: 5px;
         margin-bottom: 15px;
+      }
+    }
+  }
+  ul {
+    li {
+      list-style: disc;
+      ul {
         li {
           list-style: circle;
         }
