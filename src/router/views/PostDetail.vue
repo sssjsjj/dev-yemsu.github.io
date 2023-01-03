@@ -1,6 +1,7 @@
 <template>
   <container-comp :size="'narrow'">
     <out-liner :outlines="outlines"/>
+    <post-detail-skeleton v-if="!articleReady" />
     <article v-show="articleReady">
       <div v-if="post && post.title" class="wrap-info">
         <h2 class="title" v-html="post.title.replace(/<br>/ig, '')"></h2>
@@ -30,6 +31,7 @@
 <script>
 import VueUtterances from "vue-utterances";
 import ContainerComp from '@/components/layout/Container.vue'
+import PostDetailSkeleton from '@/components/PostDetailSkeleton.vue'
 import OutLiner from '@/components/OutLiner.vue'
 import { isDarkMode } from '@/utils'
 import { mapGetters } from 'vuex';
@@ -38,7 +40,8 @@ export default {
   components: {
     VueUtterances,
     ContainerComp,
-    OutLiner
+    OutLiner,
+    PostDetailSkeleton
   },
   data() {
     return {
