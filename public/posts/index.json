@@ -157,6 +157,13 @@
     "description": "접근성을 위한 텍스트 명도 대비 확인 사이트와, 컬러 피커"
   },
   {
+    "name": "javascript-prototype",
+    "title": "Javascript Prototype",
+    "date": "2019-6-24",
+    "keywords": ["javascript", "prototype"],
+    "description": "생각보다 다양한 쓰임! dl 태그에 대해 알아봅니다."
+  },
+  {
     "name": "all-about-dl-tag",
     "title": "&lt;dl&gt; 태그, 어디까지 알고있나요?",
     "date": "2019-3-5",
