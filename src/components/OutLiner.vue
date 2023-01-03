@@ -68,7 +68,7 @@ $top: 120px;
   overflow-y: auto;
   position: fixed;
   top: $top;
-  left: calc(50% + ($container-narrow-width / 2));
+  left: calc(50% + ($container-narrow-width / 2) + 20px);
   max-height: calc(100vh - $top - 35px);
   margin-left: 10px;
   padding: 0 5px 0 15px;
