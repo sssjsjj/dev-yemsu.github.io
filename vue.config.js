@@ -7,6 +7,8 @@ module.exports = {
     if (process.env.NODE_ENV === 'production') {
       config.plugins.push(...webpackPlugins)
     }
+    
+    config.output.filename = 'js/[name].js'
   },
   css: {
     loaderOptions: {
