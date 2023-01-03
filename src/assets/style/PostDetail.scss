@@ -4,6 +4,7 @@ $margin-small: 10px;
 $margin-medium: 40px;
 
 .wrap-info {
+  min-height: 150px;
   padding-bottom: 30px;
   border-bottom: 1px solid var(--line-gray);
   text-align: center;
@@ -37,6 +38,7 @@ $margin-medium: 40px;
   }
 }
 :deep(.article) {
+  min-height: 450px;
   padding: 50px 20px 100px;
   @include mobile {
     padding: 20px 0;
