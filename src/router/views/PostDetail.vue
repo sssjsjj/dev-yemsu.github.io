@@ -1,7 +1,7 @@
 <template>
   <container-comp :size="'narrow'">
-    <article>
-      <out-liner :outlines="outlines"/>
+    <out-liner :outlines="outlines"/>
+    <article v-show="articleReady">
       <div v-if="post && post.title" class="wrap-info">
         <h2 class="title" v-html="post.title.replace(/<br>/ig, '')"></h2>
         <p class="date">{{ post.date }}</p>
@@ -15,7 +15,7 @@
           </li>
         </ul>
       </div>
-      <article class="article" v-html="article" ref="article"></article>
+      <div class="article" v-html="article" ref="article"></div>
       <div class="article-bottom">
         <p class="text-ps">
           <strong>수정이 필요한 부분</strong> 혹은 <strong>더 나은 방법</strong>을 알고계신가요? <br>
@@ -42,7 +42,8 @@ export default {
   },
   data() {
     return {
-      outlines: []
+      outlines: [],
+      articleReady: false
     }
   },
   computed: {
@@ -58,7 +59,12 @@ export default {
     const postName = this.$route.params.title
     await this.$store.dispatch('GET_MD', postName)
     await this.$store.dispatch('GET_POST', postName)
+    this.articleReady = true
     this.readyOutLiner()
+  },
+  beforeUnmount() {
+    this.$store.commit('SET_DATA', {type: 'markdown', data: ''},)
+    this.$store.commit('SET_DATA', {type: 'post', data: {}},)
   },
   methods: {
     readyOutLiner() {

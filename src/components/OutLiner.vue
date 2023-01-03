@@ -1,5 +1,6 @@
 <template>
   <nav class="outLiner">
+    <h2 class="ir">글 목차 (클릭하여 바로가기)</h2>
     <ul>
       <li 
         v-for="(title,i) in outlines"
@@ -29,7 +30,13 @@ export default {
     }
   },
   mounted() {
-    document.addEventListener('scroll', () => {
+    document.addEventListener('scroll', this.scrollHandler)
+  },
+  beforeUnmount() {
+    document.removeEventListener('scroll', this.scrollHandler)
+  },
+  methods: {
+    scrollHandler() {
       if(this.scrolling) return 
       this.scrolling = true
 
@@ -38,12 +45,10 @@ export default {
       setTimeout(() => {
         this.scrolling = false
       }, 200);
-    })
-
-  },
-  methods: {
+    },
     setActiveTitle() {
       const titleEls = document.querySelectorAll('h3, h4')
+      if(!titleEls) return
       const articleEl = document.querySelector('.article')
       const articleOffsetBottom = articleEl.offsetTop + articleEl.offsetHeight
       const windowScrY = window.scrollY + 100

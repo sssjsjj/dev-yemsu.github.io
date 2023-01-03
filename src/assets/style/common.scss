@@ -20,3 +20,11 @@ a, button {
     transition: opacity 0.2s;
   }
 }
+.ir {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  font-size: 0;
+  opacity: 0;
+}
