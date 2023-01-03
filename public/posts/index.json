@@ -150,6 +150,13 @@
     "description": ""
   },
   {
+    "name": "css-rendering-process",
+    "title": "CSS 렌더링 과정 (번역/요약)",
+    "date": "2020-4-1",
+    "keywords": ["CSS", "CSSOM", "렌더트리"],
+    "description": "다 안다고 생각했는데 막상 들춰 보니 잘 몰랐던 텍스트를 더 풍부하게 해주는 시맨틱 태그들."
+  },
+  {
     "name": "html-text-tags",
     "title": "텍스트를 체계적으로 꾸며주는 HTML 태그들",
     "date": "2020-4-1",
