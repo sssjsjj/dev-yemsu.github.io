@@ -1,6 +1,6 @@
 아래 문서를 번역한 포스팅입니다.   
 
-원문 - https://www.digitalocean.com/community/tutorials/understanding-prototypes-and-in(prototype%EC%97%90%20%EB%8C%80%ED%95%9C%20%EB%8D%94%20%EC%9E%90%EC%84%B8%ED%95%9C%20%EB%82%B4%EC%9A%A9%EC%9D%80%20heritance-in-javascript%EC%97%90%EC%84%9C%20%ED%99%95%EC%9D%B8)
+원문 - [Understanding Classes in JavaScript  | DigitalOcean](https://www.digitalocean.com/community/tutorials/understanding-classes-in-javascript)
 
 ---
 
