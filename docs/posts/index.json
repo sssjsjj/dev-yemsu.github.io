@@ -143,11 +143,18 @@
     "description": "Vue.js devtools - not detected 이슈 해결"
   },
   {
+    "name": "javascript-class",
+    "title": "Javascript의 Class (번역)",
+    "date": "2020-6-24",
+    "keywords": ["javascript", "class", "prototype", "function"],
+    "description": "javascript class에 대한 영문 블로그 포스팅을 번역한 글입니다."
+  },
+  {
     "name": "accessibility-wai-aria-layerpopup",
     "title": "레이어 팝업 WAI-ARIA 적용 예제 코드",
     "date": "2020-4-20",
     "keywords": ["웹접근성", "레이어팝업", "WAI-ARIA"],
-    "description": ""
+    "description": "레이어 팝업에 WAI-ARIA 적용한 예제 코드"
   },
   {
     "name": "css-rendering-process",
