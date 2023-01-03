@@ -150,6 +150,13 @@
     "description": "다 안다고 생각했는데 막상 들춰 보니 잘 몰랐던 텍스트를 더 풍부하게 해주는 시맨틱 태그들."
   },
   {
+    "name": "web-mail-css",
+    "title": "웹메일에서 사용 가능한 CSS 확인하기",
+    "date": "2020-4-1",
+    "keywords": ["webmail", "css"],
+    "description": "웹메일에서 사용 가능한 CSS를 확인할 수 있는 사이트를 소개합니다."
+  },
+  {
     "name": "web-accessibility-text-contrast",
     "title": "접근성 텍스트 명도 대비 확인",
     "date": "2020-4-1",
