@@ -1,10 +1,10 @@
 [
   {
     "name": "my-vscode-keyboard-shortcuts",
-    "title": "나의 멘탈을 지켜준 VS Code 단축키들 (+ 브라우저 단축키)",
+    "title": "마우스까지 손 옮기는거 싫어하는 사람을 위한 유용한 VS Code 단축키 소개 (기본 단축키 제외)",
     "date": "2022-11-21",
     "keywords": ["VS Code", "keyboard shortcuts"],
-    "description": "나의 멘탈을 지켜준 VS Code 단축키들을 소개합니다."
+    "description": "마우스까지 손 옮기는거 싫어하는 사람을 위한 유용한 VS Code 단축키 소개 (기본 단축키 제외)"
   },
   {
     "name": "code-syntax-highlight-package",
