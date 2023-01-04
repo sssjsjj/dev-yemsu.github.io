@@ -83,7 +83,7 @@ app.use(router).mount('#app')
 라우터 영역을 지정해줍니다.
 ##### 📃 /src/App.vue
 
-```javascript
+```html
 <template>
   <div id="nav">
       <router-link to="/">Home</router-link>
@@ -109,7 +109,7 @@ app.use(router).mount('#app')
 
 ##### 📃 src/router/views/PostDetail.vue
 
-```
+```html
 <template>
   <h1>PostDetail</h1>
   <p>{{ $route.params.title }}</p>
