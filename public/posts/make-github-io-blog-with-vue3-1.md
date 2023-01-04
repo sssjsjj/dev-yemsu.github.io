@@ -34,7 +34,7 @@ $ git remote add origin https://github.com/sssjsjj/yemsu.github.io.git
 생성된 프로젝트 첫 커밋을 하고 푸쉬했다.
 - - -
 ### 폴더 구조
-[[Vue] 🌱우아한 프로젝트 구조 짜기](https://velog.io/@cindy-choi/Vue-%EC%9A%B0%EC%95%84%ED%95%9C-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%EC%A1%B0-%EC%A7%9C%EA%B8%B0)를 참고했다. 좋은 글이다!
+[[Vue] 🌱우아한 프로젝트 구조 짜기](https://velog.io/@cindy-choi/VUE-%EC%9A%B0%EC%95%84%ED%95%9C-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B5%AC%EC%A1%B0-%EC%A7%9C%EA%B8%B0)를 참고했다. 좋은 글이다!
 
 ```
 src
