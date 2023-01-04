@@ -31,7 +31,7 @@
     "name": "make-github-io-blog-with-vue3-1",
     "title": "Vue3로 Github Pages 블로그 만들기 Part 1. 환경세팅",
     "date": "2022-04-29",
-    "keywords": ["Vue CLI 4", "Vue 3", "github pages", "blog", "Octokit", "vue-markdown-loader", "markdown-to-vue-loader"],
+    "keywords": ["Vue CLI 4", "Vue 3", "github pages", "blog", "폴더구조", "vue-markdown-loader", "markdown-to-vue-loader", "동적 라우팅"],
     "description": "Vue3로 Github Pages 블로그를 만든 우여곡절 스토리 첫번째. 환경세팅."
   },
   {
