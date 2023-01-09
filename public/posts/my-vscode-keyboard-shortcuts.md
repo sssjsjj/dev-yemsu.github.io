@@ -14,7 +14,9 @@ VS Code에 default 단축키 설정이 되어있지 않아 유저가 직접 단�
 
 영역 선택 후 해당 커맨드 실행하면 상단에 태그 입력창이 노출된다. 원하는 태그 입력 후 엔터를 누르면 해당 태그로 선택 영역이 감싸진다.
 
-<code>Emmet : Wrap with Abbreviation - [docs](https://docs.emmet.io/</code>actions/wrap-with-abbreviation/)
+[docs](https://docs.emmet.io/actions/wrap-with-abbreviation/)
+
+<code>Emmet : Wrap with Abbreviation</code>
 ```
 Default   :   null
 User      :   Ctrl + Shift + A
