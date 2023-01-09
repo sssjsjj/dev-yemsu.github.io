@@ -8,7 +8,7 @@ $margin-medium: 40px;
   padding-bottom: 30px;
   border-bottom: 1px solid var(--line-gray);
   text-align: center;
-  .title {
+  .title, .skeleton-h2 {
     font-size: 2.5em;
     font-weight: 800;
     word-break: keep-all;
@@ -52,7 +52,7 @@ $margin-medium: 40px;
       margin-top: 2em;
     }
   }
-  h3 {
+  h3, .skeleton-h3 {
     font-size: 1.8em;
     margin-bottom: 0.5em;
     &:not(:first-child) {
@@ -70,7 +70,7 @@ $margin-medium: 40px;
     margin-top: 30px;
     font-size: 1em;
   }
-  p {
+  p, .skeleton-text{
     margin-top: $margin-small;
     line-height: 1.8;
   }
