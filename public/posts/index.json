@@ -1,5 +1,12 @@
 [
   {
+    "name": "flutter-get-started",
+    "title": "[Flutter] 세팅부터 Preview 화면 띄우기까지",
+    "date": "2022-11-21",
+    "keywords": ["flutter", "Android Studio"],
+    "description": "Flutter 세팅부터 Preview 화면 띄우기까지 진행합니다."
+  },
+  {
     "name": "my-vscode-keyboard-shortcuts",
     "title": "마우스까지 손 옮기는거 싫어하는 사람을 위한 유용한 VS Code 단축키 소개 (기본 단축키 제외)",
     "date": "2022-11-21",
