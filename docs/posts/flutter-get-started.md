@@ -50,9 +50,9 @@ Flutter를 세팅하고 Preview 화면이 뜨는 것까지 확인하는 과정.
 ### Flutter Window 환경 변수 설정
 환경 변수를 설정하여 일반 윈도우 콘솔에서 Flutter 명령을 실행할 수 있게 된다.  
 
-path 환경변수 설정은 구글링해서 상단에 있는 결과 페이지를 확인했다.
+path 환경 변수 설정은 구글링해서 상단에 있는 결과 페이지를 확인했다.
 
-- [윈도우(Windows) 환경변수 PATH 설정하는 방법](https://aitconomy.tistory.com/210)
+- [윈도우(Windows) 환경 변수 PATH 설정하는 방법](https://aitconomy.tistory.com/210)
 
 **고급 시스템 설정 보기 > 고급 탭 > 환경 변수 > 시스템 변수 > Path 더블클릭**하여 환경 변수 편집 창을 띄운다. 공식 문서에 나와있는대로 bin폴더까지 지정해서 <code>flutter/bin</code>을 환경 변수에 추가해줬다.  
 실행파일이 있는 폴더를 지정해줘야 한다는데 flutter의 실행파일은 bin 폴더에 있나보다.
@@ -113,7 +113,7 @@ Doctor summary (to see all details, run flutter doctor -v):
 
 [Android Studio](https://developer.android.com/studio) 부터 설치한다.
 
-설치하고 세팅창이 처음에 뜨는데 모르니까.. 가장 일반적인 default 세팅으로 쭉쭉 다음으로 넘어갔다.
+설치 옵션들이 몇개 나오는데 잘 모르니까 default 세팅으로 쭉쭉 넘어갔다.
 
 <figure>
   <img src="/posts/images/flutter-get-started/i49g-230109-174946.png" alt="Android Studio Setup Wizard - Install Type">
@@ -127,7 +127,6 @@ Doctor summary (to see all details, run flutter doctor -v):
   <figcaption>상위 항목만 Accept 해주면 하위 항목들은 일괄 처리된다.</figcaption>
 </figure>
 
-설치주르릉
 
 <figure>
   <img src="/posts/images/flutter-get-started/i51g-230109-175137.png" alt="Android Studio Setup Wizard - Downloading Components - Start download">
@@ -140,6 +139,8 @@ Doctor summary (to see all details, run flutter doctor -v):
   <figcaption>Finish!</figcaption>
 </figure>
 
+설치가 완료 되었다.
+
 <figure>
   <img src="/posts/images/flutter-get-started/i54g-230109-175446.png" alt="Android Studio First View">
   <figcaption>예이!</figcaption>
@@ -149,7 +150,7 @@ Doctor summary (to see all details, run flutter doctor -v):
 
 ### 다시 flutter doctor
 
-안드로이드 스튜디오를 깔았으니까 다시 <code>flutter doctor</code>로 확인해본다. Android toolchain 쪽이 X에서 !로 바뀌었다. 안드로이드 라이센스가 수락되지 않았다고 떴다.
+안드로이드 스튜디오를 깔았으니까 다시 <code>flutter doctor</code>로 확인해본다. Android toolchain 쪽이 <code>X</code>에서 <code>!</code>로 바뀌었다. 안드로이드 라이센스가 수락되지 않았다고 한다.
 
 ```
 Doctor summary (to see all details, run flutter doctor -v):
@@ -182,7 +183,7 @@ flutter doctor --android-licenses
   <figcaption>예. 예. 예. 예.</figcaption>
 </figure>
 
-다시 <code>flutter doctor</code>. Android toolchain 항목이 체크로 바뀌었다! 하지만 Visual Studio가 남았다.  
+다시 <code>flutter doctor</code>. Android toolchain 항목이 통과되었다. Visual Studio가 남았다.  
 
 <figure>
   <img src="/posts/images/flutter-get-started/i17g-230110-141755.png" alt="flutter doctor 진단 결과 화면">
@@ -197,7 +198,7 @@ flutter doctor --android-licenses
 
 <figure>
   <img src="/posts/images/flutter-get-started/i36g-230110-143616.png" alt="Visual Studio 2022 다운로드 페이지">
-  <figcaption>열심히 배우면 다 학생아닌가요?</figcaption>
+  <figcaption>열심히 배우면 다 학생 아닌가요?</figcaption>
 </figure>
 
 다운 후 실행하면, 아래같이 창이 뜬다. 그렇지.. C++ 버전을 설치하라고 했지.. 
@@ -242,7 +243,7 @@ flutter doctor --android-licenses
   <img src="/posts/images/flutter-get-started/i2g-230110-170207.png" alt="Android Studio Confirm Change popup">
 </figure>
 
-안드로이드 스튜디오 세팅 완료!
+안드로이드 스튜디오 세팅까지 완료!
 
 ### 프로젝트 생성
 
@@ -252,13 +253,13 @@ flutter doctor --android-licenses
   <img src="/posts/images/flutter-get-started/i55g-230110-175530.png" alt="">
 </figure>
 
-Flutter SDK 경로 지정해준다.
+Flutter SDK 경로를 지정해준다.
 
 <figure>
   <img src="/posts/images/flutter-get-started/i4g-230110-170428.png" alt="">
 </figure>
 
-Flutter 왕초보인 나는 우선 기본 옵션들은 냅두고 프로젝트 이름, 위치, 설명에 대한것만 작성했다. Finish
+Flutter 왕초보인 나는 우선 기본 옵션들은 냅두고 프로젝트 이름, 위치, 설명에 대한것만 작성했다. Finish.
 
 <figure>
   <img src="/posts/images/flutter-get-started/i5g-230110-170547.png" alt="">
@@ -270,16 +271,15 @@ Flutter 왕초보인 나는 우선 기본 옵션들은 냅두고 프로젝트 �
   <img src="/posts/images/flutter-get-started/i9g-230110-170953.png" alt="">
 </figure>
 
-> 혹시 브라우저 선택 드롭다운이 떠있지 않다면, Android Studio 오픈 경로 확인이 필요하다.
-
-> 처음에 상위 폴더 기준으로 오픈되어 있어서 프리뷰 기능이 되지 않았다.
-
-짝짝짝. 프리뷰 페이지가 뜬다!
+짝짝짝. 프리뷰 페이지가 뜬다.
 
 <figure>
   <img src="/posts/images/flutter-get-started/i10g-230110-171034.png" alt="flutter 최초 프리뷰 페이지">
   <figcaption>크</figcaption>
 </figure>
+
+Flutter 개발 준비가 완료 되었다!
+
 
 ---
 
