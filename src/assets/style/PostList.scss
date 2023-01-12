@@ -19,6 +19,32 @@ $column-gap: 30px;
   }
 }
 
+.area-tag {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--line-light-gray);
+}
+.tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  .tag {
+    flex-grow: 0;
+    .btn-tag {
+      padding: 0 15px;
+      background-color: var(--bg-gray);
+      border-radius: 10px;
+      line-height: 28px;
+    }
+    &.selected {
+      .btn-tag {
+        background-color: $color-point;
+      }
+    }
+  }
+}
+
 .list-top-area {
   display: flex;
   margin-bottom: 20px;
