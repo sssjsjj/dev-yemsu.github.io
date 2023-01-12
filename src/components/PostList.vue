@@ -1,6 +1,5 @@
  <template>  
   <div :class="['wrap-list-post', `view-${isCardList ? 'card' : 'list'}`]">
-
     <div class="list-top-area">
       <nav class="area-tag">
         <h2 class="ir">category</h2>
@@ -86,10 +85,6 @@ export default {
     selectedTag() {
       return this.tags[this.selectedTagIndex]
     }
-  },
-  created() {
-    // this.tags = this.posts.map(({tags}) => tags)
-    // console.log('tags', this.tags)
   },
   methods: {
     randomRgba() {
