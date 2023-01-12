@@ -1,23 +1,23 @@
  <template>  
   <div :class="['wrap-list-post', `view-${isCardList ? 'card' : 'list'}`]">
 
-    <nav class="area-tag">
-      <h2 class="ir">category</h2>
-      <ul class="tags">
-        <li
-          v-for="(tag, i) in tags"
-          :key="`tag${i}`"
-          :class="[
-            {selected : selectedTagIndex === i },
-            'tag'
-          ]"
-        >
-          <button class="btn-tag" @click="clickTag(i)">{{ tag }}</button>
-        </li>
-      </ul>
-    </nav>
-
     <div class="list-top-area">
+      <nav class="area-tag">
+        <h2 class="ir">category</h2>
+        <ul class="tags">
+          <li
+            v-for="(tag, i) in tags"
+            :key="`tag${i}`"
+            :class="[
+              {selected : selectedTagIndex === i },
+              'tag'
+            ]"
+          >
+            <button class="btn-tag" @click="clickTag(i)">{{ tag }}</button>
+          </li>
+        </ul>
+      </nav>
+      
       <button
         class="toggle-list-type"
         @click="(isCardList = !isCardList)"
