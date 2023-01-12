@@ -98,7 +98,7 @@
     "title": "Vue3 vue-meta 패키지 적용하기",
     "date": "2022-03-05",
     "keywords": ["Vue3", "vue-meta", "SPA SEO", "Vue CLI"],
-    "tags": ["Vue", "라이브러리"],
+    "tags": ["Vue"],
     "description": "Vue3에서 vue-meta 패키지를 설치하고 페이지별 메타태그를 적용해봅니다."
   },
   {
