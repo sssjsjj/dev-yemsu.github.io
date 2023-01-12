@@ -55,11 +55,16 @@ $column-gap: 30px;
   &.view-list {
     max-width: 980px;
     margin: 0 auto;
-
     .list-post {
+      border-bottom: 1px solid var(--line-light-gray);
       .post {
         &:nth-child(n+2) {
           border-top: 1px solid var(--line-light-gray);
+        }
+        &:first-child {
+          > .link-post {
+            padding-top: 20px;
+          }
         }
         > .link-post {
           display: block;
@@ -88,7 +93,7 @@ $column-gap: 30px;
           }
         }
         .wrap-info {
-          margin-top: 15px;
+          margin-top: 10px;
           @include mobile {
             flex-direction: row;
             align-items: center;
@@ -108,7 +113,7 @@ $column-gap: 30px;
           display: flex;
           flex-wrap: wrap;
           gap: 0.4em;
-          margin-top: 20px;
+          margin-top: 15px;
           .keyword {
             padding: 0.3em 0.4em;
             font-size: 0.8em;
