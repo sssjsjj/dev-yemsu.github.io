@@ -19,12 +19,8 @@ $column-gap: 30px;
   }
 }
 
-.area-tag {
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid var(--line-light-gray);
-}
 .tags {
+  flex: 1;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -47,7 +43,9 @@ $column-gap: 30px;
 
 .list-top-area {
   display: flex;
+  padding-bottom: 20px;
   margin-bottom: 20px;
+  border-bottom: 1px solid var(--line-light-gray);
   .toggle-list-type {
     margin-left: auto;
   }
