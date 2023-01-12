@@ -5,7 +5,8 @@
     "date": "2022-01-11",
     "keywords": ["Dart"],
     "tags": ["Dart / Flutter"],
-    "description": "Flutter 세팅부터 Preview 화면 띄우기까지 진행합니다."
+    "description": "Flutter 세팅부터 Preview 화면 띄우기까지 진행합니다.",
+    "hidden": true
   },
   {
     "name": "flutter-get-started",
