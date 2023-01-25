@@ -1,5 +1,13 @@
 
+Firebase로 Google, Github 로그인을 손쉽게 구현할 수 있다. 
+하지만 Firebase는 기능이 많고 용량이 크기때문에 Firebase에서 제공하는 기능들을 많이 사용할 것이 아니고 간단한 로그인 기능만 구현한다면 사용을 다시 고려 해보는게 좋을 것 같다.
+실제로 나도 Firebase로 구현했다가, 모두 원복하고 Firebase 없이 Google 로그인 기능을 다시 구현했다. ㅎ
 
+
+참고하시고 그럼 이제! Firebase를 이용해 로그인을 구현하는 방법에 대해 알아보자!
+
+
+---
 
 ### Firebase Authentication 설정하기
 
@@ -261,7 +269,6 @@ firebase auth 관련하여 더 많은 기능들은 [api 명세](https://firebase
 #### auth/account-exists-with-different-credential
 
 내 경우는 깃헙 계정이 구글 이메일이라서 구글 로그인 후, 깃헙 로그인을 하려고 하면 이미 존재하는 이메일이라고 에러가 났다. [공식문서에 예외처리 코드](https://firebase.google.com/docs/auth/web/google-signin?hl=ko#handling-account-exists-with-different-credential-errors)까지 잘 정리되어있으니 참고하면 좋겠다.
-
 
 ---
 
