@@ -2,7 +2,7 @@
   <div :class="['wrap-list-post', `view-${isCardList ? 'card' : 'list'}`]">
     <div class="list-top-area">
       <nav class="area-tag">
-        <h2 class="ir">category</h2>
+        <h2 class="ir">태그</h2>
         <ul class="tags">
           <li
             v-for="(tag, i) in tags"
@@ -77,7 +77,7 @@ export default {
   data() {
     return {
       isCardList: true,
-      tags: ["javascript", "Vue", "Dart / Flutter", "HTML / CSS", "개발기", "라이브러리", "번역", "접근성", "etc"],
+      tags: ["javascript", "Vue", "Dart / Flutter", "HTML / CSS", "TIL", "개발기", "라이브러리", "번역", "접근성", "etc"],
       selectedTagIndex: null,
     }
   },
