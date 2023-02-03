@@ -30,8 +30,7 @@
     "date": "2023-01-10",
     "keywords": ["Flutter", "Android Studio"],
     "tags": ["Dart / Flutter"],
-    "description": "Flutter 세팅부터 Preview 화면 띄우기까지 진행합니다.",
-    "hidden": true
+    "description": "Flutter 세팅부터 Preview 화면 띄우기까지 진행합니다."
   },
   {
     "name": "my-vscode-keyboard-shortcuts",
