@@ -1,5 +1,13 @@
 [
   {
+    "name": "fastcampus-javascript-typesript-essential-1",
+    "title": "[TIL] JavaScript & TypeScript Essential - 패캠 수강 기록 1",
+    "date": "2023-01-31",
+    "keywords": ["Fastcampus", "김민태의 프론트엔드 아카데미"],
+    "tags": ["TIL"],
+    "description": "Fastcampus의 김민태의 프론트엔드 아카데미 : 제 1 강 JavaScript & TypeScript Essential 강의를 수강하며 기록한 내용 입니다."
+  },
+  {
     "name": "nuxt-google-github-login-firebase-authentication",
     "title": "[Nuxt] Firebase Auth로 Google, Github 로그인 구현하기",
     "date": "2022-01-23",
