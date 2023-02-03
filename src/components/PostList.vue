@@ -77,7 +77,7 @@ export default {
   data() {
     return {
       isCardList: true,
-      tags: ["javascript", "Vue", "HTML / CSS", "개발기", "라이브러리", "번역", "접근성", "etc"],
+      tags: ["javascript", "Vue", "HTML / CSS", "TIL", "개발기", "라이브러리", "번역", "접근성", "etc"],
       selectedTagIndex: null,
     }
   },
