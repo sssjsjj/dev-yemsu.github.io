@@ -37,9 +37,9 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-922R4CGCRZ');</script><link href="/css/chunk-74d2d95d.css" rel="prefetch"><link href="/css/chunk-773fa2dd.css" rel="prefetch"><link href="/js/chunk-74d2d95d.js" rel="prefetch"><link href="/js/chunk-773fa2dd.js" rel="prefetch"><link href="/css/app.css" rel="preload" as="style"><link href="/js/app.js" rel="preload" as="script"><link href="/js/chunk-vendors.js" rel="preload" as="script"><link href="/css/app.css" rel="stylesheet"><link rel="stylesheet" type="text/css" href="/css/chunk-74d2d95d.css"><script charset="utf-8" src="/js/chunk-74d2d95d.js"></script></head><body><noscript><strong>We're sorry but ENJOY DEV doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app" data-v-app=""><metainfo></metainfo><header data-v-49c83e62=""><h1 data-v-49c83e62=""><a href="/" class="logo size-medium" data-v-295f0452="" data-v-49c83e62=""><span class="logo-text dev" data-v-295f0452=""> D<span class="hidden" data-v-295f0452="">E</span>V </span><span class="logo-text enjoy" data-v-295f0452=""><span class="common-e" data-v-295f0452="">E</span>NJOY🌊 </span></a></h1><div class="links" data-v-49c83e62=""><a href="https://github.com/yemsu/" title="Yemsu Github" target="_blank" data-v-49c83e62=""><svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="26" data-view-component="true" class="octicon octicon-mark-github v-align-middle"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a></div></header><div class="container size-narrow" data-v-5006e508="" data-v-0cc18c81=""><nav class="outLiner" data-v-0cc18c81=""><h2 class="ir">글 목차 (클릭하여 바로가기)</h2><ul><li class="subTitle"><a href="#SEO와-관련된-SPA의-특징">0-1. SEO와 관련된 SPA의 특징</a></li><li class="subTitle"><a href="#prerender-spa-plugin을-선택한-이유">0-2. prerender-spa-plugin을 선택한 이유</a></li><li class=""><a href="#prerender-spa-plugin">1. prerender-spa-plugin</a></li><li class="subTitle"><a href="#🔎-특징">1-1. 🔎 특징</a></li><li class="subTitle"><a href="#설치">1-2. 설치</a></li><li class="subTitle"><a href="#기본-적용">1-3. 기본 적용</a></li><li class=""><a href="#동적-routes-적용">2. 동적 routes 적용</a></li><li class=""><a href="#동적-meta태그-적용">3. 동적 meta태그 적용</a></li><li class="subTitle"><a href="#결과">3-1. 결과</a></li></ul></nav><!----><article data-v-0cc18c81="" style=""><div class="wrap-info" data-v-0cc18c81=""><h2 class="title" data-v-0cc18c81="">Webpack prerender-spa-plugin 사용하기</h2><p class="date" data-v-0cc18c81="">2022-04-13</p><ul class="keywords" data-v-0cc18c81=""><li class="keyword" data-v-0cc18c81="">Vue CLI 4</li><li class="keyword" data-v-0cc18c81="">SPA</li><li class="keyword" data-v-0cc18c81="">SEO</li><li class="keyword" data-v-0cc18c81="">meta</li><li class="keyword" data-v-0cc18c81="">HTML5 mode</li></ul></div><div class="article" data-v-0cc18c81=""><p><code>Vue.js</code>로 만들던 블로그가 어느정도 틀이 잡혔다. 블로그는 검색이 생명인데 SPA(Single Page Application)인 Vue App은 검색에 문제가 있다. SEO 문제를 <a href="https://github.com/chrisvfritz/prerender-spa-plugin">prerender-spa-plugin</a>으로 해결하고 동적 <code>meta</code>태그를 적용하는 방법까지 알아보자.</p>
+      gtag('config', 'G-922R4CGCRZ');</script><link href="/css/chunk-74d2d95d.css" rel="prefetch"><link href="/css/chunk-773fa2dd.css" rel="prefetch"><link href="/js/chunk-74d2d95d.js" rel="prefetch"><link href="/js/chunk-773fa2dd.js" rel="prefetch"><link href="/css/app.css" rel="preload" as="style"><link href="/js/app.js" rel="preload" as="script"><link href="/js/chunk-vendors.js" rel="preload" as="script"><link href="/css/app.css" rel="stylesheet"><link rel="stylesheet" type="text/css" href="/css/chunk-74d2d95d.css"><script charset="utf-8" src="/js/chunk-74d2d95d.js"></script></head><body><noscript><strong>We're sorry but ENJOY DEV doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app" data-v-app=""><metainfo></metainfo><header data-v-49c83e62=""><h1 data-v-49c83e62=""><a href="/" class="logo size-medium" data-v-295f0452="" data-v-49c83e62=""><span class="logo-text dev" data-v-295f0452=""> D<span class="hidden" data-v-295f0452="">E</span>V </span><span class="logo-text enjoy" data-v-295f0452=""><span class="common-e" data-v-295f0452="">E</span>NJOY🌊 </span></a></h1><div class="links" data-v-49c83e62=""><a href="https://github.com/yemsu/" title="Yemsu Github" target="_blank" data-v-49c83e62=""><svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="26" data-view-component="true" class="octicon octicon-mark-github v-align-middle"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg></a></div></header><div class="container size-narrow" data-v-5006e508="" data-v-0cc18c81=""><nav class="outLiner" data-v-0cc18c81=""><h2 class="ir">글 목차 (클릭하여 바로가기)</h2><ul></ul></nav><article data-v-3dddfee3="" data-v-0cc18c81=""><div class="wrap-info" data-v-3dddfee3=""><h2 class="skeleton skeleton-h2" data-v-3dddfee3="">title</h2></div><div class="article" data-v-3dddfee3=""><div class="skeleton skeleton-h3" data-v-3dddfee3="">ddd</div><div class="skeleton skeleton-text long" data-v-3dddfee3="">ddd</div><div class="skeleton skeleton-text normal" data-v-3dddfee3="">ddd</div><div class="skeleton skeleton-text short" data-v-3dddfee3="">ddd</div></div></article><article data-v-0cc18c81="" style="display: none;"><!----><div class="article" data-v-0cc18c81=""><p><code>Vue.js</code>로 만들던 블로그가 어느정도 틀이 잡혔다. 블로그는 검색이 생명인데 SPA(Single Page Application)인 Vue App은 검색에 문제가 있다. SEO 문제를 <a href="https://github.com/chrisvfritz/prerender-spa-plugin">prerender-spa-plugin</a>으로 해결하고 동적 <code>meta</code>태그를 적용하는 방법까지 알아보자.</p>
 <hr>
-<h4 id="SEO와-관련된-SPA의-특징">SEO와 관련된 SPA의 특징</h4>
+<h4 id="seospa">SEO와 관련된 SPA의 특징</h4>
 <ul>
 <li>하나의 index.html에 <code>JavaScript</code>로 컨텐츠를 렌더링한다. </li>
 <li>어떤 페이지든 <code>index.html</code> 문서 내용이기 때문에 검색 크롤러에게 각 페이지 내용을 알려줄수가 없다.  </li>
@@ -47,7 +47,7 @@
 <cite><a href="https://developers.google.com/search/docs/advanced/javascript/javascript-seo-basics?hl=ko">Google 검색 센터</a></cite></li>
 </ul>
 <hr>
-<h4 id="prerender-spa-plugin을-선택한-이유">prerender-spa-plugin을 선택한 이유</h4>
+<h4 id="prerenderspaplugin">prerender-spa-plugin을 선택한 이유</h4>
 <p>위에서 언급되었던 <a href="https://developers.google.com/web/updates/2019/02/rendering-on-the-web?hl=ko">SSR 또는 사전 렌더링</a>으로 SPA의 단점을 해결할 수 있다. 간단히 내용을 정리해 보았다.</p>
 <h5 id="ssr">SSR</h5>
 <ul>
@@ -61,17 +61,17 @@
 <p>👉 그리하여 나는 사전 렌더링 방식을 선택하게 되었다.
 이제 <code>prerender-spa-plugin</code>을 적용해보자!</p>
 <hr>
-<h3 id="prerender-spa-plugin">prerender-spa-plugin</h3>
-<h4 id="🔎-특징">🔎 특징</h4>
+<h3 id="prerenderspaplugin-1">prerender-spa-plugin</h3>
+<h4 id="-1">🔎 특징</h4>
 <ul>
 <li><code>Webpack</code> 플러그인으로 <code>Webpack</code>을 사용한 사이트라면 쉽게 적용할 수 있다.</li>
 <li>라우터 모드가 <code>HTML5 mode</code>일 때 사용할 수 있다.</li>
 <li>빌드 타임에 라우터 경로대로 폴더를 생성하고 폴더 하위에 <code>index.html</code>을 생성하는 방식이다.</li>
 </ul>
-<h4 id="설치">설치</h4>
+<h4 id="-2">설치</h4>
 <p><code>devDependency</code>로 설치한다.</p>
 <pre><code>yarn add -D prerender-spa-plugin</code></pre>
-<h4 id="기본-적용">기본 적용</h4>
+<h4 id="-3">기본 적용</h4>
 <p>기본적인 적용방식은 아래와 같다.</p>
 <h5 id="vueconfigjs">📃 vue.config.js</h5>
 <pre><code class="language-javascript"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>)
@@ -98,7 +98,7 @@
     }
   }
 }</code></pre>
-<h3 id="동적-routes-적용">동적 routes 적용</h3>
+<h3 id="routes">동적 routes 적용</h3>
 <p><code>routes</code>를 동적으로 가져오도록 아래와 같이 코드를 변경했다.</p>
 <h5 id="vueconfigjs-1">📃 vue.config.js</h5>
 <pre><code class="language-javascript"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>)
@@ -134,7 +134,7 @@
     <span class="hljs-string">"description"</span>: <span class="hljs-string">"..."</span>
   },
 ]</code></pre>
-<h3 id="동적-meta태그-적용">동적 meta태그 적용</h3>
+<h3 id="meta">동적 meta태그 적용</h3>
 <p><a href="https://mygumi.tistory.com/385">SPA 에서 SEO 적용하기 :: 마이구미</a> 포스트를 전반적으로 참고하여 적용하였다.</p>
 <h5 id="vueconfigjs-2">📃 vue.config.js</h5>
 <p>웹팩 플러그인에 대한 정의가 분량이 많아져 파일을 분리했다.</p>
@@ -194,7 +194,7 @@
     }),
   })
 ]</code></pre>
-<h4 id="결과">결과</h4>
+<h4 id="-4">결과</h4>
 <p>세팅이 완료되었으니 빌드하여 결과를 확인한다.</p>
 <pre><code>yarn build</code></pre>
 <p>output directory 내부에 아래와 같이 폴더와 <code>html</code>이 생성된다. 나는 git pages 블로그이기 때문에 output directory명이 <code>docs</code>이지만 기본은 <code>dist</code>이다.</p>
