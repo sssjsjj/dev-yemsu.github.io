@@ -85,7 +85,7 @@ function getData(url: string): NoticeList[] | NoticeDetail[] {
 - 입력이 n개일때 출력도 n개인 유형을 정의하는 것이 제네릭. 입력이 a이면 출력도 a ….
 
 #### 제네릭 관련 글
-- [TypeScript: Documentation - Generics](https://www.typescriptlang.org/ko/docs/handbook/2/- generics.html)
+- [TypeScript: Documentation - Generics](https://www.typescriptlang.org/ko/docs/handbook/2/generics.html)
 - [TypeScript: 제네릭(Generic) | DailyEngineering](https://hyunseob.github.io/2017/01/14/typescript-generic/)
 
 
