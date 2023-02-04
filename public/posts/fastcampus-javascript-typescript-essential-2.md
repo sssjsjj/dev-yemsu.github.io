@@ -24,7 +24,7 @@
 compilerOptions에 대한 내용은 공식문서에 나와있고, 엄청나게 많다. 당장 다 보기에는 내용이 너무 방대하니 나중에 디테일이 필요할때 확인해보는 것을 추천한다.
 
 - **strict: false** : 점진적으로 javascript를 typescript로 전환할 수 있는 환경을 제공해줌. true 로하면 타입스크립트가 엄격해지긴하지만 알려주는 사항들이 많아서 편리하다.
-- **noImplicityAny: true** : `any` 사용을 금지하고 명확한 타입을 요구한다.
+- **noImplicitAny: true** : `any` 사용을 금지하고 명확한 타입을 요구한다.
 - **sourceMap: true** : 설정은 브라우저에서도 타입스크립트 실행에 대한 정보를 얻을 수 있는 map파일을 생성해주는 옵션이다. - 개발환경과 실행환경을 일치시킬 수 있는 설정
 
 
@@ -121,7 +121,7 @@ GET https://api.hnpwa.com/v0/notice/1.json HTTP/1.1
 ```
 
 <figure>
-  <img src="/posts/images/fastcampus-javascript-typescript-essential-2/i41g-230203-154150.png" alt="vxcode extension - REST Client 실행 화면" />
+  <img src="/posts/images/fastcampus-javascript-typescript-essential-2/i41g-230203-154150.png" alt="vscode extension - REST Client 실행 화면" />
   <figcaption>이야! 신기</figcaption>  
 </figure>
 
