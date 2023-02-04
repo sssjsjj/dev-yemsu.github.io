@@ -8,7 +8,7 @@
         :class="[{'active':activeIndex === i}, {'subTitle':title.isSubIndex}]"
       >
         <a :href="`#${title.id}`">
-          {{ title.numbering }}. {{ title.text }}
+          {{ title.text }}
         </a>
       </li>
     </ul>
