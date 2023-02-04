@@ -5,7 +5,7 @@
       <li 
         v-for="(title,i) in outlines"
         :key="`outline${i}`"
-        :class="[{'active':activeIndex === i}, {'subTitle':title.isSubIndex}]"
+        :class="[{'active':activeIndex === i}, {'title-sub':title.isSubIndex}]"
       >
         <a :href="`#${title.id}`">
           {{ title.text }}
@@ -90,9 +90,12 @@ $top: 120px;
         opacity: 1;
       }
       &:nth-child(n+2) {
-        margin-top: 0.25em;
+        margin-top: 0.6em;
+        &.title-sub {
+          margin-top: 0.35em;
+        }
       }
-      &.subTitle {
+      &.title-sub {
         padding-left: 1em;
       }
     }
