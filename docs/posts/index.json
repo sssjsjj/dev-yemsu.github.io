@@ -1,5 +1,13 @@
 [
   {
+    "name": "fastcampus-javascript-typescript-essential-3",
+    "title": "[TIL] JavaScript & TypeScript Essential - Chapter 6",
+    "date": "2023-2-4",
+    "keywords": ["Fastcampus", "김민태의 프론트엔드 아카데미"],
+    "tags": ["TIL"],
+    "description": "Fastcampus의 김민태의 프론트엔드 아카데미 : 제 1 강 JavaScript & TypeScript Essential 강의 Chapter 6를 수강하며 기록한 내용 입니다."
+  },
+  {
     "name": "fastcampus-javascript-typescript-essential-2",
     "title": "[TIL] JavaScript & TypeScript Essential - Chapter 4",
     "date": "2023-2-3",
