@@ -111,7 +111,7 @@ makeNoticeList(getData<NoticeList[]>(NEWS_URL))
 
 hm.http 파일을 생성하고 아래와 같이 입력하면 Send Request 버튼이 활성화 된다.
 
-#도 꼭 입력!
+`#`도 꼭 입력!
 
 Send Request버튼을 클릭하면 오른쪽 패널처럼 응답을 확인할 수 있다.
 
