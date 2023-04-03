@@ -126,12 +126,14 @@ $margin-medium: 40px;
     font-family: 'Source Code Pro', monospace;
   }
   pre {
-    overflow-x: auto;
     margin: 15px 0 25px;
     padding: 15px;
     background-color: var(--bg-gray);
     code {
+      display: block;
       padding: 0;
+      word-break: keep-all;
+      white-space: pre-wrap;
     }
   }
   hr {
