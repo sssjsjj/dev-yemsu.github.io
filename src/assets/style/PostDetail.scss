@@ -47,7 +47,7 @@ $margin-medium: 40px;
     font-weight: 700;
   }
   h4, h5 {
-    margin-bottom: $margin-small;
+    margin-bottom: 15px;
     &:not(:first-child) {
       margin-top: 2em;
     }
@@ -126,12 +126,14 @@ $margin-medium: 40px;
     font-family: 'Source Code Pro', monospace;
   }
   pre {
-    overflow-x: auto;
     margin: 15px 0 25px;
     padding: 15px;
     background-color: var(--bg-gray);
     code {
+      display: block;
       padding: 0;
+      word-break: keep-all;
+      white-space: pre-wrap;
     }
   }
   hr {
@@ -144,10 +146,10 @@ $margin-medium: 40px;
     padding-left: 2em;
     li {
       &:nth-child(n+2) {
-        margin-top: 5px;
+        margin-top: 10px;
       }
       ul {
-        margin-top: 5px;
+        margin-top: 10px;
         margin-bottom: 15px;
       }
     }
