@@ -1,11 +1,19 @@
 [
   {
+    "name": "nuxt-google-login",
+    "title": "[Nuxt] 구글 로그인 개발기",
+    "date": "2023-2-10",
+    "keywords": ["Nuxt", "Vue", "Google Login", "JWT", "Access Token"],
+    "tags": ["Vue", "개발기"],
+    "description": "Nuxt 프로젝트에 구글 로그인을 구현한 과정에 대한 내용입니다."
+  },
+  {
     "name": "fastcampus-javascript-typescript-essential-3",
     "title": "[TIL] JavaScript & TypeScript Essential - Chapter 6",
     "date": "2023-2-4",
     "keywords": ["Fastcampus", "김민태의 프론트엔드 아카데미"],
     "tags": ["TIL"],
-    "description": "Fastcampus의 김민태의 프론트엔드 아카데미 : 제 1 강 JavaScript & TypeScript Essential 강의 Chapter 6를 수강하며 기록한 내용 입니다."
+    "description": "Fastcampus의 김민태의 프론트엔드 아카데미 : 제 1 강 JavaScript & TypeScript Essential 강의 Chapter 6를 수강하며 기록한 내용입니다."
   },
   {
     "name": "fastcampus-javascript-typescript-essential-2",
@@ -13,7 +21,7 @@
     "date": "2023-2-3",
     "keywords": ["Fastcampus", "김민태의 프론트엔드 아카데미"],
     "tags": ["TIL"],
-    "description": "Fastcampus의 김민태의 프론트엔드 아카데미 : 제 1 강 JavaScript & TypeScript Essential 강의 Chapter 4를 수강하며 기록한 내용 입니다."
+    "description": "Fastcampus의 김민태의 프론트엔드 아카데미 : 제 1 강 JavaScript & TypeScript Essential 강의 Chapter 4를 수강하며 기록한 내용입니다."
   },
   {
     "name": "fastcampus-javascript-typescript-essential-1",
@@ -21,7 +29,7 @@
     "date": "2023-01-31",
     "keywords": ["Fastcampus", "김민태의 프론트엔드 아카데미"],
     "tags": ["TIL"],
-    "description": "Fastcampus의 김민태의 프론트엔드 아카데미 : 제 1 강 JavaScript & TypeScript Essential 강의 Chapter 3를 수강하며 기록한 내용 입니다."
+    "description": "Fastcampus의 김민태의 프론트엔드 아카데미 : 제 1 강 JavaScript & TypeScript Essential 강의 Chapter 3를 수강하며 기록한 내용입니다."
   },
   {
     "name": "nuxt-google-github-login-firebase-authentication",
@@ -67,11 +75,11 @@
   },
   {
     "name": "vue-node-express-mongodb-crud-app-translated-ko",
-    "title": "Vue.js + Node.js + Express + MongoDB 튜토리얼: MEVN stack CRUD Application (번역)",
+    "title": "Vue + Node.js + Express + MongoDB 튜토리얼: MEVN stack CRUD Application (번역)",
     "date": "2022-05-17",
-    "keywords": ["Vue.js", "Node.js", "Express", "MongoDB", "CRUD"],
+    "keywords": ["Vue", "Node.js", "Express", "MongoDB", "CRUD"],
     "tags": ["Vue", "번역"],
-    "description": "Vue.js + Node.js + Express + MongoDB를 이용하여 CRUD App 만들기 튜토리얼 포스팅을 한국어로 번역한 내용입니다."
+    "description": "Vue + Node.js + Express + MongoDB를 이용하여 CRUD App 만들기 튜토리얼 포스팅을 한국어로 번역한 내용입니다."
   },
   {
     "name": "make-github-io-blog-with-vue3-2",
@@ -198,11 +206,11 @@
   },
   {
     "name": "vue-devtools-not-detected-vue3",
-    "title": "[Vue3] Vue.js devtools - not detected",
+    "title": "[Vue3] Vue devtools - not detected",
     "date": "2021-11-12",
-    "keywords": ["Vue3", "Vue.js devtools"],
+    "keywords": ["Vue3", "Vue devtools"],
     "tags": ["Vue"],
-    "description": "Vue.js devtools - not detected 이슈 해결"
+    "description": "Vue devtools - not detected 이슈 해결"
   },
   {
     "name": "javascript-class",
