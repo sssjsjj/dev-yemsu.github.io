@@ -1,5 +1,13 @@
 [
   {
+    "name": "til-230405",
+    "title": "[TIL] 230405 - Nuxt 사이드 프로젝트 Next로 이관 계획중",
+    "date": "2023-4-5",
+    "keywords": ["TIL", "React Component Styling", "적정기술 딜레마", "프론트엔드와 SOLID 원칙"],
+    "tags": ["TIL"],
+    "description": "2023년 4월 5일, 새롭게 알게된 내용에 대한 기록입니다."
+  },
+  {
     "name": "nuxt-google-login",
     "title": "[Nuxt] 구글 로그인 개발기",
     "date": "2023-2-10",
